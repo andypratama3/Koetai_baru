@@ -145,7 +145,7 @@
                         <a href="components-alerts.html">
                             <i class="bi bi-circle"></i><span>Alerts</span>
                         </a>
-                    </li>
+                    </li>s
                 </ul>
             </li><!-- End Components Nav -->
         </ul>
