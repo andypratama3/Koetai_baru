@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Event;
-use StoreEventAction;
+use App\Action\Event\StoreEventAction;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Event\StoreEventRequest;

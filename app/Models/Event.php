@@ -16,14 +16,18 @@ class Event extends Model
     protected $guarded = ['id'];
     protected $fillable = [
         'nama',
-        'tanggal',
-        'deskripsi'
+        'tanggal_mulai',
+        'tanggal_selesai',
+        'deskripsi',
+        'foto'
+
     ];
 
 
     protected $dates = [
         'deleted_at',
-        'tanggal'
+        'tanggal_mulai',
+        'tanggal_selesai'
     ];
 
     public function setNameAttribute($value)

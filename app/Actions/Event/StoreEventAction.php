@@ -2,9 +2,10 @@
 
 namespace App\Action\Event;
 
+use Str;
+use Carbon\Carbon;
 use App\Models\Event;
 use Illuminate\Http\Request;
-use Str;
 
 class StoreEventAction
 {
@@ -12,7 +13,13 @@ class StoreEventAction
     {
         $event = new Event;
         $event->nama = $request->nama;
-        $event->tanggal =$request->tanggal;
+
+        $tanggal = explode(' - ', $request->tanggal);
+        $tanggal_mulai = Carbon::parse($tanggal[0])->format('Y-m-d H:i:s');
+        $tanggal_selesai = Carbon::parse($tanggal[1])->format('Y-m-d H:i:s');
+
+        $event->tanggal_mulai = $tanggal_mulai;
+        $event->tanggal_selesai = $tanggal_selesai;
 
         if($request->file('foto')){
             $event_picture = $request->file('foto');

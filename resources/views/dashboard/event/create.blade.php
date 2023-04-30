@@ -16,7 +16,8 @@
               <h5 class="card-title">General Form Elements</h5>
 
               <!-- General Form Elements -->
-              <form action="{{ route('dashboard.event.create') }} " method="POST" enctype="multipart/form-data">
+              <form action="{{ route('dashboard.event.store') }} " method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Nama Event</label>
                   <div class="col-sm-10">
@@ -26,7 +27,7 @@
                 <div class="row mb-3">
                     <label for="inputDate" class="col-sm-2 col-form-label">Tanggal</label>
                     <div class="col-sm-10">
-                        <input type="text" name="tanggal"  />
+                        <input type="text" name="tanggal"  class="form-control"/>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -56,8 +57,10 @@
 
 @push('js')
 <script src="{{ asset('dashboard_assets/assets/vendor/quill/quill.min.js') }}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
 <script>
     $(function() {
       $('input[name="tanggal"]').daterangepicker({
