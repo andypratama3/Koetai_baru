@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\Dashboard\EventController;
 use App\Http\Controllers\Dashboard\DashboardController;
 
 /*
@@ -19,6 +20,6 @@ Route::get('/', WelcomeController::class)->name('index');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
     Route::get('/', DashboardController::class)->name('dashboard');
-
+    Route::resource('event', EventController::class, ['names' => 'dashboard.event']);
 });
 
