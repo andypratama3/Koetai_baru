@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Event;
+use StoreEventAction;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Event\StoreEventRequest;
 
 class EventController extends Controller
 {
@@ -24,6 +26,11 @@ class EventController extends Controller
     public function create()
     {
         return view('dashboard.event.create');
+    }
+    public function store(StoreEventRequest $request, StoreEventAction $storeEventAction)
+    {
+        $storeEventAction->execute($request);
+        return redirect()->route('dashboard.event.index')->with('succes','Event Berhasil Ditambahkan!');
     }
 
 }

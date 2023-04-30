@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nama');
-            $table->dateTime('tanggal');
+            $table->dateTime('tanggal_mulai');
+            $table->dateTime('tanggal_selesai');
             $table->longText('deskripsi');
             $table->string('foto');
             $table->softDeletes();
