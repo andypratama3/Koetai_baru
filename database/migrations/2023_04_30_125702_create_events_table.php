@@ -20,6 +20,7 @@ return new class extends Migration
             $table->dateTime('tanggal_selesai');
             $table->longText('deskripsi');
             $table->string('foto');
+            $table->string('slug');
             $table->softDeletes();
             $table->timestamps();
         });

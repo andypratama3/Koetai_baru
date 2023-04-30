@@ -16,18 +16,20 @@
                       <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nama Event</th>
-                        <th scope="col">Tanggal</th>
+                        <th scope="col">Tanggal Mulai</th>
+                        <th scope="col">Tanggal Selesai</th>
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                     @foreach ($events as $event)
                       <tr>
-                        <th scope="row">{{ $no++ }}</th>
+                        <th scope="row">{{ ++$no }}</th>
                         <td>{{ $event->nama }}</td>
-                        <td>{{ $event->tanggal->format('D-M-Y') }}</td>
+                        <td>{{ $event->tanggal_mulai->format('d M Y') }}</td>
+                        <td>{{ $event->tanggal_selesai->format('d M Y') }}</td>
                         <td>
-                            <a class="btn btn-primary" href="#"><i class="bi bi-eye"></i></a>
+                            <a class="btn btn-primary" href="{{ route('dashboard.event.show', $event->slug) }}"><i class="bi bi-eye"></i></a>
                             <a class="btn btn-warning" href="#"><i class="bi bi-pen"></i></a>
                             <a class="btn btn-danger" href="#"><i class="bi bi-trash"></i></a>
                         </td>

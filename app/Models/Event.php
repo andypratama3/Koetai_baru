@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -30,9 +31,9 @@ class Event extends Model
         'tanggal_selesai'
     ];
 
-    public function setNameAttribute($value)
+    public function setNamaAttribute($value)
     {
-        $this->attributes['name'] = $value;
+        $this->attributes['nama'] = $value;
         $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Action\Event;
+namespace App\Actions\Event;
 
 use Str;
 use Carbon\Carbon;
@@ -13,6 +13,7 @@ class StoreEventAction
     {
         $event = new Event;
         $event->nama = $request->nama;
+        $event->deskripsi = $request->deskripsi;
 
         $tanggal = explode(' - ', $request->tanggal);
         $tanggal_mulai = Carbon::parse($tanggal[0])->format('Y-m-d H:i:s');
