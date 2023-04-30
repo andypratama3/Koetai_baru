@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->longText('avatar')->nullable();
+            $table->string('slug');
             $table->softDeletes();
             $table->timestamps();
         });
