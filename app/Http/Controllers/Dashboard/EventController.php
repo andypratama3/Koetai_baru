@@ -14,7 +14,7 @@ class EventController extends Controller
 {
     public function index()
     {
-        $limit = 15;
+        $limit = 5;
         $events = Event::select(['nama', 'tanggal_mulai','tanggal_selesai', 'slug'])->latest()->paginate($limit);
         $count = $events->count();
         $no = $limit * ($events->currentPage() - 1);

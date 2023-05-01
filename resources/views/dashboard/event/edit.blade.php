@@ -19,7 +19,9 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Tambah Event</h5>
+                <h5 class="card-title text-center">
+                    <a href="{{ route('dashboard.event.index') }}" class="btn btn-danger float-start btn-sm">Kembali</a>
+                    Tambah Event</h5>
                 @include('layouts.flash-message')
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.event.update', $event->slug ) }} " method="POST" enctype="multipart/form-data">

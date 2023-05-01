@@ -11,7 +11,7 @@
                 <div class="card-body">
                   <h5 class="card-title float-end"><a href="{{ route('dashboard.event.create') }}" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a></h5>
                   <!-- Table with hoverable rows -->
-                  <table class="table table-hover">
+                  <table class="table table-hover text-center">
                     <thead>
                       <tr>
                         <th scope="col">No</th>
@@ -26,8 +26,8 @@
                       <tr>
                         <th scope="row">{{ ++$no }}</th>
                         <td>{{ $event->nama }}</td>
-                        <td>{{ $event->tanggal_mulai->format('d M Y') }}</td>
-                        <td>{{ $event->tanggal_selesai->format('d M Y') }}</td>
+                        <td>{{ $event->tanggal_mulai->format('d M Y h:d:s') }}</td>
+                        <td>{{ $event->tanggal_selesai->format('d M Y h:d:s') }}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('dashboard.event.show', $event->slug) }}"><i class="bi bi-eye"></i></a>
                             <a class="btn btn-warning" href="{{ route('dashboard.event.edit', $event->slug) }}"><i class="bi bi-pen"></i></a>
@@ -44,16 +44,15 @@
                     @endforeach
                     </tbody>
                   </table>
-
-
-                    <ul class="pagination">
-                      <li class="page-item"> {{ $events->onEachSide(1)->links() }}</li>
-
-                      </li>
-                    </ul>
-                  <!-- End Table with hoverable rows -->
-
+                  <div class="">Total Event : {{ $count }}</div>
                 </div>
+                <ul class="pagination">
+                    <li class="page-item"> {{ $events->onEachSide(1)->links() }}</li>
+
+                    </li>
+
+                </ul>
+
               </div>
         </div>
     </div>
