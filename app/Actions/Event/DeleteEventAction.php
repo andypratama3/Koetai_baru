@@ -12,7 +12,6 @@ class DeleteEventAction
     {
 
         $event = Event::where('slug', $slug)->firstOrFail();
-
         $event->delete();
 
     }

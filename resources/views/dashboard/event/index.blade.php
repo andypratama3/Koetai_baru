@@ -44,16 +44,13 @@
                     @endforeach
                     </tbody>
                   </table>
-                  <nav aria-label="...">
+
+
                     <ul class="pagination">
-                      <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                      </li>
                       <li class="page-item"> {{ $events->onEachSide(1)->links() }}</li>
-                        <a class="page-link" href="#">Next</a>
+
                       </li>
                     </ul>
-                  </nav>
                   <!-- End Table with hoverable rows -->
 
                 </div>
