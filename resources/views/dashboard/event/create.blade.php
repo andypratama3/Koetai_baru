@@ -14,16 +14,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Tambah Event</h5>
-                @if (count($errors) > 0)
-                <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
-                    <h5><i class="bi bi-ban"></i>Peringatan!</h5>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
-                        aria-label="Close"></button>
-                </div>
-                @endif
+                @include('layouts.flash-message')
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.event.store') }} " method="POST" enctype="multipart/form-data">
                     @csrf
