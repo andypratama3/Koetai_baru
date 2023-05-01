@@ -61,7 +61,7 @@
 
                         <div class="row mt-3 mb-3 text-center">
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </div>
 

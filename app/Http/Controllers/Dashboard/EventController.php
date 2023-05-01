@@ -6,6 +6,7 @@ use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Actions\Event\StoreEventAction;
+use App\Actions\Event\DeleteEventAction;
 use App\Actions\Event\UpdateEventAction;
 use App\Http\Requests\Event\StoreEventRequest;
 
@@ -52,6 +53,11 @@ class EventController extends Controller
         $updateEventAction->execute($request,$slug);
         return redirect()->route('dashboard.event.index')->with('succes','Event Berhasil Di Update!');
 
+    }
+    public function destroy($slug, DeleteEventAction $deleteEventAction){
+
+        $deleteEventAction->execute($slug);
+        return redirect()->route('dashboard.event.index')->with('succes','Event Berhasil Di Hapus!');
     }
 
 }

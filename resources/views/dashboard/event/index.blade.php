@@ -31,13 +31,23 @@
                         <td>
                             <a class="btn btn-primary" href="{{ route('dashboard.event.show', $event->slug) }}"><i class="bi bi-eye"></i></a>
                             <a class="btn btn-warning" href="{{ route('dashboard.event.edit', $event->slug) }}"><i class="bi bi-pen"></i></a>
-                            <a class="btn btn-danger" href="#"><i class="bi bi-trash"></i></a>
+                            <a class="btn btn-danger delete" href="#" data-id="{{ $event->slug }}"><i class="bi bi-trash"></i></a>
                         </td>
 
                       </tr>
                     @endforeach
                     </tbody>
                   </table>
+                  <nav aria-label="...">
+                    <ul class="pagination">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                      </li>
+                      <li class="page-item"> {{ $events->onEachSide(1)->links() }}</li>
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
                   <!-- End Table with hoverable rows -->
 
                 </div>
@@ -45,4 +55,27 @@
         </div>
     </div>
 </div>
+
+@push('js')
+{{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+<script src="{{ asset('dashboard_assets/SwetAlert/index.js') }}"></script>
+<script>
+  $(".delete").click(function (e) {
+            swal({
+                    title: 'Anda yakin?',
+                    text: 'Data yang sudah dihapus tidak dapat dikembalikan!',
+                    icon: 'warning',
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $(`#delete-${slug}`).submit();
+                    } else {
+                        // Do Nothing
+                    }
+                });
+        });
+</script>
+@endpush
 @endsection
