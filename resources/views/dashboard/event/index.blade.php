@@ -30,7 +30,7 @@
                         <td>{{ $event->tanggal_selesai->format('d M Y') }}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('dashboard.event.show', $event->slug) }}"><i class="bi bi-eye"></i></a>
-                            <a class="btn btn-warning" href="#"><i class="bi bi-pen"></i></a>
+                            <a class="btn btn-warning" href="{{ route('dashboard.event.edit', $event->slug) }}"><i class="bi bi-pen"></i></a>
                             <a class="btn btn-danger" href="#"><i class="bi bi-trash"></i></a>
                         </td>
 

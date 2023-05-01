@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Event;
-use App\Actions\Event\StoreEventAction;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Actions\Event\StoreEventAction;
+use App\Actions\Event\UpdateEventAction;
 use App\Http\Requests\Event\StoreEventRequest;
 
 class EventController extends Controller
@@ -38,6 +39,19 @@ class EventController extends Controller
         $event = Event::where('slug',$slug)->select(['nama','deskripsi' ,'tanggal_mulai','tanggal_selesai','foto', 'slug'])->firstOrFail();
 
         return view('dashboard.event.show', compact('event'));
+    }
+
+    public function edit(Request $request,$slug)
+    {
+        $event = Event::where('slug',$slug)->select(['nama','deskripsi' ,'tanggal_mulai','tanggal_selesai','foto', 'slug'])->firstOrFail();
+
+        return view('dashboard.event.edit', compact('event'));
+    }
+    public function update(StoreEventRequest $request, UpdateEventAction $updateEventAction, $slug){
+
+        $updateEventAction->execute($request,$slug);
+        return redirect()->route('dashboard.event.index')->with('succes','Event Berhasil Di Update!');
+
     }
 
 }

@@ -2,6 +2,7 @@
 @section('title', 'Detail Event')
 
 
+
 @section('content')
 <div class="row">
     <!-- Left side columns -->
