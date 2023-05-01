@@ -39,10 +39,8 @@
 
                     <div class="row mb-3">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Deskripsi</label>
-                        {{-- <div class="quill-editor-full form-control"> --}}
-                            {{-- <input name="deskripsi" class="quill-editor-full" style=""> --}}
-                            <textarea class="quill-editor-full" name="deskripsi" cols="30" rows="10"></textarea>
-                        </div>
+                        <input class="quill-editor-full form-control" cols="30" rows="10" name="deskripsi">
+                    </div>
                         <div class="row mt-3 mb-3 text-center">
                             <div class="col-sm-10">
                                 <button type="submit" class="btn btn-primary">Simpan</button>
