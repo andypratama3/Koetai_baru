@@ -135,6 +135,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link {{ Request::routeIs('dashboard.talent.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.talent.index') }}">
+                <i class="bi bi-person"></i>
+                <span>Talent</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.event.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.event.index') }}">
                 <i class="bi bi-person"></i>
                 <span>Event</span>
