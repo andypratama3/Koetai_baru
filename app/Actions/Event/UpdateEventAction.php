@@ -32,5 +32,9 @@ class UpdateEventAction
         }
         $event->foto = $picture_name;
         $event->save();
+
+        foreach ($request->talent as $key => $talent) {
+            $event->talents()->sync($talent);
+        }
     }
 }

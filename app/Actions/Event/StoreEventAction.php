@@ -4,8 +4,9 @@ namespace App\Actions\Event;
 
 use Str;
 use Carbon\Carbon;
-use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Models\Event;
+use App\Models\Talent;
 
 class StoreEventAction
 {
@@ -32,5 +33,9 @@ class StoreEventAction
         }
         $event->foto = $picture_name;
         $event->save();
+
+        foreach ($request->talent as $key => $talent) {
+            $event->talents()->attach($talent);
+        }
     }
 }

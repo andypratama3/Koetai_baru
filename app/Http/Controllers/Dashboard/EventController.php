@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 use App\Actions\Event\StoreEventAction;
 use App\Actions\Event\DeleteEventAction;
 use App\Actions\Event\UpdateEventAction;
 use App\Http\Requests\Event\StoreEventRequest;
+use App\Models\Talent;
 
 class EventController extends Controller
 {
@@ -22,12 +23,16 @@ class EventController extends Controller
         return view('dashboard.event.index', compact(
             'events',
             'count',
-            'no'
+            'no',
         ));
     }
     public function create()
     {
-        return view('dashboard.event.create');
+        $talents = Talent::select(['id', 'nama'])->orderBy('nama')->get();
+
+        return view('dashboard.event.create', compact(
+            'talents'
+        ));
     }
     public function store(StoreEventRequest $request, StoreEventAction $storeEventAction)
     {
@@ -37,7 +42,7 @@ class EventController extends Controller
     }
     public function show(Request $request,$slug)
     {
-        $event = Event::where('slug',$slug)->select(['nama','deskripsi' ,'tanggal_mulai','tanggal_selesai','foto', 'slug'])->firstOrFail();
+        $event = Event::where('slug',$slug)->select(['id', 'nama','deskripsi' ,'tanggal_mulai','tanggal_selesai','foto', 'slug'])->with('talents')->firstOrFail();
 
         return view('dashboard.event.show', compact('event'));
     }
@@ -45,8 +50,12 @@ class EventController extends Controller
     public function edit(Request $request,$slug)
     {
         $event = Event::where('slug',$slug)->select(['nama','deskripsi' ,'tanggal_mulai','tanggal_selesai','foto', 'slug'])->firstOrFail();
+        $talents = Talent::select(['id', 'nama'])->orderBy('nama')->get();
 
-        return view('dashboard.event.edit', compact('event'));
+        return view('dashboard.event.edit', compact(
+            'event',
+            'talents'
+        ));
     }
     public function update(StoreEventRequest $request, UpdateEventAction $updateEventAction, $slug){
 

@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Detail Event')
 
-
-
 @section('content')
 <div class="row">
     <!-- Left side columns -->
@@ -48,8 +46,33 @@
                 <div class="row mb-3">
                         {{ $event->deskripsi }}
                 </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <table class="table table-bordered" id="dynamicAddRemove">
+                            <tr>
+                                <th class="text-center">Talent</th>
+                            </tr>
+                            @forelse ($event->talents as $talent)
+                            <tr>
+                                <td>
+                                    {{ $talent->nama }}
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td class="text-center">
+                                    Belum ada Talent
+                                </td>
+                            </tr>
+                            @endforelse
+                            
+                        </table>
+                    </div>
+                </div>
+
                 <div class="row mt-3 mb-3 text-center">
-                    <div class="col-sm-10">
+                    <div class="col-sm-12">
                         <a href="{{ route('dashboard.event.index') }}" class="btn btn-danger">Kembali</a>
                     </div>
                 </div>
