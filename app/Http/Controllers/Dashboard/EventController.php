@@ -42,6 +42,7 @@ class EventController extends Controller
     }
     public function show(Request $request,$slug)
     {
+
         $event = Event::where('slug',$slug)->select(['id', 'nama','deskripsi' ,'tanggal_mulai','tanggal_selesai','foto', 'slug'])->with('talents')->firstOrFail();
 
         return view('dashboard.event.show', compact('event'));
@@ -49,7 +50,7 @@ class EventController extends Controller
 
     public function edit(Request $request,$slug)
     {
-        $event = Event::where('slug',$slug)->select(['nama','deskripsi' ,'tanggal_mulai','tanggal_selesai','foto', 'slug'])->firstOrFail();
+        $event = Event::where('slug',$slug)->select(['id', 'nama','deskripsi' ,'tanggal_mulai','tanggal_selesai','foto', 'slug'])->firstOrFail();
         $talents = Talent::select(['id', 'nama'])->orderBy('nama')->get();
 
         return view('dashboard.event.edit', compact(
@@ -60,6 +61,7 @@ class EventController extends Controller
     public function update(StoreEventRequest $request, UpdateEventAction $updateEventAction, $slug){
 
         $updateEventAction->execute($request,$slug);
+        // dd($request);
         return redirect()->route('dashboard.event.index')->with('succes','Event Berhasil Di Update!');
 
     }

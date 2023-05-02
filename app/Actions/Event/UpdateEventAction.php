@@ -30,7 +30,7 @@ class UpdateEventAction
             $picture_name = "event_". Str::slug($request->nama). "_" .date("YmdHis") . ".$ext";
             $event_picture->move($upload_path,$picture_name);
         }
-        $event->foto = $picture_name;
+        // $event->foto = $picture_name;
         $event->save();
 
         foreach ($request->talent as $key => $talent) {

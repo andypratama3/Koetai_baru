@@ -27,7 +27,7 @@ class StoreEventRequest extends FormRequest
             'nama' => 'required',
             'deskripsi' => 'required',
             'tanggal' => 'required',
-            'foto' => 'required'
+            // 'foto' => 'required'
         ];
 
 

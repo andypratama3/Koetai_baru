@@ -28,12 +28,14 @@
                             <input type="text" class="form-control" name="nama" value="{{ $event->nama }}">
                         </div>
                     </div>
+
                     <div class="row mb-3">
                         <label for="inputDate" class="col-sm-2 col-form-label">Tanggal</label>
                         <div class="col-sm-10">
                             <input type="text" name="tanggal" class="form-control" value="{{ $event->tanggal }}" />
                         </div>
                     </div>
+
                     <div class="row mb-3">
                         <label for="inputNumber" class="col-sm-2 col-form-label">File Foto</label>
                         <div class="col-sm-10">
@@ -68,10 +70,30 @@
                                         </select>
                                     </td>
                                     <td>
-                                        <button type="button" id="dynamic-ar" class="btn btn-sm btn-primary"><i
-                                                class="bi bi-plus"></i></button>
+                                        <button type="button" id="dynamic-ar" class="btn btn-sm btn-primary"><i class="bi bi-plus"></i></button>
                                     </td>
                                 </tr>
+                                @forelse ($event->talents as $key => $talent)
+                                <tr>
+                                    <td>
+                                        <select class="form-select" aria-label="Pilih Talent" id="talent-select2_{{ $key }}" name="talent[{{ $key }}]">
+                                            <option value="{{ $talent->id }}" selected>{{ $talent->nama }}</option>
+                                            @foreach($talents as $talent_list)
+                                            <option value="{{ $talent_list->id }}">{{ $talent_list->nama }}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-danger remove-input-field"><i class="bi bi-trash"></i></button></td>
+                                    </td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td class="text-center">
+                                        Belum ada Talent
+                                    </td>
+                                </tr>
+                                @endforelse
                             </table>
                         </div>
                     </div>
@@ -84,7 +106,6 @@
                             <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </div>
-
                 </form><!-- End General Form Elements -->
 
             </div>
@@ -112,7 +133,7 @@
     });
 </script>
 <script type="text/javascript">
-    
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
@@ -125,7 +146,7 @@
                     <td>
                         <select class="form-select" aria-label="Pilih Talent" id="talent-select2_${i}" name="talent[` + i + `]">
                             <option selected disabled>Pilih Talent</option>
-                            @foreach($event->talents as $talent)
+                            @foreach($talents as $talent)
                             <option value="{{ $talent->id }}">{{ $talent->nama }}</option>
                             @endforeach
                         </select>

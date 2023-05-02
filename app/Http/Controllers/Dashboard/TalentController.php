@@ -44,7 +44,7 @@ class TalentController extends Controller
 
     public function edit(Request $request,$slug)
     {
-        $talent = Talent::where('slug',$slug)->select(['nama','deskripsi', 'foto', 'slug'])->firstOrFail();
+        $talent = Talent::where('slug',$slug)->select(['id','nama','deskripsi', 'foto', 'slug'])->firstOrFail();
 
         return view('dashboard.talent.edit', compact('talent'));
     }
