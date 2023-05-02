@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Event')
+@section('title', 'Anggota')
 
 
 @section('content')
@@ -9,31 +9,31 @@
         <div class="row">
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title float-end"><a href="{{ route('dashboard.event.create') }}" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a></h5>
+                  <h5 class="card-title float-end"><a href="{{ route('dashboard.anggota.create') }}" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a></h5>
                   <!-- Table with hoverable rows -->
                   <table class="table table-hover text-center">
                     <thead>
                       <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Nama Event</th>
-                        <th scope="col">Tanggal Mulai</th>
-                        <th scope="col">Tanggal Selesai</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Devisi</th>
+                        <th scope="col">Instagram</th>
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
-                    @foreach ($events as $event)
+                    @foreach ($anggotas as $anggota)
                       <tr>
                         <th scope="row">{{ ++$no }}</th>
-                        <td>{{ $event->nama }}</td>
-                        <td>{{ $event->tanggal_mulai->format('d M Y H:i:s') }}</td>
-                        <td>{{ $event->tanggal_selesai->format('d M Y H:i:s') }}</td>
+                        <td>{{ $anggota->nama }}</td>
+                        <td>{{ $anggota->devisi }}</td>
+                        <td>{{ $anggota->instagram }}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{ route('dashboard.event.show', $event->slug) }}"><i class="bi bi-eye"></i></a>
-                            <a class="btn btn-warning" href="{{ route('dashboard.event.edit', $event->slug) }}"><i class="bi bi-pen"></i></a>
-                            <a href="#" data-id="{{ $event->slug }}" class="btn btn-danger delete" title="Hapus">
+                            <a class="btn btn-primary" href="{{ route('dashboard.anggota.show', $anggota->slug) }}"><i class="bi bi-eye"></i></a>
+                            <a class="btn btn-warning" href="{{ route('dashboard.anggota.edit', $anggota->slug) }}"><i class="bi bi-pen"></i></a>
+                            <a href="#" data-id="{{ $anggota->slug }}" class="btn btn-danger delete" title="Hapus">
 
-                                <form action="{{ route('dashboard.event.destroy', $event->slug) }}" id="delete-{{ $event->slug }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('dashboard.anggota.destroy', $anggota->slug) }}" id="delete-{{ $anggota->slug }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('delete')
                                 </form>
@@ -44,10 +44,10 @@
                     @endforeach
                     </tbody>
                   </table>
-                  <div class="">Total Event : {{ $count }}</div>
+                  {{-- <div class="">Total anggota : {{ $count }}</div> --}}
                 </div>
                 <ul class="pagination">
-                    <li class="page-item"> {{ $events->onEachSide(1)->links() }}</li>
+                    {{-- <li class="page-item"> {{ $events->onEachSide(1)->links() }}</li> --}}
 
                     </li>
 

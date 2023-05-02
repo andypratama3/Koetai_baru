@@ -140,6 +140,12 @@
                 <span>Event</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::routeIs('dashboard.anggota.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.anggota.index') }}">
+                <i class="bi bi-person"></i>
+                <span>Anggota</span>
+                </a>
+            </li>
 
             <li class="nav-heading">Produk</li>
 
