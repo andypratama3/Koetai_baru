@@ -62,7 +62,7 @@
                                 <tr>
                                     <td>
                                         <select class="form-select select-talent" aria-label="Pilih Talent"
-                                            name="talent[]">
+                                            name="talent[0]">
                                             <option selected disabled>Pilih Talent</option>
                                             @foreach($talents as $talent)
                                             <option value="{{ $talent->id }}">{{ $talent->nama }}</option>
@@ -76,7 +76,7 @@
                                 @forelse ($event->talents as $key => $talent)
                                 <tr>
                                     <td>
-                                        <select class="form-select" aria-label="Pilih Talent" id="talent-select2_{{ $key }}" name="talent[{{ $key }}]">
+                                        <select class="form-select" aria-label="Pilih Talent" id="talent-select2_{{ ++$key }}" name="talent[{{ $key }}]">
                                             <option value="{{ $talent->id }}" selected>{{ $talent->nama }}</option>
                                             @foreach($talents as $talent_list)
                                             <option value="{{ $talent_list->id }}">{{ $talent_list->nama }}</option>
@@ -138,7 +138,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
     $(document).ready(function () {
-        var i = 0;
+        var i = {{ $event->talents->count() }};
         $("#dynamic-ar").click(function () {
             ++i;
             $("#dynamicAddRemove").append(

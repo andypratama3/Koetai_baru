@@ -2,10 +2,11 @@
 
 namespace App\Actions\Event;
 
-use Str;
-use Carbon\Carbon;
-use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Models\Event;
+use App\Models\Talent;
+use Carbon\Carbon;
+use Str;
 
 class UpdateEventAction
 {
@@ -33,8 +34,6 @@ class UpdateEventAction
         // $event->foto = $picture_name;
         $event->save();
 
-        foreach ($request->talent as $key => $talent) {
-            $event->talents()->sync($talent);
-        }
+        $event->talents()->sync($request->talent);
     }
 }

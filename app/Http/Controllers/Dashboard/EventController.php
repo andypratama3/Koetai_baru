@@ -10,6 +10,7 @@ use App\Actions\Event\DeleteEventAction;
 use App\Actions\Event\UpdateEventAction;
 use App\Http\Requests\Event\StoreEventRequest;
 use App\Models\Talent;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -58,10 +59,10 @@ class EventController extends Controller
             'talents'
         ));
     }
-    public function update(StoreEventRequest $request, UpdateEventAction $updateEventAction, $slug){
-
+    public function update(StoreEventRequest $request, UpdateEventAction $updateEventAction, $slug)
+    {
         $updateEventAction->execute($request,$slug);
-        // dd($request);
+
         return redirect()->route('dashboard.event.index')->with('succes','Event Berhasil Di Update!');
 
     }
