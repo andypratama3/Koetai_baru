@@ -14,7 +14,7 @@ class TalentController extends Controller
 {
     public function index()
     {
-        $limit = 5;
+        $limit = 15;
         $talents = Talent::select(['nama', 'slug'])->orderBy('nama')->paginate($limit);
         $count = $talents->count();
         $no = $limit * ($talents->currentPage() - 1);

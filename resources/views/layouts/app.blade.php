@@ -129,43 +129,54 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard') ? '' : 'collapsed' }}" href="{{ route('dashboard') }}">
+                <a class="nav-link {{ Request::routeIs('dashboard') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.talent.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.talent.index') }}">
-                <i class="bi bi-person"></i>
-                <span>Talent</span>
+                <a class="nav-link {{ Request::routeIs('dashboard.talent.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.talent.index') }}">
+                    <i class="bi bi-people-fill"></i>
+                    <span>Talent</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.event.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.event.index') }}">
-                <i class="bi bi-person"></i>
-                <span>Event</span>
+                <a class="nav-link {{ Request::routeIs('dashboard.event.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.event.index') }}">
+                    <i class=" ri-booklet-line"></i>
+                    <span>Event</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.anggota.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.anggota.index') }}">
-                <i class="bi bi-person"></i>
-                <span>Anggota</span>
+                <a class="nav-link {{ Request::routeIs('dashboard.anggota.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.anggota.index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Anggota</span>
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link {{ Request::routeIs('dashboard.sponsor.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.sponsor.index') }}">
+                    <i class="bi bi-star"></i>
+                    <span>Sponsor</span>
+                </a>
+            </li>
             <li class="nav-heading">Produk</li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
-                <i class="bi bi-person"></i>
-                <span>Kategori</span>
+                    <i class="bi bi-person"></i>
+                    <span>Kategori</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#">
-                <i class="bi bi-person"></i>
-                <span>Produk</span>
+                    <i class="bi bi-person"></i>
+                    <span>Produk</span>
                 </a>
             </li>
         </ul>
