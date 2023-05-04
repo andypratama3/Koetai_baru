@@ -9,7 +9,8 @@ class WelcomeController extends Controller
 {
     public function __invoke()
     {
-        $events = Event::select(['nama', 'tanggal_mulai','tanggal_selesai','foto','deskripsi', 'slug']);
+
+        $events = Event::select('foto')->latest()->limit(3)->get();
         return view('welcome', compact('events'));
     }
 }

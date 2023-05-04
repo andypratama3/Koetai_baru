@@ -44,53 +44,49 @@
 </head>
 
 <body>
+<div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">With indicators</h5>
 
-    <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">With captions</h5>
+                <!-- Slides with indicators -->
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
 
-          <!-- Slides with captions -->
-          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
-            </div>
-            @foreach ($events as $event)
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{{ asset('storage/img/event'.$event->name .$event->nama) }}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  {{-- <h5>{{ $event->nama }}</h5>
-                  <p>{{ $event->deskripsi }}</p> --}}
+                    <div class="carousel-inner">
+                        @foreach ($events as $event)
+                    <div class="carousel-item active">
+                        <img src="{{ asset('storage/img/event/' . $event->foto) }}" class="d-block w-100" alt="...">
+                    </div>
+                    @endforeach
+                    </div>
+
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div><!-- End Slides with indicators -->
                 </div>
-              </div>
             </div>
-            @endforeach
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-
-          </div><!-- End Slides with captions -->
-
         </div>
-      </div>
+</div>
 
 
 
 
 
 
-
-
-
-      <script src="{{ asset('dashboard_assets/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/vendor/chart.js/chart.min.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/vendor/echarts/echarts.min.js') }}"></script>

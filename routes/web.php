@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\EventController;
 use App\Http\Controllers\Dashboard\TalentController;
 use App\Http\Controllers\Dashboard\AnggotaController;
 use App\Http\Controllers\Dashboard\SponsorController;
+use App\Http\Controllers\Dashboard\KategoriController;
 use App\Http\Controllers\Dashboard\DashboardController;
 
 /*
@@ -27,5 +28,8 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::resource('event', EventController::class, ['names' => 'dashboard.event']);
     Route::resource('anggota', AnggotaController::class, ['names' => 'dashboard.anggota']);
     Route::resource('sponsor', SponsorController::class, ['names' => 'dashboard.sponsor']);
+    Route::resource('kategori', KategoriController::class, ['names' => 'dashboard.kategori']);
+
 });
+
 

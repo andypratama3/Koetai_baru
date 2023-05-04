@@ -167,14 +167,14 @@
             <li class="nav-heading">Produk</li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link {{ Request::routeIs('dashboard.kategori.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.kategori.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Kategori</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link {{ Request::routeIs('dashboard.produk.*') ? '' : 'collapsed' }}" href="#">
                     <i class="bi bi-person"></i>
                     <span>Produk</span>
                 </a>
