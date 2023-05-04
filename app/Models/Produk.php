@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
-use Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Str;
 
-class Kategori extends Model
+class Produk extends Model
 {
     use SoftDeletes;
     use \App\Http\Traits\UsesUuid;
     // use HasFactory;
-    protected $table = 'Kategoris';
+    protected $table = 'produks';
     protected $guarded = ['id'];
     protected $fillable = [
     'nama'
@@ -28,7 +28,7 @@ class Kategori extends Model
         $this->attributes['nama'] = $value;
         $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
     }
-    public function produk()
+    public function kategori()
     {
         return $this->belongsToMany(Talent::class, 'events_talents');
     }

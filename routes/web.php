@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\Dashboard\EventController;
+use App\Http\Controllers\Dashboard\ProdukController;
 use App\Http\Controllers\Dashboard\TalentController;
 use App\Http\Controllers\Dashboard\AnggotaController;
 use App\Http\Controllers\Dashboard\SponsorController;
@@ -29,7 +30,9 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::resource('anggota', AnggotaController::class, ['names' => 'dashboard.anggota']);
     Route::resource('sponsor', SponsorController::class, ['names' => 'dashboard.sponsor']);
     Route::resource('kategori', KategoriController::class, ['names' => 'dashboard.kategori']);
+    Route::resource('produk', ProdukController::class, ['names' => 'dashboard.produk']);
 
 });
+
 
 

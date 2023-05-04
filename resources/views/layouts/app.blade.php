@@ -174,7 +174,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.produk.*') ? '' : 'collapsed' }}" href="#">
+                <a class="nav-link {{ Request::routeIs('dashboard.produk.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.produk.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Produk</span>
                 </a>
