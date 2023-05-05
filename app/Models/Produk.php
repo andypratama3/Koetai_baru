@@ -15,7 +15,11 @@ class Produk extends Model
     protected $table = 'produks';
     protected $guarded = ['id'];
     protected $fillable = [
-    'nama'
+        'nama',
+        'foto',
+        'stock',
+        'harga',
+        'deskripsi'
     ];
 
     protected $dates = [
@@ -28,8 +32,8 @@ class Produk extends Model
         $this->attributes['nama'] = $value;
         $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
     }
-    public function kategori()
+    public function kategoris()
     {
-        return $this->belongsToMany(Talent::class, 'events_talents');
+        return $this->belongsToMany(Kategori::class, 'produks_kategoris');
     }
 }

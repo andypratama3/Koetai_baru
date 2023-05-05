@@ -28,8 +28,8 @@ class Kategori extends Model
         $this->attributes['nama'] = $value;
         $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
     }
-    public function produk()
+    public function produks()
     {
-        return $this->belongsToMany(Talent::class, 'events_talents');
+        return $this->belongsToMany(Produk::class, 'produks_kategoris');
     }
 }
