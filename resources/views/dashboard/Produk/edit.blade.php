@@ -15,7 +15,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title text-center">
-                    Ubah Event</h5>
+                    Ubah Kategori</h5>
                 @include('layouts.flash-message')
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.event.update', $event->slug ) }} " method="POST"

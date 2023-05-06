@@ -11,7 +11,7 @@
                 <div class="card-body">
                   <h5 class="card-title float-end"><a href="{{ route('dashboard.produk.create') }}" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a></h5>
                   <!-- Table with hoverable rows -->
-                  <table class="table table-hover text-center">
+                  <table class="table table-responsive-lg text-center">
                     <thead>
                       <tr>
                         <th scope="col">No</th>
@@ -33,7 +33,7 @@
                         <td>{{ $produk->stock}}</td>
                         <td>{{ $produk->harga}}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{ route('dashboard.produk.show', $produk->slug) }}"><i class="bi bi-eye"></i></a>
+                            <a class="btn btn-primary" href="{{ route('dashboard.produk.show',$produk->slug) }}"><i class="bi bi-eye"></i></a>
                             <a class="btn btn-warning" href="{{ route('dashboard.produk.edit', $produk->slug) }}"><i class="bi bi-pen"></i></a>
                             <a href="#" data-id="{{ $produk->slug }}" class="btn btn-danger delete" title="Hapus">
 
@@ -43,7 +43,6 @@
                                 </form>
                                 <i class="bi bi-trash">
                         </td>
-
                       </tr>
                     @endforeach
                     </tbody>
@@ -51,7 +50,7 @@
                   <div class="">Total produk : {{ $count }}</div>
                 </div>
                 <ul class="pagination">
-                    <li class="page-item"> {{ $produks->onEachSide(1)->links() }}</li>
+                    {{-- <li class="page-item"> {{ $produks->onEachSide(1)->links() }}</li> --}}
 
                     </li>
 

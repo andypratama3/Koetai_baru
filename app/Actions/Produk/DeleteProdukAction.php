@@ -1,19 +1,19 @@
 <?php
 
 
-namespace App\Actions\Event;
+namespace App\Actions\Produk;
 
-use App\Models\Event;
+use App\Models\Produk;
 
 
-class DeleteEventAction
+class DeleteProdukAction
 {
     public function execute($slug): void
     {
-        $event = Event::where('slug', $slug)->firstOrFail();
-        $event->delete();
+        $produk = Produk::where('slug', $slug)->firstOrFail();
+        $produk->delete();
 
-        $event->talents()->detach();
+        $produk->kategoris()->detach();
 
     }
 }
