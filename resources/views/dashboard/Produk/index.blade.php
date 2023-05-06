@@ -16,18 +16,22 @@
                       <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nama produk</th>
-                        <th scope="col">Harga</th>
+                        <th scope="col">Deskripsi</th>
+                        <th scope="col">Gambar</th>
                         <th scope="col">Stock</th>
+                        <th scope="col">Harga</th>
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
-                    {{-- @foreach ($produks as $produk)
+                    @foreach ($produks as $produk)
                       <tr>
                         <th scope="row">{{ ++$no }}</th>
                         <td>{{ $produk->nama }}</td>
-                        <td>{{ $produk->tanggal_mulai->format('d M Y H:i:s') }}</td>
-                        <td>{{ $produk->tanggal_selesai->format('d M Y H:i:s') }}</td>
+                        <td>{{ $produk->deskripsi}}</td>
+                        <td>{{ $produk->foto}}</td>
+                        <td>{{ $produk->stock}}</td>
+                        <td>{{ $produk->harga}}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('dashboard.produk.show', $produk->slug) }}"><i class="bi bi-eye"></i></a>
                             <a class="btn btn-warning" href="{{ route('dashboard.produk.edit', $produk->slug) }}"><i class="bi bi-pen"></i></a>
@@ -41,13 +45,13 @@
                         </td>
 
                       </tr>
-                    @endforeach --}}
+                    @endforeach
                     </tbody>
                   </table>
-                  {{-- <div class="">Total produk : {{ $count }}</div> --}}
+                  <div class="">Total produk : {{ $count }}</div>
                 </div>
                 <ul class="pagination">
-                    {{-- <li class="page-item"> {{ $produks->onEachSide(1)->links() }}</li> --}}
+                    <li class="page-item"> {{ $produks->onEachSide(1)->links() }}</li>
 
                     </li>
 

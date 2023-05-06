@@ -1,39 +1,35 @@
 <?php
 
-namespace App\Actions\Event;
+namespace App\Actions\Produk;
 
-use Illuminate\Http\Request;
-use App\Models\Event;
-use App\Models\Talent;
-use Carbon\Carbon;
 use Str;
+use Illuminate\Http\Request;
+use App\Models\Produk;
+use App\Models\Kategoris;
 
-class UpdateEventAction
+class UpdateProdukAction
 {
-    public function execute(Request $request,$slug): void
+    public function execute(Request $request)
     {
-        $event = Event::where('slug',$slug)->firstOrFail();
-        $event->nama = $request->nama;
-        $event->deskripsi = $request->deskripsi;
-
-        $tanggal = explode(' - ', $request->tanggal);
-        $tanggal_mulai = Carbon::parse($tanggal[0])->format('Y-m-d H:i:s');
-        $tanggal_selesai = Carbon::parse($tanggal[1])->format('Y-m-d H:i:s');
-
-        $event->tanggal_mulai = $tanggal_mulai;
-        $event->tanggal_selesai = $tanggal_selesai;
+        $produk = new Produk;
+        $produk->nama = $request->nama;
+        $produk->deskripsi = $request->deskripsi;
+        $produk->stock = $request->stock;
+        $produk->harga = $request->harga;
 
         if($request->file('foto')){
-            $event_picture = $request->file('foto');
-            $ext = $event_picture->getClientOriginalExtension();
+            $produk_picture = $request->file('foto');
+            $ext = $produk_picture->getClientOriginalExtension();
 
-            $upload_path = 'storage/img/event/';
-            $picture_name = "event_". Str::slug($request->nama). "_" .date("YmdHis") . ".$ext";
-            $event_picture->move($upload_path,$picture_name);
+            $upload_path = 'storage/img/produk/';
+            $picture_name = "Produk_". Str::slug($request->nama). "_" .date("YmdHis") . ".$ext";
+            $produk_picture->move($upload_path,$picture_name);
         }
-        // $event->foto = $picture_name;
-        $event->save();
+        $produk->foto = $picture_name;
+        $produk->save();
 
-        $event->talents()->sync($request->talent);
+        foreach ($request->kategori as $key => $kategori) {
+            $produk->kategoris()->attach($kategori);
+        }
     }
 }
