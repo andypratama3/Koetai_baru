@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\Dashboard\EventController;
+use App\Http\Controllers\Dashboard\TiketController;
 use App\Http\Controllers\Dashboard\ProdukController;
 use App\Http\Controllers\Dashboard\TalentController;
 use App\Http\Controllers\Dashboard\AnggotaController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 
 Route::get('/', WelcomeController::class, ['middleware' => ['auth']])->name('index');
 
+
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/', DashboardController::class)->name('dashboard');
     Route::resource('talent', TalentController::class, ['names' => 'dashboard.talent']);
@@ -31,6 +33,7 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::resource('sponsor', SponsorController::class, ['names' => 'dashboard.sponsor']);
     Route::resource('kategori', KategoriController::class, ['names' => 'dashboard.kategori']);
     Route::resource('produk', ProdukController::class, ['names' => 'dashboard.produk']);
+    Route::resource('tiket', TiketController::class, ['names' => 'dashboard.tiket']);
 
 });
 
