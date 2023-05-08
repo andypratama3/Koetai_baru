@@ -180,9 +180,24 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link {{ Request::routeIs('dashboard.orderan-produk.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.produk.index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Orderan Produk</span>
+                </a>
+            </li>
+
+            <li class="nav-heading">Tiket</li>
+
+            <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.tiket.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.tiket.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Tiket</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::routeIs('dashboard.orderan-tiket.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.tiket.index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Orderan tiket</span>
                 </a>
             </li>
         </ul>

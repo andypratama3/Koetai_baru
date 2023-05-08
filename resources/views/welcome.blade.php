@@ -11,6 +11,22 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <title>Home</title>
 </head>
+<style>
+    .portfolio-menu {
+        text-align: center;
+    }
+
+    .portfolio-item {
+        /*width:100%;*/
+    }
+
+    .portfolio-item .item {
+        /*width:303px;*/
+        float: left;
+        margin-bottom: 10px;
+    }
+</style>
+
 
 <body>
     <div class="background">
@@ -72,7 +88,8 @@
                     </div>
                     <div class="row">
                         <div class="col col-md-6 thumb-kecil d-flex justify-content-center">
-                            <img src="assets/img/edisi-lebaran.png" alt="" />
+                            <img src="assets/img/edisi-lebaran.png" alt="" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" />
                         </div>
                         <div class="col col-md-6 thumb-kecil d-flex justify-content-center">
                             <img src="assets/img/about-us.png" alt="" />
@@ -90,127 +107,43 @@
                                 @endforeach
                             </div>
                         </div>
-                        </div>
                     </div>
                 </div>
             </div>
-            {{-- <div class="container d-flex justify-content-center">
-            <p style="color: #fff; text-align: center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae optio
-                alias ex, quia velit harum suscipit assumenda error, atque ut
-                necessitatibus. Perspiciatis officia vel pariatur, excepturi eligendi
-                mollitia enim impedit, adipisci illum veritatis in eveniet, ab
-                accusantium! Quas, quasi error asperiores, earum eius, ab soluta
-                laboriosam non in hic dolorum odio. Perspiciatis repellendus esse,
-                officia necessitatibus deleniti autem iste porro veritatis soluta eum.
-                Eos quae cupiditate optio sapiente vel, exercitationem fugit illo ex
-                quibusdam totam officia molestiae earum illum natus repellat iusto!
-                Nulla reprehenderit minima, debitis nobis assumenda temporibus ut sit
-                laboriosam eum. Eum at voluptas, corporis enim veritatis dolor dicta
-                quisquam optio reiciendis ipsa ut aut! Quaerat ullam dolore deleniti
-                corporis in saepe facere accusantium iste, beatae deserunt. Itaque
-                maiores nulla quisquam, voluptatem nobis hic, sit non saepe officiis
-                corporis est qui in vitae corrupti, molestias illo. Ratione similique
-                vitae debitis aspernatur molestiae! Provident ullam ad tenetur dicta
-                libero corporis impedit aut nemo cum quos? Rerum assumenda eum
-                cupiditate dolorem error est minus aliquid ipsum. Hic excepturi quae
-                odio. Quam placeat doloribus quia omnis quae laudantium sapiente veniam,
-                expedita numquam est nihil alias provident quisquam, libero tenetur
-                minima hic quibusdam illo beatae mollitia qui ratione, eum neque
-                voluptates. Omnis nam quibusdam tenetur officia ratione magni ducimus
-                enim, ullam tempora recusandae dicta eveniet soluta aliquam deleniti
-                doloribus laborum rerum numquam ut quas voluptas earum perspiciatis id
-                eaque dolore! Ratione rerum doloremque unde dolore obcaecati? Repellat
-                iste architecto aspernatur, placeat quam beatae tenetur, ipsa vel ab id
-                nobis eveniet voluptas voluptates quia in suscipit? Eveniet cupiditate
-                placeat at? Commodi corporis dolor veritatis officiis cum! Sequi amet
-                earum molestias minus modi inventore in veniam, voluptates, aperiam
-                itaque et reprehenderit vel! Saepe placeat sit nemo, voluptatum magnam
-                ratione reprehenderit maiores fugiat dolorum culpa consequuntur est,
-                cum, quibusdam molestias molestiae architecto possimus voluptate
-                obcaecati sed provident hic. Temporibus, sed molestiae cum impedit
-                tempore a omnis numquam necessitatibus, quaerat laborum sint asperiores
-                voluptas consequatur reprehenderit. Veritatis, necessitatibus aperiam.
-                Quos quasi cupiditate temporibus saepe mollitia, ea nisi atque incidunt,
-                voluptatibus doloribus ex quo ab consequuntur modi beatae, laboriosam
-                exercitationem vel sint non possimus animi. Magni cupiditate itaque,
-                esse neque eligendi distinctio earum obcaecati officiis possimus, eos
-                maxime! Totam adipisci, sint voluptates asperiores nobis corporis
-                repellendus voluptas animi beatae provident error. Cupiditate, accusamus
-                nobis consequatur dignissimos earum commodi quod maiores a corporis eum
-                perspiciatis inventore nihil saepe, quam in blanditiis sapiente.
-                Distinctio quisquam eum minus iusto sint, rem dolorum animi. Voluptas
-                non blanditiis mollitia, nobis molestiae optio eius deserunt consectetur
-                numquam saepe delectus! Praesentium, totam excepturi rerum recusandae
-                incidunt ratione error illum doloremque vitae ex nisi quisquam quam unde
-                impedit nam itaque et quos perferendis, aliquam sit sed animi quia. Rem
-                modi culpa ipsum possimus consequuntur dolor, doloribus nesciunt quae?
-                Quisquam reiciendis ex enim dignissimos neque, porro architecto. Beatae
-                delectus incidunt reprehenderit! Placeat maiores sed cupiditate ut quam,
-                incidunt est possimus minus labore! Ea, nemo? Enim inventore blanditiis
-                quod sit atque ratione, tempora suscipit magnam consequatur ut minima
-                numquam. Voluptates earum fugiat ipsam libero optio consequatur, a
-                consectetur natus quisquam vel laborum quidem quo quia est quaerat quam
-                veniam laudantium! Perferendis maiores quos quidem cumque veniam magnam
-                reprehenderit impedit aspernatur sed optio fuga labore aliquam
-                consectetur, molestias in ab, saepe perspiciatis ipsam laborum minima
-                quaerat, culpa nobis? Rem atque molestias culpa debitis natus provident
-                illum commodi fuga, repellendus aperiam quod magni temporibus. Inventore
-                magni consequatur aspernatur debitis cum aut nulla iste dolorum at
-                quisquam laboriosam reiciendis velit deleniti iure dolorem esse quis
-                impedit nesciunt, mollitia neque accusantium, amet dolore? Quibusdam
-                repellendus provident sint consequuntur non reiciendis porro quas culpa
-                temporibus autem, repellat ratione, officiis ab, tempore omnis?
-                Dignissimos possimus perferendis laudantium architecto autem, earum
-                soluta. Mollitia sit libero repudiandae alias, temporibus ex, totam
-                amet, officia ratione dolores officiis repellendus inventore? Possimus
-                dolorem harum eveniet! Placeat blanditiis delectus dolorem tempora
-                similique, facilis molestiae voluptatibus, qui minus dolores magni ad!
-                Aut velit dolore sit inventore neque, placeat cum unde hic incidunt
-                dignissimos eveniet sint ullam illo totam molestias numquam fugit nemo
-                accusamus nihil quis natus ratione minima blanditiis asperiores? Aliquam
-                a molestiae dignissimos maiores nulla possimus commodi assumenda earum
-                voluptas. Asperiores impedit est odio voluptate accusantium ratione
-                labore cumque voluptas corrupti aspernatur. Iusto hic recusandae
-                voluptas dolorem et vero quisquam, assumenda exercitationem esse
-                voluptate rerum quia nostrum provident tempora ex consectetur? Unde,
-                culpa sed! Blanditiis voluptatem magni ad impedit magnam repellendus
-                quas voluptates tempora, labore dicta! Consectetur ipsum quam excepturi
-                dolorem in atque, eveniet nihil vitae sunt odit iusto repellendus dolor
-                suscipit autem nulla culpa? Tenetur nesciunt temporibus et nihil
-                accusantium quia eius repellendus ea quos cumque recusandae eum eligendi
-                maiores, nobis quis necessitatibus nulla incidunt corporis deleniti
-                ducimus. Nihil similique voluptatem corrupti commodi delectus maxime et
-                quia sapiente adipisci provident enim aspernatur accusantium illo
-                architecto consequuntur fugit corporis voluptatibus porro, facere
-                laudantium numquam ab nam, qui alias! Veritatis corporis deleniti
-                cumque, iste dicta maiores harum ipsam delectus corrupti omnis voluptas
-                culpa illum, ratione porro aperiam. Ut, corporis praesentium cupiditate
-                dolorum perferendis dicta enim optio, culpa aperiam voluptas ullam nemo
-                quasi aspernatur iusto repellat ad voluptatum cum nam veniam iure
-                assumenda! Delectus eveniet dolorem facilis, ad nostrum mollitia quia
-                eos dolorum? Ipsum aliquid veniam, placeat voluptatum at veritatis
-                possimus voluptates numquam qui quas temporibus. Repudiandae ullam, hic
-                placeat natus quod vitae aspernatur eveniet voluptas, ipsam consequatur
-                neque molestias ratione voluptate doloremque, soluta voluptates iste
-                commodi. Hic excepturi sequi, corporis nemo obcaecati ea molestiae
-                voluptate voluptatum, dolorem id nesciunt dolor doloribus! Voluptatem,
-                nisi dignissimos temporibus blanditiis minus velit a? Tempora laboriosam
-                nihil, totam saepe dignissimos soluta reprehenderit, aspernatur nemo sit
-                reiciendis est fugit impedit! Dicta ea, sit minima nam exercitationem
-                amet, laborum ad saepe nisi autem magnam. Obcaecati iusto quo
-                repudiandae rerum temporibus autem quaerat voluptate alias voluptatibus
-                odit error unde deserunt culpa, eligendi omnis! Nostrum obcaecati, ullam
-                vero sed cum eligendi fugit eius similique velit. Modi provident ea
-                aliquid consectetur reprehenderit? Explicabo quod maiores inventore
-                culpa corporis itaque libero et delectus iste vero quis nihil odit
-                excepturi temporibus, aliquid quos? Tempore earum explicabo blanditiis
-                dolore consectetur nulla dolores error.
-            </p>
-        </div> --}}
-
-            <script src="assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+        </div>
+        <script src="assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-body" >
+                <div class="container">
+                    <div class="row">
+                        <div class="portfolio-item row">
+                            @foreach ($anggotas as $anggota)
+                            <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+                                <a href="{{  asset('storage/img/Anggota/' . $anggota->foto)  }}"
+                                    class="fancylight popup-btn" data-fancybox-group="light">
+                                    <img class="img-fluid" src="{{  asset('storage/img/Anggota/' . $anggota->foto)  }}"
+                                        alt="">
+                                </a>
+                                <div class="">{{ $anggota->devisi }}</div>
+                                <div class="">{{ $anggota->instagram }}</div>
+                            </div>
+                            @endforeach
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <center>
+                    <button type="button" class="btn btn-secondary text-center" data-bs-dismiss="modal">Close</button>
+                </center>
+
+            </div>
+        </div>
+    </div>
 
 </html>

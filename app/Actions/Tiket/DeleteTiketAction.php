@@ -9,8 +9,8 @@ class DeleteTiketAction
 {
     public function execute($slug): void
     {
-        $talent = Talent::where('slug', $slug)->firstOrFail();
-        $talent->delete();
+        $tiket = tiket::where('slug', $slug)->firstOrFail();
+        $tiket->delete();
     }
 }
 
