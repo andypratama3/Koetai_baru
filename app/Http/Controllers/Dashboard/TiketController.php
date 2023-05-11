@@ -17,8 +17,6 @@ class TiketController extends Controller
     {
         $no = 0;
         $tikets = Tiket::select(['kategori','harga','slug'])->get();
-        // $tikets = Tiket::select(['kategori','harga','slug'])->latest()->firstOrFail();
-        // $tikets = Tiket::all();
         return view('dashboard.tiket.index', compact('tikets','no'));
     }
     public function show($slug)

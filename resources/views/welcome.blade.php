@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/bootstrap-5.1.3-dist/css/bootstrap.min.css" />
     <link href="{{ asset('dashboard_assets/assets/css/style.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
-    <title>Home</title>
+    <title>Dashboard</title>
 </head>
 <style>
     .portfolio-menu {
@@ -19,7 +19,6 @@
     .portfolio-item {
         /*width:100%;*/
     }
-
     .portfolio-item .item {
         /*width:303px;*/
         float: left;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -8,6 +8,7 @@
     <title>@yield('title')</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicons -->
     <link href="{{ asset('dashboard_assets/assets/img/favicon.png') }}" rel="icon">
@@ -31,11 +32,11 @@
     <link href="{{ asset('dashboard_assets/assets/css/style.css') }}" rel="stylesheet">
 
     <!-- =======================================================
-  * Template Name: NiceAdmin - v2.4.1
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-    ======================================================== -->
+      * Template Name: NiceAdmin - v2.4.1
+      * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+      * Author: BootstrapMade.com
+      * License: https://bootstrapmade.com/license/
+        ======================================================== -->
 </head>
 
 <body>
@@ -66,12 +67,12 @@
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                         <img src="{{ asset('dashboard_assets/assets/img/profile-img.jpg') }}" alt="Profile"
                             class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
+                            <h6>{{ Auth::user()->name }}</h6>
                             <span>Web Designer</span>
                         </li>
                         <li>
@@ -109,10 +110,13 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
-                            </a>
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Sign Out</span>
+                                </a>
+                            </form>
                         </li>
 
                     </ul><!-- End Profile Dropdown Items -->
@@ -167,20 +171,23 @@
             <li class="nav-heading">Produk</li>
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.kategori.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.kategori.index') }}">
+                <a class="nav-link {{ Request::routeIs('dashboard.kategori.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.kategori.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Kategori</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.produk.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.produk.index') }}">
+                <a class="nav-link {{ Request::routeIs('dashboard.produk.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.produk.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Produk</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.orderan-produk.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.produk.index') }}">
+                <a class="nav-link {{ Request::routeIs('dashboard.orderan-produk.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.produk.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Orderan Produk</span>
                 </a>
@@ -189,13 +196,15 @@
             <li class="nav-heading">Tiket</li>
 
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.tiket.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.tiket.index') }}">
+                <a class="nav-link {{ Request::routeIs('dashboard.tiket.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.tiket.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Tiket</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.orderan-tiket.*') ? '' : 'collapsed' }}" href="{{ route('dashboard.tiket.index') }}">
+                <a class="nav-link {{ Request::routeIs('dashboard.orderan-tiket.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.tiket.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Orderan tiket</span>
                 </a>
@@ -258,27 +267,28 @@
 
 </html>
 {{-- <div class="card-body">
-    <!-- Slides with indicators -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-          @foreach ($events as $key => $event)
-        <button type="button" data-bs-target="#carouselExampleIndicators{{ $key }}" data-bs-slide-to="{{ $key }}" class="{{ !$loop->first ?: 'active' }}" aria-current="true" aria-label="Slide 1"></button>
-          @endforeach
-      </div>
-      <div class="carousel-inner">
-      @foreach ($events as $event)
-        <div class="carousel-item {{ !$loop->first ?: 'active' }} ">
-          <img class="d-block w-100" src="{{ asset('storage/img/event/'. $event->foto) }}" alt="">
-        </div>
-      @endforeach
-      </div>
+        <!-- Slides with indicators -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+              @foreach ($events as $key => $event)
+            <button type="button" data-bs-target="#carouselExampleIndicators{{ $key }}" data-bs-slide-to="{{ $key }}"
+class="{{ !$loop->first ?: 'active' }}" aria-current="true" aria-label="Slide 1"></button>
+@endforeach
+</div>
+<div class="carousel-inner">
+    @foreach ($events as $event)
+    <div class="carousel-item {{ !$loop->first ?: 'active' }} ">
+        <img class="d-block w-100" src="{{ asset('storage/img/event/'. $event->foto) }}" alt="">
+    </div>
+    @endforeach
+</div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+</button>
 </div> --}}

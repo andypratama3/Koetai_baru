@@ -1,7 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            <form method="POST" action="{{ route('logout') }}" x-data>
+                @csrf
+
+                <x-dropdown-link href="{{ route('logout') }}">
+                    {{ __('Log Out') }}
+                </x-dropdown-link>
+            </form>
         </h2>
     </x-slot>
 
