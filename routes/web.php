@@ -22,10 +22,10 @@ use App\Http\Controllers\Dashboard\DashboardController;
 |
 */
 
-Route::get('/', WelcomeController::class, ['middleware' => ['auth']])->name('index');
+Route::get('/', WelcomeController::class)->name('index');
 
 
-Route::group(['prefix' => 'dashboard'], function () {
+Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], function () {
     Route::get('/', DashboardController::class)->name('dashboard');
     Route::resource('talent', TalentController::class, ['names' => 'dashboard.talent']);
     Route::resource('event', EventController::class, ['names' => 'dashboard.event']);
@@ -40,12 +40,12 @@ Route::group(['prefix' => 'dashboard'], function () {
 
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
