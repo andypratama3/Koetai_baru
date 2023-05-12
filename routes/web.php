@@ -40,12 +40,17 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], func
 
 
 
+<<<<<<< HEAD
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),
 //     'verified'
 // ])->group(function () {
 //     Route::get('/dashboard', function () {
+=======
+// Route::middleware(['auth:sanctum',config('jetstream.auth_session')])->group(function () {
+//   Route::get('/dashboard', function () {
+>>>>>>> cfae3532b83f5e3a8b68c6c555f6436c1a588d1d
 //         return view('dashboard');
 //     })->name('dashboard');
 // });
