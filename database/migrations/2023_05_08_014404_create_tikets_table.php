@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('kategori');
             $table->float('harga');
+            $table->integer('stok');
             $table->string('slug');
             $table->timestamps();
         });

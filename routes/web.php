@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\OrderTiketController;
 use App\Http\Controllers\Dashboard\EventController;
 use App\Http\Controllers\Dashboard\TiketController;
 use App\Http\Controllers\Dashboard\ProdukController;
@@ -24,6 +25,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 
 Route::get('/', WelcomeController::class)->name('index');
 
+Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
 
 Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], function () {
     Route::get('/', DashboardController::class)->name('dashboard');

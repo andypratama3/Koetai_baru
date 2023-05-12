@@ -24,6 +24,12 @@
                             <input type="number" class="form-control" name="harga">
                         </div>
                     </div>
+                    <div class="row mb-3">
+                        <label for="inputText" class="col-sm-2 col-form-label">Stok</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="stok">
+                        </div>
+                    </div>
                     <div class="row mt-3 mb-3 text-center">
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">Simpan</button>

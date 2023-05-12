@@ -11,13 +11,14 @@ class OrderTiket extends Model
 
     use \App\Http\Traits\UsesUuid;
     // use HasFactory;
-    protected $table = 'orderTikets';
+    protected $table = 'order_tikets';
     protected $guarded = ['id'];
     protected $fillable = [
         'nama',
         'jumlah',
         'user_id',
-        'kategori_tiket'
+        'kategori_tiket',
+        // 'status_pembayaran'
     ];
 
 

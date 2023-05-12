@@ -17,6 +17,7 @@
                         <th scope="col">No</th>
                         <th scope="col">Kategori Tiket</th>
                         <th scope="col">Harga</th>
+                        <th scope="col">Stok</th>
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
@@ -26,7 +27,7 @@
                         <th scope="row">{{ ++$no }}</th>
                         <td>{{ $tiket->kategori }}</td>
                         <td>{{ $tiket->harga }}</td>
-
+                        <td>{{ $tiket->stok }}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('dashboard.tiket.show', $tiket->slug) }}"><i class="bi bi-eye"></i></a>
                             <a class="btn btn-warning" href="{{ route('dashboard.tiket.edit', $tiket->slug) }}"><i class="bi bi-pen"></i></a>

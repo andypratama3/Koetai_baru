@@ -14,6 +14,7 @@ class UpdatetiketAction
         $tiket = Tiket::where('slug',$slug)->firstOrFail();
         $tiket->kategori = $request->kategori;
         $tiket->harga = $request->harga;
+        $tiket->stok = $request->stok;
         $tiket->save();
     }
 }

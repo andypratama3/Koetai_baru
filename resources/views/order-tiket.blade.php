@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="assets/bootstrap-5.1.3-dist/css/bootstrap.min.css" />
     <link href="{{ asset('dashboard_assets/assets/css/style.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
@@ -27,7 +28,46 @@
 </style>
 
 
-<body>
+
+
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Horizontal Form</h5>
+
+      <!-- Horizontal Form -->
+      <form action="{{ route('tiket.store') }}" method="POST">
+        @csrf
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Your Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputText" name="nama">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Kategori Tiket</label>
+          <div class="col-sm-10">
+            <select name="kategori_tiket" id="" class="form-control">
+                @foreach ($tikets as $tiket)
+                <option value="{{ $tiket->kategori }}">{{ $tiket->kategori }} |  Harga Rp. {{ $tiket->harga }}</option>
+                @endforeach
+            </select>
+          </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Jumlah</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputEmail" name="jumlah">
+            </div>
+          </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form><!-- End Horizontal Form -->
+
+    </div>
+  </div>
+{{-- <body>
     <div class="background">
         <!-- Navbar -->
         <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light py-0">
@@ -44,7 +84,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link bttn bttn-pesanTiket my-1 mx-1 py-1" aria-current="page" href="/tiket">Pesan
+                            <a class="nav-link bttn bttn-pesanTiket my-1 mx-1 py-1" aria-current="page" href="#">Pesan
                                 Tiket</a>
                         </li>
                         <li class="nav-item">
@@ -54,6 +94,7 @@
                 </div>
             </div>
         </nav>
+
 
         <!-- Section 1 -->
         <div class="container">
@@ -143,6 +184,6 @@
 
             </div>
         </div>
-    </div>
+</div> --}}
 
 </html>

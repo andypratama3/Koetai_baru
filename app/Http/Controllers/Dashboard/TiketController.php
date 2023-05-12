@@ -5,9 +5,10 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Tiket;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Tiket\StoreTiketRequest;
 use App\Actions\Tiket\StoreTiketAction;
 use App\Actions\Tiket\DeleteTiketAction;
+use App\Actions\Tiket\UpdateTiketAction;
+use App\Http\Requests\Tiket\StoreTiketRequest;
 
 
 
@@ -16,12 +17,12 @@ class TiketController extends Controller
     public function index()
     {
         $no = 0;
-        $tikets = Tiket::select(['kategori','harga','slug'])->get();
+        $tikets = Tiket::select(['kategori','harga','stok','slug'])->get();
         return view('dashboard.tiket.index', compact('tikets','no'));
     }
     public function show($slug)
     {
-        $tiket = Tiket::where('slug',$slug)->select(['kategori','harga','slug'])->firstOrFail();
+        $tiket = Tiket::where('slug',$slug)->select(['kategori','harga','stok','slug'])->firstOrFail();
         return view('dashboard.tiket.show', compact('tiket'));
     }
     public function create()
@@ -35,12 +36,11 @@ class TiketController extends Controller
     }
     public function edit($slug)
     {
-        $tiket = Tiket::where('slug',$slug)->select(['kategori','harga','slug'])->firstOrFail();
-        return view('dashboard.tiket.show', compact('tiket'));
+        $tiket = Tiket::where('slug',$slug)->select(['kategori','harga','stok','slug'])->firstOrFail();
+        return view('dashboard.tiket.edit', compact('tiket'));
     }
-    public function update(StoreTiketRequest $request, StoreTiketAction $StoreTiketAction, $slug)
+    public function update(StoreTiketRequest $request, UpdateTiketAction $UpdateTiketAction, $slug)
     {
-
         $UpdateTiketAction->execute($request,$slug);
         return redirect()->route('dashboard.tiket.index')->with('succes','Tiket Berhasil Di Update');
     }

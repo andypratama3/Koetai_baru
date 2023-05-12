@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Tiket;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTiketRequest extends FormRequest
+class StoreOrderTiket extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class StoreTiketRequest extends FormRequest
     public function rules()
     {
         return [
-            'kategori' => 'required',
-            'harga' => 'required',
-            'stok' => 'required'
+            'nama' => 'required',
+            'jumlah' => 'required',
+            'kategori_tiket' => 'required'
         ];
 
     }

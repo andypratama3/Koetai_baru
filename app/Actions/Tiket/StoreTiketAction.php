@@ -14,6 +14,7 @@ class StoreTiketAction
         $tiket = new Tiket;
         $tiket->kategori = $request->kategori;
         $tiket->harga = $request->harga;
+        $tiket->stok = $request->stok;
 
         $tiket->save();
     }
