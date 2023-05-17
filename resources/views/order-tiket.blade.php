@@ -33,7 +33,7 @@
 <div class="card">
     <div class="card-body">
       <h5 class="card-title">Horizontal Form</h5>
-
+      @include('layouts.flash-message')
       <!-- Horizontal Form -->
       <form action="{{ route('tiket.store') }}" method="POST">
         @csrf
@@ -46,9 +46,10 @@
         <div class="row mb-3">
           <label for="inputEmail3" class="col-sm-2 col-form-label">Kategori Tiket</label>
           <div class="col-sm-10">
-            <select name="kategori_tiket" id="" class="form-control">
+            <select name="tiket_id" id="" class="form-select">
+                <option value="">Pilih Tiket</option>
                 @foreach ($tikets as $tiket)
-                <option value="{{ $tiket->kategori }}">{{ $tiket->kategori }} |  Harga Rp. {{ $tiket->harga }}</option>
+                <option value="{{$tiket->id}}">{{$tiket->kategori}}</option>
                 @endforeach
             </select>
           </div>

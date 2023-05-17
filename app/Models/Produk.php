@@ -36,4 +36,5 @@ class Produk extends Model
     {
         return $this->belongsToMany(Kategori::class, 'produks_kategoris');
     }
+    
 }

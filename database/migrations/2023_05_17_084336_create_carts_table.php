@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tikets', function (Blueprint $table) {
-            $table->id();
-            $table->string('kategori');
-            $table->float('harga');
-            $table->unsignedInteger('stok');
-            $table->string('slug');
+        Schema::create('carts', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('user_id');
+            $table->string('produk_id');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tikets');
+        Schema::dropIfExists('carts');
     }
 };

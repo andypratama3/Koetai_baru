@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreOrderTiket extends FormRequest
+class StoreCartRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,14 @@ class StoreOrderTiket extends FormRequest
     public function rules()
     {
         return [
-            'nama' => 'required',
-            'jumlah' => 'required',
-
+            'produk_id' => 'required',
         ];
 
     }
-    public function message(){
 
+    public function  message(){
         return [
-            'required' => 'Atribut Tidak Boleh Kosong!'
+            'required' => 'Attribut Tidak Boleh Kosong'
         ];
     }
 }

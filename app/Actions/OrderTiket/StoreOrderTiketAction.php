@@ -5,21 +5,27 @@ namespace App\Actions\OrderTiket;
 use Str;
 
 
+use App\Models\User;
+use App\Models\Tiket;
 use App\Models\OrderTiket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class StoreOrderTiketAction
 {
     public function execute(Request $request)
     {
-        $order = new OrderTiket;
-        $order->user_id = Auth::id();
-        $order->nama = $request->nama;
-        $order->jumlah = $request->jumlah;
-        $order->kategori_tiket = $request->kategori_tiket;
+        $tikets = Tiket::select(['kategori','harga','stok','slug'])->get();
 
-        $order->save();
+        $order = new OrderTiket();
+        $order->nama = $request->nama;
+        // $order->tiket_id = $request->input('tiket_id');
+        $order->jumlah = $request->jumlah;
+
+        $stok = Tiket::find($request->tiket_id);
+        $stok->stok = $stok->stok - $request->jumlah;
+        $stok->update();
+        $order->update();
+
     }
 }

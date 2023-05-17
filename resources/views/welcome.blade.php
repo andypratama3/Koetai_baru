@@ -48,8 +48,12 @@
                                 Tiket</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link bttn bttn-shop my-1 mx-1 py-1" href="">Shop</a>
+                            <a class="nav-link bttn bttn-shop my-1 mx-1 py-1" href="/list-order-tiket">Pesanan Tiket</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link bttn bttn-shop my-1 mx-1 py-1" href="/shop">Shop</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

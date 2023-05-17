@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('order_tikets', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->string('jumlah');
+            $table->uuid('id')->primary();
             $table->string('user_id');
-            $table->string('kategori_tiket');
+            $table->string('nama');
+            $table->bigInteger('tiket_id');
+            $table->string('jumlah');
             $table->string('slug');
             $table->timestamps();
         });
@@ -34,4 +34,5 @@ return new class extends Migration
         Schema::dropIfExists('order_tikets');
     }
 };
+
 

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\OrderTiketController;
 use App\Http\Controllers\Dashboard\EventController;
@@ -23,9 +25,14 @@ use App\Http\Controllers\Dashboard\DashboardController;
 |
 */
 
-Route::get('/', WelcomeController::class)->name('index');
+    Route::get('/', WelcomeController::class)->name('index');
+    Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
+    Route::get('/list-order-tiket', [OrderTiketController::class,'allorder']);
+Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
+    Route::resource('shop', ShopController::class, ['names' => 'shop']);
+    Route::resource('cart', CartController::class, ['names' => 'cart']);
 
-Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
+});
 
 Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], function () {
     Route::get('/', DashboardController::class)->name('dashboard');
