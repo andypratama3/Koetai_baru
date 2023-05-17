@@ -32,4 +32,6 @@ class OrderTiketController extends Controller
         $order = OrderTiket::where('slug',$slug)->select(['nama','jumlah','harga','kategori_tiket','slug'])->firstOrFail();
         return view('list-order-tiket', compact('order'));
     }
+
+
 }

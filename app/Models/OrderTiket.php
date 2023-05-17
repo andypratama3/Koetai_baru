@@ -14,11 +14,12 @@ class OrderTiket extends Model
     protected $table = 'order_tikets';
     protected $guarded = ['id'];
     protected $fillable = [
-
+        'user_id',
         'nama',
         'tiket_id',
         'jumlah',
-        // 'status_pembayaran'
+        'total',
+        'status'
     ];
 
 
@@ -27,14 +28,10 @@ class OrderTiket extends Model
         $this->attributes['nama'] = $value;
         $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
     }
-    // public function tiket(){
+    public function tiket(){
 
-    //     return $this->belongsTo(Tiket::class);
-    // }
-    public function tiket()
-    {
-        return $this->belongsTo(Tiket::class, 'tiket_id','id');
-
+        return $this->belongsTo(Tiket::class);
     }
+
 
 }

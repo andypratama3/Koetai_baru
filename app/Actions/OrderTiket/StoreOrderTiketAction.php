@@ -18,14 +18,16 @@ class StoreOrderTiketAction
         $tikets = Tiket::select(['kategori','harga','stok','slug'])->get();
 
         $order = new OrderTiket();
+        $order->user_id = Auth::id();
         $order->nama = $request->nama;
-        // $order->tiket_id = $request->input('tiket_id');
+        $order->total = $request->total;
+        $order->tiket_id = $request->tiket_id;
         $order->jumlah = $request->jumlah;
-
+        //mengurangi stok pada tiket
         $stok = Tiket::find($request->tiket_id);
         $stok->stok = $stok->stok - $request->jumlah;
         $stok->update();
-        $order->update();
+        $order->save();
 
     }
 }

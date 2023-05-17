@@ -65,20 +65,20 @@
 
                     @foreach ($orders as $order)
                       <tr>
-                        {{-- @php
+                        @php
                             $totals = 0;
                             $totals += $order->tiket->harga * $order->jumlah;
-                        @endphp --}}
+                        @endphp
                         <th scope="row">{{ ++$no }}</th>
                         <td>{{ $order->nama }}</td>
                         <td>{{ $order->tiket->kategori }}</td>
                         <td>{{ $order->jumlah }} Tiket</td>
-                        {{-- <td>{{ $totals }}</td> --}}
+                        <td>Rp.{{ $totals }}</td>
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="{{ $order->slug }}">
                                 bayar
                               </button>
-                            {{-- <a class="btn btn-primary" href="{{ route('tiket.show', $order->slug) }}"><i class="bi bi-eye"></i></a> --}}
+                            <a class="btn btn-primary" href="{{ route('tiket.show', $order->slug) }}"><i class="bi bi-eye"></i></a>
                             {{-- <a class="btn btn-warning" href="{{ route('order.edit', $order->slug) }}"><i class="bi bi-pen"></i></a> --}}
                             {{-- <a href="#" data-id="{{ $order->slug }}" class="btn btn-danger delete" title="Hapus"> --}}
 

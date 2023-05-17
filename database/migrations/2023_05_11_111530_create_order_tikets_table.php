@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('nama');
             $table->bigInteger('tiket_id');
             $table->string('jumlah');
+            $table->float('total');
+            $table->string('status')->default('0');
             $table->string('slug');
             $table->timestamps();
         });
@@ -34,5 +36,6 @@ return new class extends Migration
         Schema::dropIfExists('order_tikets');
     }
 };
+
 
 
