@@ -75,18 +75,16 @@
                         <td>{{ $order->jumlah }} Tiket</td>
                         <td>Rp.{{ $totals }}</td>
                         <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="{{ $order->slug }}">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="{{ $order->id }}">
                                 bayar
                               </button>
-                            <a class="btn btn-primary" href="{{ route('tiket.show', $order->slug) }}"><i class="bi bi-eye"></i></a>
-                            {{-- <a class="btn btn-warning" href="{{ route('order.edit', $order->slug) }}"><i class="bi bi-pen"></i></a> --}}
-                            {{-- <a href="#" data-id="{{ $order->slug }}" class="btn btn-danger delete" title="Hapus"> --}}
 
-                                {{-- <form action="{{ route('order.destroy', $order->slug) }}" id="delete-{{ $order->slug }}" method="POST" enctype="multipart/form-data">
+                            <a href="#" data-id="{{ $order->slug }}" class="btn btn-danger delete" title="Hapus">
+                            <form action="{{ route('list.destroy', $order->slug) }}" id="delete-{{ $order->slug }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('delete')
-                                </form> --}}
-                                {{-- <i class="bi bi-trash"> --}}
+                                </form>
+                                <i class="bi bi-trash">
                         </td>
 
                       </tr>

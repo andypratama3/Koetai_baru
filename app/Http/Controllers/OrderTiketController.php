@@ -20,18 +20,6 @@ class OrderTiketController extends Controller
         $storeOrderTiketAction->execute($request);
         return \redirect('list-order-tiket')->with('success','Tiket berhasil Di Pesan');
     }
-    public function allorder()
-    {
-        $no = 0;
-        $orders = OrderTiket::with('tiket')->select(['nama','jumlah','tiket_id'])->firstOrFail()->get();
-
-        return view('list-order-tiket', compact('no','orders'));
-    }
-    public function show_order($slug){
-
-        $order = OrderTiket::where('slug',$slug)->select(['nama','jumlah','harga','kategori_tiket','slug'])->firstOrFail();
-        return view('list-order-tiket', compact('order'));
-    }
 
 
 }
