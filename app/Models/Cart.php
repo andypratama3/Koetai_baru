@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Produk;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Cart extends Model
 {
@@ -15,14 +16,12 @@ class Cart extends Model
 
         'user_id',
         'produk_id',
-        
+
         // 'status_pembayaran'
     ];
-
-
-    public function setSlugAttribute($value)
+    public function produk()
     {
+        return $this->belongsTo(Produk::class, 'produk_id','id');
 
-        $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
     }
 }

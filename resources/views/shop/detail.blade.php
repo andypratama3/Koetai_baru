@@ -42,7 +42,7 @@
                     <i class="bi bi-arrow-right"></i>
 
                     <hr>
-                    @if($produk->stok > 0)
+                    @if($produk->stock > 0)
                     <label class="badge bg-success">In Stock : {{$produk->stok}} Item</label>
                     @else
                     <label class="badge bg-danger">Out of stock</label>
@@ -61,13 +61,18 @@
                         <div class="col-md-12">
                             <br>
                             @if ($produk->stock > 0)
-                            <button type="button" class="btn btn-primary addcart me-3 float-start">Beli Sekarang
-                                <i class="bi bi-cart"></i></button>
-                            @endif
-                            <form action="{{ route('cart.store') }}" method="post">
+                            <form action="{{ route('shop.store'. $produk->id) }}" method="post">
                                 @csrf
                                 <input type="hidden" name="produk_id" value="{{ $produk->id }}">
-                            <button type="submit" class="btn btn-success btnwishlist me-3 float-start">Add To
+                                <input type="hidden" name="nama" value="{{ Auth::user()->name }}">
+                            <button type="submit" class="btn btn-primary  me-3 float-start">Beli Sekarang
+                                <i class="bi bi-cart"></i></button>
+                            </form>
+                            @endif
+                            {{-- <form action="{{ route('cart.store'. $produk->id) }}" method="post">
+                                @csrf
+                                <input type="hidden" name="produk_id" value="{{ $produk->id }}"> --}}
+                                <button type="submit" class="btn btn-success addcart me-3 float-start">Add To
                                 Cart <i class="bi bi-heart"></i></button>
                             </form>
                         </div>
@@ -88,9 +93,38 @@
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            $('.addcart').click(function (e){
+            e.preventDefault();
 
-<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+            var produk_id = $(this).closest('.produk_data').find('.produk_id').val();
+
+
+            $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+            $.ajax({
+                method: "POST",
+                url: "/add-to-cart",
+                data: {
+                    'produk_id': produk_id,
+
+                },
+                success: function (response){
+                    Swal.fire(
+                    'Success',
+                    response.status,
+                    'success',
+                    )
+                    loadcart();
+                },
+
+            });
+    });
+        </script>
 </body>
 </html>
 

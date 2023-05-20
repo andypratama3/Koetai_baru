@@ -20,8 +20,8 @@ class ListOrderTiketController extends Controller
 
         return view('list-order-tiket', compact('order'));
     }
-    public function destroy($id){
-        $order = OrderTiket::where('id', $id)->firstOrFail();
+    public function destroy($slug){
+        $order = OrderTiket::where('slug', $slug)->firstOrFail();
         $order->delete();
         return redirect()->route('list.index');
     }

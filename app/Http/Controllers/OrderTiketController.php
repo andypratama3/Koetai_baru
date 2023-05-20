@@ -13,7 +13,7 @@ class OrderTiketController extends Controller
 {
     public function index(){
         $tikets = Tiket::all();
-        return view('order-tiket', compact('tikets'));
+        return view('tiket.order-tiket', compact('tikets'));
     }
     public function store(StoreOrderTiket $request, StoreOrderTiketAction $storeOrderTiketAction)
     {

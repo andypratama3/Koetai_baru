@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use Str;
+use App\Models\Cart;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Str;
 
 class Produk extends Model
 {
@@ -36,5 +37,9 @@ class Produk extends Model
     {
         return $this->belongsToMany(Kategori::class, 'produks_kategoris');
     }
-    
+    public function cart(){
+
+        return $this->hasMany(Cart::class);
+    }
+
 }

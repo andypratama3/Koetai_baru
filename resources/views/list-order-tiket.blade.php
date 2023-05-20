@@ -66,17 +66,24 @@
                     @foreach ($orders as $order)
                       <tr>
                         @php
-                            $totals = 0;
-                            $totals += $order->tiket->harga * $order->jumlah;
+                            $total = 0;
+                            $total += $order->tiket->harga * $order->jumlah;
                         @endphp
                         <th scope="row">{{ ++$no }}</th>
                         <td>{{ $order->nama }}</td>
                         <td>{{ $order->tiket->kategori }}</td>
                         <td>{{ $order->jumlah }} Tiket</td>
-                        <td>Rp.{{ $totals }}</td>
+
+                        <td>Rp.{{ $total }}</td>
                         <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="{{ $order->id }}">
-                                bayar
+                            <button type="button" class="btn btn-primary" id="details" data-toggle="modal"
+                            data-target="#detailModal"
+                            data-nama="<?=$order->nama ?>"
+                            data-kategori="<?=$order->tiket->kategori ?>"
+                            data-jumlah="<?=$order->jumlah ?>"
+                            data-total="<?=$total ?>"
+                            >
+                                Check Out
                               </button>
 
                             <a href="#" data-id="{{ $order->slug }}" class="btn btn-danger delete" title="Hapus">
@@ -108,7 +115,7 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -117,37 +124,37 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-            <div class="row mb-3">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Nama : </label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputText" name="nama" readonly value="{{ $order->nama }}">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Kategori Tiket</label>
-                <div class="col-sm-10">
-                  <input type="" name="harga" value="{{ $order->kategori_tiket }}" readonly>
-                </div>
-              </div>
-              <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Jumlah</label>
-                    : {{ $order->jumlah }}
-               </div>
-        </div>
+        <div class="modal-body table-responsive">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Nama</td>
+                        <td><span id="nama"></span></td>
+                    </tr>
+                    <tr>
+                        <td>kategori</td>
+                        <td><span id="kategori"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Jumlah</td>
+                        <td><span id="jumlah"></span> Tiket</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>Rp. <span id="total"></span></td>
+                    </tr>
+                </tbody>
+            </table>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button id="pay" type="button" class="btn btn-primary">Bayar</button>
         </div>
       </div>
     </div>
   </div>
 
-{{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
-<script src="{{ asset('dashboard_assets/SwetAlert/index.js') }}"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+@include('layouts.script')
 <script>
   $(".delete").click(function (e) {
         slug = e.target.dataset.id;
@@ -166,8 +173,22 @@
                 }
             });
     });
+
+    $(document).ready(function () {
+            $(document).on('click', '#details', function(){
+                var nama = $(this).data('nama');
+                var kategori = $(this).data('kategori');
+                var jumlah = $(this).data('jumlah');
+                var total = $(this).data('total');
+
+                $('#nama').text(nama);
+                $('#kategori').text(kategori);
+                $('#jumlah').text(jumlah);
+                $('#total').text(total);
+
+            });
+    });
 </script>
-
-
 </body>
 </html>
+

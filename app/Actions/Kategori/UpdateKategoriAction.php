@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class UpdateKategoriAction
 {
-    public function execute(Request $request)
+    public function execute(Request $request,$slug)
     {
-        $kategori = new Kategori;
+        $kategori = Kategori::where('slug',$slug)->firstOrFail();
         $kategori->nama = $request->nama;
         $kategori->save();
     }

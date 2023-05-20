@@ -4,19 +4,17 @@ namespace App\Actions\Cart;
 
 use Str;
 
-use Illuminate\Http\Request;
 use App\Models\Cart;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class StoreCartAction
 {
-    public function execute(Request $request)
+    public function execute(Request $request,$id)
     {
-        $produk = Produk::select(['nama', 'foto','stock','harga','deskripsi', 'slug'])->firstOrFail();
-        $cart = new Cart;
-        $cart->user_id = Auth::id();
-        $cart->produk_id = $produk->produk_id;
+        $produk = Produk::findOrFail($id);
+        
 
-        $cart->save();
     }
 }

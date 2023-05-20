@@ -5,41 +5,90 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}" />
-  <link rel="stylesheet" href="{{ asset('assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}" />
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
   <title>@yield('title')</title>
+  <link rel="stylesheet" href="{{ asset('asset_user/assets/css/style.css')}}"/>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="{{ asset('assets/js/jquery-3.6.0.min.js')}}"></script>
 </head>
 
 <body>
-  <div class="background">
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light py-0">
-      <div class="container-fluid">
-        <a href="#" class="navbar-brand fs-6 col-md-6 fs-4" style="font-weight: bold">
-          <img src="{{ asset('assets/img/kms-vol2.png')}}" class="kms-vol2" alt="..." />
-          KOETAI MAHKOTA SOUNDLINE
-        </a>
-        <button class="navbar-toggler my-0 border-light" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link bttn bttn-pesanTiket my-1 mx-1 py-1" aria-current="page" href="#">Pesan Tiket</a>
+    <div class="blur-kuning"></div>
+    <img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="logo-kms-kuning">
+    <header>
+        <nav id="navbar">
+            <div class="teks-kms">KOETAI MAHKOTA SOUNDLINE</div>
+            <ul class="menu-nav">
+                <li>
+                    <a href="/" >
+                        <button class="{{ request()->is('/') ? 'active' : '' }}" >BERANDA</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('shop.index') }}">
+                        <button class="{{ request()->is('shop') ? 'active' : '' }}">BELANJA</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('cart.index') }}">
+                        <button class="{{ request()->is('cart') ? 'active' : '' }}">Cart</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="semtim.html">
+                        <button class="{{ request()->is('tim') ? 'active' : '' }}">SEMUA TIM</button>
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu-nav">
+                <li>
+                    <a href="{{ route('tiket.index') }}">
+                        <button class="tombol-pesantik {{ request()->is('tiket') ? 'active' : '' }}">PESAN TIKET</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('login') }}">
+                        <button class="tombol-login {{ request()->is('login') ? 'active' : '' }}">LOGIN</button>
+                    </a>
+                </li>
+            </ul>
+            <div class="tombol-menu">
+                <i class="bx bx-menu"></i>
+            </div>
+        </nav>
+
+        <div class="dropdown-menu">
+            <li>
+                <a href="/">
+                    <button class="{{ request()->is('/') ? 'active' : '' }}">BERANDA</button>
+                </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link bttn bttn-shop my-1 mx-1 py-1" href="#">Shop</a>
+            <li>
+                <a href="/shop">
+                    <button class="{{ request()->is('shop') ? 'active' : '' }}">BELANJA</button>
+                </a>
             </li>
-          </ul>
+            <li>
+                <a href="/">
+                    <button class="{{ request()->is('tim') ? 'active' : '' }}">SEMUA TIM</button>
+                </a>
+            </li>
+            <li>
+                <a href="/tiket">
+                    <button class="{{ request()->is('tiket') ? 'active' : '' }}">PESAN TIKET</button>
+                </a>
+            </li>
+            <li>
+                <a href="/tiket">
+                    <button class="{{ request()->is('tiket') ? 'active' : '' }}">LOGIN</button>
+                </a>
+            </li>
         </div>
-      </div>
-    </nav>
+    </header>
 
-   @yield('content')
+@yield('content')
 
-  <script src="{{ asset('assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js')}}"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="{{ asset('asset_user/assets/js/script.js') }}"></script>
 </body>
 
 </html>
