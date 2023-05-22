@@ -37,7 +37,7 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
     Route::resource('shop', ShopController::class, ['names' => 'shop']);
 
     Route::resource('cart', CartController::class, ['names' => 'cart']);
-    Route::post('add-to-cart', [CartController::class, 'addtocart']);
+    Route::post('add-to-cart', [CartController::class, 'addtoCart']);
 });
 
 Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], function () {

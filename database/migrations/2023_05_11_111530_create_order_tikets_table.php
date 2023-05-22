@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('nama');
             $table->bigInteger('tiket_id');
-            $table->string('jumlah');
-            $table->float('total');
-            $table->string('status')->default('0');
+            $table->integer('jumlah');
+            $table->Biginteger('total');
+            $table->enum('status', ['Unpaid','Paid']);
             $table->string('slug');
             $table->timestamps();
         });

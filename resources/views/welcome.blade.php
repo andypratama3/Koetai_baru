@@ -3,62 +3,72 @@
 @section('content')
 
 <main>
-    <div id="container">
+    <div class="container-fluid container">
 
-        <div class="container-beranda item">
+      <div class="container-beranda">
 
-            <div class="container-kiri">
-                <img src="{{ asset('asset_user/assets/img/thumb-tenkita.png')}}" alt="">
-            </div>
-            <div class="container-kanan">
-                <div class="carouselnya">
-                    {{-- carsoul --}}
-                    <div class="slides-row">
-                        <div class="carousel-indicators">
-                            @foreach ($events as $key => $event)
-                            <button  class="next" type="button" data-bs-target="#slides-row{{ $key }}"
-                                data-bs-slide-to="{{ $key }}" class="{{ !$loop->first ?: 'active' }}"
-                                aria-current="true" aria-label="{{ $key }}"></button>
-                            @endforeach
-                        </div>
-                        <div class="carousel-inner">
-                            @foreach ($events as $event)
-                            <div class="carousel-item {{ !$loop->first ?: 'active' }} ">
-                                <img class="d-block w-100" src="{{ asset('storage/img/event/'. $event->foto) }}"
-                                    alt="">
-                            </div>
-                            @endforeach
-                        </div>
+        <div class="container-kiri">
+          <img src="{{ asset('asset_user/assets/img/thumb-tenkita.png')}}" alt="">
+        </div>
+        <div class="container-kanan">
+          <div class="carouselnya">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/img/thumb-comsoon.gif" class="" alt="...">
                 </div>
-
-                <div class="couple-container-kanan">
-                    <div class="dots">
-                        <div class="dot active"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                    <h3>CALL FOR SPONSORED <br> 08XXXXXXXXXX</h3>
+                <div class="carousel-item">
+                  <img src="assets/img/logo-kms1.png" class="" alt="...">
                 </div>
-
+                <div class="carousel-item">
+                  <img src="assets/img/logo-kms2.png" class="" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-
+          </div>
+          <h3>CALL FOR SPONSORED <br> 08XXXXXXXXXX</h3>
         </div>
 
-    </div>
-</main>
+      </div>
 
-<section id="sponsor">
+    </div>
+
+  </main>
+
+  <section class="sponsor">
     <div class="container">
-        <h1>SPONSOR</h1>
-        <div class="sponsor-utama">
-            <img src="{{ asset('asset_user/assets/img/sponsor1.png')}}">
-        </div>
-        <div class="sponsor-lainnya">
-            @foreach ($sponsors as $sponsor)
-            <img class="d-block w-100" src="{{ asset('storage/img/sponsor/'. $event->poto) }}">
-            @endforeach
-        </div>
+      <h1>SPONSOR</h1>
+      <div class="sponsor-utama">
+        <img src="assets/img/sponsor1.png">
+      </div>
+      <div class="sponsor-lainnya">
+        <img src="assets/img/sponsor2.png">
+        <img src="assets/img/sponsor3.png">
+        <img src="assets/img/sponsor4.png">
+        <img src="assets/img/sponsor5.png">
+        <img src="assets/img/sponsor6.png">
+        <img src="assets/img/sponsor7.png">
+      </div>
     </div>
-</section>
+  </section>
+
+
 @endsection

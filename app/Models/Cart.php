@@ -2,26 +2,25 @@
 
 namespace App\Models;
 
-use App\Models\Produk;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Cart extends Model
 {
     use \App\Http\Traits\UsesUuid;
-    // use HasFactory;
-    protected $table = 'carts';
+
+    use HasFactory;
+    protected $table = 'events';
     protected $guarded = ['id'];
     protected $fillable = [
-
         'user_id',
-        'produk_id',
-
-        // 'status_pembayaran'
+        'prod_id',
+        'prod_qty',
     ];
-    public function produk()
+    public function setSlugAttribute($value)
     {
-        return $this->belongsTo(Produk::class, 'produk_id','id');
-
+        $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
     }
+
 }

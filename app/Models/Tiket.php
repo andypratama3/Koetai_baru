@@ -34,10 +34,5 @@ class Tiket extends Model
 
         return $this->hasMany(OrderTiket::class);
     }
-    public function kurangiStok($jumlah)
-    {
-        $this->stok -= $jumlah;
-        $this->save();
-    }
 
 }
