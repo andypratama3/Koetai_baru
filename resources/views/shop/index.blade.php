@@ -99,7 +99,6 @@
                                 <h2 id="nama"></h2>
                                   <td>Rp . <span id="harga"></span></td>
                                   <br>
-
                                    <td> Stok   : <span id="stock"></span></td>
                                 </div>
                             </div>
@@ -208,7 +207,8 @@
             $('#id').text(id);
             $('#nama').text(nama);
             $('#harga').text(harga);
-            $('#foto').attr('src',foto);
+            var imageUrl = '/storage/img/produk/'+ foto;
+            $('#foto').attr('src',imageUrl);
             $('#stock').text(stock);
 
         });
