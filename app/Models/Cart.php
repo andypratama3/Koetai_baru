@@ -11,16 +11,13 @@ class Cart extends Model
     use \App\Http\Traits\UsesUuid;
 
     use HasFactory;
-    protected $table = 'events';
+    protected $table = 'carts';
     protected $guarded = ['id'];
     protected $fillable = [
         'user_id',
         'prod_id',
         'prod_qty',
     ];
-    public function setSlugAttribute($value)
-    {
-        $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
-    }
+    
 
 }

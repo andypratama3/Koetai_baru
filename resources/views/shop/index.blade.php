@@ -5,7 +5,7 @@
         <nav class="nav-belanja">
             <ul>
                 <li class="belanja-baju active" id="nav-baju">BAJU</li>
-                <li class="belanja-mchan" id="nav-mchan">Tooth Bag</li>
+                <li class="belanja-mchan" id="nav-mchan">Tote Bag</li>
             </ul>
         </nav>
         <div class="isi-belanja" id="isi-belanja ">
@@ -110,7 +110,7 @@
                                     <button id="xxl">XXL</button>
                                 </div>
                                 <div class="jumlah">
-                                    <p>jumlah: </p>
+                                    <h2>jumlah: </h2>
                                     <input type="number" min="1" max="100" value="1" class="prod_qty">
                                 </div>
                             </div>
@@ -193,7 +193,6 @@
 
     $(document).ready(function () {
         $(document).on('click', '#details', function () {
-            var id = $(this).data('id');
             var nama = $(this).data('nama');
             var harga = $(this).data('harga');
             var foto = $(this).data('foto');
@@ -211,12 +210,34 @@
     });
     $('.btncart').click(function (e) {
         e.preventDefault();
-        // var produk_id = $(this).closest('.produk_data').find('.prod_id').val();
-        // var produk_id = $(this).data('id');
         var produk_id = $(this).closest('.detail').find('.prod_id').val();
         var produk_qty = $(this).closest('.detail').find('.prod_qty').val();
+        // var url = ({{ route('cart.store') }});
+        // alert(prod_id)
 
-        
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            method: "POST",
+            url: "/add-to-cart",
+            data: {
+                'prod_id': produk_id,
+                'prod_qty': produk_qty,
+            },
+
+            success: function (response) {
+                Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: response.status,
+                });
+            }
+        });
+
+
     });
     </script>
 @endsection

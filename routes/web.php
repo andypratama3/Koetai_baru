@@ -27,17 +27,16 @@ use App\Http\Controllers\Dashboard\DashboardController;
 */
 
 Route::get('/', WelcomeController::class)->name('index');
-
+Route::get('shop', [ShopController::class, 'index']);
 //tiket
 Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
     Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
     Route::resource('list-order-tiket', ListOrderTiketController::class, ['names' => 'list']);
 
-
-    Route::resource('shop', ShopController::class, ['names' => 'shop']);
+    // Route::resource('shop', ShopController::class, ['names' => 'shop']);
 
     Route::resource('cart', CartController::class, ['names' => 'cart']);
-    Route::post('add-to-cart', [CartController::class, 'addtoCart']);
+    Route::post('add-to-cart', [CartController::class, 'addtocart']);
 });
 
 Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], function () {
