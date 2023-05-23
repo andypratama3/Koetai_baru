@@ -13,9 +13,5 @@ class ShopController extends Controller
 
         return view('shop.index', compact('shops'));
     }
-    public function show($slug){
 
-        $view = Produk::where('slug',$slug)->firsOrFail()->get();
-        return view('shop.index', compact('view'));
-    }
 }

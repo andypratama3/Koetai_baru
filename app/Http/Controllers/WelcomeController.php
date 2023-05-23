@@ -16,9 +16,10 @@ class WelcomeController extends Controller
         $events = Event::select(['nama', 'foto', 'deskripsi'])->latest()->limit(3)->get();
         $produks = Produk::select(['nama', 'foto','stock','harga','deskripsi', 'slug'])->get();
         $anggotas = Anggota::select(['nama', 'foto','devisi','instagram', 'slug'])->get();
-        $sponsors = Sponsor::select(['nama','logo','slug'])->get();
+        $sponsor = Sponsor::select(['nama','logo','slug'])->limit(1)->get();
+        $sponsors = Sponsor::select(['nama','logo','slug'])->latest()->get();
 
-        return view('welcome', compact('events','produks','anggotas','sponsors'));
+        return view('welcome', compact('events','produks','anggotas','sponsor','sponsors'));
     }
 
 }

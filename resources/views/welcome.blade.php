@@ -57,15 +57,15 @@
     <div class="container">
       <h1>SPONSOR</h1>
       <div class="sponsor-utama">
-        <img src="assets/img/sponsor1.png">
+        @foreach ($sponsor as $spon)
+        <img src="{{ asset('storage/img/sponsor/'.$spon->logo) }}">
+        @endforeach
+
       </div>
       <div class="sponsor-lainnya">
-        <img src="assets/img/sponsor2.png">
-        <img src="assets/img/sponsor3.png">
-        <img src="assets/img/sponsor4.png">
-        <img src="assets/img/sponsor5.png">
-        <img src="assets/img/sponsor6.png">
-        <img src="assets/img/sponsor7.png">
+        @foreach ($sponsors as $sponsor)
+        <img src="{{ asset('storage/img/sponsor/'.$sponsor->logo) }}">
+        @endforeach
       </div>
     </div>
   </section>
