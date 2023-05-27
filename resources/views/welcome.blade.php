@@ -12,30 +12,31 @@
         </div>
         <div class="container-kanan">
           <div class="carouselnya">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
+            <!-- Slider main container -->
+            <div class="carouselnya">
+                <!-- Slider main container -->
+              <div class="swiper">
+                <!-- Additional required wrapper -->
 
-                @foreach ($events as $key => $event)
-                    <li data-target="#carouselExampleIndicators{{ $key }}" data-slide-to="{{ $key }}" class="{{ !$loop->first ? : 'active' }}"></li>
-                @endforeach
+                <div class="swiper-wrapper">
+                    @foreach ($events as $event)
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="" class="img-fluid">
+                  </div>
+                  @endforeach
+                </div>
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                {{-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> --}}
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
               </div>
-              <div class="carousel-inner">
-                @foreach ($events as $event)
-                    <div class="carousel-item {{ !$loop->first ?: 'active' }}">
-                      <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="">
-                    </div>
-                @endforeach
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
           </div>
           <h3>CALL FOR SPONSORED <br> 08XXXXXXXXXX</h3>
@@ -45,25 +46,51 @@
     </div>
   </main>
 
-  {{-- <section class="sponsor">
+  <section class="sponsor">
     <div class="container">
       <h1>SPONSOR</h1>
+
       <div class="sponsor-utama">
         @foreach ($sponsor as $spon)
-        <img src="{{ asset('storage/img/sponsor/'.$spon->logo) }}">
+        <img src="{{ asset('storage/img/sponsor/'.$spon->logo) }}" alt="" srcset="">
         @endforeach
-
       </div>
       <div class="sponsor-lainnya">
-        @foreach ($sponsors as $sponsor)
-        <img src="{{ asset('storage/img/sponsor/'.$sponsor->logo) }}">
+        @foreach ($sponsors as $spons)
+        <img src="{{ asset('storage/img/sponsor/'.$spons->logo) }}" alt="" srcset="">
         @endforeach
       </div>
+
     </div>
-  </section> --}}
+  </section>
+
 
 
 @include('layouts.script')
+<script>
+    const swiper = new Swiper('.swiper', {
+  autoplay: {
+    delay: 2000,
+  },
+  direction: 'horizontal',
+  loop: true,
 
-<script></script>
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    type: "bullets",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+  </script>
 @endsection

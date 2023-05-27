@@ -308,7 +308,7 @@ main .container .container-beranda .container-kanan .carouselnya {
     object-fit: cover;
 }
 
-main .container .container-beranda .container-kanan .carouselnya .carousel-inner img {
+main .container .container-beranda .container-kanan .carouselnya .swiper-wrapper img {
     object-fit: cover;
     width: 90vh;
     height: 60vh;
@@ -328,6 +328,10 @@ main .container .container-beranda .container-kanan h3 {
     font-size: 14px;
     font-weight: bold;
     text-align: center;
+}
+main .swiper-pagination *
+{
+    background: var(--primary);
 }
 
 /* AKHIR CONTAINER BERANDA */
