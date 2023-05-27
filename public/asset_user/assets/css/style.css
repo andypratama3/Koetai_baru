@@ -130,6 +130,13 @@ header .nav-bar ul li button {
 header ul li button:hover {
     border: 1px rgba(255, 183, 22, 0.8) solid;
 }
+header ul li .cart-icon{
+    background-color: none;
+    display: inline-block;
+    margin-right: 10px;
+    height: inherit;
+
+}
 
 header ul li button.active {
     border: 1px #FFB716 solid;
@@ -187,6 +194,7 @@ header .dropdown-menu li a {
     background: transparent;
     border: 1px rgba(255, 255, 255, 0) solid;
 }
+
 
 header .dropdown-menu li button {
     width: 100%;

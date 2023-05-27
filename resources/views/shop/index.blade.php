@@ -51,7 +51,7 @@
                                <div class="ukuran">
                                 <p>Ukuran</p>
                                 <select name="" id="" class="radio-inputs prod_ukuran text-center" style="color :beige">
-                                    <option value="disabled">Pilih Ukuran</option>
+                                    <option disabled>Pilih Ukuran</option>
                                     <option value="L">L</option>
                                     <option value="XL">Xl</option>
                                     <option value="XXL">XXL</option>

@@ -100,7 +100,7 @@
                 @endforeach
                 <div class="total float-end">
                     <h5>Total Semua Rp. {{ $totals }}</h5>
-                    <a href="" class="btn btn-keranjang align-center" style="background-color: #FFB716;">Pesan</a>
+                    <a href="" class="btn btn-keranjang align-center float-end" style="background-color: #FFB716;">Pesan</a>
                 </div>
             </div>
 

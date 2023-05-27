@@ -1,5 +1,23 @@
 $(document).ready(function () {
+    loadcart();
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
 
+        function loadcart()
+        {
+            $.ajax({
+                method: "GET",
+                url: "/cart-count",
+                success: function (response){
+                    $('.cart-count').html('');
+                    $('.cart-count').html(response.count);
+
+                }
+            });
+        }
     $(".delete").click(function (e) {
         slug = e.target.dataset.id;
         swal({
@@ -134,5 +152,5 @@ $(document).ready(function () {
                 window.location.reload();
             },
       });
-});
+    });
 });

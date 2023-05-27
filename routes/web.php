@@ -39,6 +39,9 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
     Route::post('add-to-cart', [CartController::class, 'addtocart']);
     Route::post('update-cart', [CartController::class, 'updatecart']);
     Route::post('delete-cart', [CartController::class, 'deletecart']);
+    Route::get('cart-count', [CartController::class, 'cartcount']);
+
+
 
 
 
