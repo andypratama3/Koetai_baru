@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('asset_user/assets/css/style.css')}}" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
+
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
 </head>
@@ -29,12 +30,12 @@
                 </li>
                 <li>
                     <a href="/shop">
-                        <button class="{{ request()->is('/shop') ? 'active' : '' }}" >BELANJA</button>
+                        <button class="{{ request()->is('shop') ? 'active' : '' }}" >BELANJA</button>
                     </a>
                 </li>
                 <li>
                     <a href="/cart">
-                        <button class="{{ request()->is('/cart') ? 'active' : '' }}" >CART</button>
+                        <button class="{{ request()->is('cart') ? 'active' : '' }}" >CART</button>
                     </a>
                 </li>
                 <li>

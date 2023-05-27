@@ -59,7 +59,7 @@
                     <div class="row mb-3">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Harga</label>
                         <div class="col-sm-10">
-                            <input class="form-control" name="harga" id="harga">
+                            <input type="number" class="form-control" name="harga" id="harga">
                         </div>
                     </div>
 

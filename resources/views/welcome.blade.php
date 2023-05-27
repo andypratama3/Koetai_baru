@@ -12,25 +12,19 @@
         </div>
         <div class="container-kanan">
           <div class="carouselnya">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                  aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                  aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                  aria-label="Slide 3"></button>
+
+                @foreach ($events as $key => $event)
+                    <li data-target="#carouselExampleIndicators{{ $key }}" data-slide-to="{{ $key }}" class="{{ !$loop->first ? : 'active' }}"></li>
+                @endforeach
               </div>
               <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="assets/img/thumb-comsoon.gif" class="" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/img/logo-kms1.png" class="" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/img/logo-kms2.png" class="" alt="...">
-                </div>
+                @foreach ($events as $event)
+                    <div class="carousel-item {{ !$loop->first ?: 'active' }}">
+                      <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="">
+                    </div>
+                @endforeach
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
@@ -48,12 +42,10 @@
         </div>
 
       </div>
-
     </div>
-
   </main>
 
-  <section class="sponsor">
+  {{-- <section class="sponsor">
     <div class="container">
       <h1>SPONSOR</h1>
       <div class="sponsor-utama">
@@ -68,7 +60,10 @@
         @endforeach
       </div>
     </div>
-  </section>
+  </section> --}}
 
 
+@include('layouts.script')
+
+<script></script>
 @endsection

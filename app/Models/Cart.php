@@ -17,7 +17,13 @@ class Cart extends Model
         'user_id',
         'prod_id',
         'prod_qty',
+        'prod_ukuran',
     ];
-    
+
+    public function produks(){
+        return $this->belongsTo(Produk::class, 'prod_id', 'id');
+
+    }
 
 }
+

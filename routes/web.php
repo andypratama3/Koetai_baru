@@ -37,6 +37,11 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
 
     Route::resource('cart', CartController::class, ['names' => 'cart']);
     Route::post('add-to-cart', [CartController::class, 'addtocart']);
+    Route::post('update-cart', [CartController::class, 'updatecart']);
+    Route::post('delete-cart', [CartController::class, 'deletecart']);
+
+
+
 });
 
 Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], function () {
@@ -50,5 +55,6 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], func
     Route::resource('tiket', TiketController::class, ['names' => 'dashboard.tiket']);
 
 });
+
 
 

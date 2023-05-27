@@ -617,6 +617,33 @@ main .container .container-beranda .container-kanan h3 {
     width: 100%;
 
 }
+.produk-klik .konten-bawah .ukuran .radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.produk-klik .konten-bawah .ukuran .radio-inputs .radio input {
+    display: none;
+}
+
+.produk-klik .konten-bawah .ukuran .radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    width: 40px;
+    padding: 5px 0;
+    color: var(--primary);
+    transition: all .15s ease-in-out;
+}
+
+.produk-klik .konten-bawah .ukuran .radio-inputs .radio input:checked+.name {
+    background-color: rgba(255, 255, 255, .1);
+    box-shadow: 0 0 5px #111;
+    font-weight: 600;
+}
 
 .produk-klik .konten-atas .teks-gambar p {
     font-weight: bold;
@@ -626,11 +653,6 @@ main .container .container-beranda .container-kanan h3 {
 .produk-klik .konten-atas .teks-gambar span {
     font-weight: 400;
 }
-
-.produk-klik .konten-bawah {
-    /* border: 2px blue solid; */
-}
-
 .produk-klik .konten-bawah .ukuran p {
     font-size: 15px;
     margin: 10px 0 5px;
@@ -650,12 +672,55 @@ main .container .container-beranda .container-kanan h3 {
 }
 
 .produk-klik .konten-bawah .ukuran button:hover {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
+    text-shadow: 0 0 5px var(--primary);
+}
+
+.produk-klik .konten-bawah .ukuran .radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: var(--secondary);
+    /* box-sizing: border-box; */
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    margin-top: 10px;
+    width: 120px;
+    font-size: 12px;
+}
+
+.produk-klik .konten-bawah .ukuran .radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.produk-klik .konten-bawah .ukuran .radio-inputs .radio input {
+    display: none;
+}
+
+.produk-klik .konten-bawah .ukuran .radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    width: 40px;
+    padding: 5px 0;
+    color: var(--primary);
+    transition: all .15s ease-in-out;
+}
+
+.produk-klik .konten-bawah .ukuran .radio-inputs .radio input:checked+.name {
+    background-color: rgba(255, 255, 255, .1);
+    box-shadow: 0 0 5px #111;
+    font-weight: 600;
 }
 
 .produk-klik .konten-bawah .jumlah {
     display: flex;
     align-items: end;
+    margin-top: 10px;
 }
 
 .produk-klik .konten-bawah .jumlah p {
@@ -837,6 +902,136 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 
 /* AKHIR CONTAINER PESAN TIKET */
 /* ===================================================================== */
+/* CONTAINER KERANJANG*/
+.main-keranjang {
+    display: flex;
+    justify-content: center;
+    /* border: 1px blue solid; */
+    height: auto;
+    margin-top: 0px;
+}
+
+.link-keluar-keranjang .btn-keluar-keranjang {
+    width: 60px;
+    height: 40px;
+    /* border: 1px red solid; */
+    border-radius: 20px;
+    position: absolute;
+    top: 11%;
+    left: 10%;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.link-keluar-keranjang .btn-keluar-keranjang:hover {
+    text-shadow: 0 0 10px var(--primary);
+}
+
+.link-keluar-keranjang .btn-keluar-keranjang:active {
+    transform: scale(0.95);
+}
+
+.btn-keluar-keranjang i {
+    font-size: 32px;
+    color: var(--primary);
+}
+
+.container-keranjang {
+    /* border: 2px red solid; */
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    border-radius: 20px;
+    background-color: var(--secondary);
+    z-index: 0;
+}
+
+.container-keranjang .container-kiri {
+    width: 100%;
+    /* border: 1px yellow solid; */
+    padding: 30px 60px;
+    color: var(--putih);
+    font-size: 18px;
+}
+
+.container-keranjang .container-kiri .isinya {
+    width: 100%;
+    height: 100%;
+    /* border: 2px green solid; */
+}
+
+.container-keranjang .container-kiri .isinya h1 {
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+.container-keranjang .container-kiri .isinya .list-produk {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    /* border: 2px red solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-keranjang .container-kiri .isinya .list-produk .gambar-produk {
+    padding: 10px 10px 10px 0;
+    /* border: 2px yellow solid; */
+}
+
+.container-keranjang .container-kiri .isinya .list-produk .gambar-produk img {
+    width: 100px;
+    height: 100px;
+    margin-right: 80px;
+}
+
+.container-keranjang .container-kiri .isinya .list-produk .produk-ukuran {
+    /* border: 2px blue solid; */
+    width: 500px;
+    margin-left: -50px;
+
+}
+
+.container-keranjang .container-kiri .isinya .list-produk .jumlah  .no {
+    border: 3px var(--putih) solid;
+    border-radius: 10px;
+    width: 40px;
+    padding: 0 10px;
+}
+.container-keranjang .container-kiri .isinya .list-produk .jumlah  .minus {
+    border: 3px var(--putih) solid;
+    border-radius: 10px;
+    width: 30px;
+    text-align: center;
+    padding: 0 10px;
+}
+.container-keranjang .container-kiri .isinya .list-produk .jumlah .plus {
+    border: 3px var(--putih) solid;
+    border-radius: 10px;
+    text-align: center;
+    width: 30px;
+    padding: 0 10px;
+}
+
+
+.container-keranjang .container-kiri .isinya .list-produk .harga {
+    /* border: 2px green solid; */
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+.btn-keranjang{
+    color: var(--primary);
+}
+
+/* AKHIR CONTAINER KERANJANG*/
+/* ===================================================================== */
 
 /* ===================================================================== */
 /* CONTAINER SPONSOR */
@@ -857,12 +1052,12 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 .sponsor .container {
     width: auto;
     padding: 10px;
+
     /* border: 3px #fff solid; */
 
 }
 
 .sponsor .container h1 {
-    color: var(--bg);
     text-align: center;
     font-size: 24px;
     font-weight: bold;

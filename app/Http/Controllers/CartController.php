@@ -13,6 +13,7 @@ class CartController extends Controller
     {
         $produk_id = $request->input('prod_id');
         $produk_qty = $request->input('prod_qty');
+        $produk_ukuran = $request->input('prod_ukuran');
 
         if(Auth::check()){
 
@@ -22,25 +23,59 @@ class CartController extends Controller
             {
                 if(Cart::where('prod_id', $produk_id)->where('user_id',Auth::id())->exists())
                 {
-                    return response()->json(['status' => $produk_cek->name. ' Sudah Ada Di Keranjang']);
+                    return response()->json(['status' => $produk_cek->nama. ' Sudah Ada Di Keranjang']);
                 }else{
                 $cartItem = new Cart();
                 $cartItem->prod_id = $produk_id;
                 $cartItem->user_id = Auth::id();
                 $cartItem->prod_qty = $produk_qty;
+                $cartItem->prod_ukuran = $produk_ukuran;
                 $cartItem->save();
-                return response()->json(['status' => $produk_cek->name. ' Di Tambahkan Ke Keranjang']);
+                return response()->json(['status' => $produk_cek->nama. ' Di Tambahkan Ke Keranjang']);
                 }
             }
         }else{
-            return \redirect('login')->response()->json(['status' => "Login To continue"]);
+            return view('auth.login');
         }
     }
 
     public function index()
     {
         $carts = Cart::where('user_id', Auth::id())->get();
-        return view('shop.cart', compact('cart'));
+        return view('shop.cart', compact('carts'));
+    }
+    public function updatecart(Request $request){
+        $produk_id = $request->input('prod_id');
+        $produk_qty = $request->input('prod_qty');
+
+        if(Auth::check()){
+            if(Cart::where('prod_id',$produk_id)->where('user_id',Auth::id())->exists())
+            {
+                $cart = Cart::where('prod_id',$produk_id)->where('user_id',Auth::id())->first();
+                $cart->prod_qty = $produk_qty;
+                $cart->update();
+                return response()->json(['status'=>'Quantity Update']);
+            }
+        }
+    }
+
+    public function deletecart(Request $request){
+
+        if(Auth::check())
+        {
+            $produk_id = $request->input('prod_id');
+            if(Cart::where('prod_id', $produk_id)->where('user_id', Auth::id())->exists())
+            {
+            $cartItem = Cart::where('prod_id', $produk_id)->where('user_id', Auth::id())->first();
+            $cartItem->delete();
+            return response()->json(['status' => "Cart HasBeen Delete"]);
+            }
+        }
+        else{
+            return response()->json(['status' => "Login To continue"]);
+
+        }
     }
 
 }
+
