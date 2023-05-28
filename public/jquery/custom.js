@@ -35,7 +35,6 @@ $(document).ready(function () {
                 }
             });
     });
-
     $(document).on('click', '#details', function () {
         var nama = $(this).data('nama');
         var harga = $(this).data('harga');
@@ -51,8 +50,7 @@ $(document).ready(function () {
         $('#stock').text(stock);
 
     });
-
-    $('.btncart').click(function (e) {
+    $(document).on('click','.btncart', function (e) {
         var produk_id = $(this).closest('.detail').find('.prod_id').val();
         var produk_qty = $(this).closest('.detail').find('.prod_qty').val();
         var produk_ukuran = $(this).closest('.detail').find('.prod_ukuran').val();
@@ -71,6 +69,7 @@ $(document).ready(function () {
                 'prod_ukuran': produk_ukuran
             },
             success: function (response) {
+                loadcart();
                 Swal.fire({
                 icon: 'success',
                 title: 'Berhasil',
@@ -80,7 +79,7 @@ $(document).ready(function () {
         });
 
     });
-    $('.increment-btn').click(function (e){
+    $(document).on('click','.increment-btn', function (e) {
         e.preventDefault();
 
         var inc_value = $(this).closest('.produk_data').find('.qty-input').val();
@@ -90,9 +89,8 @@ $(document).ready(function () {
             value++;
             $(this).closest('.produk_data').find('.qty-input').val(value);
     }
-
     });
-    $('.decrement-btn').click(function (e){
+    $(document).on('click','.decrement-btn', function (e) {
     e.preventDefault();
     var dec_value = $(this).closest('.produk_data').find('.qty-input').val();
     var value = parseInt(dec_value, 10);
@@ -102,8 +100,7 @@ $(document).ready(function () {
         $(this).closest('.produk_data').find('.qty-input').val(value);
     }
     });
-
-    $('.delete-cart').click(function (e){
+    $(document).on('click','.delete-cart', function (e) {
         e.preventDefault();
 
         var produk_id = $(this).closest('.produk_data').find('.prod_id').val();
@@ -120,7 +117,9 @@ $(document).ready(function () {
 
             },
             success: function (response){
-                window.location.reload();
+                // window.location.reload();
+                loadcart();
+                $('.cartitems').load(location.href + " .cartitems");
                 Swal.fire(
                 'Success',
                 response.status,
@@ -130,7 +129,7 @@ $(document).ready(function () {
             }
         });
     });
-    $('.changeQuantity').click(function (e){
+    $(document).on('click','.changeQuantity', function (e) {
         e.preventDefault();
 
         var produk_id = $(this).closest('.produk_data').find('.prod_id').val();
@@ -149,8 +148,10 @@ $(document).ready(function () {
             url: "update-cart",
             data: data,
             success: function (response){
-                window.location.reload();
+                $('.cartitems').load(location.href + " .cartitems");
             },
       });
     });
 });
+// $(document).on('click', 'increment-btn', function () {
+

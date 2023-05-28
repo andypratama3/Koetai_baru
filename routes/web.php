@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CrewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\OrderTiketController;
@@ -28,7 +29,9 @@ use App\Http\Controllers\Dashboard\DashboardController;
 
 Route::get('/', WelcomeController::class)->name('index');
 Route::get('shop', [ShopController::class, 'index']);
-//tiket
+Route::get('crew', [CrewController::class, 'index']);
+
+
 Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
     Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
     Route::resource('list-order-tiket', ListOrderTiketController::class, ['names' => 'list']);
