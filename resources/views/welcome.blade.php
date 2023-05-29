@@ -11,7 +11,7 @@
           <img src="{{ asset('asset_user/assets/img/thumb-tenkita.png')}}" alt="">
         </div>
         <div class="container-kanan">
-          <div class="carouselnya">
+          <div class="carousel-swiper">
             <!-- Slider main container -->
             <div class="carouselnya">
                 <!-- Slider main container -->

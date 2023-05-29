@@ -31,36 +31,37 @@
     <header>
         <nav class="nav-bar">
             <a href="/" class="teks-kms">KOETAI MAHKOTA SOUNDLINE</a>
-            <ul class="menu-nav">
+            <ul>
                 <li>
                     <a href="/">
-                        <button class="{{ request()->is('/') ? 'active' : '' }}" >BERANDA</button>
+                        <button class="{{ request()->is('/') ? 'active' : '' }}" >Beranda</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/crew">
+                        <button class="{{ request()->is('crew') ? 'active' : '' }}" >Semua Tim</button>
                     </a>
                 </li>
                 <li>
                     <a href="/shop">
-                        <button class="{{ request()->is('shop') ? 'active' : '' }}" >BELANJA</button>
+                        <button class="{{ request()->is('shop') ? 'active' : '' }}" >Belanja</button>
                     </a>
                 </li>
                 <li>
                     <a href="/cart">
                         <button class="{{ request()->is('cart') ? 'active' : '' }}">
-                            {{-- <box-icon name='cart' class="cart-icon"></box-icon> --}}
-                            KERANJANG
-                            <span class="badge badge-pill cart-count" style="background-color: red;">0</span>
+                            <i class='bx bx-cart cart-icon'></i>
+                            <p>Keranjang</p>
+                            {{-- //pokoknya pake class yang udah ku buat --}}
+                            <span class="badge badge-pill cart-count">0</span>
                         </button>
-                    </a>
-                </li>
-                <li>
-                    <a href="/crew">
-                        <button class="{{ request()->is('crew') ? 'active' : '' }}" >SEMUA TIM</button>
                     </a>
                 </li>
             </ul>
             <ul class="menu-nav">
                 <li>
                     <a href="/tiket">
-                        <button class="{{ request()->is('/tiket') ? 'active' : '' }}" >TIKET</button>
+                        <button class="{{ request()->is('/tiket') ? 'active' : '' }}" >Tiket</button>
                     </a>
                 </li>
                 @if (Route::has('login'))
@@ -89,27 +90,27 @@
         <div class="dropdown-menu">
             <li>
                 <a href="/">
-                    <button class="{{ request()->is('/login') ? 'active' : '' }}" >BERANDA</button>
-                </a>
-            </li>
-            <li>
-                <a href="/shop">
-                    <button class="{{ request()->is('/shop') ? 'active' : '' }}" >BELANJA</button>
+                    <button class="{{ request()->is('/login') ? 'active' : '' }}" >Beranda</button>
                 </a>
             </li>
             <li>
                 <a href="/crew">
-                    <button class="{{ request()->is('/crew') ? 'active' : '' }}" >SEMUA TIM</button>
+                    <button class="{{ request()->is('/crew') ? 'active' : '' }}" >Semua Tim</button>
+                </a>
+            </li>
+            <li>
+                <a href="/shop">
+                    <button class="{{ request()->is('/shop') ? 'active' : '' }}" >Belanja`</button>
                 </a>
             </li>
             <li>
                 <a href="/tiket">
-                    <button class="{{ request()->is('/tiket') ? 'active' : '' }}" >TIKET</button>
+                    <button class="{{ request()->is('/tiket') ? 'active' : '' }}" >Tiket</button>
                 </a>
             </li>
             <li>
                 <a href="/login">
-                    <button class="{{ request()->is('/shop') ? 'active' : '' }}" >LOGIN</button>
+                    <button class="{{ request()->is('/shop') ? 'active' : '' }}" >Login</button>
                 </a>
             </li>
         </div>

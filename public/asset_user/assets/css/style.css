@@ -111,36 +111,54 @@ header .nav-bar ul li {
     display: inline-block;
 }
 
-header ul li button {
+header .nav-bar ul li a {
+    text-decoration: none;
+    /* color: var(--primary); */
+}
+
+header ul li a button {
     font-weight: 500;
     font-size: 12px;
-    color: var(--primary);
-    padding: 5px 20px;
     background-color: var(--secondary);
+    color: var(--primary);
     border-radius: 20px;
     border: 1px var(--secondary) solid;
-    cursor: pointer;
-    transition: 0.1s all;
-}
-
-header .nav-bar ul li button {
+    padding: 0 20px;
+    height: 28px;
     margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s all;
+    cursor: pointer;
 }
 
-header ul li button:hover {
-    border: 1px rgba(255, 183, 22, 0.8) solid;
-}
-header ul li .cart-icon{
-    background-color: none;
-    display: inline-block;
-    margin-right: 10px;
-    height: inherit;
-
+header ul li a button:hover {
+    border: 1px var(--primary) solid;
 }
 
-header ul li button.active {
+header ul li a button .cart-icon {
+    /* position: absolute   ; */
+    width: auto;
+    height: auto;
+    font-size: 18px;
+    /* border: 2px red solid; */
+}
+
+header ul li a button p {
+    /* transform: translateX(3px); */
+    margin: 5px -15px 5px 0;
+    /* border: 2px red solid; */
+}
+
+header ul li a button .cart-count {
+    background-color: red;
+    transform: translateX(25px) translateY(-12px) !important;
+}
+
+header ul li a button.active {
     border: 1px #FFB716 solid;
-    color: white;
+    color: white !important;
     background-color: var(--primary);
 }
 
@@ -289,7 +307,7 @@ main .container .container-beranda .container-kanan {
     justify-content: center;
     margin-left: 0;
     text-align: center;
-    /* border: 1px #fff solid; */
+    /* border: 5px var(--primary) solid; */
 }
 
 main .container .container-beranda .container-kanan .carouselnya {
@@ -310,8 +328,8 @@ main .container .container-beranda .container-kanan .carouselnya {
 
 main .container .container-beranda .container-kanan .carouselnya .swiper-wrapper img {
     object-fit: cover;
-    width: 90vh;
-    height: 60vh;
+    width: 100%;
+    height: 58vh;
 }
 
 main .container .container-beranda .container-kanan {
@@ -329,8 +347,8 @@ main .container .container-beranda .container-kanan h3 {
     font-weight: bold;
     text-align: center;
 }
-main .swiper-pagination *
-{
+
+main .swiper-pagination * {
     background: var(--primary);
 }
 
@@ -629,6 +647,7 @@ main .swiper-pagination *
     width: 100%;
 
 }
+
 .produk-klik .konten-bawah .ukuran .radio-inputs .radio {
     flex: 1 1 auto;
     text-align: center;
@@ -665,6 +684,7 @@ main .swiper-pagination *
 .produk-klik .konten-atas .teks-gambar span {
     font-weight: 400;
 }
+
 .produk-klik .konten-bawah .ukuran p {
     font-size: 15px;
     margin: 10px 0 5px;
@@ -1010,20 +1030,22 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 
 }
 
-.container-keranjang .container-kiri .isinya .list-produk .jumlah  .no {
+.container-keranjang .container-kiri .isinya .list-produk .jumlah .no {
     border: 3px var(--putih) solid;
     border-radius: 10px;
     width: 50px;
     text-align: center;
     padding: 0 10px;
 }
-.container-keranjang .container-kiri .isinya .list-produk .jumlah  .minus {
+
+.container-keranjang .container-kiri .isinya .list-produk .jumlah .minus {
     border: 3px var(--putih) solid;
     border-radius: 10px;
     width: 30px;
 
     padding: 0 10px;
 }
+
 .container-keranjang .container-kiri .isinya .list-produk .jumlah .plus {
     border: 3px var(--putih) solid;
     border-radius: 10px;
@@ -1039,7 +1061,8 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     text-align: right;
     margin-right: 10px;
 }
-.btn-keranjang{
+
+.btn-keranjang {
     color: var(--primary);
 }
 
@@ -1412,9 +1435,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 
 /* ===================================================================== */
 /* RESPONSIVE WIDTH 1900px*/
-@media (max-width: 1900px) {
-    
-}
+@media (max-width: 1900px) {}
 
 /* AKHIR RESPONSIVE WIDTH 1900px */
 /* ===================================================================== */
@@ -1448,6 +1469,12 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
         padding-left: 1rem;
         padding-right: 1rem;
     }
+
+    header ul li a button .cart-count {
+        background-color: red;
+        transform: translateX(15px) translateY(-12px) !important;
+    }
+
 
     main .container {
         width: 90%;
@@ -1486,6 +1513,11 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
         font-size: 10px;
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+
+    header ul li a button .cart-count {
+        background-color: red;
+        transform: translateX(15px) translateY(-12px) !important;
     }
 
     main .container {
@@ -1541,12 +1573,17 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 /* ===================================================================== */
 
 /* ===================================================================== */
-/* RESPONSIVE WIDTH 768px */
-@media (max-width: 768px) {
+/* RESPONSIVE WIDTH 788px */
+@media (max-width: 788px) {
     header .nav-bar .teks-kms {
         font-size: 18px;
 
     }
+
+    header .nav-bar ul {
+        display: none;
+    }
+
     header .nav-bar .tombol-menu {
         display: block;
         cursor: pointer;
@@ -1644,7 +1681,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 
 }
 
-/* AKHIR RESPONSIVE WIDTH 768px */
+/* AKHIR RESPONSIVE WIDTH 788px */
 /* ===================================================================== */
 
 /* ===================================================================== */

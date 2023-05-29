@@ -114,108 +114,108 @@
 
 
     <!-- Modal -->
-<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body table-responsive">
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <td>Nama</td>
-                            <td><span id="nama"></span></td>
-                        </tr>
-                        <tr>
-                            <td>kategori</td>
-                            <td><span id="kategori"></span></td>
-                        </tr>
-                        <tr>
-                            <td>Jumlah</td>
-                            <td><span id="jumlah"></span> Tiket</td>
-                        </tr>
-                        <tr>
-                            <td>Total</td>
-                            <td>Rp. <span id="total"></span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="pay-button" class="btn btn-primary">Bayar</button>
+    <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body table-responsive">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>Nama</td>
+                                <td><span id="nama"></span></td>
+                            </tr>
+                            <tr>
+                                <td>kategori</td>
+                                <td><span id="kategori"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah</td>
+                                <td><span id="jumlah"></span> Tiket</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>Rp. <span id="total"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="pay-button" class="btn btn-primary">Bayar</button>
+                    </div>
                 </div>
             </div>
         </div>
-</div>
-    @include('layouts.script')
-    <script>
-    $(".delete").click(function (e) {
-        slug = e.target.dataset.id;
-        swal({
-                title: 'Anda yakin?',
-                text: 'Data yang sudah dihapus tidak dapat dikembalikan!',
-                icon: 'warning',
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    $(`#delete-${slug}`).submit();
-                } else {
-                    // Do Nothing
-                }
+        @include('layouts.script')
+        <script>
+            $(".delete").click(function (e) {
+                slug = e.target.dataset.id;
+                swal({
+                        title: 'Anda yakin?',
+                        text: 'Data yang sudah dihapus tidak dapat dikembalikan!',
+                        icon: 'warning',
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $(`#delete-${slug}`).submit();
+                        } else {
+                            // Do Nothing
+                        }
+                    });
             });
-    });
 
-    $(document).ready(function () {
-        $(document).on('click', '#details', function () {
-            var nama = $(this).data('nama');
-            var kategori = $(this).data('kategori');
-            var jumlah = $(this).data('jumlah');
-            var total = $(this).data('total');
+            $(document).ready(function () {
+                $(document).on('click', '#details', function () {
+                    var nama = $(this).data('nama');
+                    var kategori = $(this).data('kategori');
+                    var jumlah = $(this).data('jumlah');
+                    var total = $(this).data('total');
 
-            $('#nama').text(nama);
-            $('#kategori').text(kategori);
-            $('#jumlah').text(jumlah);
-            $('#total').text(total);
+                    $('#nama').text(nama);
+                    $('#kategori').text(kategori);
+                    $('#jumlah').text(jumlah);
+                    $('#total').text(total);
 
-        });
-    });
-    </script>
+                });
+            });
+        </script>
 
-{{-- <script type="text/javascript">
+        {{-- <script type="text/javascript">
     // For example trigger on button clicked, or any time you need
     var payButton = document.getElementById('pay-button');
     payButton.addEventListener('click', function () {
         // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
         window.snap.pay('{{ $snapToken }}', {
-            onSuccess: function (result) {
-                /* You may add your own implementation here */
-                alert("payment success!");
-                console.log(result);
-            },
-            onPending: function (result) {
-                /* You may add your own implementation here */
-                alert("wating your payment!");
-                console.log(result);
-            },
-            onError: function (result) {
-                /* You may add your own implementation here */
-                alert("payment failed!");
-                console.log(result);
-            },
-            onClose: function () {
-                /* You may add your own implementation here */
-                alert('you closed the popup without finishing the payment');
-            }
+        onSuccess: function (result) {
+        /* You may add your own implementation here */
+        alert("payment success!");
+        console.log(result);
+        },
+        onPending: function (result) {
+        /* You may add your own implementation here */
+        alert("wating your payment!");
+        console.log(result);
+        },
+        onError: function (result) {
+        /* You may add your own implementation here */
+        alert("payment failed!");
+        console.log(result);
+        },
+        onClose: function () {
+        /* You may add your own implementation here */
+        alert('you closed the popup without finishing the payment');
+        }
         })
-    });
-</script> --}}
+        });
+        </script> --}}
 </body>
 
 </html>
