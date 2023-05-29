@@ -31,10 +31,11 @@ Route::get('/', WelcomeController::class)->name('index');
 Route::get('shop', [ShopController::class, 'index']);
 Route::get('crew', [CrewController::class, 'index']);
 
-
 Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
     Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
-    Route::resource('list-order-tiket', ListOrderTiketController::class, ['names' => 'list']);
+    Route::post('pesan-tiket', [OrderTiketController::class, 'store']);
+    Route::get('pesanan-tiket', [OrderTiketController::class, 'order_tiket']);
+
 
     // Route::resource('shop', ShopController::class, ['names' => 'shop']);
 

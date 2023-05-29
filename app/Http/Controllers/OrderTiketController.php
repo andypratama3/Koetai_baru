@@ -20,10 +20,23 @@ class OrderTiketController extends Controller
     {
         $storeOrderTiketAction->execute($request);
 
-        return \redirect('list-order-tiket')->with('success','Tiket berhasil Di Pesan');
+        return response()->json(['status'=>'Tiket Telah Di Pesan']);;
+    }
+    public function order_tiket(){
+
+        $no = 0;
+        $orders = OrderTiket::where('user_id',Auth::id())->get();
+        return view('tiket.list-order-tiket', compact('orders','no'));
     }
     
-     
+    public function destroy($slug){
+        $order = OrderTiket::where('slug', $slug)->firstOrFail();
+        $order->delete();
+        return redirect()->route('list.index');
+    }
+    
+
+
 
 
 }

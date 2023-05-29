@@ -79,6 +79,7 @@
   pagination: {
     el: '.swiper-pagination',
     type: "bullets",
+    clickable: true,
   },
 
   // Navigation arrows
