@@ -36,6 +36,9 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
     Route::post('pesan-tiket', [OrderTiketController::class, 'store']);
     Route::get('pesanan-tiket', [OrderTiketController::class, 'order_tiket']);
 
+    Route::post('update-tiket', [OrderTiketController::class, 'update_tiket']);
+    Route::post('delete-pesanan-tiket', [OrderTiketController::class, 'destroy']);
+
 
     // Route::resource('shop', ShopController::class, ['names' => 'shop']);
 

@@ -28,15 +28,38 @@ class OrderTiketController extends Controller
         $orders = OrderTiket::where('user_id',Auth::id())->get();
         return view('tiket.list-order-tiket', compact('orders','no'));
     }
-    
-    public function destroy($slug){
-        $order = OrderTiket::where('slug', $slug)->firstOrFail();
-        $order->delete();
-        return redirect()->route('list.index');
+    public function update_tiket(Request $request){
+
+        $order_id = $request->input("id");
+        $qty = $request->input("jumlah");
+
+        if(Auth::check()){
+            if(OrderTiket::where('id',$order_id)->where('user_id',Auth::id())->exists())
+            {
+                $order = OrderTiket::where('id',$order_id)->where('user_id',Auth::id())->first();
+                $order->jumlah = $qty;
+                $order->update();
+                return response()->json(['status'=>'Quantity Update']);
+            }
+        }
     }
-    
+    public function destroy(Request $request){
 
 
+        if(Auth::check())
+        {
+            $order_id = $request->input('id');
+            if(OrderTiket::where('id', $order_id)->where('user_id', Auth::id())->exists())
+            {
+            $order = OrderTiket::where('id', $order_id)->where('user_id', Auth::id())->first();
+            $order->delete();
+            return response()->json(['status' => "Tiket HasBeen Delete"]);
+            }
+        }
+        else{
+            return response()->json(['status' => "Login To continue"]);
 
+        }
+    }
 
 }

@@ -18,23 +18,6 @@ $(document).ready(function () {
                 }
             });
         }
-    $(".delete").click(function (e) {
-        slug = e.target.dataset.id;
-        swal({
-                title: 'Anda yakin?',
-                text: 'Data yang sudah dihapus tidak dapat dikembalikan!',
-                icon: 'warning',
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    $(`#delete-${slug}`).submit();
-                } else {
-                    // Do Nothing
-                }
-            });
-    });
     $(document).on('click', '#details', function () {
         var nama = $(this).data('nama');
         var harga = $(this).data('harga');
@@ -180,11 +163,87 @@ $(document).ready(function () {
                     icon: 'success',
                     title: 'Berhasil',
                     text: response.status,
-                })
+                });
                 window.location.href = "/pesanan-tiket";
             },
       });
     });
+    $(document).on('click','.change-qty-tiket', function (e) {
+        e.preventDefault();
+
+        var id = $(this).closest('.pesan_tiket').find('.order_id').val();
+        var qty = $(this).closest('.pesan_tiket').find('.qty-input-tiket').val();
+        data = {
+            'id': id,
+            'jumlah': qty,
+        }
+        $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+        $.ajax({
+            method: "POST",
+            url: "update-tiket",
+            data: data,
+            success: function (response){
+                
+                $('.pesantiket').load(location.href + " .pesantiket");
+            },
+      });
+    });
+
+    $(document).on('click','.delete-tiket-order', function (e) {
+        e.preventDefault();
+
+        var order_id = $(this).closest('.pesan_tiket').find('.order_id').val();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+        $.ajax({
+            method: "POST",
+            url: "delete-pesanan-tiket",
+            data: {
+                'id': order_id,
+
+            },
+            success: function (response){
+                // window.location.reload();
+                loadcart();
+                $('.pesantiket').load(location.href + " .pesantiket");
+                Swal.fire(
+                'Success',
+                response.status,
+                'success',
+                )
+                // loadcart();
+            }
+        });
+    });
+    $(document).on('click','.increment-btn-tiket', function (e) {
+        e.preventDefault();
+
+        var inc_value = $(this).closest('.pesan_tiket').find('.qty-input-tiket').val();
+        var value = parseInt(inc_value, 10);
+        value = isNaN(value) ? 0 : value;
+        if(value < 10 ){
+            value++;
+            $(this).closest('.pesan_tiket').find('.qty-input-tiket').val(value);
+    }
+    });
+    $(document).on('click','.decrement-btn-tiket', function (e) {
+    e.preventDefault();
+    var dec_value = $(this).closest('.pesan_tiket').find('.qty-input-tiket').val();
+    var value = parseInt(dec_value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value > 1 ){
+        value--;
+        $(this).closest('.pesan_tiket').find('.qty-input-tiket').val(value);
+    }
+    });
+
 });
 // $(document).on('click', 'increment-btn', function () {
 
