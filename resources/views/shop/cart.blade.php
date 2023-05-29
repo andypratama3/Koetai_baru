@@ -52,7 +52,7 @@
 
             @else
             <div class="card-body text-center">
-                <h2>Your <i class="bi bi-cart"></i>Keranjang Anda Kosong!</h2>
+                <h2>Keranjang<i class="bi bi-cart"></i>Anda Kosong!</h2>
                 <br>
                 <a href="{{url('shop')}}" class="btn btn-keranjang align-center" style="background-color: #FFB716;">Continue Shopping</a>
             </div>
