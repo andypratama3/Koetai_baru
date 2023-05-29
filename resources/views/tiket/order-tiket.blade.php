@@ -8,33 +8,39 @@
                 <img src="assets/img/logo-kms1.png" alt="">
                 <h1>PESAN TIKET</h1>
             </div>
-            <div class="pesantik-menu">
+            <div class="pesantik-menu pesan_tiket">
                 <div class="form-menu">
                     <div class="pilihan">
                         <div class="pesantik-menu">
                             <div class="form-menu">
                                 <div class="pilihan">
-                                    <form action="{{ route('tiket.store') }}" method="POST">
+                                    @php
+                                        $total = 0;
+                                    @endphp
+                                    {{-- <form action="{{ route('tiket.store') }}" method="POST"> --}}
                                         @csrf
                                         <div class="label-pesantik">Nama</div>
-                                        <input type="text" name="nama" id="nama" placeholder="nama" class="form-control">
+                                        <input type="text" name="nama" id="nama" placeholder="nama" class="form-control nama">
                                         <br>
                                         <div class="label-pesantik">Jenis Tiket</div>
-                                        <select name="tiket_id" id="" class="form-select form-control">
+                                        <select name="tiket_id" id="" class="form-select form-control tiket_id">
 
                                             <option value="">Pilih Tiket</option>
                                             @foreach ($tikets as $tiket)
                                             <option value="{{ $tiket->id }}">{{ $tiket->kategori }} || Harga Rp.
                                                 {{ $tiket->harga }}</option>
-
+                                                <input type="hidden" name="harga" value="{{ $tiket->harga }}" class="harga">
                                             @endforeach
                                             <i class="bx bx-chevron-down"></i>
                                         </select>
 
                                         <div class="label-pesantik">Jumlah</div>
-                                        <input type="number" name="jumlah" class="form-control" id="jumlah">
-                                        <button type="submit" class="btn btn-primary checkout">Pesan Tiket</button>
-                                    </form>
+                                        <input type="number" name="jumlah" class="form-control qty" id="jumlah">
+
+                                        <input type="hidden" name="total" value="0" class="total">
+                                        <br>
+                                        <button type="submit" class="btn btn-primary pesan-tiket">Pesan Tiket</button>
+                                    {{-- </form> --}}
                                 </div>
                             </div>
                         </div>
@@ -44,4 +50,5 @@
         </div>
     </div>
 </main>
+@include('layouts.script')
 @endsection

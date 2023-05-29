@@ -1,47 +1,78 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@extends('layouts.user')
+@section('title', 'Shop')
+@section('content')
 
-    <title>@yield('title')</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+<div class="container-belanja cartitems">
+<div class="main-keranjang">
+    <div class="container-keranjang">
+        <div class="container-kiri">
+            <div class="isinya">
+                <h1>Pesanan Tiket</h1>
+                @if ($orders->count() > 0)
+                @php $totals = 0; @endphp
+                @foreach ($orders as $order)
+                @php $total = 0; @endphp
+                <div class="list-produk produk_data">
+                    <div class="produk-ukuran">
+                        <div class="produk">
+                            <p>{{ $order->nama }}</p>
+                        </div>
 
-    <!-- Favicons -->
-    <link href="{{ asset('dashboard_assets/assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('dashboard_assets/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+                    </div>
+                    @if($order->tiket->stok > $order->jumlah)
+                    {{-- <input type="hidden" value="{{ $order->prod_id }}" class="prod_id"> --}}
+                    <div class="jumlah">
+                        <div class=" text-center mb-3" style="width: 130px;">
+                        <button class="minus decrement-btn">-</button>
+                        <input class="no qty-input qty-input" type="text" name="quantity " value="{{ $order->jumlah }}">
+                        <button class="plus  increment-btn">+</button>
+                        </div>
+                    </div>
+                    @php $total += $order->tiket->harga * $order->jumlah; @endphp
+                    @else
+                    <h6>Out Of Stock</h6>
+                    @endif
+                    <h5>Total : Rp. {{ $total }}</h5>
+                    <a href="#" data-id="{{ $order->slug }}" class="btn btn-danger delete"
+                        title="Hapus">
+                        <form action="{{ route('tiket.destroy', $order->slug) }}"
+                            id="delete-{{ $order->slug }}" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method('delete')
+                        </form>
+                        Delete
+                        </a>
+                    <input type="hidden" class="prod_id" value="{{ $order->prod_id }}">
+                </div>
+                <hr>
+                @php $totals += $order->tiket->harga * $order->jumlah; @endphp
+                @endforeach
+                <div class="total float-end">
+                    <h5>Total Semua Rp. {{ $totals }}</h5>
+                    <a href="" class="btn btn-keranjang align-center float-end" style="background-color: #FFB716;">Bayar</a>
+                </div>
+            </div>
+            @else
+            <div class="card-body text-center">
+                <h2>Your <i class="bi bi-cart"></i>Keranjang Anda Kosong!</h2>
+                <br>
+                <a href="{{url('shop')}}" class="btn btn-keranjang align-center" style="background-color: #FFB716;">Continue Shopping</a>
+            </div>
+            @endif
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+        </div>
+    </div>
+</div>
+    @include('layouts.script')
 
-    <!-- Vendor CSS Files -->
-    <link href="{{ asset('dashboard_assets/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('dashboard_assets/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('dashboard_assets/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+@endsection
 
-    <link href="{{ asset('dashboard_assets/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('dashboard_assets/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
-    @stack('css')
-    <!-- Template Main CSS File -->
-    <link href="{{ asset('dashboard_assets/assets/css/style.css') }}" rel="stylesheet">
-    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
-        data-client-key="{{ config('midtrans.client_key') }}"></script>
-    <!-- =======================================================
-      * Template Name: NiceAdmin - v2.4.1
-      * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-      * Author: BootstrapMade.com
-      * License: https://bootstrapmade.com/license/
-        ======================================================== -->
-</head>
-
-<body>
-
+{{-- @extends('layouts.user')
+@section('title', 'Tiket')
+@section('content')
+<main>
     <div class="row">
         <!-- Left side columns -->
         <div class="col-lg-12">
@@ -82,15 +113,7 @@
                                             data-jumlah="<?=$order->jumlah ?>" data-total="<?=$total ?>">
                                             Check Out
                                         </button>
-                                        <a href="#" data-id="{{ $order->slug }}" class="btn btn-danger delete"
-                                            title="Hapus">
-                                            <form action="{{ route('list.destroy', $order->slug) }}"
-                                                id="delete-{{ $order->slug }}" method="POST"
-                                                enctype="multipart/form-data">
-                                                @csrf
-                                                @method('delete')
-                                            </form>
-                                            <i class="bi bi-trash">
+
                                     </td>
 
                                 </tr>
@@ -111,7 +134,7 @@
         </div>
     </div>
     <!-- Button trigger modal -->
-
+</main>
 
     <!-- Modal -->
 <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel"
@@ -153,24 +176,7 @@
         </div>
 </div>
     @include('layouts.script')
-    <script>
-    $(".delete").click(function (e) {
-        slug = e.target.dataset.id;
-        swal({
-                title: 'Anda yakin?',
-                text: 'Data yang sudah dihapus tidak dapat dikembalikan!',
-                icon: 'warning',
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    $(`#delete-${slug}`).submit();
-                } else {
-                    // Do Nothing
-                }
-            });
-    });
+
 
     $(document).ready(function () {
         $(document).on('click', '#details', function () {
@@ -216,6 +222,4 @@
         })
     });
 </script> --}}
-</body>
-
-</html>
+{{-- @endsection --}}

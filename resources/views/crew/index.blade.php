@@ -53,4 +53,5 @@
     </div>
 </div>
 </main>
+@include('layouts.script')
 @endsection

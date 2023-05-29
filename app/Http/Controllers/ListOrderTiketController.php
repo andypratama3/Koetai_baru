@@ -48,10 +48,6 @@ class ListOrderTiketController extends Controller
         $order = OrderTiket::where('slug',$slug)->firstOrFail()->get();
 
     }
-    public function destroy($slug){
-        $order = OrderTiket::where('slug', $slug)->firstOrFail();
-        $order->delete();
-        return redirect()->route('list.index');
-    }
+    
 
 }
