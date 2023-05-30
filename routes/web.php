@@ -32,9 +32,15 @@ Route::get('shop', [ShopController::class, 'index']);
 Route::get('crew', [CrewController::class, 'index']);
 
 Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
-    Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
-    Route::post('pesan-tiket', [OrderTiketController::class, 'store']);
-    Route::get('pesanan-tiket', [OrderTiketController::class, 'order_tiket']);
+    Route::get('tiket', [OrderTiketController::class, 'index']);
+    Route::post('tiket-order', [OrderTiketController::class, 'order_tiket']);
+
+    //listTiket
+    Route::get('order-list-tiket', [OrderTiketController::class, 'list_order']);
+    Route::post('bayar-tiket', [OrderTiketController::class, 'list_order']);
+
+    // Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
+    // Route::post('pesan-tiket', [OrderTiketController::class, 'store']);
 
     Route::post('update-tiket', [OrderTiketController::class, 'update_tiket']);
     Route::post('delete-pesanan-tiket', [OrderTiketController::class, 'destroy']);
@@ -65,6 +71,5 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], func
     Route::resource('tiket', TiketController::class, ['names' => 'dashboard.tiket']);
 
 });
-
 
 

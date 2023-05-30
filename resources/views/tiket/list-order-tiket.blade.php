@@ -1,6 +1,6 @@
 
 @extends('layouts.user')
-@section('title', 'Shop')
+@section('title', 'List Order Tiket')
 @section('content')
 
 <div class="container-belanja pesantiket">
@@ -34,16 +34,19 @@
                     <h6>Out Of Stock</h6>
                     @endif
                     <h5>Total : Rp. {{ $total }}</h5>
+                    <h5>{{ $order->status }}</h5>
                     <button class="btn btn-danger delete-tiket-order">Delete</button>
-
+                    <button class="btn btn-keranjang align-center float-end pay-button" style="background-color: #FFB716;">Bayar</button>
                     <input type="hidden" class="prod_id" value="{{ $order->prod_id }}">
                 </div>
                 <hr>
                 @php $totals += $order->tiket->harga * $order->jumlah; @endphp
+
                 @endforeach
+
                 <div class="total float-end">
                     <h5>Total Semua Rp. {{ $totals }}</h5>
-                    <a href="" class="btn btn-keranjang align-center float-end" style="background-color: #FFB716;">Bayar</a>
+                    <button id="pay-button" class="btn btn-keranjang align-center float-end pay-button" style="background-color: #FFB716;">Bayar</button>
                 </div>
             </div>
             @else
@@ -57,7 +60,7 @@
         </div>
     </div>
 </div>
-
+@include('layouts.script')
 <script>
     $(document).ready(function () {
         $(".delete").click(function (e) {
@@ -78,7 +81,33 @@
             });
     });
     });
-
     </script>
-    @include('layouts.script')
+
+ <script type="text/javascript">
+      // For example trigger on button clicked, or any time you need
+    //   var payButton = document.getElementById('pay-button');
+    $(document).on('click','.pay-button', function (e) {
+        // var order_id = $(this).closest('.pesan_tiket').find('.order_id').val();
+    //   payButton.addEventListener('click', function () {
+        // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+        window.snap.pay('{{$snapToken}}', {
+          onSuccess: function(result){
+            /* You may add your own implementation here */
+            alert("payment success!"); console.log(result);
+          },
+          onPending: function(result){
+            /* You may add your own implementation here */
+            alert("wating your payment!"); console.log(result);
+          },
+          onError: function(result){
+            /* You may add your own implementation here */
+            alert("payment failed!"); console.log(result);
+          },
+          onClose: function(){
+            /* You may add your own implementation here */
+            alert('you closed the popup without finishing the payment');
+          }
+        })
+      });
+</script>
 @endsection

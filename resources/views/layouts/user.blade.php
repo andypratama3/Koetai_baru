@@ -16,6 +16,9 @@
     @stack('css')
     <link rel="stylesheet" href="sweetalert2.min.css">
 
+
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_Key') }}"></script>
+    
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('asset_user/vendor/glightbox/css/glightbox.min.css')}}">
 
@@ -66,14 +69,14 @@
                         <button class="{{ request()->is('/tiket') ? 'active' : '' }}" >Tiket</button>
                     </a>
                 </li>
-                @if (Route::has('login'))
+
                 <li>
                     <a href="{{ route('login') }}">
                         <button class="{{ request()->is('/login') ? 'active' : '' }}" >Login</button>
                     </a>
                 </li>
 
-                @else
+
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
@@ -82,7 +85,7 @@
                     </a>
                 </form>
                 </li>
-                @endif
+                {{-- @endif --}}
             </ul>
             <div class="tombol-menu">
                 <i class="bx bx-menu"></i>
