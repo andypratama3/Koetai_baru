@@ -23,8 +23,8 @@ $(document).ready(function () {
         var harga = $(this).data('harga');
         var foto = $(this).data('foto');
         var stock = $(this).data('stock');
-
         var id = $(this).data('id');
+
         $('#id').attr('value', id);
         $('#nama').text(nama);
         $('#harga').text(harga);
@@ -141,7 +141,7 @@ $(document).ready(function () {
         var nama = $(this).closest('.pesan_tiket').find('.nama').val();
         var kategori_tiket = $(this).closest('.pesan_tiket').find('.tiket_id').val();
         var jumlah = $(this).closest('.pesan_tiket').find('.qty').val();
-        var harga = $(this).closest('.pesan_tiket').find('.harga').val();
+        var harga = $('#harga_tiket').data('harga');
         var total = harga * jumlah;
         data = {
             'nama': nama,

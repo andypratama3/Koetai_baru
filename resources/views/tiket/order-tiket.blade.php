@@ -24,21 +24,17 @@
                                         <input type="text" name="nama" id="nama" placeholder="nama" class="form-control nama">
                                         <br>
                                         <div class="label-pesantik">Jenis Tiket</div>
-                                        <select name="tiket_id"  class="form-select form-control tiket_id">
 
-                                            <option value="">Pilih Tiket</option>
+                                        <select name="tiket_id"  class="form-select form-control tiket_id ">
+                                            <option disabled>Pilih Tiket</option>
                                             @foreach ($tikets as $tiket)
-                                            <option value="{{ $tiket->id }}">{{ $tiket->kategori }} || Harga Rp.
-                                                {{ $tiket->harga }}</option>
-                                                <input type="hidden" name="harga" value="{{ $tiket->harga }}" class="harga">
+                                            <option value="{{ $tiket->id }}" id="harga_tiket" data-harga="<?=$tiket->harga ?>">{{ $tiket->kategori }} || Harga Rp. {{ $tiket->harga }}</option>
                                             @endforeach
+                                            <span id="harga"></span>
                                             <i class="bx bx-chevron-down"></i>
                                         </select>
-
                                         <div class="label-pesantik">Jumlah</div>
                                         <input type="number" name="jumlah" class="form-control qty" id="jumlah">
-
-                                        <input type="hidden" name="total" value="0" class="total">
                                         <br>
                                         <button type="submit" class="btn btn-primary pesan-tiket pay-button">Pesan Tiket</button>
                                     {{-- </form> --}}

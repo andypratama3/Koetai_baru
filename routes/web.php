@@ -34,13 +34,13 @@ Route::get('crew', [CrewController::class, 'index']);
 Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
     Route::get('tiket', [OrderTiketController::class, 'index']);
     Route::post('tiket-order', [OrderTiketController::class, 'order_tiket']);
-
+    
     //listTiket
     Route::get('checkout-tiket', [OrderTiketController::class, 'checkout']);
     Route::post('bayar-tiket', [OrderTiketController::class, 'order']);
 
     Route::get('orderan-tiket', [OrderTiketController::class, 'orderan']);
-    
+
 
     // Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
     // Route::post('pesan-tiket', [OrderTiketController::class, 'store']);

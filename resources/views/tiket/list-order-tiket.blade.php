@@ -20,7 +20,7 @@
                         </div>
 
                     </div>
-                    @if($order->tiket->stok > $order->jumlah)
+
                     <input type="hidden" value="{{ $order->id }}" class="order_id">
                     <div class="jumlah">
                         <div class=" text-center mb-3" style="width: 130px;">
@@ -28,9 +28,9 @@
                         </div>
                     </div>
                     @php $total += $order->tiket->harga * $order->jumlah; @endphp
-                    @else
+
                     <h6>Out Of Stock</h6>
-                    @endif
+                    
                     <h5>Total : Rp. {{ $total }}</h5>
                     <h5>{{ $order->status }}</h5>
                     {{-- <button class="btn btn-danger delete-tiket-order">Delete</button> --}}

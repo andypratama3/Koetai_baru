@@ -17,7 +17,7 @@
 
 
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_Key') }}"></script>
-    
+
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('asset_user/vendor/glightbox/css/glightbox.min.css')}}">
 
@@ -60,29 +60,20 @@
                 </li>
             </ul>
             <ul class="menu-nav">
-<<<<<<< HEAD
                 <div class="drop-down-tiket">
                     <button onclick="pilihTiket" class="pilih-btn">Tiket</button>
                     <div id="pilih-tiket" class="drop-down-konten">
                         <a href="/tiket">Tiket</a>
-                        <a href="/pesanan-tiket">Pesanan Tiket</a>
+                        <a href="/orderan-tiket">Pesanan Tiket</a>
                     </div>
                 </div>
 
                 {{-- <li>
-                    <a href="/tiket">   
+                    <a href="/tiket">
                         <button class="{{ request()->is('/tiket') ? 'active' : '' }} tombol-nav">Tiket</button>
                 </a>
                 </li> --}}
                 @if (Route::has('login'))
-=======
-                <li>
-                    <a href="/tiket">
-                        <button class="{{ request()->is('/tiket') ? 'active' : '' }}" >Tiket</button>
-                    </a>
-                </li>
-
->>>>>>> 7c40d6ff6e9b806b646a631b96719d6a16d83d4c
                 <li>
                     <a href="{{ route('login') }}">
                         <button class="{{ request()->is('/login') ? 'active' : '' }} tombol-nav">Login</button>
@@ -99,7 +90,7 @@
                         </a>
                     </form>
                 </li>
-                {{-- @endif --}}
+                @endif
             </ul>
             <div class="tombol-menu">
                 <i class="bx bx-menu"></i>
