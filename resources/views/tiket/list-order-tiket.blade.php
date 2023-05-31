@@ -34,7 +34,7 @@
                     <h5>Total : Rp. {{ $total }}</h5>
                     <h5>{{ $order->status }}</h5>
                     {{-- <button class="btn btn-danger delete-tiket-order">Delete</button> --}}
-                    <button class="btn btn-keranjang align-center float-end pay-button" style="background-color: #FFB716;">Bayar</button>
+                    <button class="btn btn-keranjang align-center float-end pay-button" style="background-color: #FFB716;">Detail</button>
                     <input type="hidden" value="{{ $order->tiket->harga }}" class="harga">
                     <input type="hidden" class="prod_id" value="{{ $order->prod_id }}">
                 </div>

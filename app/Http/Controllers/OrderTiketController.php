@@ -38,9 +38,6 @@ class OrderTiketController extends Controller
     public function checkout(Request $request){
 
         $order = OrderTiket::where('user_id',Auth::id())->firstOrFail();
-        // $order = OrderTiket::select(['id','user_id','nama','jumlah','tiket_id','total','status','slug'])->firstOrFail();
-        // $order_id = $request->input("id");
-        // /$order_total = $request->input("total");
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_Key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -58,6 +55,7 @@ class OrderTiketController extends Controller
             ),
             'customer_details' => array(
                 'nama' => $order->nama,
+                // 'email' => Auth::user()->email,
                 'slug' => $request->slug,
             ),
         );
@@ -98,9 +96,7 @@ class OrderTiketController extends Controller
         }
     }
 
-
     public function destroy(Request $request){
-
         if(Auth::check())
         {
             $order_id = $request->input('id');
