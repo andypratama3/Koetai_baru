@@ -24,9 +24,7 @@
                     <input type="hidden" value="{{ $order->id }}" class="order_id">
                     <div class="jumlah">
                         <div class=" text-center mb-3" style="width: 130px;">
-                        <button class="minus change-qty-tiket decrement-btn-tiket">-</button>
-                        <input class="no qty-input-tiket" type="text" name="quantity " value="{{ $order->jumlah }}">
-                        <button class="plus change-qty-tiket increment-btn-tiket">+</button>
+                        <input class="no qty-input-tiket" type="text" name="quantity " value="{{ $order->jumlah }}" readonly>
                         </div>
                     </div>
                     @php $total += $order->tiket->harga * $order->jumlah; @endphp
@@ -35,18 +33,17 @@
                     @endif
                     <h5>Total : Rp. {{ $total }}</h5>
                     <h5>{{ $order->status }}</h5>
-                    <button class="btn btn-danger delete-tiket-order">Delete</button>
+                    {{-- <button class="btn btn-danger delete-tiket-order">Delete</button> --}}
                     <button class="btn btn-keranjang align-center float-end pay-button" style="background-color: #FFB716;">Bayar</button>
+                    <input type="hidden" value="{{ $order->tiket->harga }}" class="harga">
                     <input type="hidden" class="prod_id" value="{{ $order->prod_id }}">
                 </div>
                 <hr>
                 @php $totals += $order->tiket->harga * $order->jumlah; @endphp
-
                 @endforeach
 
                 <div class="total float-end">
                     <h5>Total Semua Rp. {{ $totals }}</h5>
-                    <button id="pay-button" class="btn btn-keranjang align-center float-end pay-button" style="background-color: #FFB716;">Bayar</button>
                 </div>
             </div>
             @else
@@ -61,53 +58,5 @@
     </div>
 </div>
 @include('layouts.script')
-<script>
-    $(document).ready(function () {
-        $(".delete").click(function (e) {
-        slug = e.target.dataset.id;
-        swal({
-                title: 'Anda yakin?',
-                text: 'Data yang sudah dihapus tidak dapat dikembalikan!',
-                icon: 'warning',
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    $(`#delete-${slug}`).submit();
-                } else {
-                    // Do Nothing
-                }
-            });
-    });
-    });
-    </script>
-
- <script type="text/javascript">
-      // For example trigger on button clicked, or any time you need
-    //   var payButton = document.getElementById('pay-button');
-    $(document).on('click','.pay-button', function (e) {
-        // var order_id = $(this).closest('.pesan_tiket').find('.order_id').val();
-    //   payButton.addEventListener('click', function () {
-        // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-        window.snap.pay('{{$snapToken}}', {
-          onSuccess: function(result){
-            /* You may add your own implementation here */
-            alert("payment success!"); console.log(result);
-          },
-          onPending: function(result){
-            /* You may add your own implementation here */
-            alert("wating your payment!"); console.log(result);
-          },
-          onError: function(result){
-            /* You may add your own implementation here */
-            alert("payment failed!"); console.log(result);
-          },
-          onClose: function(){
-            /* You may add your own implementation here */
-            alert('you closed the popup without finishing the payment');
-          }
-        })
-      });
-</script>
 @endsection
+

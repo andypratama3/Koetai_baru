@@ -35,7 +35,7 @@ class CartController extends Controller
                 }
             }
         }else{
-            return view('auth.login');
+            return redirect()->route('login')->json(['status','Silahkan Login Terlebih Dahulul']);
         }
     }
 

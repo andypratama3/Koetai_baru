@@ -32,15 +32,15 @@ class OrderTiketController extends Controller
         $stok->stok = $stok->stok - $request->jumlah;
         $stok->update();
         $order->save();
-        
-        
 
         return response()->json(['status'=>'Tiket Berhasil Di Pesan']);
     }
-    public function list_order(Request $request){
+    public function checkout(Request $request){
 
-        $orders = OrderTiket::where('user_id',Auth::id())->select(['id','user_id','nama','jumlah','tiket_id','total','status','slug'])->get();
-        $order = OrderTiket::select(['id','user_id','nama','jumlah','tiket_id','total','status','slug'])->firstOrFail();
+        $order = OrderTiket::where('user_id',Auth::id())->firstOrFail();
+        // $order = OrderTiket::select(['id','user_id','nama','jumlah','tiket_id','total','status','slug'])->firstOrFail();
+        // $order_id = $request->input("id");
+        // /$order_total = $request->input("total");
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_Key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -49,34 +49,51 @@ class OrderTiketController extends Controller
         \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
-
         $params = array(
             'transaction_details' => array(
                 'order_id' => $order->id,
                 'gross_amount' => $order->total,
+                'jumlah' => $order->jumlah,
+
             ),
             'customer_details' => array(
-                'first_name' => 'budi',
-                'last_name' => 'pratama',
-                'email' => 'budi.pra@example.com',
-                'phone' => '08111222333',
+                'nama' => $order->nama,
+                'slug' => $request->slug,
             ),
         );
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-        return view('tiket.list-order-tiket', compact('orders','snapToken'));
+
+        return view('tiket.tiket-pay', compact('order','snapToken'));
+    }
+    public function orderan(Request $request){
+
+        $orders = OrderTiket::where('user_id', Auth::id())->get();
+
+        return view('tiket.list-order-tiket', compact('orders'));
     }
 
-    public function update_tiket(Request $request){
-        $order_id = $request->input("id");
-        $qty = $request->input("jumlah");
 
-        if(Auth::check()){
-            if(OrderTiket::where('id',$order_id)->where('user_id',Auth::id())->exists())
-            {
-                $order = OrderTiket::where('id',$order_id)->where('user_id',Auth::id())->first();
-                $order->jumlah = $qty;
-                $order->update();
-                return response()->json(['status'=>'Quantity Update']);
+    // public function update_tiket(Request $request){
+    //     $order_id = $request->input("id");
+    //     $qty = $request->input("jumlah");
+
+    //     if(Auth::check()){
+    //         if(OrderTiket::where('id',$order_id)->where('user_id',Auth::id())->exists())
+    //         {
+    //             $order = OrderTiket::where('id',$order_id)->where('user_id',Auth::id())->first();
+    //             $order->jumlah = $qty;
+    //             $order->update();
+    //             return response()->json(['status'=>'Quantity Update']);
+    //         }
+    //     }
+    // }
+    public function callback_status(Request $request){
+        $serverKey = config('midtrans.server_Key');
+        $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
+        if($hashed == $request->signature_key){
+            if($request->transaction_status == "capture"){
+                $order = OrderTiket::find($request->order_id);
+                $order->update(['status' => 'Paid']);
             }
         }
     }

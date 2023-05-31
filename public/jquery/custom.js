@@ -164,7 +164,7 @@ $(document).ready(function () {
                     title: 'Berhasil',
                     text: response.status,
                 });
-                window.location.href = "/order-list-tiket";
+                window.location.href = "/checkout-tiket";
             },
       });
     });
@@ -233,7 +233,7 @@ $(document).ready(function () {
             $(this).closest('.pesan_tiket').find('.qty-input-tiket').val(value);
     }
     });
-    
+
     $(document).on('click','.decrement-btn-tiket', function (e) {
     e.preventDefault();
     var dec_value = $(this).closest('.pesan_tiket').find('.qty-input-tiket').val();
