@@ -156,7 +156,7 @@ $(document).ready(function () {
         });
         $.ajax({
             method: "POST",
-            url: "/pesan-tiket",
+            url: "/tiket-order",
             data: data,
             success: function (response){
                 Swal.fire({
@@ -164,7 +164,7 @@ $(document).ready(function () {
                     title: 'Berhasil',
                     text: response.status,
                 });
-                window.location.href = "/pesanan-tiket";
+                window.location.href = "/checkout-tiket";
             },
       });
     });
@@ -187,7 +187,7 @@ $(document).ready(function () {
             url: "update-tiket",
             data: data,
             success: function (response){
-                
+
                 $('.pesantiket').load(location.href + " .pesantiket");
             },
       });
@@ -233,6 +233,7 @@ $(document).ready(function () {
             $(this).closest('.pesan_tiket').find('.qty-input-tiket').val(value);
     }
     });
+
     $(document).on('click','.decrement-btn-tiket', function (e) {
     e.preventDefault();
     var dec_value = $(this).closest('.pesan_tiket').find('.qty-input-tiket').val();

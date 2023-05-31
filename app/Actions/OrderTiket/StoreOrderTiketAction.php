@@ -15,19 +15,7 @@ class StoreOrderTiketAction
 {
     public function execute(Request $request)
     {
-        $tikets = Tiket::select(['kategori','harga','stok','slug'])->get();
-
-        $order = new OrderTiket();
-        $order->user_id = Auth::id();
-        $order->nama = $request->input("nama");
-        $order->tiket_id = $request->input("tiket_id");
-        $order->jumlah = $request->input("jumlah");
-        $order->total = $request->total;
-        //mengurangi stok pada tiket
-        $stok = Tiket::find($request->tiket_id);
-        $stok->stok = $stok->stok - $request->jumlah;
-        $stok->update();
-        $order->save();
-
+        
+       
     }
 }

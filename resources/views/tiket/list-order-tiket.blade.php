@@ -1,6 +1,6 @@
 
 @extends('layouts.user')
-@section('title', 'Shop')
+@section('title', 'List Order Tiket')
 @section('content')
 
 <div class="container-belanja pesantiket">
@@ -24,9 +24,7 @@
                     <input type="hidden" value="{{ $order->id }}" class="order_id">
                     <div class="jumlah">
                         <div class=" text-center mb-3" style="width: 130px;">
-                        <button class="minus change-qty-tiket decrement-btn-tiket">-</button>
-                        <input class="no qty-input-tiket" type="text" name="quantity " value="{{ $order->jumlah }}">
-                        <button class="plus change-qty-tiket increment-btn-tiket">+</button>
+                        <input class="no qty-input-tiket" type="text" name="quantity " value="{{ $order->jumlah }}" readonly>
                         </div>
                     </div>
                     @php $total += $order->tiket->harga * $order->jumlah; @endphp
@@ -34,16 +32,18 @@
                     <h6>Out Of Stock</h6>
                     @endif
                     <h5>Total : Rp. {{ $total }}</h5>
-                    <button class="btn btn-danger delete-tiket-order">Delete</button>
-
+                    <h5>{{ $order->status }}</h5>
+                    {{-- <button class="btn btn-danger delete-tiket-order">Delete</button> --}}
+                    <button class="btn btn-keranjang align-center float-end pay-button" style="background-color: #FFB716;">Detail</button>
+                    <input type="hidden" value="{{ $order->tiket->harga }}" class="harga">
                     <input type="hidden" class="prod_id" value="{{ $order->prod_id }}">
                 </div>
                 <hr>
                 @php $totals += $order->tiket->harga * $order->jumlah; @endphp
                 @endforeach
+
                 <div class="total float-end">
                     <h5>Total Semua Rp. {{ $totals }}</h5>
-                    <a href="" class="btn btn-keranjang align-center float-end" style="background-color: #FFB716;">Bayar</a>
                 </div>
             </div>
             @else
@@ -57,28 +57,6 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function () {
-        $(".delete").click(function (e) {
-        slug = e.target.dataset.id;
-        swal({
-                title: 'Anda yakin?',
-                text: 'Data yang sudah dihapus tidak dapat dikembalikan!',
-                icon: 'warning',
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    $(`#delete-${slug}`).submit();
-                } else {
-                    // Do Nothing
-                }
-            });
-    });
-    });
-
-    </script>
-    @include('layouts.script')
+@include('layouts.script')
 @endsection
+

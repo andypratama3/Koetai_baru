@@ -1597,8 +1597,8 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     header .nav-bar .teks-kms {
         font-size: 18px;
     }
-
-    header .nav-bar ul li button {
+    
+    header .nav-bar ul li .button {
         font-size: 11px;
         padding-left: 1rem;
         padding-right: 1rem;

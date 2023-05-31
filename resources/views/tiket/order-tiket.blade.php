@@ -1,5 +1,6 @@
 @extends('layouts.user')
 @section('title', 'Tiket')
+
 @section('content')
 <main>
     <div class="container">
@@ -17,13 +18,13 @@
                                     @php
                                         $total = 0;
                                     @endphp
-                                    {{-- <form action="{{ route('tiket.store') }}" method="POST"> --}}
-                                        @csrf
+                                    {{-- <form action="tiket-order" method="POST"> --}}
+                                        {{-- @csrf --}}
                                         <div class="label-pesantik">Nama</div>
                                         <input type="text" name="nama" id="nama" placeholder="nama" class="form-control nama">
                                         <br>
                                         <div class="label-pesantik">Jenis Tiket</div>
-                                        <select name="tiket_id" id="" class="form-select form-control tiket_id">
+                                        <select name="tiket_id"  class="form-select form-control tiket_id">
 
                                             <option value="">Pilih Tiket</option>
                                             @foreach ($tikets as $tiket)
@@ -39,7 +40,7 @@
 
                                         <input type="hidden" name="total" value="0" class="total">
                                         <br>
-                                        <button type="submit" class="btn btn-primary pesan-tiket">Pesan Tiket</button>
+                                        <button type="submit" class="btn btn-primary pesan-tiket pay-button">Pesan Tiket</button>
                                     {{-- </form> --}}
                                 </div>
                             </div>
