@@ -13,7 +13,7 @@ var navBaju = document.getElementById("nav-baju");
 var navMchan = document.getElementById("nav-mchan");
 var belanjaBaju = document.getElementById("belanja-baju");
 var belanjaMchan = document.getElementById("belanja-mchan");
-var isiBelanja = document.getElementById("isi-belanja")
+var isiBelanja = document.getElementById("isi-belanja");
 
 navBaju.onclick = function () {
     navBaju.classList.add("active");
@@ -32,7 +32,10 @@ navMchan.onclick = function () {
     belanjaMchan.style.animation = "mchan-in .8s";
     isiBelanja.style.animation = "mchan-in .8s";
 }
-    
+
+function pilihTiket() {
+    document.getElementsByClassName("pilih-btn").classList.add("show");
+}
 
 // // BERANDA MAIN -> Variabel Carousel
 // const carouselRow = document.querySelector(".slides-row"),
