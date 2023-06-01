@@ -16,8 +16,12 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
 
 
+<<<<<<< HEAD
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
         data-client-key="{{ config('midtrans.client_Key') }}"></script>
+=======
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_Key') }}"></script>
+>>>>>>> ab7c1f31f893bbcc8d60489f88e4cc94d37e1305
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('asset_user/vendor/glightbox/css/glightbox.min.css')}}">
@@ -61,6 +65,7 @@
             </ul>
             <ul class="menu-nav">
                 <div class="drop-down-tiket">
+<<<<<<< HEAD
                     <button class="btn-pilih">Tiket</button>
                     <div class="drop-down-konten">
                         <a href="/tiket" class="konten-tiket">Tiket</a>
@@ -68,13 +73,23 @@
                     </div>
                 </div>
                 @if (Route::has('login'))
+=======
+                    <button onclick="pilihTiket" class="pilih-btn">Tiket</button>
+                    <div id="pilih-tiket" class="drop-down-konten">
+                        <a href="/tiket">Tiket</a>
+                        <a href="/orderan-tiket">Pesanan Tiket</a>
+                    </div>
+                </div>
+
+                {{-- @if (Route::has('login')) --}}
+                {{-- @auth --}}
+>>>>>>> ab7c1f31f893bbcc8d60489f88e4cc94d37e1305
                 <li>
                     <a href="{{ route('login') }}">
                         <button class="{{ request()->is('/login') ? 'active' : '' }}">Login</button>
                     </a>
                 </li>
-
-
+                {{-- @else --}}
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
                         <a href="{{ route('logout') }}"
@@ -84,7 +99,10 @@
                         </a>
                     </form>
                 </li>
+<<<<<<< HEAD
                 @endif
+=======
+>>>>>>> ab7c1f31f893bbcc8d60489f88e4cc94d37e1305
             </ul>
             <div class="tombol-menu">
                 <i class="bx bx-menu"></i>
@@ -117,6 +135,7 @@
                     <button class="{{ request()->is('/shop') ? 'active' : '' }}">Login</button>
                 </a>
             </li>
+
         </div>
     </header>
 

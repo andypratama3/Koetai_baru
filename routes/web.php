@@ -6,6 +6,7 @@ use App\Http\Controllers\CrewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\OrderTiketController;
+use App\Http\Controllers\Dashboard\OrderanTiket;
 use App\Http\Controllers\ListOrderTiketController;
 use App\Http\Controllers\Dashboard\EventController;
 use App\Http\Controllers\Dashboard\TiketController;
@@ -40,7 +41,7 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
     Route::post('bayar-tiket', [OrderTiketController::class, 'order']);
 
     Route::get('orderan-tiket', [OrderTiketController::class, 'orderan']);
-    
+
 
     // Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
     // Route::post('pesan-tiket', [OrderTiketController::class, 'store']);
@@ -72,6 +73,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], func
     Route::resource('kategori', KategoriController::class, ['names' => 'dashboard.kategori']);
     Route::resource('produk', ProdukController::class, ['names' => 'dashboard.produk']);
     Route::resource('tiket', TiketController::class, ['names' => 'dashboard.tiket']);
+    Route::resource('order', OrderanTiket::class, ['names' => 'dashboard.order']);
 
 });
 

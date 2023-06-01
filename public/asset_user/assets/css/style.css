@@ -437,6 +437,9 @@ main .swiper-pagination * {
     background: var(--primary);
 }
 
+main .swiper-scrollbar{
+    color: var(--primary);
+}
 /* AKHIR CONTAINER BERANDA */
 /* ===================================================================== */
 

@@ -24,7 +24,9 @@ class StoreCartRequest extends FormRequest
     public function rules()
     {
         return [
-            'produk_id' => 'required',
+            'prod_id' => 'required',
+            'prod_qty' => 'required',
+            'prod_ukuran'=> 'required',
         ];
 
     }

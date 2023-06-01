@@ -59,7 +59,7 @@
                 <br>
                 <a href="{{url('shop')}}" class="btn btn-keranjang align-center"
                     style="background-color: #FFB716;">Continue Shopping</a>
-                    
+
             </div>
             @endif
         </div>

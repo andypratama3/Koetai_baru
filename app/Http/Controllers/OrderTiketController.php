@@ -37,7 +37,7 @@ class OrderTiketController extends Controller
     }
     public function checkout(Request $request){
 
-        $order = OrderTiket::where('user_id',Auth::id())->firstOrFail();
+        $order = OrderTiket::where('user_id',Auth::id())->first();
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_Key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).

@@ -2,6 +2,7 @@
 @section('title', 'List Order Tiket')
 @section('content')
 
+<<<<<<< HEAD
 <div class="container-pesanan-tiket pesantiket">
     <div class="main-pesanan-tiket">
         <div class="isi-pesanan-tiket">
@@ -17,8 +18,6 @@
                             <div class="produk">
                                 <p>{{ $order->nama }}</p>
                             </div>
-
-                        </div>
                         @if($order->tiket->stok > $order->jumlah)
                         <input type="hidden" value="{{ $order->id }}" class="order_id">
                         <div class="jumlah">

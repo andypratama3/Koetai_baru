@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Produk')
+@section('title', 'Orderan Tiket')
 
 
 @section('content')
@@ -9,35 +9,34 @@
         <div class="row">
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title float-end"><a href="{{ route('dashboard.produk.create') }}" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a></h5>
+                  <h5 class="card-title float-end"><a href="{{ route('dashboard.order.create') }}" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a></h5>
                   <!-- Table with hoverable rows -->
                   <table class="table table-responsive-lg text-center">
                     <thead>
                       <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Nama produk</th>
-                        <th scope="col">Deskripsi</th>
-                        <th scope="col">Gambar</th>
-                        <th scope="col">Stock</th>
-                        <th scope="col">Harga</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Kategori Tiket</th>
+                        <th scope="col">Jumlah</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
-                    @foreach ($produks as $produk)
+                    @foreach ($orderan as $order)
                       <tr>
                         <th scope="row">{{ ++$no }}</th>
-                        <td>{{ $produk->nama }}</td>
-                        <td>{{ $produk->deskripsi}}</td>
-                        <td>{{ $produk->foto}}</td>
-                        <td>{{ $produk->stock}}</td>
-                        <td>{{ $produk->harga}}</td>
+                        <td>{{ $order->nama }}</td>
+                        <td>{{ $order->tiket->kategori}}</td>
+                        <td>{{ $order->jumlah}}</td>
+                        <td>{{ $order->total}}</td>
+                        <td><span class="badge {{ $order->status == 'Unpaid' ? 'bg-danger' : 'bg-success' }} text-dark">{{ $order->status }}</span></td>
+                        {{-- <td>{{ $order->status}}</td> --}}
                         <td>
-                            <a class="btn btn-primary" href="{{ route('dashboard.produk.show',$produk->slug) }}"><i class="bi bi-eye"></i></a>
-                            <a class="btn btn-warning" href="{{ route('dashboard.produk.edit', $produk->slug) }}"><i class="bi bi-pen"></i></a>
-                            <a href="#" data-id="{{ $produk->slug }}" class="btn btn-danger delete" title="Hapus">
-
-                                <form action="{{ route('dashboard.produk.destroy', $produk->slug) }}" id="delete-{{ $produk->slug }}" method="POST" enctype="multipart/form-data">
+                            <a class="btn btn-primary" href="{{ route('dashboard.order.show',$order->slug) }}"><i class="bi bi-eye"></i></a>
+                            <a href="#" data-id="{{ $order->slug }}" class="btn btn-danger delete" title="Hapus">
+                                <form action="{{ route('dashboard.order.destroy', $order->slug) }}" id="delete-{{ $order->slug }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('delete')
                                 </form>
@@ -47,13 +46,11 @@
                     @endforeach
                     </tbody>
                   </table>
-                  <div class="">Total produk : {{ $count }}</div>
+                  <div class="">Total order : {{ $count }}</div>
                 </div>
                 <ul class="pagination">
-                    <li class="page-item"> {{ $produks->onEachSide(1)->links() }}</li>
-
+                    <li class="page-item"> {{ $orderan->onEachSide(1)->links() }}</li>
                     </li>
-
                 </ul>
 
               </div>
