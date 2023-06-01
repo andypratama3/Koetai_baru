@@ -32,6 +32,9 @@ class OrderTiket extends Model
 
         return $this->belongsTo(Tiket::class);
     }
+    // public function users(){
 
+    //     return $this->belongsTo(User::class);
+    // }
 
 }

@@ -67,5 +67,14 @@ class User extends Authenticatable
         $this->attributes['name'] = $value;
         $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
     }
+    /**
+     * Get all of the tiket for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tiket(): HasMany
+    {
+        return $this->hasMany(Tiket::class);
+    }
 
 }

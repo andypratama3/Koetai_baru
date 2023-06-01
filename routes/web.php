@@ -6,6 +6,7 @@ use App\Http\Controllers\CrewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\OrderTiketController;
+use App\Http\Controllers\Dashboard\OrderanTiket;
 use App\Http\Controllers\ListOrderTiketController;
 use App\Http\Controllers\Dashboard\EventController;
 use App\Http\Controllers\Dashboard\TiketController;
@@ -34,7 +35,7 @@ Route::get('crew', [CrewController::class, 'index']);
 Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
     Route::get('tiket', [OrderTiketController::class, 'index']);
     Route::post('tiket-order', [OrderTiketController::class, 'order_tiket']);
-    
+
     //listTiket
     Route::get('checkout-tiket', [OrderTiketController::class, 'checkout']);
     Route::post('bayar-tiket', [OrderTiketController::class, 'order']);
@@ -72,6 +73,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], func
     Route::resource('kategori', KategoriController::class, ['names' => 'dashboard.kategori']);
     Route::resource('produk', ProdukController::class, ['names' => 'dashboard.produk']);
     Route::resource('tiket', TiketController::class, ['names' => 'dashboard.tiket']);
+    Route::resource('order', OrderanTiket::class, ['names' => 'dashboard.order']);
 
 });
 

@@ -420,6 +420,9 @@ main .swiper-pagination * {
     background: var(--primary);
 }
 
+main .swiper-scrollbar{
+    color: var(--primary);
+}
 /* AKHIR CONTAINER BERANDA */
 /* ===================================================================== */
 
@@ -1597,7 +1600,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     header .nav-bar .teks-kms {
         font-size: 18px;
     }
-    
+
     header .nav-bar ul li .button {
         font-size: 11px;
         padding-left: 1rem;

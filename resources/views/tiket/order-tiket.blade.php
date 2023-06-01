@@ -34,7 +34,7 @@
                                             <i class="bx bx-chevron-down"></i>
                                         </select>
                                         <div class="label-pesantik">Jumlah</div>
-                                        <input type="number" name="jumlah" class="form-control qty" id="jumlah">
+                                        <input type="number" id="jumlah" name="jumlah" class="form-control qty" id="jumlah">
                                         <br>
                                         <button type="submit" class="btn btn-primary pesan-tiket pay-button">Pesan Tiket</button>
                                     {{-- </form> --}}

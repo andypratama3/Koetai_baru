@@ -203,8 +203,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.orderan-tiket.*') ? '' : 'collapsed' }}"
-                    href="{{ route('dashboard.tiket.index') }}">
+                <a class="nav-link {{ Request::routeIs('dashboard.order.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.order.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Orderan tiket</span>
                 </a>

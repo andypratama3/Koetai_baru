@@ -68,19 +68,14 @@
                     </div>
                 </div>
 
-                {{-- <li>
-                    <a href="/tiket">
-                        <button class="{{ request()->is('/tiket') ? 'active' : '' }} tombol-nav">Tiket</button>
-                </a>
-                </li> --}}
-                @if (Route::has('login'))
+                {{-- @if (Route::has('login')) --}}
+                {{-- @auth --}}
                 <li>
                     <a href="{{ route('login') }}">
                         <button class="{{ request()->is('/login') ? 'active' : '' }} tombol-nav">Login</button>
                     </a>
                 </li>
-
-
+                {{-- @else --}}
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
                         <a href="{{ route('logout') }}"
@@ -90,7 +85,6 @@
                         </a>
                     </form>
                 </li>
-                @endif
             </ul>
             <div class="tombol-menu">
                 <i class="bx bx-menu"></i>
@@ -123,6 +117,7 @@
                     <button class="{{ request()->is('/shop') ? 'active' : '' }} tombol-nav">Login</button>
                 </a>
             </li>
+
         </div>
     </header>
 

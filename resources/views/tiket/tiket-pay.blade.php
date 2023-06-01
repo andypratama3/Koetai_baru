@@ -6,7 +6,7 @@
 <div class="container-belanja pesantiket">
 <div class="main-keranjang">
     <div class="container-keranjang">
-        <div class="container-kiri">
+        <div class="container">
             <div class="isinya">
                 <h1>Pesanan Tiket</h1>
                 @if ($order->count() > 0)
