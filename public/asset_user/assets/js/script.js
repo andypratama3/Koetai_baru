@@ -3,9 +3,8 @@ const tombolMenu = document.querySelector("header .nav-bar .tombol-menu"),
     tombolMenuIcon = document.querySelector("header .nav-bar .tombol-menu i"),
     dropDownMenu = document.querySelector("header .dropdown-menu");
 
-// BERANDA HEADER -> Function Tombol Open Dropdown Navbar
 tombolMenu.onclick = function () {
-    dropDownMenu.classList.toggle("open")
+    dropDownMenu.classList.toggle("open");
 }
 
 // Belanja -> Navbar Belanja Di Click
@@ -33,8 +32,35 @@ navMchan.onclick = function () {
     isiBelanja.style.animation = "mchan-in .8s";
 }
 
-function pilihTiket() {
-    document.getElementsByClassName("pilih-btn").classList.add("show");
+// function pilihTiket() {
+//     document.getElementsByClassName("pilih-btn").classList.add("show");
+// }
+
+// Tiket Dropdown -> Variabel Dropdown
+var dropDownTiket = document.querySelector("header .menu-nav .drop-down-tiket");
+var pilihTiket = document.querySelector("header .menu-nav .drop-down-tiket .drop-down-konten");
+var btnPilih = document.querySelector("header .menu-nav .drop-down-tiket .btn-pilih");
+
+dropDownTiket.onclick = function () {
+    pilihTiket.classList.toggle("open");
+    pilihTiket.classList.toggle("active");
+}
+
+btnPilih.onclick = function () {
+    btnPilih.classList.toggle("active");
+}
+
+window.onclick = function (event) {
+    if (!event.target.matches('header .menu-nav .drop-down-tiket .drop-down-tiket .btn-pilih')) {
+        var dropdowns = document.getElementsByClassName("header .menu-nav .drop-down-tiket .drop-down-konten");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('open')) {
+                openDropdown.classList.remove('open');
+            }
+        }
+    }
 }
 
 // // BERANDA MAIN -> Variabel Carousel

@@ -165,9 +165,10 @@ header ul li a button.active {
 header .menu-nav .drop-down-tiket {
     position: relative;
     display: inline-block;
+    /* border: 2px red solid; */
 }
 
-header .menu-nav .drop-down-tiket .pilih-btn {
+header .menu-nav .drop-down-tiket .btn-pilih {
     background-color: var(--secondary);
     color: var(--primary);
     font-weight: 500;
@@ -176,51 +177,67 @@ header .menu-nav .drop-down-tiket .pilih-btn {
     border: 1px var(--secondary) solid;
     padding: 0 20px;
     height: 28px;
-    margin-left: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.1s all;
     cursor: pointer;
+    /* border: 2px green solid; */
 }
 
-header .menu-nav .drop-down-tiket:hover .pilih-btn {
+header .menu-nav .drop-down-tiket:hover .btn-pilih {
     border: 1px var(--primary) solid;
     background-color: var(--secondary);
     color: var(--primary);
 }
 
-header .menu-nav .drop-down-tiket .drop-down-konten {
-    display: none;
-    position: absolute;
-    background-color: var(--secondary);
-    min-width: 160px;
-    z-index: 1;
-    top: 30px;
-    right: 0px;
-    border-radius: 5px;
-}
-
-header .menu-nav .drop-down-tiket .drop-down-konten.show {
-    display: block;
+header .menu-nav .drop-down-tiket .btn-pilih.active {
     background-color: var(--primary);
     color: var(--putih);
+    border: 1px var(--primary) solid;
 }
 
-header .menu-nav .drop-down-tiket .drop-down-konten:hover {
+header .menu-nav .drop-down-tiket .drop-down-konten {
+    display: none;
+    position: fixed;
+    /* top: 40px;
+    right: 250px; */
+    min-width: 130px;
+    height: 0;
+    z-index: 100;
+    margin-top: 1px;
     background-color: var(--secondary);
-    color: var(--putih);
+    border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+header .menu-nav .drop-down-tiket .drop-down-konten.open {
+    display: block;
+    height: 80px;
 }
 
 header .menu-nav .drop-down-tiket:hover .drop-down-konten {
     display: block;
+    height: 80px;
+}
+
+header .menu-nav .drop-down-tiket .drop-down-konten .konten-tiket {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+header .menu-nav .drop-down-tiket .drop-down-konten .konten-pesan-tiket {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 header .menu-nav .drop-down-tiket .drop-down-konten a {
     text-decoration: none;
     color: var(--primary);
     display: block;
-    padding: 10px 15px;
+    padding: 10px 20px;
     font-size: 12px;
 }
 
@@ -506,7 +523,7 @@ main .swiper-pagination * {
 /* CONTAINER BELANJA BAJU */
 .container-belanja .isi-belanja .belanja-baju {
     display: block;
-    animation: baju-in .5s
+    animation: baju-in .5s;
 }
 
 @keyframes baju-in {
@@ -524,8 +541,8 @@ main .swiper-pagination * {
 .container-belanja .isi-belanja .belanja-baju .produk {
     border: 2px #111 solid;
     border-radius: 15px;
-    width: 190px;
-    height: auto;
+    width: 200px;
+    height: 230px;
     margin: 20px 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     /* border: 2px red solid; */
@@ -544,8 +561,9 @@ main .swiper-pagination * {
 
 .container-belanja .isi-belanja .belanja-baju .produk img {
     width: 100%;
+    height: 180px;
     border-radius: 10px 10px 0 0;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     margin-bottom: 0;
 }
@@ -689,9 +707,9 @@ main .swiper-pagination * {
     padding: 20px 30px;
 }
 
-.produk-klik {
-    /* border: 2px red solid; */
-}
+/* .produk-klik {
+    border: 2px red solid;
+} */
 
 .produk-klik .konten-atas {
     /* border: 2px green solid; */
@@ -972,6 +990,11 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan select {
     outline: 0;
 }
 
+main .container .container-pesantik .pesantik-menu .form-menu .pilihan select option {
+    height: 100px;
+
+}
+
 /* main .container .container-pesantik .pesantik-menu .form-menu .pilihan input {
     width: 100%;
     height: 30px;
@@ -998,6 +1021,97 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 
 main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     transform: scale(0.97);
+}
+
+.container-pesanan-tiket {
+    /* border: 2px red solid; */
+}
+
+.container-pesanan-tiket .main-pesanan-tiket {
+    /* border: 2px white solid; */
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket {
+    background-color: var(--secondary);
+    width: 80%;
+    height: auto;
+    color: var(--putih);
+    padding: 20px;
+}
+
+.container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket .container-isi {
+    /* border: 2px green solid; */
+    /* width; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket .container-isi .isinya {
+    /* border: 2px white solid; */
+    font-size: 15px;
+}
+
+.container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket .container-isi .isinya h1 {
+    display: block;
+    text-align: center;
+}
+
+.container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket .container-isi .isinya .list-produk {
+    /* border: 2px yellow solid; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket .container-isi .isinya .list-produk .jumlah {
+    /* border: 2px green solid; */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+.container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket .container-isi .isinya .list-produk .jumlah .no {
+    width: 50px;
+    text-align: center;
+    background-color: var(--secondary);
+    border: 3px var(--putih) solid;
+    border-radius: 1rem;
+    color: var(--putih);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 0;
+    margin-left: 3px;
+}
+
+.container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket .container-isi .isinya .list-produk .jumlah .minus {
+    border: transparent;
+    background-color: transparent;
+    color: var(--putih);
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket .container-isi .isinya .list-produk .jumlah .plus {
+    border: transparent;
+    background-color: transparent;
+    color: var(--putih);
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket .container-isi .isinya .total {
+    /* border: 2px red solid; */
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
 }
 
 /* AKHIR CONTAINER PESAN TIKET */
@@ -1039,9 +1153,9 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     color: var(--primary);
 }
 
-.main-keranjang {
-    /* border: 2px red solid; */
-}
+/* .main-keranjang {
+    border: 2px red solid;
+} */
 
 .main-keranjang .container-keranjang {
     /* border: 2px white solid; */
@@ -1086,10 +1200,9 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     /* align-items: center; */
 }
 
-.main-keranjang .isinya .list-produk .gambar-produk {
-    /* height: 100%; */
-
-}
+/* .main-keranjang .isinya .list-produk .gambar-produk {
+    height: 100%;
+} */
 
 .main-keranjang .isinya .list-produk .gambar-produk img {
     /* border: 2px yellow solid; */
@@ -1204,7 +1317,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 /* ===================================================================== */
 
 /* ===================================================================== */
-/* CONTAINER SPONSOR */
+/* CONTAINER LOGION */
 .link-keluar-login .btn-keluar-login {
     width: 55px;
     height: 35px;
@@ -1597,7 +1710,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     header .nav-bar .teks-kms {
         font-size: 18px;
     }
-    
+
     header .nav-bar ul li .button {
         font-size: 11px;
         padding-left: 1rem;

@@ -16,8 +16,9 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
 
 
-    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_Key') }}"></script>
-    
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="{{ config('midtrans.client_Key') }}"></script>
+
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('asset_user/vendor/glightbox/css/glightbox.min.css')}}">
 
@@ -35,57 +36,41 @@
             <ul>
                 <li>
                     <a href="/">
-                        <button class="{{ request()->is('/') ? 'active' : '' }} tombol-nav">Beranda</button>
+                        <button class="{{ request()->is('/') ? 'active' : '' }}">Beranda</button>
                     </a>
                 </li>
                 <li>
                     <a href="/crew">
-                        <button class="{{ request()->is('crew') ? 'active' : '' }} tombol-nav">Semua Tim</button>
+                        <button class="{{ request()->is('crew') ? 'active' : '' }}">Semua Tim</button>
                     </a>
                 </li>
                 <li>
                     <a href="/shop">
-                        <button class="{{ request()->is('shop') ? 'active' : '' }} tombol-nav">Belanja</button>
+                        <button class="{{ request()->is('shop') ? 'active' : '' }}">Belanja</button>
                     </a>
                 </li>
                 <li>
                     <a href="/cart">
-                        <button class="{{ request()->is('cart') ? 'active' : '' }} tombol-nav">
+                        <button class="{{ request()->is('cart') ? 'active' : '' }}">
                             <i class='bx bx-cart cart-icon'></i>
                             <p>Keranjang</p>
-                            {{-- //pokoknya pake class yang udah ku buat --}}
                             <span class="badge badge-pill cart-count">0</span>
                         </button>
                     </a>
                 </li>
             </ul>
             <ul class="menu-nav">
-<<<<<<< HEAD
                 <div class="drop-down-tiket">
-                    <button onclick="pilihTiket" class="pilih-btn">Tiket</button>
-                    <div id="pilih-tiket" class="drop-down-konten">
-                        <a href="/tiket">Tiket</a>
-                        <a href="/pesanan-tiket">Pesanan Tiket</a>
+                    <button class="btn-pilih">Tiket</button>
+                    <div class="drop-down-konten">
+                        <a href="/tiket" class="konten-tiket">Tiket</a>
+                        <a href="/checkout-tiket" class="konten-pesan-tiket">Pesanan Tiket</a>
                     </div>
                 </div>
-
-                {{-- <li>
-                    <a href="/tiket">   
-                        <button class="{{ request()->is('/tiket') ? 'active' : '' }} tombol-nav">Tiket</button>
-                </a>
-                </li> --}}
                 @if (Route::has('login'))
-=======
-                <li>
-                    <a href="/tiket">
-                        <button class="{{ request()->is('/tiket') ? 'active' : '' }}" >Tiket</button>
-                    </a>
-                </li>
-
->>>>>>> 7c40d6ff6e9b806b646a631b96719d6a16d83d4c
                 <li>
                     <a href="{{ route('login') }}">
-                        <button class="{{ request()->is('/login') ? 'active' : '' }} tombol-nav">Login</button>
+                        <button class="{{ request()->is('/login') ? 'active' : '' }}">Login</button>
                     </a>
                 </li>
 
@@ -99,7 +84,7 @@
                         </a>
                     </form>
                 </li>
-                {{-- @endif --}}
+                @endif
             </ul>
             <div class="tombol-menu">
                 <i class="bx bx-menu"></i>
@@ -109,17 +94,17 @@
         <div class="dropdown-menu">
             <li>
                 <a href="/">
-                    <button class="{{ request()->is('/login') ? 'active' : '' }} tombol-nav">Beranda</button>
+                    <button class="{{ request()->is('/login') ? 'active' : '' }}">Beranda</button>
                 </a>
             </li>
             <li>
                 <a href="/crew">
-                    <button class="{{ request()->is('/crew') ? 'active' : '' }} tombol-nav">Semua Tim</button>
+                    <button class="{{ request()->is('/crew') ? 'active' : '' }}">Semua Tim</button>
                 </a>
             </li>
             <li>
                 <a href="/shop">
-                    <button class="{{ request()->is('/shop') ? 'active' : '' }} tombol-nav">Belanja</button>
+                    <button class="{{ request()->is('/shop') ? 'active' : '' }}">Belanja</button>
                 </a>
             </li>
             <li>
@@ -129,7 +114,7 @@
             </li>
             <li>
                 <a href="/login">
-                    <button class="{{ request()->is('/shop') ? 'active' : '' }} tombol-nav">Login</button>
+                    <button class="{{ request()->is('/shop') ? 'active' : '' }}">Login</button>
                 </a>
             </li>
         </div>

@@ -30,7 +30,7 @@
                                             @foreach ($tikets as $tiket)
                                             <option value="{{ $tiket->id }}">{{ $tiket->kategori }} || Harga Rp.
                                                 {{ $tiket->harga }}</option>
-                                                <input type="hidden" name="harga" value="{{ $tiket->harga }}" class="harga">
+                                                {{-- <input type="hidden" name="harga" value="{{ $tiket->harga }}" class="harga"> --}}
                                             @endforeach
                                             <i class="bx bx-chevron-down"></i>
                                         </select>

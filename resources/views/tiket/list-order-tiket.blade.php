@@ -3,7 +3,7 @@
 @section('title', 'List Order Tiket')
 @section('content')
 
-<div class="container-belanja pesantiket">
+<div class="container-pesanan-tiket pesantiket">
 <div class="main-keranjang">
     <div class="container-keranjang">
         <div class="container-kiri">
