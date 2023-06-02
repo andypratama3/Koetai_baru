@@ -141,7 +141,7 @@ $(document).ready(function () {
         var nama = $(this).closest('.pesan_tiket').find('.nama').val();
         var kategori_tiket = $(this).closest('.pesan_tiket').find('.tiket_id').val();
         var jumlah = $(this).closest('.pesan_tiket').find('.qty').val();
-        
+
         var harga = $('#harga_tiket').data('harga');
         var total = harga * jumlah;
         data = {
