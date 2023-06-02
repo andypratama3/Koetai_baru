@@ -144,6 +144,7 @@ $(document).ready(function () {
 
         var harga = $('#harga_tiket').data('harga');
         var total = harga * jumlah;
+        
         data = {
             'nama': nama,
             'tiket_id': kategori_tiket,
