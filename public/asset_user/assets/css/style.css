@@ -543,7 +543,6 @@ main .swiper-scrollbar {
 }
 
 .container-belanja .isi-belanja .belanja-baju .produk {
-    /* position: relative; */
     border: 2px #111 solid;
     border-radius: 15px;
     width: 200px;
@@ -655,8 +654,11 @@ main .swiper-scrollbar {
     /* border: 2px red solid; */
     display: inline-block;
     justify-content: center;
+    text-align: center;
+    z-index: 1;
     cursor: pointer;
     transition: .2s all;
+    overflow: hidden;
 }
 
 .container-belanja .isi-belanja .belanja-mchan .produk:hover {
@@ -665,6 +667,7 @@ main .swiper-scrollbar {
 }
 
 .container-belanja .isi-belanja .belanja-mchan .produk img {
+    position: relative;
     width: 100%;
     border-radius: 10px 10px 0 0;
     background-size: cover;
@@ -1009,6 +1012,13 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .label-pe
     margin-bottom: 5px;
 }
 
+main .container .container-pesantik .pesantik-menu .form-menu .pilihan .tombol-pesantik {
+    /* border: 2px red solid; */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 main .container .container-pesantik .pesantik-menu .form-menu .pilihan select {
     width: 100%;
     height: 30px;
@@ -1022,16 +1032,18 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan select op
 
 }
 
-/* main .container .container-pesantik .pesantik-menu .form-menu .pilihan input {
+main .container .container-pesantik .pesantik-menu .form-menu .pilihan input,
+main .container .container-pesantik .pesantik-menu .form-menu .pilihan select {
     width: 100%;
     height: 30px;
     border-radius: 5px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: 0;
-} */
+    font-size: 15px;
+}
+
+main .container .container-pesantik .pesantik-menu .form-menu .pilihan button {
+    width: 100px;
+    margin: 0 auto;
+}
 
 main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout {
     margin-top: 40px;
@@ -1051,7 +1063,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 }
 
 .container-pesanan-tiket {
-    /* border: 2px red solid; */
+    border: 2px red solid;
 }
 
 .container-pesanan-tiket .main-pesanan-tiket {
@@ -1489,8 +1501,8 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     height: auto;
     display: flex;
     justify-content: center;
-    /* border: 2px red solid; */
-    margin-top: 80px;
+    border: 2px red solid;
+    /* margin-top: 10px; */
     box-sizing: border-box;
 }
 
@@ -2035,7 +2047,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
         display: block;
         justify-content: center;
         margin: 3vh auto 0 auto;
-        /* border: 2px red solid; */
+        border: 2px red solid;
         align-items: center;
         text-align: center;
     }
