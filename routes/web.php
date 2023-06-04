@@ -33,24 +33,17 @@ Route::get('shop', [ShopController::class, 'index']);
 Route::get('crew', [CrewController::class, 'index']);
 
 Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
+    //tiket
     Route::get('tiket', [OrderTiketController::class, 'index']);
     Route::post('tiket-order', [OrderTiketController::class, 'order_tiket']);
-
     //listTiket
     Route::get('checkout-tiket', [OrderTiketController::class, 'checkout']);
     Route::post('bayar-tiket', [OrderTiketController::class, 'order']);
-
     Route::get('orderan-tiket', [OrderTiketController::class, 'orderan']);
-
-
-    // Route::resource('tiket', OrderTiketController::class, ['names' => 'tiket']);
-    // Route::post('pesan-tiket', [OrderTiketController::class, 'store']);
-
     Route::post('update-tiket', [OrderTiketController::class, 'update_tiket']);
     Route::post('delete-pesanan-tiket', [OrderTiketController::class, 'destroy']);
+    //cart
 
-
-    // Route::resource('shop', ShopController::class, ['names' => 'shop']);
 
     Route::resource('cart', CartController::class, ['names' => 'cart']);
     Route::post('add-to-cart', [CartController::class, 'addtocart']);
@@ -58,7 +51,9 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
     Route::post('delete-cart', [CartController::class, 'deletecart']);
     Route::get('cart-count', [CartController::class, 'cartcount']);
 
-
+    //shop
+    Route::post('add-to-checkout', [ShopController::class,'addprodukcheckout']);
+    Route::get('checkout', [ShopController::class,'checkoutproduk']);
 
 
 

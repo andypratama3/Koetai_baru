@@ -54,20 +54,6 @@
                                     <option value="XL">Xl</option>
                                     <option value="XXL">XXL</option>
                                 </select>
-                                {{-- <div class="radio-inputs">
-                                    <label class="radio">
-                                        <input type="radio" name="prod_ukuran" value="L">
-                                        <span class="name">L</span>
-                                    </label>
-                                    <label class="radio">
-                                        <input type="radio" name="prod_ukuran" value="XL">
-                                        <span class="name">XL</span>
-                                    </label>
-                                    <label class="radio">
-                                        <input type="radio" name="prod_ukuran" value="XXL">
-                                        <span class="name">XXL</span>
-                                    </label>
-                                </div> --}}
                             </div>
                             <div class="jumlah">
                                 <h2>jumlah: </h2>
@@ -84,9 +70,9 @@
                             <i class='bx bx-cart-add bx-md ikon'></i>
                             <span class="teks-checkout">Tambahkan Ke Keranjang</span>
                         </button>
-                        <button value="beli" class="btn-beli teks-checkout btn-beli">Beli Sekarang</button>
+                        <button value="beli" class="btn-beli teks-checkout btn-beli btn-checkout-form">Beli Sekarang</button>
                         @else
-                        <button class="btn-beli teks-checkout"><a href="{{ route('login') }}"
+                        <button class="btn-beli teks-checkout "><a href="{{ route('login') }}"
                                 style="text-decoration:none; color: black;"> Masuk Sekarang</a></button>
                         @endif
                         @endauth

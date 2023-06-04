@@ -81,14 +81,7 @@ class CartController extends Controller
         }
     }
 
-    public function checkoutproduk(Request $request)
-    {
-        $produk_id = $request->input("produk_id");
-        $produk_ukuran  = $request->input("produk_ukuran");
-        $produk_qty = $request->input("produk_jumlah");
-
-        
-    }
+    
 
 }
 

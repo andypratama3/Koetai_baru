@@ -271,7 +271,30 @@ $(document).ready(function () {
         //         });
         //     }
         // });
+    });
+    $(document).on('click','.btn-checkout-form', function (e) {
+        var produk_id = $(this).closest('.detail').find('.prod_id').val();
+        var produk_ukuran = $(this).closest('.detail').find('.prod_ukuran').val();
+        var produk_qty = $(this).closest('.detail').find('.prod_qty').val();
 
+        $.ajax({
+            method: "POST",
+            url: "/add-to-checkout",
+            data: {
+                'prod_id': produk_id,
+                'prod_qty': produk_qty,
+                'prod_ukuran': produk_ukuran
+            },
+            success: function (response) {
+                loadcart();
+                Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: response.status,
+                });
+                window.location.href = "/checkout";
+            }
+        });
     });
 });
 

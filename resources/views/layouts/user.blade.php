@@ -16,12 +16,8 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
 
 
-<<<<<<< HEAD
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
         data-client-key="{{ config('midtrans.client_Key') }}"></script>
-=======
-    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_Key') }}"></script>
->>>>>>> ab7c1f31f893bbcc8d60489f88e4cc94d37e1305
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('asset_user/vendor/glightbox/css/glightbox.min.css')}}">

@@ -1,4 +1,67 @@
-<x-guest-layout>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="{{ asset('asset_user/assets/img/logo-kms1.png') }}" rel="icon">
+    <link href="{{ asset('asset_user/assets/img/logo-kms1.png') }}" rel="apple-touch-icon">
+
+    <link rel="stylesheet" href="{{ asset('asset_user/assets/css/style.css')}}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
+</head>
+
+<main>
+<body>
+    <div class="blur-kuning"></div>
+    <a href="index.html" class="link-keluar-login">
+        <div class="btn-keluar-login">
+            <i class='bx bxs-chevron-left logo-keluar-login'></i>
+        </div>
+    </a>
+
+    <div class="container-login">
+        <div class="container-kiri">
+            {{-- <img src="{{ asset('asset_user/assets/img/logo-kms1.png')}}"> --}}
+        </div>
+        <div class="container-kanan">
+            <div class="isi-container">
+                <div class="judul-login">
+                    <h1>MASUK</h1>
+                </div>
+                <div class="form-input">
+                    <div class="input-isi">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="input-isi">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="input-isi">
+                        <input type="password" class="form-control" placeholder="Password" aria-label="password">
+                    </div>
+                    <div class="input-isi">
+                        <label for="co-password">Konfirmasi Password</label>
+                        <input type="password" class="form-control" placeholder="Konfirmasi Password"
+                            aria-label="co-password">
+                    </div>
+                </div>
+                <button type="submit" class="btn-login">Masuk</button>
+            </div>
+        </div>
+        <img src="assets/img/logo-kms4.png" class="bg-logo">
+    </div>
+
+</main>
+
+</body>
+</html>
+
+
+{{-- <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -49,4 +112,4 @@
             </div>
         </form>
     </x-authentication-card>
-</x-guest-layout>
+</x-guest-layout> --}}

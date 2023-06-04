@@ -1,5 +1,5 @@
 @extends('layouts.user')
-@section('title', 'Shop')
+@section('title', 'Cart')
 @section('content')
 
 <div class="container-belanja cartitems">
