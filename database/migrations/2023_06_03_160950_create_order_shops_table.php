@@ -14,7 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('order_shops', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->string('user_id');
+            $table->string('nama_penerima');
+            $table->integer('nomor_telpon');
+            $table->string('prod_id');
+            $table->string('prod_qty');
+            $table->string('prod_ukuran');
+            $table->string('kategori_pesanan');
+            $table->longText('alamat')->nullable()->default('text');
+            $table->enum('status', ['Unpaid','Paid']);
+            $table->string('slug');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -29,3 +40,8 @@ return new class extends Migration
         Schema::dropIfExists('order_shops');
     }
 };
+
+
+
+
+

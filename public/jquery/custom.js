@@ -144,7 +144,7 @@ $(document).ready(function () {
 
         var harga = $('#harga_tiket').data('harga');
         var total = harga * jumlah;
-        
+
         data = {
             'nama': nama,
             'tiket_id': kategori_tiket,
@@ -194,7 +194,6 @@ $(document).ready(function () {
             },
       });
     });
-
     $(document).on('click','.delete-tiket-order', function (e) {
         e.preventDefault();
 
@@ -235,7 +234,6 @@ $(document).ready(function () {
             $(this).closest('.pesan_tiket').find('.qty-input-tiket').val(value);
     }
     });
-
     $(document).on('click','.decrement-btn-tiket', function (e) {
     e.preventDefault();
     var dec_value = $(this).closest('.pesan_tiket').find('.qty-input-tiket').val();
@@ -246,7 +244,34 @@ $(document).ready(function () {
         $(this).closest('.pesan_tiket').find('.qty-input-tiket').val(value);
     }
     });
+    $(document).on('click','.btn-checkout', function (e) {
+        var produk_id = $(this).closest('.produk_data').find('.prod_id').val();
+        var produk_qty = $(this).closest('.produk_data').find('.prod_qty').val();
+        var produk_ukuran = $(this).closest('.produk_data').find('.prod_ukuran').val();
+        alert(produk_id);
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
+        // $.ajax({
+        //     method: "POST",
+        //     url: "/add-to-cart",
+        //     data: {
+        //         'prod_id': produk_id,
+        //         'prod_qty': produk_qty,
+        //         'prod_ukuran': produk_ukuran
+        //     },
+        //     success: function (response) {
+        //         loadcart();
+        //         Swal.fire({
+        //         icon: 'success',
+        //         title: 'Berhasil',
+        //         text: response.status,
+        //         });
+        //     }
+        // });
 
+    });
 });
-// $(document).on('click', 'increment-btn', function () {
 

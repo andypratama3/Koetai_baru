@@ -42,7 +42,7 @@ class CartController extends Controller
     public function index()
     {
         $carts = Cart::where('user_id', Auth::id())->get();
-        return view('shop.cart', compact('carts'));
+        return view('shop.cart.cart', compact('carts'));
     }
     public function updatecart(Request $request){
         $produk_id = $request->input('prod_id');
@@ -79,6 +79,15 @@ class CartController extends Controller
             return response()->json(['status' => "Login To continue"]);
 
         }
+    }
+
+    public function checkoutproduk(Request $request)
+    {
+        $produk_id = $request->input("produk_id");
+        $produk_ukuran  = $request->input("produk_ukuran");
+        $produk_qty = $request->input("produk_jumlah");
+
+        
     }
 
 }

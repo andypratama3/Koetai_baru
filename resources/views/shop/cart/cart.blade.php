@@ -49,7 +49,7 @@
                 @endforeach
                 <div class="total">
                     <p>Total Semua : Rp. {{ $totals }}</p>
-                    <a href="">Pesan</a>
+                        <button type="submit" class="btn btn-warning btn-lg btn-checkout">Check Out</button>
                 </div>
             </div>
 

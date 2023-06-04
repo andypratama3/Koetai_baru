@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk;
 use Illuminate\Http\Request;
+use App\Http\Requests\CheckoutRequest;
 
 class ShopController extends Controller
 {
@@ -13,6 +14,9 @@ class ShopController extends Controller
 
         return view('shop.index', compact('shops'));
     }
-    
 
+    public function store(CheckoutRequest $request){
+
+        
+    }
 }
