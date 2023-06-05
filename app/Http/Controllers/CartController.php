@@ -54,7 +54,7 @@ class CartController extends Controller
                 $cart = Cart::where('prod_id',$produk_id)->where('user_id',Auth::id())->first();
                 $cart->prod_qty = $produk_qty;
                 $cart->update();
-                return response()->json(['status'=>'Quantity Update']);
+                return response()->json(['status'=>'Jumlah Di Ganti']);
             }
         }
     }
@@ -65,6 +65,7 @@ class CartController extends Controller
 
     public function deletecart(Request $request){
 
+
         if(Auth::check())
         {
             $produk_id = $request->input('prod_id');
@@ -72,16 +73,16 @@ class CartController extends Controller
             {
             $cartItem = Cart::where('prod_id', $produk_id)->where('user_id', Auth::id())->first();
             $cartItem->delete();
-            return response()->json(['status' => "Cart HasBeen Delete"]);
+            return response()->json(['status' => "Produk Berhasil Di Hapus Dari Keranjang"]);
             }
         }
         else{
-            return response()->json(['status' => "Login To continue"]);
+            return response()->json(['status' => "Masuk Untuk Melanjutkan"]);
 
         }
     }
 
-    
+
 
 }
 

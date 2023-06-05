@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,7 +25,7 @@
 
     <div class="container-login">
         <div class="container-kiri">
-            {{-- <img src="{{ asset('asset_user/assets/img/logo-kms1.png')}}"> --}}
+            {{-- <img src="{{ asset('asset_user/assets/img/logo-kms1.png')}}">
         </div>
         <div class="container-kanan">
             <div class="isi-container">
@@ -60,8 +60,8 @@
 </body>
 </html>
 
-
-{{-- <x-guest-layout>
+ --}}
+<x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -112,4 +112,4 @@
             </div>
         </form>
     </x-authentication-card>
-</x-guest-layout> --}}
+</x-guest-layout>
