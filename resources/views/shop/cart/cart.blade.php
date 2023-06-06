@@ -58,7 +58,6 @@
                 <h2>Keranjang<i class="bi bi-cart"></i> Anda Kosong!</h2>
                 <br>
                 <a href="{{url('shop')}}" class="btn btn-warning btn-keranjang align-center">Continue Shopping</a>
-
             </div>
             @endif
         </div>

@@ -3,9 +3,7 @@
 @section('content')
 
 <div class="container-belanja cartitems">
-    <div class="container">
-
-    </div>
+    
     <div class="main-keranjang">
         <div class="container-keranjang">
             <div class="isinya">
@@ -57,6 +55,7 @@
                 <a href="{{url('shop')}}" class="btn btn-warning btn-keranjang align-center">Continue Shopping</a>
 
             </div>
+
 
         </div>
     </div>

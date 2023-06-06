@@ -45,9 +45,9 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
                 <img src="{{ asset('dashboard_assets/assets/img/logo.png') }}" alt="">
-                <span class="d-none d-lg-block">NiceAdmin</span>
+                <span class="d-none d-lg-block span-logo">Koetai Mahkota Soundline</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -219,11 +219,32 @@
             <h1>Dashboard</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
             </nav>
-        </div><!-- End Page Title -->
+            {{-- @if(session()->get('update'))
+            <div class="alert alert-primary alert-dismissible float-end" role="alert" style="text-align: center;"
+                data-delay="20">
+                {{session()->get('success')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            @if(session()->get('succes'))
+            <div class="alert alert-primary alert-dismissible float-end" role="alert" style="text-align: center;"
+                data-delay="20">
+                {{session()->get('succes')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            @if(session()->get('succes'))
+            <div class="alert alert-primary alert-dismissible float-end" role="alert" style="text-align: center;"
+                data-delay="20">
+                {{session()->get('succes')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif --}}
+        </div>
 
         <section class="section dashboard">
             <div class="row">
