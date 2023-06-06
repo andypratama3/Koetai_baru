@@ -1357,7 +1357,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 /* ===================================================================== */
 
 /* ===================================================================== */
-/* CONTAINER LOGION */
+/* CONTAINER LOGIN */
 .link-keluar-login .btn-keluar-login {
     width: 55px;
     height: 35px;
@@ -1379,13 +1379,13 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     transform: scale(0.95);
 }
 
-.btn-keluar-login i {
+.link-keluar-login .btn-keluar-login i {
     font-size: 32px;
     color: var(--primary);
 }
 
 .container-login {
-    width: 60%;
+    width: 70%;
     height: 75vh;
     display: flex;
     justify-content: space;
@@ -1400,7 +1400,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     position: absolute;
     width: 345px;
     height: 450px;
-    right: 20%;
+    right: 15%;
     z-index: -1;
 }
 
@@ -1416,7 +1416,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 
 .container-login .container-kiri img {
     width: 90%;
-    height: 80%;
+    height: 70%;
 }
 
 .container-login .container-kanan {
@@ -1455,6 +1455,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     color: var(--primary);
     font-size: 15px;
     display: block;
+    margin-bottom: 5px;
 }
 
 .container-login .container-kanan .form-input input {
@@ -1464,17 +1465,41 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 
 .container-login .container-kanan .form-input .input-isi {
     /* border: 2px red solid; */
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
-.container-login .container-kanan .btn-login {
-    width: 200px;
+.container-login .container-kanan .form-btn {
+    /* border: 2px red solid; */
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px auto 0;
+}
+
+.container-login .container-kanan .form-btn .btn-login {
+    width: 150px;
     height: 25px;
+    padding: 15px 0;
+    background-color: var(--primary);
+    border: 1px var(--primary) solid;
+    border-radius: 3px;
+    color: var(--putih);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    transition: .2s all;
+}
+
+.container-login .container-kanan .form-btn .btn-register {
+    width: 150px;
+    height: 25px;
+    padding: 15px 0;
     background-color: #146C94;
     border: 1px #146C94 solid;
     border-radius: 3px;
     color: var(--putih);
-    margin: 50px auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1483,10 +1508,19 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 }
 
 .container-login .container-kanan .btn-login:hover {
-    box-shadow: 0 0 10px 1px #146C94;
+    box-shadow: 0 0 10px 1px var(--primary);
 }
 
 .container-login .container-kanan .btn-login:active {
+    transform: scale(0.95);
+    transition: none;
+}
+
+.container-login .container-kanan .btn-register:hover {
+    box-shadow: 0 0 10px 1px #146C94;
+}
+
+.container-login .container-kanan .btn-register:active {
     transform: scale(0.95);
     transition: none;
 }
