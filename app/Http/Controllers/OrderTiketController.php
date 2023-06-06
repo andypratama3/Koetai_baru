@@ -104,16 +104,13 @@ class OrderTiketController extends Controller
             {
             $order = OrderTiket::where('id', $order_id)->where('user_id', Auth::id())->first();
             $order->delete();
-            return response()->json(['status' => "Tiket HasBeen Delete"]);
+            return response()->json(['status' => "Tiket Berhasil Di Hapus"]);
             }
         }
         else{
             return response()->json(['status' => "Login To continue"]);
 
         }
-    }
-    public function bayar(){
-
     }
 
 }

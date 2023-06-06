@@ -54,8 +54,8 @@ class ShopController extends Controller
         $produk_id = $request->input("produk_id");
         $produk_ukuran  = $request->input("produk_ukuran");
         $produk_qty = $request->input("produk_jumlah");
-
         
+
         return view('shop.cart.checkout',compact('carts'));
 
     }

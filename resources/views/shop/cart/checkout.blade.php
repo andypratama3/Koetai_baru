@@ -35,7 +35,7 @@
 
                     <div class="harga">
                         <p>Total : Rp. {{ $total }}</p>
-                      </div>
+                    </div>
                     <div class="btn-x">
                         <button class="float-end delete-cart"><i class='bx bx-x'></i></button>
                     </div>
@@ -46,7 +46,7 @@
                 @endforeach
                 <div class="total">
                     <p>Total Semua : Rp. {{ $totals }}</p>
-                        <button type="submit" class="btn btn-warning btn-lg btn-checkout">Check Out</button>
+                    <button type="submit" class="btn btn-warning btn-lg btn-checkout">Check Out</button>
                 </div>
             </div>
 
