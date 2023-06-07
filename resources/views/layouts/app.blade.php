@@ -225,27 +225,6 @@
                 </ol>
 
             </nav>
-            {{-- @if(session()->get('update'))
-            <div class="alert alert-primary alert-dismissible float-end" role="alert" style="text-align: center;"
-                data-delay="20">
-                {{session()->get('success')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
-            @if(session()->get('succes'))
-            <div class="alert alert-primary alert-dismissible float-end" role="alert" style="text-align: center;"
-                data-delay="20">
-                {{session()->get('succes')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
-            @if(session()->get('succes'))
-            <div class="alert alert-primary alert-dismissible float-end" role="alert" style="text-align: center;"
-                data-delay="20">
-                {{session()->get('succes')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif --}}
         </div>
 
         <section class="section dashboard">
@@ -278,7 +257,7 @@
     <script src="{{ asset('dashboard_assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/vendor/chart.js/chart.min.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/vendor/echarts/echarts.min.js') }}"></script>
-
+    <script src="{{ asset('dashboard_assets/SwetAlert/index.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('dashboard_assets/assets/vendor/php-email-form/validate.js') }}"></script>

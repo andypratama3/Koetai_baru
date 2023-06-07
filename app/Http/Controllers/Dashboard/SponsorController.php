@@ -39,6 +39,4 @@ class SponsorController extends Controller
         $deleteSponsorAction->execute($slug);
         return redirect()->route('dashboard.sponsor.index')->with('success-delete','Event Berhasil Di Hapus!');
     }
-
-
 }
