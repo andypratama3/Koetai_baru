@@ -39,7 +39,7 @@ class EventController extends Controller
     {
         $storeEventAction->execute($request);
 
-        return redirect()->route('dashboard.event.index')->with('succes','Event Berhasil Ditambahkan!');
+        return redirect()->route('dashboard.event.index')->with('success-insert','Event Berhasil Ditambahkan!');
     }
     public function show(Request $request,$slug)
     {
@@ -63,13 +63,13 @@ class EventController extends Controller
     {
         $updateEventAction->execute($request,$slug);
 
-        return redirect()->route('dashboard.event.index')->with('succes','Event Berhasil Di Update!');
+        return redirect()->route('dashboard.event.index')->with('success-update','Event Berhasil Di Update!');
 
     }
     public function destroy($slug, DeleteEventAction $deleteEventAction){
 
         $deleteEventAction->execute($slug);
-        return redirect()->route('dashboard.event.index')->with('succes','Event Berhasil Di Hapus!');
+        return redirect()->route('dashboard.event.index')->with('success-delete','Event Berhasil Di Hapus!');
     }
 
 }

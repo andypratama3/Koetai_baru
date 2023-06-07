@@ -26,7 +26,7 @@ class SponsorController extends Controller
     public function store(StoreSponsorRequest $request, StoreSponsorAction $storeSponsorAction)
     {
         $storeSponsorAction->execute($request);
-        return redirect()->route('dashboard.sponsor.index')->with('succes','Sponsor Berhasil Ditambahkan!');
+        return redirect()->route('dashboard.sponsor.index')->with('success-insert','Sponsor Berhasil Ditambahkan!');
     }
     public function show(Request $request,$slug)
     {
@@ -37,7 +37,7 @@ class SponsorController extends Controller
     public function destroy($slug, DeleteSponsorAction $deleteSponsorAction){
 
         $deleteSponsorAction->execute($slug);
-        return redirect()->route('dashboard.sponsor.index')->with('succes','Event Berhasil Di Hapus!');
+        return redirect()->route('dashboard.sponsor.index')->with('success-delete','Event Berhasil Di Hapus!');
     }
 
 

@@ -38,7 +38,7 @@
 
 
                         <div class="col-sm-10">
-                            <input class="form-control" type="file" id="formFile" name="foto" value="{{ $anggota->foto }}">
+                            <input class="form-control" type="file" id="formFile" name="foto" value="{{ $anggota->foto }}"  >
                             <br>
                             <div>Foto :</div>
                             <img src="{{ asset('storage/img/Anggota/' . $anggota->foto) }}" alt="" srcset="" class="imgs">

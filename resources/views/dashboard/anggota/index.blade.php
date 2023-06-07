@@ -7,10 +7,12 @@
     <!-- Left side columns -->
     <div class="col-lg-12">
         <div class="row">
+
             <div class="card">
                 <div class="card-body">
                   <h5 class="card-title float-end"><a href="{{ route('dashboard.anggota.create') }}" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a></h5>
                   <!-- Table with hoverable rows -->
+
                   <table class="table table-hover text-center">
                     <thead>
                       <tr>

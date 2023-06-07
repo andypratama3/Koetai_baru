@@ -26,7 +26,7 @@ class KategoriController extends Controller
     public function store(StorekategoriRequest $request, StoreKategoriAction $storeKategoriAction)
     {
         $storeKategoriAction->execute($request);
-        return redirect()->route('dashboard.kategori.index')->with('succes','Kategori Berhasil Ditambahkan!');
+        return redirect()->route('dashboard.kategori.index')->with('success-insert','Kategori Berhasil Ditambahkan!');
     }
     public function edit($slug)
     {
@@ -36,12 +36,12 @@ class KategoriController extends Controller
     public function update(UpdateKategoriRequest $request, UpdateKategoriAction $updateKategoriAction,$slug)
     {
         $updateKategoriAction->execute($request,$slug);
-        return redirect()->route('dashboard.kategori.index')->with('succes','Kategori Berhasil Di Update');
+        return redirect()->route('dashboard.kategori.index')->with('success-update','Kategori Berhasil Di Update');
     }
     public function destroy($slug ,DeleteKategoriAction $deleteKategoriAction)
     {
         $deleteKategoriAction->execute($slug);
-        return redirect()->route('dashboard.kategori.index')->with('succes','Kategori Berhasil Dihapus!');
+        return redirect()->route('dashboard.kategori.index')->with('success-delete','Kategori Berhasil Dihapus!');
     }
 
 }

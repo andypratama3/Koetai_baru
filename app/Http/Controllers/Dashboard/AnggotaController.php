@@ -26,7 +26,7 @@ class AnggotaController extends Controller
     public function store(StoreRequestAnggota $request, StoreAnggotaAction $storeAnggotaAction)
     {
         $storeAnggotaAction->execute($request);
-        return redirect()->route('dashboard.anggota.index')->with('success','Anggota berhasil di tambahkan!');
+        return redirect()->route('dashboard.anggota.index')->with('success-insert','Anggota berhasil di tambahkan!');
     }
     public function show($slug){
 
@@ -41,11 +41,11 @@ class AnggotaController extends Controller
     }
     public function update(StoreRequestanggota $request, UpdateAnggotaAction $updateAnggotaAction,$slug){
         $updateAnggotaAction->execute($request,$slug);
-        return redirect()->route('dashboard.anggota.index')->with('success','Anggota berhasil di Update!');
+        return redirect()->route('dashboard.anggota.index')->with('success-update','Anggota berhasil di Update!');
     }
     public function destroy(DeleteAnggotaAction $deleteAnggotaAction,$slug)
     {
         $deleteAnggotaAction->execute($slug);
-        return redirect()->route('dashboard.anggota.index')->with('success','Anggota berhasil di Hapus!');
+        return redirect()->route('dashboard.anggota.index')->with('success-delete','Anggota berhasil di Hapus!');
     }
 }
