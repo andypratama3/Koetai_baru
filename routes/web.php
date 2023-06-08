@@ -71,7 +71,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], func
     Route::resource('tiket', TiketController::class, ['names' => 'dashboard.tiket']);
     Route::resource('order', OrderanTiket::class, ['names' => 'dashboard.order']);
     Route::resource('user', UserController::class, ['names' => 'dashboard.user']);
-
+    
 });
 
 
