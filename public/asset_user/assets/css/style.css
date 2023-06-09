@@ -327,18 +327,10 @@ header .dropdown-menu li button:hover {
 /* ===================================================================== */
 /* MAIN */
 main {
-    height: auto;
-    display: flex;
-    justify-content: center;
     /* border: 1px blue solid; */
-    height: 75vh;
+    width: 100%;
+    height: auto;
     margin-top: 70px;
-}
-
-main .container {
-    width: 90%;
-    height: 100%;
-    /* border: 2px green solid; */
     display: flex;
     justify-content: center;
 }
@@ -348,57 +340,37 @@ main .container {
 
 /* ===================================================================== */
 /* CONTAINER BERANDA */
-main .container .container-beranda {
+main .container-beranda {
+    border: 2px green solid;
     display: flex;
-    width: 100%;
-    height: 100%;
-    /* border: 2px green solid; */
     justify-content: space-between;
+    width: 80%;
+    height: auto;
 }
 
-main .container .container-beranda.close {
-    height: 0;
-    display: none;
-}
-
-main .container .container-beranda.open {
-    height: 100%;
-    display: flex;
-}
-
-main .container .container-beranda .container-kiri {
-    width: 45%;
-    height: 100%;
+main .container-beranda .container-kiri {
+    width: 48%;
+    height: 73vh;
     background-color: rgba(33, 42, 62, 0.5);
     border: 5px var(--primary) solid;
     border-radius: 20px;
     box-sizing: border-box;
 }
 
-main .container .container-beranda .container-kiri img {
-    display: flex;
-    justify-self: center;
+main .container-beranda .container-kiri img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 15px;
-    margin: auto;
 }
 
-main .container .container-beranda .container-kanan {
-    width: 50%;
-    height: 100%;
-    display: block;
-    justify-content: center;
-    margin-left: 0;
-    text-align: center;
-    /* border: 5px var(--primary) solid; */
+main .container-beranda .container-kanan {
+    width: 48%;
 }
 
-main .container .container-beranda .container-kanan .carouselnya {
+main .container-beranda .container-kanan .carouselnya {
     position: relative;
     width: 100%;
-    height: 58vh;
+    height: 63vh;
     display: flex;
     justify-content: center;
     border: 5px var(--primary) solid;
@@ -411,21 +383,20 @@ main .container .container-beranda .container-kanan .carouselnya {
     object-fit: cover;
 }
 
-main .container .container-beranda .container-kanan .carouselnya .swiper-wrapper img {
-    object-fit: cover;
+main .container-beranda .container-kanan .carouselnya .swiper-wrapper img {
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
-    height: 58vh;
+    height: 100%;
 }
 
-main .container .container-beranda .container-kanan {
-    /* position: absolute; */
+main .container-beranda .container-kanan {
     display: block;
-    justify-content: center;
-    text-align: center;
-    /* bottom: 13vh; */
+    height: auto;
 }
 
-main .container .container-beranda .container-kanan h3 {
+main .container-beranda .container-kanan h3 {
     line-height: 20px;
     color: white !important;
     font-size: 14px;
@@ -959,7 +930,7 @@ main .swiper-scrollbar {
 
 /* ===================================================================== */
 /* CONTAINER PESAN TIKET */
-main .container .container-pesantik {
+main .container-pesantik {
     width: 70vh;
     height: 100%;
     border-radius: 20px;
@@ -970,7 +941,7 @@ main .container .container-pesantik {
     /* border: 2px red solid; */
 }
 
-main .container .container-pesantik .pesantik-atas {
+main .container-pesantik .pesantik-atas {
     width: 100%;
     /* border: 1px white solid; */
     display: block;
@@ -980,17 +951,17 @@ main .container .container-pesantik .pesantik-atas {
     text-align: center;
 }
 
-main .container .container-pesantik .pesantik-atas img {
+main .container-pesantik .pesantik-atas img {
     width: 120px;
     height: auto;
 }
 
-main .container .container-pesantik .pesantik-atas h1 {
+main .container-pesantik .pesantik-atas h1 {
     color: var(--primary);
     font-size: 18px;
 }
 
-main .container .container-pesantik .pesantik-menu {
+main .container-pesantik .pesantik-menu {
     width: 90%;
     height: 50%;
     /* border: 2px white solid; */
@@ -998,28 +969,28 @@ main .container .container-pesantik .pesantik-menu {
     display: block;
 }
 
-main .container .container-pesantik .pesantik-menu .form-menu {
+main .container-pesantik .pesantik-menu .form-menu {
     width: 90%;
     height: 100%;
     /* border: 2px blue solid; */
     margin: 0 auto;
 }
 
-main .container .container-pesantik .pesantik-menu .form-menu .pilihan .label-pesantik {
+main .container-pesantik .pesantik-menu .form-menu .pilihan .label-pesantik {
     color: var(--primary);
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 5px;
 }
 
-main .container .container-pesantik .pesantik-menu .form-menu .pilihan .tombol-pesantik {
+main .container-pesantik .pesantik-menu .form-menu .pilihan .tombol-pesantik {
     /* border: 2px red solid; */
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-main .container .container-pesantik .pesantik-menu .form-menu .pilihan select {
+main .container-pesantik .pesantik-menu .form-menu .pilihan select {
     width: 100%;
     height: 30px;
     border-radius: 5px;
@@ -1027,25 +998,25 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan select {
     outline: 0;
 }
 
-main .container .container-pesantik .pesantik-menu .form-menu .pilihan select option {
+main .container-pesantik .pesantik-menu .form-menu .pilihan select option {
     height: 100px;
 
 }
 
-main .container .container-pesantik .pesantik-menu .form-menu .pilihan input,
-main .container .container-pesantik .pesantik-menu .form-menu .pilihan select {
+main .container-pesantik .pesantik-menu .form-menu .pilihan input,
+main .container-pesantik .pesantik-menu .form-menu .pilihan select {
     width: 100%;
     height: 30px;
     border-radius: 5px;
     font-size: 15px;
 }
 
-main .container .container-pesantik .pesantik-menu .form-menu .pilihan button {
+main .container-pesantik .pesantik-menu .form-menu .pilihan button {
     width: 100px;
     margin: 0 auto;
 }
 
-main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout {
+main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout {
     margin-top: 40px;
     background-color: #146C94;
     color: white;
@@ -1054,16 +1025,16 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     text-align: center;
 }
 
-main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:hover {
+main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:hover {
     box-shadow: 0 0 5px 1px #146C94;
 }
 
-main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
+main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     transform: scale(0.97);
 }
 
 .container-pesanan-tiket {
-    border: 2px red solid;
+    /* border: 2px red solid; */
 }
 
 .container-pesanan-tiket .main-pesanan-tiket {
@@ -1535,7 +1506,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     height: auto;
     display: flex;
     justify-content: center;
-    border: 2px red solid;
+    /* border: 2px red solid; */
     /* margin-top: 10px; */
     box-sizing: border-box;
 }
@@ -1698,9 +1669,8 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 .sponsor {
     width: 100%;
     height: 100%;
-    margin-top: 5vh;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 30px;
+    padding: 10px 0 30px;
     box-sizing: border-box;
     display: block;
     justify-content: center;
@@ -1711,7 +1681,8 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 
 .sponsor .container {
     width: auto;
-    padding: 10px;
+    height: auto;
+    padding: 0;
     /* border: 3px #fff solid; */
 
 }
@@ -1724,14 +1695,24 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 }
 
 .sponsor .container .sponsor-utama {
+    /* border: 2px red solid; */
     display: flex;
     justify-content: center;
-    margin-top: 5vh;
-    margin-bottom: 1vh;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 0;
+    width: auto;
+    height: auto;
 }
 
 .sponsor .container .sponsor-utama img {
-    width: 60vh;
+    width: 350px;
+    height: auto;
+}
+
+.sponsor .container img {
+    filter: grayscale(90%);
+    /* border: 2px red solid; */
 }
 
 .sponsor .container .sponsor-lainnya {
@@ -1739,12 +1720,17 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     justify-content: center;
     /* border: 1px red solid; */
     width: auto;
+    height: auto;
+    padding: 0;
 }
 
-.sponsor .container img {
-    width: 150px;
-    margin: 5vh 5vh;
-    filter: grayscale(90%);
+.sponsor .container .sponsor-lainnya img {
+    width: 120px;
+    height: 50px;
+    margin: 0 15px 0;
+    object-fit: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .sponsor img:hover {
@@ -1752,29 +1738,6 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 }
 
 /* AKHIR CONTAINER SPONSOR*/
-/* ===================================================================== */
-
-/* ===================================================================== */
-/* RESPONSIVE WIDTH 1900px*/
-@media (max-width: 1900px) {}
-
-/* AKHIR RESPONSIVE WIDTH 1900px */
-/* ===================================================================== */
-
-/* ===================================================================== */
-/* RESPONSIVE WIDTH 1400px*/
-@media (max-width: 1400px) {
-    main .container .container-beranda {
-        width: 100%;
-    }
-
-    .sponsor .container img {
-        width: 12vh;
-
-    }
-}
-
-/* AKHIR RESPONSIVE WIDTH 1400px */
 /* ===================================================================== */
 
 /* ===================================================================== */
@@ -1794,28 +1757,6 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     header ul li a button .cart-count {
         background-color: red;
         transform: translateX(15px) translateY(-12px) !important;
-    }
-
-
-    main .container {
-        width: 90%;
-    }
-
-    main .container .container-beranda {
-        width: 100%;
-    }
-
-    main .container .container-beranda .container-kiri {
-        width: 45%;
-        height: 100%;
-    }
-
-    main .container .container-beranda .container-kanan h3 {
-        font-size: 14px;
-    }
-
-    main .container .container-beranda .container-kanan .dots {
-        margin-bottom: 20px;
     }
 }
 
@@ -1841,53 +1782,14 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
         transform: translateX(15px) translateY(-12px) !important;
     }
 
-    main .container {
-        width: 95%;
-    }
-
-    main .container .container-beranda {
-        width: 100%;
-    }
-
-    main .container .container-beranda .container-kiri {
-        width: 45%;
-        height: 100%;
-    }
-
-    main .container .container-beranda .container-kiri img {
-        width: 100%;
-        height: 100%;
-    }
-
-    main .container .container-beranda .container-kanan .dots {
-        margin-bottom: 20px;
-    }
-
-    .sponsor .container .sponsor-utama {
-        display: flex;
-        justify-content: center;
-        margin-top: 5vh;
-        margin-bottom: 1vh;
-    }
-
     .sponsor .container .sponsor-utama img {
-        width: 50vh;
+        width: 250px;
     }
 
-    .sponsor .container .sponsor-lainnya {
-        display: flex;
-        justify-content: center;
-        display: block;
-        text-align: center;
-        margin: 0 auto;
+    .sponsor .container .sponsor-lainnya img {
+        width: 100px;
+        height: 40px;
     }
-
-    .sponsor .container img {
-        width: 15vh;
-        margin: 5vh 4vh;
-        filter: grayscale(90%);
-    }
-
 }
 
 /* AKHIR RESPONSIVE WIDTH 992px */
@@ -1925,81 +1827,46 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
 
     }
 
-    main .container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        margin: 0 auto;
-        align-items: center;
+    main .container-beranda {
+        min-width: 95%;
     }
 
-    main .container .container-beranda {
-        width: 100%;
-        height: 85%;
-
+    main .container-beranda .container-kiri {
+        min-width: 50%;
+        min-height: 73vh;
     }
 
-    main .container .container-beranda .container-kiri {
-        width: 48%;
-        height: 100%;
+    main .container-beranda .container-kanan .carouselnya {
+        min-width: 50%;
+        min-height: 63vh;
     }
 
-    main .container .container-beranda .container-kiri img {
-        object-fit: contain;
-    }
-
-    main .container .container-beranda .container-kanan {
-        width: 50%;
-        height: 100%;
-    }
-
-    main .container .container-beranda .container-kanan .carouselnya {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-
-    main .container .container-beranda .container-kanan h3 {
+    main .container-beranda .container-kanan h3 {
         font-size: 12px;
     }
 
-    main .container .container-beranda .container-kanan .dots .dot {
-        height: 10px;
-        width: 10px;
-    }
-
-    .sponsor {
-        margin-top: 5vh;
-    }
-
     .sponsor .container .sponsor-utama {
-        display: flex;
-        justify-content: center;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .sponsor .container .sponsor-utama img {
-        width: 50vh;
+        width: 250px;
     }
 
     .sponsor .container .sponsor-lainnya {
+        /* border: 2px white solid; */
         width: 80%;
         height: 100%;
-        /* border: 2px white solid; */
         display: block;
         justify-content: space-between;
         margin: 0 auto;
-    }
-
-    .sponsor .container img {
         text-align: center;
-        display: inline-block;
-        width: 15vh;
-        margin: 3vh 10vh;
-        filter: grayscale(90%);
     }
 
+    .sponsor .container .sponsor-lainnya img {
+        margin: 10px;
+    }
 }
 
 /* AKHIR RESPONSIVE WIDTH 788px */
@@ -2011,74 +1878,44 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     header .nav-bar .teks-kms {
         font-size: 16px;
     }
+
     header .dropdown-menu.open {
         display: block;
         height: 210px;
         padding: 10px 0;
     }
 
-    main .container {
-        width: 85%;
-        align-items: start;
-    }
-
-    main .container .container-beranda {
+    main .container-beranda {
         display: block;
-        height: 100%;
     }
 
-    main .container .container-beranda .container-kiri {
+    main .container-beranda .container-kiri {
         width: 90%;
-        height: 35vh;
-        margin: 0 auto 2vh auto;
+        height: 40vh;
+        margin: 0 auto 20px auto;
     }
 
-    main .container .container-beranda .container-kiri img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    main .container .container-beranda .container-kanan {
+    main .container-beranda .container-kanan {
         width: 90%;
-        height: 100%;
-        display: block;
+        height: auto;
         margin: 0 auto;
     }
 
-    main .container .container-beranda .container-kanan .carouselnya {
-        position: relative;
-        width: 100%;
-        height: 280px;
-        margin-bottom: 10px;
+    main .container-beranda .container-kanan .carouselnya {
+        height: 40%;
     }
 
-    main .container .container-beranda .container-kanan .carouselnya .swiper-wrapper img{
-        height: 100%;
-        object-fit: cover;
-        object-position: 0px;
-    }
-
-    main .container .container-beranda .container-kanan h3 {
+    main .container-beranda .container-kanan h3 {
         line-height: 15px;
         font-size: 10px;
     }
 
-    main .container .container-beranda .container-kanan .dots {
-        margin-bottom: 10px;
-    }
-
-    main .container .container-beranda .container-kanan .dots .dot {
-        height: 8px;
-        width: 8px;
-    }
-
-    main .container .container-pesantik {
+    main .container-pesantik {
         width: 50vh;
         height: 95%;
     }
 
-    main .container .container-pesantik .pesantik-atas {
+    main .container-pesantik .pesantik-atas {
         width: 100%;
         display: block;
         justify-content: center;
@@ -2088,34 +1925,34 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
         text-align: center;
     }
 
-    main .container .container-pesantik .pesantik-atas img {
+    main .container-pesantik .pesantik-atas img {
         width: 100px;
     }
 
-    main .container .container-pesantik .pesantik-atas h1 {
+    main .container-pesantik .pesantik-atas h1 {
         font-size: 16px;
     }
 
-    main .container .container-pesantik .pesantik-menu {
+    main .container-pesantik .pesantik-menu {
         width: 90%;
         /* border: 2px white solid; */
         margin: 5vh auto 0 auto;
     }
 
-    main .container .container-pesantik .pesantik-menu .form-menu {
+    main .container-pesantik .pesantik-menu .form-menu {
         width: 90%;
         /* border: 2px blue solid; */
         margin: 0 auto;
     }
 
-    main .container .container-pesantik .pesantik-menu .form-menu .pilihan .label-pesantik {
+    main .container-pesantik .pesantik-menu .form-menu .pilihan .label-pesantik {
         color: var(--primary);
         font-size: 13px;
         font-weight: 500;
         margin-bottom: 7px;
     }
 
-    main .container .container-pesantik .pesantik-menu .form-menu .pilihan select {
+    main .container-pesantik .pesantik-menu .form-menu .pilihan select {
         width: 100%;
         height: 25px;
         border-radius: 5px;
@@ -2123,7 +1960,7 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
         outline: 0;
     }
 
-    main .container .container-pesantik .pesantik-menu .form-menu .pilihan input {
+    main .container-pesantik .pesantik-menu .form-menu .pilihan input {
         width: 100%;
         height: 25px;
         border-radius: 5px;
@@ -2134,22 +1971,12 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
         outline: 0;
     }
 
-    main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout {
+    main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout {
         margin-top: 37px;
         background-color: #146C94;
         color: white;
         border: transparent;
         cursor: pointer;
-    }
-
-
-    .sponsor {
-        margin-top: 5vh;
-    }
-
-    .sponsor .container {
-        display: block;
-        justify-content: center;
     }
 
     .sponsor .container h1 {
@@ -2159,12 +1986,12 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     .sponsor .container .sponsor-utama {
         display: flex;
         justify-content: center;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
+        margin-top: 30px;
+        margin-bottom: 50px;
     }
 
     .sponsor .container .sponsor-utama img {
-        width: 35vh;
+        width: 350px;
     }
 
     .sponsor .container .sponsor-lainnya {
@@ -2179,8 +2006,8 @@ main .container .container-pesantik .pesantik-menu .form-menu .pilihan .checkout
     .sponsor .container img {
         text-align: center;
         display: inline-block;
-        width: 10vh;
-        margin: 3vh 10vh;
+        width: 100px;
+        margin: 10px;
         filter: grayscale(90%);
     }
 

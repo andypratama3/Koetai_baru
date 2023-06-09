@@ -67,13 +67,7 @@
                         <a href="/checkout-tiket" class="konten-pesan-tiket">Pesanan Tiket</a>
                     </div>
                 </div>
-                @if (Route::has('login'))
-                <li>
-                    <a href="{{ route('login') }}">
-                        <button class="{{ request()->is('/login') ? 'active' : '' }}">Login</button>
-                    </a>
-                </li>
-                {{-- @else --}}
+                @if(auth()->check())
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
                         <a href="{{ route('logout') }}"
@@ -83,7 +77,14 @@
                         </a>
                     </form>
                 </li>
+                @else
+                <li>
+                    <a href="{{ route('login') }}">
+                        <button class="{{ request()->is('/login') ? 'active' : '' }}">Login</button>
+                    </a>
+                </li>
                 @endif
+
             </ul>
             <div class="tombol-menu">
                 <i class="bx bx-menu"></i>

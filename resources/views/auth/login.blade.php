@@ -14,41 +14,47 @@
     <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
 </head>
 
-<main>
-    <div class="container-login">
-        <div class="container-kiri">
-            <img src="{{ asset('asset_user/assets/img/logo-kms1.png')}}">
-        </div>
-        <div class="container-kanan">
-            <div class="isi-container">
-                <div class="judul-login">
-                    <h1>MASUK</h1>
-                </div>
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-                <div class="form-input">
-                    <div class="input-isi">
+<body>
+    <div class="blur-kuning"></div>
+    <img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="logo-kms-kuning">
 
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="input-isi">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password" aria-label="password">
-                    </div>
-                </div>
-                <div class="form-btn">
-                    <button type="submit" class="btn-login">Masuk</button>
-                    <a type="button" class="btn-register" href="{{ route('register') }}" style="text-decoration: none;">Register</a>
-                </div>
-                </form>
-
+    <main>
+        <div class="container-login">
+            <div class="container-kiri">
+                <img src="{{ asset('asset_user/assets/img/logo-kms1.png')}}">
             </div>
+            <div class="container-kanan">
+                <div class="isi-container">
+                    <div class="judul-login">
+                        <h1>MASUK</h1>
+                    </div>
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                        <div class="form-input">
+                            <div class="input-isi">
+
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="input-isi">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password"
+                                    aria-label="password">
+                            </div>
+                        </div>
+                        <div class="form-btn">
+                            <button type="submit" class="btn-login">Masuk</button>
+                            <a type="button" class="btn-register" href="{{ route('register') }}"
+                                style="text-decoration: none;">Register</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="bg-logo">
         </div>
-        <img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="bg-logo">
-    </div>
-</main>
+    </main>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
-</html>
 
+</html>
