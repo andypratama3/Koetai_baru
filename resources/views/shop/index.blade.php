@@ -8,6 +8,7 @@
             <li class="belanja-mchan" id="nav-mchan">Tote Bag</li>
         </ul>
     </nav>
+    
     <div class="isi-belanja" id="isi-belanja ">
         <!-- <div class="container-isi"> -->
         <div class="belanja-baju" id="belanja-baju">
@@ -27,7 +28,6 @@
             @endforeach
         </div>
     </div>
-
     <!-- MODAL BAJU -->
     <div class="modal fade detail" id="modalss" tabindex="-1" aria-labelledby="" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -72,8 +72,7 @@
                         </button>
                         <button value="beli" class="btn-beli teks-checkout btn-beli btn-checkout-form">Beli Sekarang</button>
                         @else
-                        <button class="btn-beli teks-checkout "><a href="{{ route('login') }}"
-                                style="text-decoration:none; color: black;"> Masuk Sekarang</a></button>
+                        <button class="btn-beli teks-checkout"><a href="{{ route('login') }}" style="text-decoration:none; color: black;"> Masuk Sekarang</a></button>
                         @endif
                         @endauth
                     </div>

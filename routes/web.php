@@ -7,6 +7,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\OrderTiketController;
 use App\Http\Controllers\Dashboard\OrderanTiket;
+use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\ListOrderTiketController;
 use App\Http\Controllers\Dashboard\EventController;
 use App\Http\Controllers\Dashboard\TiketController;
@@ -69,7 +70,8 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], func
     Route::resource('produk', ProdukController::class, ['names' => 'dashboard.produk']);
     Route::resource('tiket', TiketController::class, ['names' => 'dashboard.tiket']);
     Route::resource('order', OrderanTiket::class, ['names' => 'dashboard.order']);
-
+    Route::resource('user', UserController::class, ['names' => 'dashboard.user']);
+    
 });
 
 

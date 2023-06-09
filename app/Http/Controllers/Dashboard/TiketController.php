@@ -32,7 +32,7 @@ class TiketController extends Controller
     public function store(StoreTiketRequest $request, StoreTiketAction $StoreTiketAction)
     {
         $StoreTiketAction->execute($request);
-        return redirect()->route('dashboard.tiket.index')->with('succes','Tiket Berhasil Di Tambah!');
+        return redirect()->route('dashboard.tiket.index')->with('success-insert','Tiket Berhasil Di Tambah!');
     }
     public function edit($slug)
     {
@@ -42,12 +42,12 @@ class TiketController extends Controller
     public function update(StoreTiketRequest $request, UpdateTiketAction $UpdateTiketAction, $slug)
     {
         $UpdateTiketAction->execute($request,$slug);
-        return redirect()->route('dashboard.tiket.index')->with('succes','Tiket Berhasil Di Update');
+        return redirect()->route('dashboard.tiket.index')->with('success-update','Tiket Berhasil Di Update');
     }
     public function destroy(DeleteTiketAction $DeleteTiketAction, $slug)
     {
         $DeleteTiketAction->execute($slug);
-        return redirect()->route('dashboard.tiket.index')->with('succes','Tiket Berhasil Di Hapus');
+        return redirect()->route('dashboard.tiket.index')->with('success-delete','Tiket Berhasil Di Hapus');
 
     }
 }

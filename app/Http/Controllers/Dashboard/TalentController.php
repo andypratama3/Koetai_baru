@@ -33,7 +33,7 @@ class TalentController extends Controller
     {
         $storeTalentAction->execute($request);
 
-        return redirect()->route('dashboard.talent.index')->with('succes','Talent Berhasil Ditambahkan!');
+        return redirect()->route('dashboard.talent.index')->with('success-insert','Talent Berhasil Ditambahkan!');
     }
     public function show(Request $request,$slug)
     {
@@ -51,12 +51,12 @@ class TalentController extends Controller
     public function update(StoreTalentRequest $request, UpdateTalentAction $updateTalentAction, $slug){
 
         $updateTalentAction->execute($request,$slug);
-        return redirect()->route('dashboard.talent.index')->with('succes','Talent Berhasil Di Update!');
+        return redirect()->route('dashboard.talent.index')->with('success-update','Talent Berhasil Di Update!');
 
     }
     public function destroy($slug, DeleteTalentAction $deleteTalentAction){
 
         $deleteTalentAction->execute($slug);
-        return redirect()->route('dashboard.talent.index')->with('succes','Talent Berhasil Di Hapus!');
+        return redirect()->route('dashboard.talent.index')->with('success-delete','Talent Berhasil Di Hapus!');
     }
 }

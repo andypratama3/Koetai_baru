@@ -25,6 +25,6 @@ class OrderanTiket extends Controller
     public function destroy($slug, DeleteOrderanAction $deleteOrderanAction){
 
         $deleteOrderanAction->execute($slug);
-        return redirect()->route('dashboard.order.index')->with('succes','Orderan Berhasil Di Hapus!');
+        return redirect()->route('dashboard.order.index')->with('success-delete','Orderan Berhasil Di Hapus!');
     }
 }

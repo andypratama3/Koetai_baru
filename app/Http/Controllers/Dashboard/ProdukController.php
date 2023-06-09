@@ -30,7 +30,7 @@ class ProdukController extends Controller
     public function store(StoreProdukRequest $request, StoreProdukAction $storeProdukAction)
     {
         $storeProdukAction->execute($request);
-        return redirect()->route('dashboard.produk.index')->with('success','Produk Berhasil Ditambahkan!');
+        return redirect()->route('dashboard.produk.index')->with('success-insert','Produk Berhasil Ditambahkan!');
     }
 
     public function show($slug)
@@ -48,12 +48,12 @@ class ProdukController extends Controller
     public function update(StoreProdukRequest $request, UpdateProdukAction $updateProdukAction, $slug)
     {
         $updateProdukAction->execute($request,$slug);
-        return redirect()->route('dashboard.produk.index')->with('success','Produk Berhasil Update!');
+        return redirect()->route('dashboard.produk.index')->with('success-update','Produk Berhasil Update!');
     }
     public function destroy(DeleteProdukAction $deleteProdukAction,$slug)
     {
         $deleteProdukAction->execute($slug);
-        return redirect()->route('dashboard.produk.index')->with('success','Produk Berhasil Hapus!');
+        return redirect()->route('dashboard.produk.index')->with('success-delete','Produk Berhasil Hapus!');
     }
 
 }
