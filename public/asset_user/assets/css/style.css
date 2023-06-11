@@ -328,12 +328,9 @@ header .dropdown-menu li button:hover {
 /* MAIN */
 main {
     /* border: 1px blue solid; */
-<<<<<<< HEAD
     width: 100%;
     height: auto;
-=======
     min-height: 75vh;
->>>>>>> 5423948e65c512fdbd95399ad55ff750fa1c35a2
     margin-top: 70px;
     display: flex;
     justify-content: center;

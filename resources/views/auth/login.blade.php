@@ -23,24 +23,36 @@
             <div class="container-kiri">
                 <img src="{{ asset('asset_user/assets/img/logo-kms1.png')}}">
             </div>
+
             <div class="container-kanan">
                 <div class="isi-container">
+                    {{-- @include('layouts.flash-message') --}}
                     <div class="judul-login">
                         <h1>MASUK</h1>
                     </div>
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-input">
                             <div class="input-isi">
-
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="Email">
+                                <input type="email" id="email" name="email" :value="old('email')" class="form-control" placeholder="Email">
                             </div>
+                            @if ($errors->has('email'))
+                            <div class="alert alert-primary alert-dismissible fade show text-center text-black" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </div>
+                            @endif
                             <div class="input-isi">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" name="password" placeholder="Password"
                                     aria-label="password">
                             </div>
+                            @if ($errors->has('password'))
+                        <div class="alert alert-primary alert-dismissible fade show text-center text-black" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </div>
+                        @endif
                         </div>
                         <div class="form-btn">
                             <button type="submit" class="btn-login">Masuk</button>

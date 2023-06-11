@@ -73,7 +73,7 @@
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
                             <h6>{{ Auth::user()->name }}</h6>
-                            <span>Web Designer</span>
+                            <span>{{ Auth::user()->role == '1' ? 'Admin' : 'User'}}</span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -207,6 +207,13 @@
                     href="{{ route('dashboard.order.index') }}">
                     <i class="bi bi-person"></i>
                     <span>Orderan tiket</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::routeIs('dashboard.user.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.user.index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>User</span>
                 </a>
             </li>
         </ul>
