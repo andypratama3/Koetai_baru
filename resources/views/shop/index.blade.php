@@ -8,9 +8,8 @@
             <li class="belanja-mchan" id="nav-mchan">Tote Bag</li>
         </ul>
     </nav>
-    
-    <div class="isi-belanja" id="isi-belanja ">
-        <!-- <div class="container-isi"> -->
+
+    <div class="isi-belanja" id="isi-belanja">
         <div class="belanja-baju" id="belanja-baju">
             @foreach ($shops as $shop)
             <!-- BELANJA BAJU -->
@@ -21,8 +20,8 @@
                     <img src="{{ asset('storage/img/produk/'.$shop->foto) }}" alt="Produk Baju 1" class="foto">
                 </div>
                 <div class="konten-bawah">
-                    <div class="teks nama-produk">{{ $shop->nama }}</div>
-                    <div class="teks harga">Rp. {{ $shop->harga }}</div>
+                    <p class="teks nama-produk">{{ $shop->nama }}</p>
+                    <p class="teks harga">Rp. {{ $shop->harga }}</p>
                 </div>
             </div>
             @endforeach
@@ -70,9 +69,11 @@
                             <i class='bx bx-cart-add bx-md ikon'></i>
                             <span class="teks-checkout">Tambahkan Ke Keranjang</span>
                         </button>
-                        <button value="beli" class="btn-beli teks-checkout btn-beli btn-checkout-form">Beli Sekarang</button>
+                        <button value="beli" class="btn-beli teks-checkout btn-beli btn-checkout-form">Beli
+                            Sekarang</button>
                         @else
-                        <button class="btn-beli teks-checkout"><a href="{{ route('login') }}" style="text-decoration:none; color: black;"> Masuk Sekarang</a></button>
+                        <button class="btn-beli teks-checkout"><a href="{{ route('login') }}"
+                                style="text-decoration:none; color: black;"> Masuk Sekarang</a></button>
                         @endif
                         @endauth
                     </div>

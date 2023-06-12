@@ -26,7 +26,7 @@
                     @if($cart->produks->stock > $cart->prod_qty)
                     <input type="hidden" value="{{ $cart->prod_id }}" class="prod_id">
                     <div class="jumlah">
-                        <div class=" text-center jumlah-produk" style="width: 130px;">
+                        <div class="jumlah-produk">
                             <button class="minus changeQuantity decrement-btn">-</button>
                             <input class="no qty-input" type="text" name="quantity " value="{{ $cart->prod_qty }}">
                             <button class="plus changeQuantity increment-btn">+</button>
