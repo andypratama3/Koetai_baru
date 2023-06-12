@@ -19,7 +19,6 @@
                             </div>
 
                         </div>
-
                         <input type="hidden" value="{{ $order->id }}" class="order_id">
                         <div class="jumlah">
                             <div class=" text-center mb-3" style="width: 130px;">
@@ -40,7 +39,6 @@
                     <hr>
                     @php $total += $order->tiket->harga * $order->jumlah; @endphp
                     @endforeach
-
                     <div class="total float-end">
                         {{-- <h5>Total Semua Rp. {{ $totals }}</h5> --}}
                     </div>

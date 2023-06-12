@@ -329,10 +329,6 @@ main {
     /* border: 1px blue solid; */
     width: 100%;
     height: auto;
-<<<<<<< HEAD
-=======
-    min-height: 75vh;
->>>>>>> 996790d4f6e3fe8d7b360cbbc5997efb9712c5a5
     margin-top: 70px;
     display: flex;
     justify-content: center;
@@ -1176,7 +1172,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 .container-keranjang .isinya {
     max-width: 100%;
     height: 100%;
-    border: 2px green solid;
+    /* border: 2px green solid; */
 }
 
 .main-keranjang .isinya h1 {
@@ -1185,25 +1181,25 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .main-keranjang .isinya .list-produk {
-    border: 2px red solid;
+    /* border: 2px red solid; */
     height: 100px;
     margin-top: 30px;
 }
 
 .main-keranjang .isinya .list-produk .gambar-produk img {
-    border: 2px yellow solid;
+    /* border: 2px yellow solid; */
     margin-right: 60px;
     object-fit: cover;
     border-radius: 5px;
 }
 
 .main-keranjang .isinya .list-produk .produk-ukuran {
-    border: 2px blue solid;
+    /* border: 2px blue solid; */
     width: auto;
 }
 
 .main-keranjang .isinya .list-produk .jumlah {
-    border: 2px purple solid;
+    /* border: 2px purple solid; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1211,7 +1207,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .main-keranjang .isinya .list-produk .jumlah .jumlah-produk {
-    border: 2px yellowgreen solid;
+    /* border: 2px yellowgreen solid; */
     width: 100px;
     display: flex;
     justify-content: center;
@@ -1260,7 +1256,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 
 
 .main-keranjang .isinya .list-produk .harga {
-    border: 2px green solid;
+    /* border: 2px green solid; */
     width: 300px !important;
     padding: 0 10px;
 }

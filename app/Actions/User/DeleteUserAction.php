@@ -6,9 +6,9 @@ use App\Models\User;
 
 class DeleteUserAction
 {
-    public function execute($id){
+    public function execute($slug){
 
-        $user = User::where('id',$id)->firstOrFail();
+        $user = User::where('slug',$slug)->firstOrFail();
         $user->delete();
     }
 }

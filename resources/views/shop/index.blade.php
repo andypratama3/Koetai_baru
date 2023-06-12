@@ -9,12 +9,7 @@
         </ul>
     </nav>
 
-<<<<<<< HEAD
     <div class="isi-belanja" id="isi-belanja">
-=======
-    <div class="isi-belanja" id="isi-belanja ">
-        <!-- <div class="container-isi"> -->
->>>>>>> 996790d4f6e3fe8d7b360cbbc5997efb9712c5a5
         <div class="belanja-baju" id="belanja-baju">
             @foreach ($shops as $shop)
             <!-- BELANJA BAJU -->
@@ -40,7 +35,7 @@
                     <button type="button" class="tutup-modal" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="produk-klik" id="produk-klik">
                         <div class="konten-atas">
-                            <img src="" id="foto" alt="Gambar Modal">
+                            <img src="" id="foto" alt="Gambar Modal" >
                             <div class="teks-gambar">
                                 <input type="hidden" id="id" class="prod_id">
                                 <h2 id="nama"></h2>
