@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('title', 'User')
-
-
 @section('content')
 <div class="row">
     <!-- Left side columns -->
@@ -28,20 +26,20 @@
                         <th scope="row">{{ ++$no }}</th>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->role }}</td>
-
+                        <td>{{ $user->role == '1' ? 'Admin' : 'User'}}</td>
                         <td>
-
                             <button class="btn btn-primary change-role">Ganti Role
-                                <form action="{{ route('dashboard.user.update', $user->id) }}" method="post">
-                                </form>
+                                {{-- <form action="{{ route('dashboard.user.update', $user->id) }}" method="post">
+                                    @csrf
+                                    @method('PUT') --}}
+                            </form>
                             </button>
                             <a href="#" data-id="{{ $user->slug }}" class="btn btn-danger delete" title="Hapus">
                                 <form action="{{ route('dashboard.user.destroy', $user->slug) }}" id="delete-{{ $user->slug }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('delete')
                                 </form>
-                                <i class="bi bi-trash">
+                            <i class="bi bi-trash">
                         </td>
                       </tr>
                     @endforeach
@@ -52,7 +50,5 @@
         </div>
     </div>
 </div>
-
 @include('layouts.script')
 @endsection
-

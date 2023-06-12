@@ -56,11 +56,10 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
     Route::post('add-to-checkout', [ShopController::class,'addprodukcheckout']);
     Route::get('checkout', [ShopController::class,'checkoutproduk']);
 
-
-
 });
 
-Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], function () {
+
+Route::group(['prefix' => 'dashboard','middleware' => ['auth', 'admin: 1','verified']], function () {
     Route::get('/', DashboardController::class)->name('dashboard');
     Route::resource('talent', TalentController::class, ['names' => 'dashboard.talent']);
     Route::resource('event', EventController::class, ['names' => 'dashboard.event']);
@@ -71,7 +70,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth','verified']], func
     Route::resource('tiket', TiketController::class, ['names' => 'dashboard.tiket']);
     Route::resource('order', OrderanTiket::class, ['names' => 'dashboard.order']);
     Route::resource('user', UserController::class, ['names' => 'dashboard.user']);
-    
+
 });
 
 
