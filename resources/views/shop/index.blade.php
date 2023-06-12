@@ -9,7 +9,12 @@
         </ul>
     </nav>
 
+<<<<<<< HEAD
     <div class="isi-belanja" id="isi-belanja">
+=======
+
+    <div class="isi-belanja" id="isi-belanja ">
+>>>>>>> 60f24cc6134a24b1d60f7682b0bfdba76a384135
         <div class="belanja-baju" id="belanja-baju">
             @foreach ($shops as $shop)
             <!-- BELANJA BAJU -->
