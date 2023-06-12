@@ -329,10 +329,7 @@ main {
     /* border: 1px blue solid; */
     width: 100%;
     height: auto;
-<<<<<<< HEAD
-=======
     min-height: 75vh;
->>>>>>> 996790d4f6e3fe8d7b360cbbc5997efb9712c5a5
     margin-top: 70px;
     display: flex;
     justify-content: center;
@@ -471,7 +468,7 @@ main .swiper-scrollbar {
 }
 
 .container-belanja .isi-belanja {
-    border: 2px red solid;
+    /* border: 2px red solid; */
     width: 90%;
     height: auto;
     margin: 0 auto;
