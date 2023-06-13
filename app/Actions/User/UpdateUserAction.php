@@ -10,6 +10,7 @@ class UpdateUserAction
     {
         $user = User::where('id',$id)->firstOrFail();
         $cek_role = User::select(['role'])->first();
+
         if($cek_role->role == 1){
             $user->role = 0;
             $user->update();

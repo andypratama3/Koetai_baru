@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Models\OrderTiket;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Excel;
 use App\Http\Controllers\Controller;
 use App\Actions\OrderTiket\DeleteOrderanAction;
 
@@ -26,5 +27,10 @@ class OrderanTiket extends Controller
 
         $deleteOrderanAction->execute($slug);
         return redirect()->route('dashboard.order.index')->with('success-delete','Orderan Berhasil Di Hapus!');
+    }
+    public function export(){
+
+        return Excel::download(new OrderTiketExport, 'ordeTiket.xlsx');
+
     }
 }

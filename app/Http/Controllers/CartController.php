@@ -41,7 +41,7 @@ class CartController extends Controller
 
     public function index()
     {
-        $carts = Cart::where('user_id', Auth::id())->get();
+        $carts = Cart::where('user_id', Auth::id())->firstOrFail()->get();
         return view('shop.cart.cart', compact('carts'));
     }
     public function updatecart(Request $request){
@@ -58,7 +58,7 @@ class CartController extends Controller
             }
         }
     }
-    
+
     public function cartcount(){
         $cartcount = Cart::where('user_id', Auth::id())->count();
         return response()->json(['count'=> $cartcount]);

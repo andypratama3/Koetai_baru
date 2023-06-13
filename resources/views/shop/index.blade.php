@@ -6,15 +6,11 @@
         <ul>
             <li class="belanja-baju active" id="nav-baju">BAJU</li>
             <li class="belanja-mchan" id="nav-mchan">Tote Bag</li>
+            <li class="belanja-mchan" id="nav-mchan">Acc</li>
         </ul>
     </nav>
 
-<<<<<<< HEAD
     <div class="isi-belanja" id="isi-belanja">
-=======
-
-    <div class="isi-belanja" id="isi-belanja ">
->>>>>>> 60f24cc6134a24b1d60f7682b0bfdba76a384135
         <div class="belanja-baju" id="belanja-baju">
             @foreach ($shops as $shop)
             <!-- BELANJA BAJU -->
@@ -22,7 +18,7 @@
                 data-nama="<?=$shop->nama ?>" data-harga="<?=$shop->harga ?>" data-foto="<?=$shop->foto ?>"
                 data-stock="<?=$shop->stock ?>">
                 <div class="gambar-produk">
-                    <img src="{{ asset('storage/img/produk/'.$shop->foto) }}" alt="Produk Baju 1" class="foto">
+                    <img src="{{ asset('storage/img/produk/'.$shop->foto) }}" alt="Produk Baju 1" class="">
                 </div>
                 <div class="konten-bawah">
                     <p class="teks nama-produk">{{ $shop->nama }}</p>
@@ -61,7 +57,7 @@
                             </div>
                             <div class="jumlah">
                                 <h2>jumlah: </h2>
-                                <input type="number" min="1" max="100" value="1" class="form-custom prod_qty">
+                                <input type="number" min="1" max="100" value="1" class="form-custom prod_qty text-center">
                             </div>
                         </div>
                     </div>

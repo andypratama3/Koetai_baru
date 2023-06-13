@@ -10,13 +10,11 @@ use App\Http\Requests\CheckoutRequest;
 
 class ShopController extends Controller
 {
-    public function index(){
-
-        $shops = Produk::all();
-
+    public function index()
+    {
+        $shops = Produk::with('kategoris')->get();
         return view('shop.index', compact('shops'));
     }
-
 
     public function addprodukcheckout(Request $request){
 
@@ -54,10 +52,6 @@ class ShopController extends Controller
         $produk_id = $request->input("produk_id");
         $produk_ukuran  = $request->input("produk_ukuran");
         $produk_qty = $request->input("produk_jumlah");
-
-        
-
         return view('shop.cart.checkout',compact('carts'));
-
     }
 }

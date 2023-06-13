@@ -9,7 +9,9 @@
         <div class="row">
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title float-end"><a href="{{ route('dashboard.order.create') }}" class="btn btn-primary"><i class="bi bi-plus"></i> Tambah</a></h5>
+                  <h5 class="card-title">
+                  <a href="{{ route('dashboard.order.export') }}" class="btn btn-success"><i class='bx bx-export'> Export</i></a>
+                  <a href="{{ route('dashboard.order.create') }}" class="btn btn-primary float-end" style="margin-bottom: 2rem;"><i class="bi bi-plus"></i> Tambah</a></h5>
                   <!-- Table with hoverable rows -->
                   <table class="table table-responsive-lg text-center">
                     <thead>

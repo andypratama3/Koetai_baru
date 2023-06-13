@@ -7,6 +7,7 @@
         <div class="container-keranjang">
             <div class="isinya">
                 <h1>Keranjang Belanja Anda</h1>
+
                 @if ($carts->count() > 0)
                 @php $totals = 0; @endphp
                 @foreach ($carts as $cart)
@@ -61,6 +62,7 @@
             </div>
             @endif
         </div>
+        
     </div>
     @include('layouts.script')
     @endsection

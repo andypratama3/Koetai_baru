@@ -329,10 +329,6 @@ main {
     /* border: 1px blue solid; */
     width: 100%;
     height: auto;
-<<<<<<< HEAD
-=======
-    min-height: 75vh;
->>>>>>> 60f24cc6134a24b1d60f7682b0bfdba76a384135
     margin-top: 70px;
     display: flex;
     justify-content: center;
