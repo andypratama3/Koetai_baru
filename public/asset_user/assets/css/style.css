@@ -1039,9 +1039,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     transform: scale(0.97);
 }
 
-.container-pesanan-tiket {
-    /* border: 2px red solid; */
-}
 
 .container-pesanan-tiket .main-pesanan-tiket {
     /* border: 2px white solid; */
