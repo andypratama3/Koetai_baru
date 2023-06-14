@@ -1,13 +1,11 @@
 @extends('layouts.user')
 @section('title', 'Cart')
 @section('content')
-
 <div class="container-belanja cartitems">
     <div class="main-keranjang">
         <div class="container-keranjang">
             <div class="isinya">
                 <h1>Keranjang Belanja Anda</h1>
-
                 @if ($carts->count() > 0)
                 @php $totals = 0; @endphp
                 @foreach ($carts as $cart)
@@ -53,7 +51,6 @@
                         <button type="submit" class="btn btn-warning btn-lg btn-checkout-form">Check Out</button>
                 </div>
             </div>
-
             @else
             <div class="card-body text-center">
                 <h2>Keranjang<i class="bi bi-cart"></i> Anda Kosong!</h2>
@@ -62,7 +59,6 @@
             </div>
             @endif
         </div>
-        
     </div>
-    @include('layouts.script')
-    @endsection
+@include('layouts.script')
+@endsection
