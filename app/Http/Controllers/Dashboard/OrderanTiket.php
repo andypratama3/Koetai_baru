@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Models\OrderTiket;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Excel;
+// use Maatwebsite\Excel\Excel;
+use App\Exports\OrderTiketExport;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Actions\OrderTiket\DeleteOrderanAction;
 
 class OrderanTiket extends Controller

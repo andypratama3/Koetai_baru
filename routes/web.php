@@ -69,7 +69,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth', 'admin: 1','verif
     Route::resource('produk', ProdukController::class, ['names' => 'dashboard.produk']);
     Route::resource('tiket', TiketController::class, ['names' => 'dashboard.tiket']);
     Route::resource('order', OrderanTiket::class, ['names' => 'dashboard.order']);
-    Route::get('order/export', [OrderanTiket::class, 'export'])->name('dashboard.order.export');
+    Route::get('order-export', [OrderanTiket::class, 'export'])->name('dashboard.order.export');
     Route::resource('user', UserController::class, ['names' => 'dashboard.user']);
 
 
