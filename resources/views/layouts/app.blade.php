@@ -30,13 +30,6 @@
     @stack('css')
     <!-- Template Main CSS File -->
     <link href="{{ asset('dashboard_assets/assets/css/style.css') }}" rel="stylesheet">
-
-    <!-- =======================================================
-      * Template Name: NiceAdmin - v2.4.1
-      * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-      * Author: BootstrapMade.com
-      * License: https://bootstrapmade.com/license/
-        ======================================================== -->
 </head>
 
 <body>
@@ -171,7 +164,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.kategori.*') ? '' : 'collapsed' }}"
                     href="{{ route('dashboard.kategori.index') }}">
-                    <i class="bi bi-person"></i>
+                    <i class=" ri-product-hunt-fill"></i>
                     <span>Kategori</span>
                 </a>
             </li>
@@ -179,14 +172,14 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.produk.*') ? '' : 'collapsed' }}"
                     href="{{ route('dashboard.produk.index') }}">
-                    <i class="bi bi-person"></i>
+                    <i class=" ri-product-hunt-fill"></i>
                     <span>Produk</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('dashboard.orderan-produk.*') ? '' : 'collapsed' }}"
-                    href="{{ route('dashboard.produk.index') }}">
-                    <i class="bi bi-person"></i>
+                <a class="nav-link {{ Request::routeIs('dashboard.ordershop.*') ? '' : 'collapsed' }}"
+                    href="{{ route('dashboard.ordershop.index') }}">
+                    <i class=" ri-product-hunt-fill"></i>
                     <span>Orderan Produk</span>
                 </a>
             </li>
@@ -196,14 +189,14 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.tiket.*') ? '' : 'collapsed' }}"
                     href="{{ route('dashboard.tiket.index') }}">
-                    <i class="bi bi-person"></i>
+                    <i class="ri-ticket-2-fill"></i>
                     <span>Tiket</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.order.*') ? '' : 'collapsed' }}"
                     href="{{ route('dashboard.order.index') }}">
-                    <i class="bi bi-person"></i>
+                    <i class="ri-ticket-2-fill"></i>
                     <span>Orderan tiket</span>
                 </a>
             </li>
@@ -245,13 +238,6 @@
         <div class="copyright">
             &copy; Copyright <strong><span>Koetai Mahkota SOundline</span></strong>. All Rights Reserved
         </div>
-        <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-            {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
-        </div>
     </footer><!-- End Footer -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -271,31 +257,5 @@
     <script src="{{ asset('dashboard_assets/assets/js/main.js') }}"></script>
 
 </body>
-
 </html>
-{{-- <div class="card-body">
-        <!-- Slides with indicators -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-              @foreach ($events as $key => $event)
-            <button type="button" data-bs-target="#carouselExampleIndicators{{ $key }}" data-bs-slide-to="{{ $key }}"
-class="{{ !$loop->first ?: 'active' }}" aria-current="true" aria-label="Slide 1"></button>
-@endforeach
-</div>
-<div class="carousel-inner">
-    @foreach ($events as $event)
-    <div class="carousel-item {{ !$loop->first ?: 'active' }} ">
-        <img class="d-block w-100" src="{{ asset('storage/img/event/'. $event->foto) }}" alt="">
-    </div>
-    @endforeach
-</div>
 
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-</button>
-</div> --}}

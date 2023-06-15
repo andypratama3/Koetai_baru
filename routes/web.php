@@ -17,6 +17,7 @@ use App\Http\Controllers\Dashboard\AnggotaController;
 use App\Http\Controllers\Dashboard\SponsorController;
 use App\Http\Controllers\Dashboard\KategoriController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\OrderanShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +72,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth', 'admin: 1','verif
     Route::resource('order', OrderanTiket::class, ['names' => 'dashboard.order']);
     Route::get('order-export', [OrderanTiket::class, 'export'])->name('dashboard.order.export');
     Route::resource('user', UserController::class, ['names' => 'dashboard.user']);
+    Route::resource('ordershop', OrderanShopController::class, ['names' => 'dashboard.ordershop']);
 
 
 });

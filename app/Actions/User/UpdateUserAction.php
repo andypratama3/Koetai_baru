@@ -8,13 +8,16 @@ class UpdateUserAction
 {
     public function execute($id):void
     {
-        $user = User::where('id',$id)->firstOrFail();
-        $cek_role = User::select(['role'])->first();
+        $user = User::where('id',$id)->first();
+        $cek_role = $user->role;
 
-        if($cek_role->role == 1){
+        if($cek_role == 1){
+            $user = User::where('id',$id)->first();
             $user->role = 0;
             $user->update();
+
         }else{
+            $user = User::where('id',$id)->first();
             $user->role = 1;
             $user->update();
         }
