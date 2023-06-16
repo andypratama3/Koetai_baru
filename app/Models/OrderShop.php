@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Http\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class OrderShop extends Model
 {
-    use \App\Http\Traits\UsesUuid;
+    use UsesUuid;
     use SoftDeletes;
     // use HasFactory;
     protected $table = 'order_shops';
