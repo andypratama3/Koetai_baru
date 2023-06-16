@@ -5,7 +5,9 @@
 <main>
     <div class="container-beranda">
         <div class="container-kiri">
-            <img src="{{ asset('asset_user/assets/img/thumb-tenkita.png')}}" alt="" class="img-carsoul">
+            <div class="isinya">
+                <img src="{{ asset('asset_user/assets/img/thumb-tenkita.png')}}" alt="" class="img-carsoul">
+            </div>
         </div>
         <div class="container-kanan">
             <div class="carousel-swiper">

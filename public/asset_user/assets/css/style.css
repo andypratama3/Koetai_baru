@@ -10,15 +10,15 @@
     text-decoration: none;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 15px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background: #0B0B0C;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background: #FFB716 !important;
     box-shadow: inset 0 0 5px 0 black;
 }
@@ -353,36 +353,23 @@ main {
 /* ===================================================================== */
 /* CONTAINER BERANDA */
 main .container-beranda {
-    /* border: 2px green solid; */
+    max-width: 65%;
+    height: auto;
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    height: auto;
+    border: 2px green solid;
 }
 
 main .container-beranda .container-kiri {
-    width: 48%;
-    height: 73vh;
-    background-color: rgba(33, 42, 62, 0.5);
-    border: 5px var(--primary) solid;
-    border-radius: 20px;
-    box-sizing: border-box;
+    width: 45%;
+    max-height: 73vh;
+    /* border: 2px red solid; */
 }
 
-main .container-beranda .container-kiri img {
-    width: 100%;
+main .container-beranda .container-kiri .isinya {
+    max-width: 100%;
     height: 100%;
-    object-fit: contain;
-}
-
-main .container-beranda .container-kanan {
-    width: 48%;
-}
-
-main .container-beranda .container-kanan .carouselnya {
     position: relative;
-    width: 100%;
-    height: 63vh;
     display: flex;
     justify-content: center;
     border: 5px var(--primary) solid;
@@ -391,6 +378,32 @@ main .container-beranda .container-kanan .carouselnya {
     box-sizing: border-box;
     overflow: hidden;
     margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main .container-beranda .container-kiri .isinya img {
+    width: 100%;
+    height: 100%;
+}
+
+main .container-beranda .container-kanan {
+    width: 48%;
+    max-height: 73vh;
+    /* border: 2px red solid; */
+}
+
+main .container-beranda .container-kanan .carouselnya {
+    position: relative;
+    width: 100%;
+    max-height: 63vh;
+    display: flex;
+    justify-content: center;
+    border: 5px var(--primary) solid;
+    border-radius: 20px;
+    background-color: rgba(33, 42, 62, 0.5);
+    box-sizing: border-box;
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -400,11 +413,6 @@ main .container-beranda .container-kanan .carouselnya {
 main .container-beranda .container-kanan .carouselnya .swiper-wrapper img {
     width: 100%;
     height: 100%;
-}
-
-main .container-beranda .container-kanan {
-    display: block;
-    height: auto;
 }
 
 main .container-beranda .container-kanan h3 {
@@ -1039,7 +1047,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     transform: scale(0.97);
 }
 
-
 .container-pesanan-tiket .main-pesanan-tiket {
     /* border: 2px white solid; */
     margin-top: 70px;
@@ -1268,7 +1275,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     padding-bottom: 5px;
 }
 
-
 .main-keranjang .isinya .list-produk .harga {
     /* border: 2px green solid; */
     width: 300px !important;
@@ -1369,8 +1375,8 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     justify-content: center;
     align-items: center;
     float: left;
-    /* border: 2px green solid; */
     background-color: rgba(0, 0, 0, 0.25);
+    /* border: 2px green solid; */
 }
 
 .container-login .container-kiri img {
@@ -1664,6 +1670,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background-color: var(--primary);
+    overflow: hidden;
 }
 
 .sponsor .container {
@@ -1693,7 +1700,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .sponsor .container .sponsor-utama img {
-    width: 350px;
+    max-width: 350px;
     height: auto;
 }
 
@@ -1703,17 +1710,15 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .sponsor .container .sponsor-lainnya {
-    display: flex;
-    justify-content: center;
-    /* border: 1px red solid; */
+    display: block;
+    text-align: center;
     width: auto;
     height: auto;
     padding: 0;
 }
 
 .sponsor .container .sponsor-lainnya img {
-    width: 120px;
-    height: 50px;
+    max-width: 100px;
     margin: 0 15px 0;
     object-fit: contain;
     background-position: center;
@@ -1744,6 +1749,22 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     header ul li a button .cart-count {
         background-color: red;
         transform: translateX(15px) translateY(-12px) !important;
+    }
+
+    main .container-beranda {
+        max-width: 70%;
+    }
+
+    main .container-beranda .container-kiri {
+        width: 45%;
+        max-height: 73vh;
+        /* border: 2px red solid; */
+    }
+
+    main .container-beranda .container-kanan {
+        width: 48%;
+        max-height: 73vh;
+        /* border: 2px red solid; */
     }
 }
 
@@ -1794,7 +1815,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     }
 
     .sponsor .container .sponsor-lainnya img {
-        width: 100px;
+        width: 75px;
         height: 40px;
     }
 }
@@ -1834,24 +1855,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 
     }
 
-    main .container-beranda {
-        min-width: 95%;
-    }
-
-    main .container-beranda .container-kiri {
-        min-width: 50%;
-        min-height: 73vh;
-    }
-
-    main .container-beranda .container-kanan .carouselnya {
-        min-width: 50%;
-        min-height: 63vh;
-    }
-
-    main .container-beranda .container-kanan h3 {
-        font-size: 12px;
-    }
-
     .main-keranjang .isinya h1 {
         font-size: 16px;
         letter-spacing: 1px;
@@ -1883,20 +1886,16 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     }
 
     .sponsor .container .sponsor-utama img {
-        width: 250px;
+        max-width: 250px;
     }
 
     .sponsor .container .sponsor-lainnya {
-        /* border: 2px white solid; */
-        width: 80%;
-        height: 100%;
         display: block;
-        justify-content: space-between;
-        margin: 0 auto;
-        text-align: center;
+        text-align: center !important;
     }
 
     .sponsor .container .sponsor-lainnya img {
+        width: 75px;
         margin: 10px;
     }
 }
@@ -1918,129 +1917,33 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     }
 
     main .container-beranda {
+        max-width: 80%;
         display: block;
-    }
-
-    main .container-beranda .container-kiri {
-        width: 90%;
-        height: 40vh;
-        margin: 0 auto 20px auto;
-    }
-
-    main .container-beranda .container-kanan {
-        width: 90%;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    main .container-beranda .container-kanan .carouselnya {
-        height: 40%;
-    }
-
-    main .container-beranda .container-kanan h3 {
-        line-height: 15px;
-        font-size: 10px;
-    }
-
-    main .container-pesantik {
-        width: 50vh;
-        height: 95%;
-    }
-
-    main .container-pesantik .pesantik-atas {
-        width: 100%;
-        display: block;
-        justify-content: center;
-        margin: 3vh auto 0 auto;
-        border: 2px red solid;
-        align-items: center;
         text-align: center;
     }
 
-    main .container-pesantik .pesantik-atas img {
-        width: 100px;
+
+    main .container-beranda .container-kiri {
+        margin-bottom: 100px;
     }
 
-    main .container-pesantik .pesantik-atas h1 {
-        font-size: 16px;
+    main .container-beranda .container-kiri {
+        width: auto;
+        max-height: 100%;
+        margin: 0 auto 30px;
     }
 
-    main .container-pesantik .pesantik-menu {
-        width: 90%;
-        /* border: 2px white solid; */
-        margin: 5vh auto 0 auto;
-    }
-
-    main .container-pesantik .pesantik-menu .form-menu {
-        width: 90%;
-        /* border: 2px blue solid; */
+    main .container-beranda .container-kanan {
+        width: auto;
         margin: 0 auto;
-    }
-
-    main .container-pesantik .pesantik-menu .form-menu .pilihan .label-pesantik {
-        color: var(--primary);
-        font-size: 13px;
-        font-weight: 500;
-        margin-bottom: 7px;
-    }
-
-    main .container-pesantik .pesantik-menu .form-menu .pilihan select {
-        width: 100%;
-        height: 25px;
-        border-radius: 5px;
-        margin-bottom: 17px;
-        outline: 0;
-    }
-
-    main .container-pesantik .pesantik-menu .form-menu .pilihan input {
-        width: 100%;
-        height: 25px;
-        border-radius: 5px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        -ms-appearance: none;
-        appearance: none;
-        outline: 0;
-    }
-
-    main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout {
-        margin-top: 37px;
-        background-color: #146C94;
-        color: white;
-        border: transparent;
-        cursor: pointer;
     }
 
     .sponsor .container h1 {
         font-size: 18px;
     }
 
-    .sponsor .container .sponsor-utama {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
-        margin-bottom: 50px;
-    }
-
-    .sponsor .container .sponsor-utama img {
-        width: 350px;
-    }
-
-    .sponsor .container .sponsor-lainnya {
-        width: 80%;
-        height: 100%;
-        /* border: 2px white solid; */
-        display: block;
-        justify-content: space-between;
-        margin: 0 auto;
-    }
-
-    .sponsor .container img {
-        text-align: center;
-        display: inline-block;
-        width: 100px;
-        margin: 10px;
-        filter: grayscale(90%);
+    .sponsor .container .sponsor-lainnya img {
+        width: 75px;
     }
 
 }
