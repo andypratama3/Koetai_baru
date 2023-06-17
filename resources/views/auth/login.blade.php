@@ -56,14 +56,13 @@
                         </div>
                         <div class="form-btn">
                             <button type="submit" class="btn-login">Masuk</button>
-                            <a type="button" class="btn-register" href="{{ route('register') }}"
-                                style="text-decoration: none;">Register</a>
+                            <a type="button" class="btn-register" href="{{ route('register') }}">Register</a>
                         </div>
                     </form>
 
                 </div>
             </div>
-            <img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="bg-logo">
+            {{-- <img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="bg-logo"> --}}
         </div>
     </main>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

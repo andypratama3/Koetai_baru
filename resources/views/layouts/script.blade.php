@@ -14,7 +14,7 @@
 <script>
     const swiper = new Swiper('.swiper', {
   autoplay: {
-    delay: 20000,
+    delay: 4000,
   },
   direction: 'horizontal',
   loop: true,
