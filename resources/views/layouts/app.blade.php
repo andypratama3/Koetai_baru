@@ -176,6 +176,7 @@
                     <span>Produk</span>
                 </a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.ordershop.*') ? '' : 'collapsed' }}"
                     href="{{ route('dashboard.ordershop.index') }}">

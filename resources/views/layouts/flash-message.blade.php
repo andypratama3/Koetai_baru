@@ -29,6 +29,14 @@
 </div>
 @endif
 
+@if(session()->get('success'))
+<div class="alert alert-primary alert-dismissible fade show text-center float-end text-black" data-delay="20" style="height: 55px; top: 10px; right: 10px; font-weight:900;" role="alert">
+    <i class="bi bi-ban me-1"></i>
+    {{session()->get('success')}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+
 
 
 

@@ -28,7 +28,7 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->role == '1' ? 'Admin' : 'User'}}</td>
                         <td>
-                            <a href="{{ route('dashboard.user.show', $user->id) }}" class="btn btn-primary change-role">
+                            <a href="{{ route('dashboard.user.show', $user->id) }}" class="btn btn-primary">
                             Ganti Role
                             </a>
                             <a href="#" data-id="{{ $user->slug }}" class="btn btn-danger delete" title="Hapus">
