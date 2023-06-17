@@ -245,10 +245,12 @@ $(document).ready(function () {
     }
     });
     $(document).on('click','.btn-checkout', function (e) {
-        var produk_id = $(this).closest('.produk_data').find('.prod_id').val();
-        var produk_qty = $(this).closest('.produk_data').find('.prod_qty').val();
-        var produk_ukuran = $(this).closest('.produk_data').find('.prod_ukuran').val();
+        var produk_id = $(this).closest('.cartitems').find('.prod_id').val();
+        var produk_qty = $(this).closest('.cartitems').find('.prod_qty').val();
+        var produk_ukuran = $(this).closest('.cartitems').find('.prod_ukuran').val();
         alert(produk_id);
+        alert(produk_qty);
+        alert(produk_ukuran);
         // $.ajaxSetup({
         //     headers: {
         //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

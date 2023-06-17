@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Tambah Kategori</h5>
-                @include('layouts.flash-message')
+                
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.kategori.store') }} " method="POST" enctype="multipart/form-data">
                     @csrf

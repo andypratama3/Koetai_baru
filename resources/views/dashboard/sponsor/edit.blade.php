@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Tambah Sponsor</h5>
-                @include('layouts.flash-message')
+
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.anggota.update', $anggota->slug ) }} " method="POST" enctype="multipart/form-data">
 

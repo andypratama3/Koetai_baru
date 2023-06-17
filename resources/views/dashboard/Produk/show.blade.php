@@ -8,17 +8,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Detail produk</h5>
-                @if (count($errors) > 0)
-                <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
-                    <h5><i class="bi bi-ban"></i>Peringatan!</h5>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
-                        aria-label="Close"></button>
-                </div>
-                @endif
-
+        
                 <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
@@ -43,7 +33,7 @@
                         {{ $produk->deskripsi }}
                     </div>
                 </div>
-                
+
                 <div class="row mb-3">
                     <label for="inputNumber" class="col-sm-2 col-form-label">Foto</label>
                     <div id="carouselExampleSlidesOnly" class="carousel slide justify-center" data-bs-ride="carousel">

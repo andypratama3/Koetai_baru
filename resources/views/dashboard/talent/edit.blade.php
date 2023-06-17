@@ -19,7 +19,7 @@
                 <h5 class="card-title text-center">
                     <a href="{{ route('dashboard.talent.index') }}" class="btn btn-danger float-start btn-sm">Kembali</a>
                     Edit Talent</h5>
-                @include('layouts.flash-message')
+              
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.talent.update', $talent->slug ) }} " method="POST"
                     enctype="multipart/form-data">

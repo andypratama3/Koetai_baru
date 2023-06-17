@@ -15,7 +15,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Tambah Event</h5>
-                @include('layouts.flash-message')
+                
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.event.store') }} " method="POST" enctype="multipart/form-data">
                     @csrf

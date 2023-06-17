@@ -41,7 +41,7 @@ class ProdukController extends Controller
     public function edit($slug)
     {
         $produk = Produk::where('slug',$slug)->select(['id', 'nama','deskripsi' ,'foto','harga','stock', 'slug'])->firstOrFail();
-        $kategoris = Kategoris::select(['id', 'nama'])->orderBy('nama')->get();
+        $kategoris = Kategori::select(['id', 'nama'])->orderBy('nama')->get();
         return view('dashboard.produk.edit', compact('produk','kategoris'));
     }
     public function update(StoreProdukRequest $request, UpdateProdukAction $updateProdukAction, $slug)

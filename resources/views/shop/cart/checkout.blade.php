@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="container-belanja cartitems">
-    
     <div class="main-keranjang">
         <div class="container-keranjang">
             <div class="isinya">
@@ -37,7 +36,8 @@
                     <div class="btn-x">
                         <button class="float-end delete-cart"><i class='bx bx-x'></i></button>
                     </div>
-                    <input type="hidden" class="prod_id" value="{{ $cart->prod_id }}">
+                    <input type="hidden" class="prod_qty" value="{{ $cart->prod_qty}}">
+                    <input type="hidden" class="prod_ukuran" value="{{ $cart->prod_ukuran}}">
                 </div>
                 <hr>
                 @php $totals += $cart->produks->harga * $cart->prod_qty; @endphp
@@ -47,15 +47,6 @@
                     <button type="submit" class="btn btn-warning btn-lg btn-checkout">Check Out</button>
                 </div>
             </div>
-
-
-            {{-- <div class="card-body text-center">
-                <h2>Keranjang<i class="bi bi-cart"></i> Anda Kosong!</h2>
-                <br>
-                <a href="{{url('shop')}}" class="btn btn-warning btn-keranjang align-center">Continue Shopping</a>
-            </div> --}}
-
-
         </div>
     </div>
     @include('layouts.script')

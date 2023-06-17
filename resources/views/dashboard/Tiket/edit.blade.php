@@ -11,7 +11,7 @@
                 <h5 class="card-title text-center">
                     <a href="{{ route('dashboard.tiket.index') }}" class="btn btn-danger float-start btn-sm">Kembali</a>
                     Edit tiket</h5>
-                @include('layouts.flash-message')
+               
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.tiket.update', $tiket->slug ) }} " method="POST"
                     enctype="multipart/form-data">
