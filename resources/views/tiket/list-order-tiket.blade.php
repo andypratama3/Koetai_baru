@@ -9,7 +9,6 @@
                 <div class="isinya">
                     <h1>Pesanan Tiket</h1>
                     @if ($orders->count() > 0)
-                    {{-- @php $totals = 0; @endphp --}}
                     @foreach ($orders as $order)
                     @php $total = 0; @endphp
                     <div class="list-produk pesan_tiket">
@@ -17,7 +16,6 @@
                             <div class="produk">
                                 <p>{{ $order->nama }}</p>
                             </div>
-
                         </div>
                         <input type="hidden" value="{{ $order->id }}" class="order_id">
                         <div class="jumlah">
@@ -26,21 +24,29 @@
                                     value="{{ $order->jumlah }}" readonly>
                             </div>
                         </div>
-                        @php $total += $order->tiket->harga * $order->jumlah; @endphp
 
-                        <h5>Total : Rp. {{ $total }}</h5>
+
+
+                        <h5>Total : Rp. {{ $order->total }}</h5>
                         <h5>{{ $order->status }}</h5>
-                        {{-- <button class="btn btn-danger delete-tiket-order">Delete</button> --}}
-                        <button class="btn btn-keranjang align-center float-end pay-button"
-                            style="background-color: #FFB716;">Detail</button>
-                        <input type="hidden" value="{{ $order->tiket->harga }}" class="harga">
-                        <input type="hidden" class="prod_id" value="{{ $order->prod_id }}">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#detail_tiket_lauch" style="background-color: #FFB716;" id="detail_tiket"
+                                data-id="<?=$order->id?>"
+                                data-nama="<?=$order->nama ?>"
+                                data-total="<?=$order->total ?>"
+                                data-kategori="<?=$order->tikets ?>"
+                                data-status="<?=$order->status ?>"
+                                data-foto="<?=$order->tiket->foto ?>"
+                                >
+
+                                Detail Tiket
+                              </button>
                     </div>
                     <hr>
-                    @php $total += $order->tiket->harga * $order->jumlah; @endphp
+
                     @endforeach
                     <div class="total float-end">
-                        {{-- <h5>Total Semua Rp. {{ $totals }}</h5> --}}
+                        <h5>Total Semua Rp. {{ $order->total }}</h5>
                     </div>
                 </div>
                 @else
@@ -55,5 +61,22 @@
         </div>
     </div>
 </div>
+
+<!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade detail" id="detail_tiket_lauch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-konten">
+        <div class="modal-body">
+
+            <img src="" alt="" id="foto" style="width: 100%; height: 80px;
+            " >
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
 @include('layouts.script')
 @endsection

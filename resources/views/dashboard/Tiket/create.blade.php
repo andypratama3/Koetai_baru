@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Tambah tiket</h5>
-              
+
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.tiket.store') }} " method="POST" enctype="multipart/form-data">
                     @csrf
@@ -28,6 +28,12 @@
                         <label for="inputText" class="col-sm-2 col-form-label">Stok</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="stok">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="file" class="col-sm-2 col-form-label">Foto Tiket</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="file" id="formFile" name="foto">
                         </div>
                     </div>
                     <div class="row mt-3 mb-3 text-center">

@@ -11,7 +11,7 @@
                 <h5 class="card-title text-center">
                     <a href="{{ route('dashboard.tiket.index') }}" class="btn btn-danger float-start btn-sm">Kembali</a>
                     Edit tiket</h5>
-               
+
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.tiket.update', $tiket->slug ) }} " method="POST"
                     enctype="multipart/form-data">
@@ -33,6 +33,12 @@
                         <label for="inputText" class="col-sm-2 col-form-label">Stok</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="stok" value="{{ $tiket->stok }}">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="file" class="col-sm-2 col-form-label">Foto Tiket</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="file" id="formFile" name="foto" value="{{ $tiket->foto }}">
                         </div>
                     </div>
                     <div class="row mt-3 mb-3 text-center">

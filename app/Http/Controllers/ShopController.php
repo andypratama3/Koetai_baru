@@ -55,3 +55,4 @@ class ShopController extends Controller
         return view('shop.cart.checkout',compact('carts'));
     }
 }
+

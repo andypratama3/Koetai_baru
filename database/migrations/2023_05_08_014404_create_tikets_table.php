@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('kategori');
             $table->float('harga');
             $table->unsignedInteger('stok');
+            $table->string('foto');
             $table->string('slug');
             $table->timestamps();
         });

@@ -298,5 +298,20 @@ $(document).ready(function () {
             }
         });
     });
+    $(document).on('click', '#detail_tiket', function () {
+
+        var id = $(this).data('id');
+        var nama = $(this).data('nama');
+        var jumlah = $(this).data('jumlah');
+        var foto = $(this).data('foto');
+
+        $('#id').attr('value', id);
+        $('#nama').text(nama);
+        $('#jumlah').text(jumlah);
+        var imageUrl = '/storage/img/tiket/'+ foto;
+        $('#foto').attr('src',imageUrl);
+
+
+    });
 });
 

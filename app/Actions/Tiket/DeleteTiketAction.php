@@ -10,6 +10,7 @@ class DeleteTiketAction
     public function execute($slug): void
     {
         $tiket = tiket::where('slug', $slug)->firstOrFail();
+        
         $tiket->delete();
     }
 }

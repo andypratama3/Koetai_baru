@@ -21,7 +21,7 @@ class OrderanTiket extends Controller
     }
     public function show($slug){
 
-        $orderan = OrderTiket::where('slug',$slug)->select(['user_id','nama','tiket_id','jumlah','total','status','slug'])->firstOrFail();
+        $orderan = OrderTiket::where('slug',$slug)->select(['id','user_id','nama','tiket_id','jumlah','total','status','slug'])->firstOrFail();
         return view('dashboard.orderan_tiket.show',compact('orderan'));
     }
     public function destroy($slug, DeleteOrderanAction $deleteOrderanAction){

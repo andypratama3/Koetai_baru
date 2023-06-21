@@ -7,9 +7,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Detail Orderan</h5>
-              
-
+                <h5 class="card-title">Detail Orderan</h5>              
                 <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">User Id</label>
                     <div class="col-sm-10">

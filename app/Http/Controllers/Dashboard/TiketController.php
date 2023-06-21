@@ -17,7 +17,7 @@ class TiketController extends Controller
     public function index()
     {
         $no = 0;
-        $tikets = Tiket::select(['kategori','harga','stok','slug'])->get();
+        $tikets = Tiket::select(['kategori','harga','stok','foto','slug'])->get();
         return view('dashboard.tiket.index', compact('tikets','no'));
     }
     public function show($slug)

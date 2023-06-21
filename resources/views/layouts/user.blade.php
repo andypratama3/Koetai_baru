@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
     @stack('css')
     <link rel="stylesheet" href="sweetalert2.min.css">
-    
+
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
         data-client-key="{{ config('midtrans.client_Key') }}"></script>
 
@@ -58,12 +58,13 @@
                     </a>
                 </li>
             </ul>
+
             <ul class="menu-nav">
                 <div class="drop-down-tiket">
                     <button class="btn-pilih">Tiket</button>
                     <div class="drop-down-konten">
                         <a href="/tiket" class="konten-tiket">Tiket</a>
-                        <a href="/checkout-tiket" class="konten-pesan-tiket">Pesanan Tiket</a>
+                        <a href="/orderan-tiket" class="konten-pesan-tiket">Pesanan Tiket</a>
                     </div>
                 </div>
                 @if(auth()->check())

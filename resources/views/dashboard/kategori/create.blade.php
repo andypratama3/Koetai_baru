@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Tambah Kategori</h5>
-                
+
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.kategori.store') }} " method="POST" enctype="multipart/form-data">
                     @csrf
@@ -18,6 +18,7 @@
                             <input type="text" class="form-control" name="nama">
                         </div>
                     </div>
+                   
                     <div class="row mt-3 mb-3 text-center">
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">Simpan</button>

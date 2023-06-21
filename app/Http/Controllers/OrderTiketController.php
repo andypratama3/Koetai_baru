@@ -65,7 +65,7 @@ class OrderTiketController extends Controller
     }
     public function orderan(Request $request){
 
-        $orders = OrderTiket::where('user_id', Auth::id())->get();
+        $orders = OrderTiket::with('tiket')->where('user_id', Auth::id())->get();
 
         return view('tiket.list-order-tiket', compact('orders'));
     }
