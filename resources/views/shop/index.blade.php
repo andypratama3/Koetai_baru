@@ -4,7 +4,7 @@
 <div class="container-belanja produk_data">
     <nav class="nav-belanja">
         <ul>
-            <li class="belanja-baju active" id="nav-baju">BAJU</li>
+            <li class="belanja-baju active" id="nav-baju">T-Shirt</li>
             <li class="belanja-mchan" id="nav-mchan">Tote Bag</li>
             <li class="belanja-mchan" id="nav-mchan">Acc</li>
         </ul>
@@ -36,7 +36,9 @@
                     <button type="button" class="tutup-modal" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="produk-klik" id="produk-klik">
                         <div class="konten-atas">
-                            <img src="" id="foto" alt="Gambar Modal" >
+                            <div class="container-img">
+                                <img src="" id="foto" alt="Gambar Modal">
+                            </div>
                             <div class="teks-gambar">
                                 <input type="hidden" id="id" class="prod_id">
                                 <h2 id="nama"></h2>
@@ -57,7 +59,8 @@
                             </div>
                             <div class="jumlah">
                                 <h2>jumlah: </h2>
-                                <input type="number" min="1" max="100" value="1" class="form-custom prod_qty text-center">
+                                <input type="number" min="1" max="100" value="1"
+                                    class="form-custom prod_qty text-center">
                             </div>
                         </div>
                     </div>

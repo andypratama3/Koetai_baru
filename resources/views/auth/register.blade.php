@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
 </head>
 
+<div class="blur-kuning"></div>
+<img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="logo-kms-kuning">
 <main>
     <div class="container-login">
         <div class="container-kiri">
@@ -22,7 +24,7 @@
         <div class="container-kanan">
             <div class="isi-container">
                 <div class="judul-login">
-                    <h1>Daftar</h1>
+                    <h1>DAFTAR</h1>
                 </div>
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
@@ -53,7 +55,7 @@
 
             </div>
         </div>
-        <img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="bg-logo">
+        {{-- <img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="bg-logo"> --}}
     </div>
 </main>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

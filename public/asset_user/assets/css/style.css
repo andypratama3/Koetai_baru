@@ -732,12 +732,20 @@ main .swiper-scrollbar {
     align-items: end;
 }
 
-.produk-klik .konten-atas img {
+.produk-klik .konten-atas .container-img {
+    position: relative;
     width: 230px;
     height: 180px;
     border: 1px solid #3D3D3D;
     border-radius: 15px;
-    display: flex;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.produk-klik .konten-atas .container-img img {
+    width: 100%;
+    z-index: 9;
+    transform: translateY(-50px);
 }
 
 .produk-klik .konten-atas .teks-gambar {
@@ -1353,7 +1361,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 .container-login {
     width: 70%;
     height: auto;
-    max-height: 70vh;
+    /* max-height: 70vh; */
     display: flex;
     justify-content: space;
     border-radius: 20px;
@@ -1377,12 +1385,11 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     align-items: center;
     float: left;
     background-color: rgba(0, 0, 0, 0.25);
-    /* border: 2px green solid; */
+    /* border: 2px pink solid; */
 }
 
 .container-login .container-kiri img {
-    width: 90%;
-    height: 70%;
+    width: 95%;
 }
 
 .container-login .container-kanan {
@@ -1400,7 +1407,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .container-login .container-kanan .isi-container .form-btn {
-    /* border: 2px red solid; */
+    /* border: 2px green solid; */
     width: 100%;
 }
 
@@ -1799,6 +1806,10 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
         transform: translateX(15px) translateY(-12px) !important;
     }
 
+    .produk-klik .konten-atas .container-img img {
+        transform: translateY(-10px);
+    }
+
     .container-keranjang .isinya .list-produk .gambar-produk img {
         width: 85px;
         height: 85px;
@@ -1818,9 +1829,8 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
         font-size: 21px;
     }
 
-    .container-login .container-kiri img {
-        width: 80%;
-        height: 60%;
+    .container-login .container-kiri {
+        display: none;
     }
 
     .sponsor .container .sponsor-utama img {
@@ -1891,10 +1901,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     .main-keranjang .isinya .list-produk .jumlah .minus,
     .main-keranjang .isinya .list-produk .jumlah .plus {
         font-size: 20px;
-    }
-
-    .container-login .container-kiri {
-        display: none;
     }
 
     .sponsor .container .sponsor-utama {
