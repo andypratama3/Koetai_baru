@@ -13,7 +13,7 @@ class DashboardController extends Controller
 {
     public function __invoke()
     {
-        $tikets = Tiket::select(['kategori','harga','stok','slug'])->firstOrFail();
+        $tikets = Tiket::count();
         $ordersTiket = OrderTiket::count();
         $Event = Event::count();
         $talent = Talent::count();

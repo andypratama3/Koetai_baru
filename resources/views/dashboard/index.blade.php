@@ -9,13 +9,13 @@
             <div class="col-xxl-4 col-md-6">
                 <div class="card info-card sales-card">
                   <div class="card-body">
-                    <h5 class="card-title">Stok Tiket</h5>
+                    <h5 class="card-title">Kategori Tiket</h5>
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                         <i class=" ri-ticket-2-line"></i>
                       </div>
                       <div class="ps-3">
-                        <h6>{{ $tikets->stok }} <span class="text-success small pt-1 fw-bold">Tiket</span> </h6>
+                        <h6>{{ $tikets }} <span class="text-success small pt-1 fw-bold">Tiket</span> </h6>
                       </div>
                     </div>
                   </div>
