@@ -1143,6 +1143,13 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     justify-content: space-between;
     align-items: start;
 }
+.id-tiket{
+    display: flex;
+    position: relative;
+    font-size: 8px;
+    font-weight: bold;
+    transform: translateX(560px) translateY(-40px);
+}
 
 /* AKHIR CONTAINER PESAN TIKET */
 /* ===================================================================== */
@@ -1920,6 +1927,10 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     .sponsor .container .sponsor-lainnya img {
         width: 75px;
         margin: 10px;
+    }
+    .id-tiket{
+        font-weight: bold;
+        transform: translateX(300px) translateY(-40px);
     }
 }
 

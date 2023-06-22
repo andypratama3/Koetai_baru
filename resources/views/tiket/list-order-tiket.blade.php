@@ -2,6 +2,7 @@
 @section('title', 'List Order Tiket')
 @section('content')
 
+
 <div class="container-pesanan-tiket pesantiket">
     <div class="main-pesanan-tiket">
         <div class="isi-pesanan-tiket">
@@ -24,9 +25,6 @@
                                     value="{{ $order->jumlah }}" readonly>
                             </div>
                         </div>
-
-
-
                         <h5>Total : Rp. {{ $order->total }}</h5>
                         <h5>{{ $order->status }}</h5>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -38,7 +36,6 @@
                                 data-status="<?=$order->status ?>"
                                 data-foto="<?=$order->tiket->foto ?>"
                                 >
-
                                 Detail Tiket
                               </button>
                     </div>
@@ -69,10 +66,8 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-konten">
         <div class="modal-body">
-
-            <img src="" alt="" id="foto" style="width: 100%; height: 80px;
-            " >
-
+            <img src="" alt="" id="foto" style="width: 100%; height: 80px;">
+            <p id="id" class="id-tiket"></p>
         </div>
         </div>
       </div>

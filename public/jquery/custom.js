@@ -305,7 +305,9 @@ $(document).ready(function () {
         var jumlah = $(this).data('jumlah');
         var foto = $(this).data('foto');
 
-        $('#id').attr('value', id);
+        // $('#id').attr('value', id);
+        $('#id').text(id);
+
         $('#nama').text(nama);
         $('#jumlah').text(jumlah);
         var imageUrl = '/storage/img/tiket/'+ foto;
