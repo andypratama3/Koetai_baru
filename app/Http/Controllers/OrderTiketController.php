@@ -6,7 +6,6 @@ use Midtrans\Snap;
 use App\Models\Tiket;
 use App\Models\OrderTiket;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreOrderTiket;
 use App\Actions\OrderTiket\StoreOrderTiketAction;
@@ -54,6 +53,7 @@ class OrderTiketController extends Controller
     public function orderan(Request $request){
 
         $orders = OrderTiket::with('tiket')->where('user_id', Auth::id())->get();
+<<<<<<< HEAD
         $transaksi = OrderTiket::with("tiket")->select(["id","user_id","nama","tiket_id","jumlah","total","status","slug","created_at"])->firstOrFail();
         // Periksa status pembayaran dan waktu pembayaran
         if ($transaksi->status === 'Unpaid' && $transaksi->created_at->diffInHours(Carbon::now()) >= 24) {
@@ -62,6 +62,8 @@ class OrderTiketController extends Controller
             $tiket->stok += $transaksi->jumlah;
             $tiket->save();
         }
+=======
+>>>>>>> 3a30f8001ede78f65de71c636143f5b4705138a6
         return view('tiket.list-order-tiket', compact('orders'));
     }
 
