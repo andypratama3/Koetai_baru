@@ -31,11 +31,11 @@
                         @else
                         <h6>Out Of Stock</h6>
                         @endif
-                        <h5>Total : Rp. {{ $total }}</h5>
-                        <h5>{{ $order->status }}</h5>
-                        <div class="tombol-hapus-bayar">
-                            <button class="btn btn-danger delete-tiket-order">Delete</button>
-                            <button class="btn btn-warning btn-keranjang pay-button">Bayar</button>
+                        <h5 class="total-harga">Total : Rp. {{ $total }}</h5>
+                        <h5 class="status">{{ $order->status }}</h5>
+                        <div class="container-btn">
+                            <button class="bttn btn-merah delete-tiket-order">Delete</button>
+                            <button class="bttn btn-kuning pay-button">Bayar</button>
                         </div>
                         <input type="hidden" value="{{ $order->tiket->harga }}" class="harga">
                         <input type="hidden" class="prod_id" value="{{ $order->prod_id }}">

@@ -36,7 +36,7 @@
                                     <i class="bx bx-chevron-down"></i>
                                 </select>
                                 <div class="label-pesantik">Jumlah</div>
-                                <input type="number" id="jumlah" name="jumlah" class="form-control qty" id="jumlah"
+                                <input type="number" id="jumlah" name="jumlah" min="0" class="form-control qty" id="jumlah"
                                     placeholder="Jumlah">
                                 <br>
                                 <div class="tombol-pesantik">
