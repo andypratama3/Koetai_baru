@@ -63,7 +63,7 @@
                 <div class="drop-down-tiket">
                     <button class="btn-pilih">Tiket</button>
                     <div class="drop-down-konten">
-                        <a href="/tiket" class="konten-tiket">Tiket</a>
+                        <a href="/tiket" class="konten-tiket">Beli Tiket</a>
                         <a href="/orderan-tiket" class="konten-pesan-tiket">Pesanan Tiket</a>
                     </div>
                 </div>

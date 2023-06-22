@@ -10,7 +10,6 @@
                     <h1>Pesanan Tiket</h1>
                     @if ($order->count() > 0)
                     @php $totals = 0; @endphp
-                    {{-- @foreach ($orders as $order) --}}
                     @php $total = 0; @endphp
                     <div class="list-produk pesan_tiket">
                         <div class="produk-ukuran">
