@@ -61,7 +61,7 @@
 
             <ul class="menu-nav">
                 <div class="drop-down-tiket">
-                    <button class="btn-pilih">Tiket</button>
+                    <button class="btn-pilih" id="btn-tiket">Tiket</button>
                     <div class="drop-down-konten">
                         <a href="/tiket" class="konten-tiket">Beli Tiket</a>
                         <a href="/orderan-tiket" class="konten-pesan-tiket">Pesanan Tiket</a>
@@ -89,33 +89,49 @@
                 <i class="bx bx-menu"></i>
             </div>
         </nav>
-        <div class="dropdown-menu">
-            <li>
-                <a href="/">
-                    <button class="{{ request()->is('/login') ? 'active' : '' }}">Beranda</button>
-                </a>
-            </li>
-            <li>
-                <a href="/crew">
-                    <button class="{{ request()->is('/crew') ? 'active' : '' }}">Semua Tim</button>
-                </a>
-            </li>
-            <li>
-                <a href="/shop">
-                    <button class="{{ request()->is('/shop') ? 'active' : '' }}">Belanja</button>
-                </a>
-            </li>
-            <li>
-                <a href="/tiket">
-                    <button class="{{ request()->is('/tiket') ? 'active' : '' }}">Tiket</button>
-                </a>
-            </li>
-            <li>
-                <a href="/login">
-                    <button class="{{ request()->is('/shop') ? 'active' : '' }}">Login</button>
-                </a>
-            </li>
-
+        <div class="side-bar">
+            <div class="sidebar-img">
+                <img src="{{ asset('asset_user/assets/img/logo-kms1.png')}}">
+            </div>
+            <div class="container-dropdown">
+                <li>
+                    <a href="/">
+                        <button class="{{ request()->is('/login') ? 'active' : '' }} list-content">Beranda</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/crew">
+                        <button class="{{ request()->is('/crew') ? 'active' : '' }} list-content">Semua Tim</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/shop">
+                        <button class="{{ request()->is('/shop') ? 'active' : '' }} list-content">Belanja</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/cart">
+                        <button class="{{ request()->is('/cart') ? 'active' : '' }} list-content">Keranjang</button>
+                    </a>
+                </li>
+                <li class="dropdown-tiket">
+                    <button
+                        class="{{ request()->is('/shop') ? 'active' : '' }} list-content btn-tiket-resp">Tiket</button>
+                    <div class="dropdown-content">
+                        <a href="/tiket">
+                            <button class="list-content">Beli Tiket</button>
+                        </a>
+                        <a href="/orderan-tiket">
+                            <button class="list-content">Pesanan Tiket</button>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="/login">
+                        <button class="{{ request()->is('/shop') ? 'active' : '' }} list-content">Login</button>
+                    </a>
+                </li>
+            </div>
         </div>
     </header>
 

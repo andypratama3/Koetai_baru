@@ -1,54 +1,66 @@
 // BERANDA HEADER -> Variabel Dropdown
 const tombolMenu = document.querySelector("header .nav-bar .tombol-menu"),
     tombolMenuIcon = document.querySelector("header .nav-bar .tombol-menu i"),
-    dropDownMenu = document.querySelector("header .dropdown-menu");
+    side_bar = document.querySelector("header .side-bar"),
+    btn_tiket = document.querySelector("header .menu-nav .drop-down-tiket .btn-pilih"),
+    dropdown_konten = document.querySelector("header .menu-nav .drop-down-tiket .drop-down-konten"),
+    btn_tiketResp = document.querySelector("header .side-bar .dropdown-tiket .btn-tiket-resp"),
+    dropdown_tiketResp = document.querySelector("header .side-bar .dropdown-tiket .dropdown-content");
 
 tombolMenu.onclick = function () {
-    dropDownMenu.classList.toggle("open");
+    side_bar.classList.toggle("open");
+    const isOpen = side_bar.classList.contains("open");
+    tombolMenuIcon.classList = isOpen ?
+        "bx bx-x" :
+        "bx bx-menu";
+}
+
+btn_tiket.onclick = function () {
+    btn_tiket.classList.toggle("active");
+    dropdown_konten.classList.toggle("open");
+}
+
+btn_tiketResp.onclick = function () {
+    dropdown_tiketResp.classList.toggle("open");
 }
 
 // Belanja -> Navbar Belanja Di Click
-var navBaju = document.getElementById("nav-baju");
-var navMchan = document.getElementById("nav-mchan");
-var belanjaBaju = document.getElementById("belanja-baju");
-var belanjaMchan = document.getElementById("belanja-mchan");
-var isiBelanja = document.getElementById("isi-belanja");
+// var navBaju = document.getElementById("nav-baju");
+// var navMchan = document.getElementById("nav-mchan");
+// var belanjaBaju = document.getElementById("belanja-baju");
+// var belanjaMchan = document.getElementById("belanja-mchan");
+// var isiBelanja = document.getElementById("isi-belanja");
 
-navBaju.onclick = function () {
-    navBaju.classList.add("active");
-    navMchan.classList.remove("active");
-    belanjaBaju.style.display = "block";
-    belanjaMchan.style.display = "none";
-    belanjaBaju.style.animation = "baju-in .8s";
-    isiBelanja.style.animation = "baju-in .8s";
-}
+// navBaju.onclick = function () {
+//     navBaju.classList.add("active");
+//     navMchan.classList.remove("active");
+//     belanjaBaju.style.display = "block";
+//     belanjaMchan.style.display = "none";
+//     belanjaBaju.style.animation = "baju-in .8s";
+//     isiBelanja.style.animation = "baju-in .8s";
+// }
 
-navMchan.onclick = function () {
-    navMchan.classList.add("active");
-    navBaju.classList.remove("active");
-    belanjaMchan.style.display = "block";
-    belanjaBaju.style.display = "none";
-    belanjaMchan.style.animation = "mchan-in .8s";
-    isiBelanja.style.animation = "mchan-in .8s";
-}
+// navMchan.onclick = function () {
+//     navMchan.classList.add("active");
+//     navBaju.classList.remove("active");
+//     belanjaMchan.style.display = "block";
+//     belanjaBaju.style.display = "none";
+//     belanjaMchan.style.animation = "mchan-in .8s";
+//     isiBelanja.style.animation = "mchan-in .8s";
+// }
 
 // function pilihTiket() {
 //     document.getElementsByClassName("pilih-btn").classList.add("show");
 // }
 
 // Tiket Dropdown -> Variabel Dropdown
-var dropDownTiket = document.querySelector("header .menu-nav .drop-down-tiket");
-var pilihTiket = document.querySelector("header .menu-nav .drop-down-tiket .drop-down-konten");
-var btnPilih = document.querySelector("header .menu-nav .drop-down-tiket .btn-pilih");
+// var btn_tiket = document.querySelector("header .menu-nav .drop-down-tiket .btn-pilih")
 
-dropDownTiket.onclick = function () {
-    pilihTiket.classList.toggle("open");
-    pilihTiket.classList.toggle("active");
-}
+// btn_tiket.onclick = function () {
+//     btn_tiket.classList.toggle("active")
+// }
 
-btnPilih.onclick = function () {
-    btnPilih.classList.toggle("active");
-}
+
 
 window.onclick = function (event) {
     if (!event.target.matches('header .menu-nav .drop-down-tiket .drop-down-tiket .btn-pilih')) {
