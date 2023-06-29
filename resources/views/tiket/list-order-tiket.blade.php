@@ -25,19 +25,17 @@
                                     value="{{ $order->jumlah }}" readonly>
                             </div>
                         </div>
-                        <h5>Total : Rp. {{ $order->total }}</h5>
-                        <h5>{{ $order->status }}</h5>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#detail_tiket_lauch" style="background-color: #FFB716;" id="detail_tiket"
-                                data-id="<?=$order->id?>"
-                                data-nama="<?=$order->nama ?>"
-                                data-total="<?=$order->total ?>"
-                                data-kategori="<?=$order->tikets ?>"
-                                data-status="<?=$order->status ?>"
-                                data-foto="<?=$order->tiket->foto ?>"
-                                >
+                        <h5 class="total-harga">Total : Rp. {{ $order->total }}</h5>
+                        <h5 class="status">{{ $order->status }}</h5>
+                        <div class="container-btn">
+                            <button type="button" class="bttn btn-kuning" data-bs-toggle="modal"
+                                data-bs-target="#detail_tiket_lauch"
+                                id="detail_tiket" data-id="<?=$order->id?>" data-nama="<?=$order->nama ?>"
+                                data-total="<?=$order->total ?>" data-kategori="<?=$order->tikets ?>"
+                                data-status="<?=$order->status ?>" data-foto="<?=$order->tiket->foto ?>">
                                 Detail Tiket
-                              </button>
+                            </button>
+                        </div>
                     </div>
                     <hr>
 
@@ -61,17 +59,18 @@
 
 <!-- Button trigger modal -->
 
-  <!-- Modal -->
-  <div class="modal fade detail" id="detail_tiket_lauch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade detail" id="detail_tiket_lauch" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-konten">
-        <div class="modal-body">
-            <img src="" alt="" id="foto" style="width: 100%; height: 80px;">
-            <p id="id" class="id-tiket"></p>
+        <div class="modal-konten">
+            <div class="modal-body">
+                <img src="" alt="" id="foto" style="width: 100%; height: 80px;">
+                <p id="id" class="id-tiket"></p>
+            </div>
         </div>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+</div>
 @include('layouts.script')
 @endsection
