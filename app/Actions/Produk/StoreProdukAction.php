@@ -29,6 +29,7 @@ class StoreProdukAction
         $produk->foto = $picture_name;
         $produk->save();
 
+
         foreach ($request->kategori as $key => $kategori) {
             $produk->kategoris()->attach($kategori);
         }

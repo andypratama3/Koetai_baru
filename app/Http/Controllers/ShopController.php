@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Produk;
+use App\Models\Kategori;
+use App\Models\OrderShop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CheckoutRequest;
@@ -12,8 +14,10 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $shops = Produk::with('kategoris')->get();
-        return view('shop.index', compact('shops'));
+        $kategoris = Kategori::select(['nama'])->get();
+
+        $shops = Produk::select(['nama','foto','stock','harga','deskripsi','slug'])->get();
+        return view('shop.index', compact('shops','kategoris'));
     }
 
     public function addprodukcheckout(Request $request){
@@ -52,6 +56,15 @@ class ShopController extends Controller
         $produk_id = $request->input("produk_id");
         $produk_ukuran  = $request->input("produk_ukuran");
         $produk_qty = $request->input("produk_jumlah");
+
+        $checkout = new OrderShop();
+        $checkout->prod_id = $produk_id;
+        $checkout->prod_ukuran = $produk_ukuran;
+        $checkout->prod_qty = $produk_qty;
+
+
+
+
         return view('shop.cart.checkout',compact('carts'));
     }
 }

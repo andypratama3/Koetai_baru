@@ -20,7 +20,7 @@ class StoreAnggotaAction
             $ext = $anggota_picture->getClientOriginalExtension();
 
             $upload_path = 'storage/img/anggota/';
-            $picture_name = "event_". Str::slug($request->nama). "_" .date("YmdHis") . ".$ext";
+            $picture_name = "anggota_". Str::slug($request->nama). "_" .date("YmdHis") . ".$ext";
             $anggota_picture->move($upload_path,$picture_name);
         }
         $anggota->foto = $picture_name;

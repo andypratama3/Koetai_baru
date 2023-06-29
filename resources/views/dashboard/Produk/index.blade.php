@@ -19,6 +19,7 @@
                         <th scope="col">Deskripsi</th>
                         <th scope="col">Gambar</th>
                         <th scope="col">Stock</th>
+                        <th scope="col">Kategori</th>
                         <th scope="col">Harga</th>
                         <th scope="col">Aksi</th>
                       </tr>
@@ -31,6 +32,7 @@
                         <td>{{ $produk->deskripsi}}</td>
                         <td>{{ $produk->foto}}</td>
                         <td>{{ $produk->stock}}</td>
+                        <td>{{ $produk->kategoris }}</td>
                         <td>{{ $produk->harga}}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('dashboard.produk.show',$produk->slug) }}"><i class="bi bi-eye"></i></a>

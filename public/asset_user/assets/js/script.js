@@ -8,29 +8,29 @@ tombolMenu.onclick = function () {
 }
 
 // Belanja -> Navbar Belanja Di Click
-var navBaju = document.getElementById("nav-baju");
-var navMchan = document.getElementById("nav-mchan");
-var belanjaBaju = document.getElementById("belanja-baju");
-var belanjaMchan = document.getElementById("belanja-mchan");
-var isiBelanja = document.getElementById("isi-belanja");
+// var navBaju = document.getElementById("nav-baju");
+// var navMchan = document.getElementById("nav-mchan");
+// var belanjaBaju = document.getElementById("belanja-baju");
+// var belanjaMchan = document.getElementById("belanja-mchan");
+// var isiBelanja = document.getElementById("isi-belanja");
 
-navBaju.onclick = function () {
-    navBaju.classList.add("active");
-    navMchan.classList.remove("active");
-    belanjaBaju.style.display = "block";
-    belanjaMchan.style.display = "none";
-    belanjaBaju.style.animation = "baju-in .8s";
-    isiBelanja.style.animation = "baju-in .8s";
-}
+// navBaju.onclick = function () {
+//     navBaju.classList.add("active");
+//     navMchan.classList.remove("active");
+//     belanjaBaju.style.display = "block";
+//     belanjaMchan.style.display = "none";
+//     belanjaBaju.style.animation = "baju-in .8s";
+//     isiBelanja.style.animation = "baju-in .8s";
+// }
 
-navMchan.onclick = function () {
-    navMchan.classList.add("active");
-    navBaju.classList.remove("active");
-    belanjaMchan.style.display = "block";
-    belanjaBaju.style.display = "none";
-    belanjaMchan.style.animation = "mchan-in .8s";
-    isiBelanja.style.animation = "mchan-in .8s";
-}
+// navMchan.onclick = function () {
+//     navMchan.classList.add("active");
+//     navBaju.classList.remove("active");
+//     belanjaMchan.style.display = "block";
+//     belanjaBaju.style.display = "none";
+//     belanjaMchan.style.animation = "mchan-in .8s";
+//     isiBelanja.style.animation = "mchan-in .8s";
+// }
 
 // function pilihTiket() {
 //     document.getElementsByClassName("pilih-btn").classList.add("show");
@@ -135,7 +135,7 @@ window.onclick = function (event) {
 // }
 // autoSlide();
 
-// // BERANDA MAIN -> Mouse Hover Carousel = Stop Auto Sliding 
+// // BERANDA MAIN -> Mouse Hover Carousel = Stop Auto Sliding
 // const mainContainer = document.querySelector(".carouselnya");
 // mainContainer.addEventListener("mouseover", function () {
 //     clearInterval(deleteInterval);
@@ -144,7 +144,7 @@ window.onclick = function (event) {
 // // BERANDA MAIN -> Mouse Kada Hover Carousel = Lanjut Auto Sliding
 // mainContainer.addEventListener("mouseout", autoSlide);
 
-// // BERANDA MAIN -> Ingpo Pagination 
+// // BERANDA MAIN -> Ingpo Pagination
 // function dotsLabel() {
 //     for (i = 0; i < dots.length; i++) {
 //         dots[i].className = dots[i].className.replace("active", "");
