@@ -5,9 +5,9 @@
     <nav class="nav-belanja">
         <ul id="produk-flters">
             <li class="belanja-baju active"  data-filter="*" >Semua</li>
-            @foreach ($kategoris as $kategori)
+            {{-- @foreach ($kategoris as $kategori)
             <li class="belanja-baju" data-filter=".{{ $kategori->nama }}">{{ $kategori->nama }}</li>
-            @endforeach
+            @endforeach --}}
         </ul>
     </nav>
 

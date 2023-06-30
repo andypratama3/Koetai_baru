@@ -145,7 +145,7 @@ $(document).ready(function () {
         var harga = $('#harga_tiket').data('harga');
         var total = harga * jumlah;
 
-        data = {
+        data = { 
             'nama': nama,
             'tiket_id': kategori_tiket,
             'jumlah': jumlah,
@@ -295,6 +295,30 @@ $(document).ready(function () {
             }
         });
     });
+    $(document).on('click','.btn-proses-checkout', function (e) {
+        var produk_id = $(this).closest('.detail').find('.prod_id').val();
+        var produk_ukuran = $(this).closest('.detail').find('.prod_ukuran').val();
+        var produk_qty = $(this).closest('.detail').find('.prod_qty').val();
+
+        $.ajax({
+            method: "POST",
+            url: "/proses-checkout",
+            data: {
+                'prod_id': produk_id,
+                'prod_qty': produk_qty,
+                'prod_ukuran': produk_ukuran
+            },
+            success: function (response) {
+                loadcart();
+                Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: response.status,
+                });
+                window.location.href = "/checkout";
+            }
+        });
+    });
     $(document).on('click', '#detail_tiket', function () {
 
         var id = $(this).data('id');
@@ -312,5 +336,73 @@ $(document).ready(function () {
 
 
     });
+    $(document).on('click','.proses-checkout', function (e) {
+        //detail user
+       var paymentMethod = document.getElementById("payment_method").value;
+       var nama = document.getElementById("nama").value;
+       var no_telp = document.getElementById("nomor_telpon").value;
+       var alamat = document.getElementById("alamat").value;
+       var catatan = document.getElementById("catatan").value;
+       //produk
+       var produk_id = $(this).closest('.cartitems').find('.prod_id').val();
+       var produk_qty = $(this).closest('.cartitems').find('.prod_qty').val();
+       var produk_ukuran = $(this).closest('.cartitems').find('.prod_ukuran').val();
+       var total = $(this).closest('.cartitems').find('.total_pesanan').val();
+       if(paymentMethod === 'bayar_sekarang'){
+       $.ajaxSetup({
+           headers: {
+               'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+           }
+       });
+       $.ajax({
+           method: "POST",
+           url: "/proses-checkout",
+           data: {
+               'nama_penerima': nama,
+               'nomor_telpon': no_telp,
+               'alamat': alamat,
+               'catatan': catatan,
+               'prod_id': produk_id,
+               'prod_qty': produk_qty,
+               'prod_ukuran': produk_ukuran,
+               'total': total,
+               'payment_method': paymentMethod,
+           },
+           success: function (response) {
+               Swal.fire({
+               icon: 'success',
+               title: 'Berhasil',
+               text: response.status,
+               });
+               window.location.href = "/pembayaran";
+           }
+       });
+       }else{
+           $.ajax({
+           method: "POST",
+           url: "/proses-checkout",
+           data: {
+               'nama_penerima': nama,
+               'nomor_telpon': no_telp,
+               'alamat': alamat,
+               'catatan': catatan,
+               'prod_id': produk_id,
+               'prod_qty': produk_qty,
+               'prod_ukuran': produk_ukuran,
+               'total': total,
+               'payment_method': paymentMethod,
+           },
+           success: function (response) {
+               Swal.fire({
+               icon: 'success',
+               title: 'Berhasil',
+               text: response.status,
+               });
+               window.location.href = "/order-shop";
+           }
+       });
+       }
+   });
+
 });
 

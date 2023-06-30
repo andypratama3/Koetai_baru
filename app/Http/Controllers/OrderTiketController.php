@@ -18,11 +18,6 @@ class OrderTiketController extends Controller
         return view('tiket.order-tiket', compact('tikets'));
     }
 
-    public function order_tiket(StoreOrderTiket $request, StoreOrderTiketAction $storeOrderTiketAction){
-
-        $storeOrderTiketAction->execute($request);
-        return response()->json(['status'=>'Tiket Berhasil Di Pesan']);
-    }
     public function checkout(Request $request){
 
         $order = OrderTiket::where('user_id',Auth::id())->first();
@@ -51,17 +46,14 @@ class OrderTiketController extends Controller
 
         return view('tiket.tiket-pay', compact('order','snapToken'));
     }
+     public function order_tiket(StoreOrderTiket $request, StoreOrderTiketAction $storeOrderTiketAction){
+
+        $storeOrderTiketAction->execute($request);
+        return response()->json(['status'=>'Tiket Berhasil Di Pesan']);
+    }
     public function orderan(Request $request){
 
         $orders = OrderTiket::with('tiket')->where('user_id', Auth::id())->get();
-        // $transaksi = OrderTiket::with("tiket")->select(["id","user_id","nama","tiket_id","jumlah","total","status","slug","created_at"])->firstOrFail();
-        // // Periksa status pembayaran dan waktu pembayaran
-        // if ($transaksi->status === 'Unpaid' && $transaksi->created_at->diffInHours(Carbon::now()) >= 24) {
-        //     $tiket = Tiket::select(["kategori", "harga", "stok", "foto", "slug"])->firstOrFail();
-        //     // Mengembalikan stok barang
-        //     $tiket->stok += $transaksi->jumlah;
-        //     $tiket->save();
-        // }
         return view('tiket.list-order-tiket', compact('orders'));
     }
 

@@ -21,7 +21,9 @@ class OrderShop extends Model
         'prod_id',
         'prod_qty',
         'prod_ukuran',
-        'kategori_pesanan',
+        'metode_pembayaran',
+        'total',
+        'catatan',
         'alamat',
         'status',
         'slug',
@@ -32,9 +34,9 @@ class OrderShop extends Model
     ];
 
 
-    public function setNamaAttribute($value)
+    public function setNama_penerimaAttribute($value)
     {
-        $this->attributes['nama'] = $value;
+        $this->attributes['nama_penerima'] = $value;
         $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
     }
 }

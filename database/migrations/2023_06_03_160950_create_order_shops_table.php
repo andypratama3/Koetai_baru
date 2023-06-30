@@ -21,8 +21,10 @@ return new class extends Migration
             $table->string('prod_id');
             $table->string('prod_qty');
             $table->string('prod_ukuran');
-            $table->string('kategori_pesanan');
+            $table->string('metode_pembayaran');
+            $table->string('total');
             $table->longText('alamat')->nullable()->default('text');
+            $table->longText('catatan')->nullable()->default('text');
             $table->enum('status', ['Unpaid','Paid']);
             $table->string('slug');
             $table->softDeletes();

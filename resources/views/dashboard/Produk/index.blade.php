@@ -32,7 +32,9 @@
                         <td>{{ $produk->deskripsi}}</td>
                         <td>{{ $produk->foto}}</td>
                         <td>{{ $produk->stock}}</td>
-                        <td>{{ $produk->kategoris }}</td>
+                        @foreach ($produk->kategoris as $kategoris)
+                        <td>{{ $kategoris->nama }}</td>
+                        @endforeach
                         <td>{{ $produk->harga}}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('dashboard.produk.show',$produk->slug) }}"><i class="bi bi-eye"></i></a>
@@ -53,9 +55,6 @@
                 </div>
                 <ul class="pagination">
                     <li class="page-item"> {{ $produks->onEachSide(1)->links() }}</li>
-
-                    </li>
-
                 </ul>
 
               </div>
