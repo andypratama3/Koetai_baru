@@ -16,7 +16,7 @@ class ProdukController extends Controller
     public function index()
     {
         $limit = 10;
-        $produk = Produk::first();
+        
         $produks = Produk::with('kategoris')->latest()->paginate($limit);
         $count = $produks->count();
         $no = $limit * ($produks->currentPage() - 1);

@@ -5,16 +5,17 @@
     <nav class="nav-belanja">
         <ul id="produk-flters">
             <li class="belanja-baju active"  data-filter="*" >Semua</li>
-            {{-- @foreach ($kategoris as $kategori)
+            @foreach ($kategoris as $kategori)
             <li class="belanja-baju" data-filter=".{{ $kategori->nama }}">{{ $kategori->nama }}</li>
-            @endforeach --}}
+            @endforeach
         </ul>
     </nav>
 
     <div class="isi-belanja">
         <div class="belanja-baju" id="belanja-baju">
             @foreach ($shops as $shop)
-            <div class="produk {{ $shop->kategoris}}" data-bs-toggle="modal" data-bs-target="#modalss" id="details" data-id="<?=$shop->id ?>"
+            @foreach ($shop->kategoris as $kategoris)
+            <div class="produk {{ $kategoris->nama }}"  data-bs-toggle="modal" data-bs-target="#modalss" id="details" data-id="<?=$shop->id ?>"
                 data-nama="<?=$shop->nama ?>" data-harga="<?=$shop->harga ?>" data-foto="<?=$shop->foto ?>"
                 data-stock="<?=$shop->stock ?>">
                 <div class="gambar-produk">
@@ -25,6 +26,7 @@
                     <p class="teks harga">Rp. {{ $shop->harga }}</p>
                 </div>
             </div>
+            @endforeach
             @endforeach
         </div>
     </div>

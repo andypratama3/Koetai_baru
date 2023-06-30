@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Produk;
+use App\Models\Kategori;
 use App\Models\OrderShop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,8 +14,9 @@ class ShopController extends Controller
 {
     public function index()
     {
+        $kategoris = Kategori::all();
         $shops = Produk::with('kategoris')->get();
-        return view('shop.index', compact('shops'));
+        return view('shop.index', compact('shops','kategoris'));
     }
 
     public function addprodukcheckout(Request $request){
