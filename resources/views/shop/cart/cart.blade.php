@@ -37,9 +37,9 @@
                     @endif
                     <div class="harga">
                         <p>Total : Rp. {{ $total }}</p>
-                      </div>
+                    </div>
                     <div class="btn-x">
-                        <button class="float-end delete-cart"><i class='bx bx-x'></i></button>
+                        <button class="delete-cart"><i class='bx bx-x'></i></button>
                     </div>
                     <input type="hidden" class="prod_id" value="{{ $cart->prod_id }}">
                 </div>
@@ -48,7 +48,7 @@
                 @endforeach
                 <div class="total">
                     <p>Total Semua : Rp. {{ $totals }}</p>
-                        <button type="submit" class="btn btn-warning btn-lg btn-checkout-form">Check Out</button>
+                    <button type="submit" class="btn btn-warning btn-lg btn-checkout-form">Check Out</button>
                 </div>
             </div>
             @else
@@ -60,5 +60,5 @@
             @endif
         </div>
     </div>
-@include('layouts.script')
-@endsection
+    @include('layouts.script')
+    @endsection

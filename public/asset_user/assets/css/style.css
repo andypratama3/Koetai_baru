@@ -26,6 +26,7 @@
 :root {
     --primary: #FFB716;
     --secondary: #212A3E;
+    --transecondary: rgba(33, 42, 62, 0.5);
     --bs-body-bg: #0B0B0C !important;
     --putih: #FFF4E2;
 }
@@ -107,7 +108,7 @@ header .nav-bar .teks-kms {
     font-size: 21px;
     font-weight: bolder;
     text-decoration: none;
-
+    /* border: 2px red solid; */
 }
 
 header .nav-bar .teks-kms:hover {
@@ -131,28 +132,29 @@ header .nav-bar ul li a {
     /* color: var(--primary); */
 }
 
-header ul li a button {
+header .nav-bar ul .btn-nav {
     font-weight: 500;
     font-size: 12px;
     background-color: var(--secondary);
     color: var(--primary);
     border-radius: 20px;
-    border: 1px var(--secondary) solid;
-    padding: 0 20px;
+    border: 2px var(--secondary) solid;
+    /* border: 2px blue solid; */
+    padding: 0 2rem;
     height: 28px;
-    margin-left: 10px;
+    margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.1s all;
+    transition: 0.3s all;
     cursor: pointer;
 }
 
-header ul li a button:hover {
-    border: 1px var(--primary) solid;
+header .nav-bar ul .btn-nav:hover {
+    border: 2px var(--primary) solid;
 }
 
-header ul li a button .cart-icon {
+header .nav-bar ul li a .btn-nav .cart-icon {
     /* position: absolute   ; */
     width: auto;
     height: auto;
@@ -160,56 +162,34 @@ header ul li a button .cart-icon {
     /* border: 2px red solid; */
 }
 
-header ul li a button p {
+header .nav-bar ul li a .btn-nav p {
     /* transform: translateX(3px); */
     margin: 5px -15px 5px 0;
     /* border: 2px red solid; */
 }
 
-header ul li a button .cart-count {
+header .nav-bar ul li a .btn-nav .cart-count {
     background-color: red;
     transform: translateX(25px) translateY(-12px) !important;
 }
 
-header ul li a button.active {
-    border: 1px #FFB716 solid;
+header .nav-bar ul li a .btn-nav.active {
+    border: 2px var(--primary) solid;
     color: white !important;
     background-color: var(--primary);
 }
 
 header .menu-nav .drop-down-tiket {
+    /* border: 2px red solid; */
     position: relative;
     display: inline-block;
-    /* border: 2px red solid; */
-}
-
-header .menu-nav .drop-down-tiket .btn-pilih {
-    background-color: var(--secondary);
-    color: var(--primary);
-    font-weight: 500;
-    font-size: 12px;
-    border-radius: 20px;
-    border: 1px var(--secondary) solid;
-    padding: 0 20px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.1s all;
-    cursor: pointer;
-    /* border: 1px green solid; */
-}
-
-header .menu-nav .drop-down-tiket:hover .btn-pilih {
-    border: 1px var(--primary) solid;
-    background-color: var(--secondary);
-    color: var(--primary);
+    transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 header .menu-nav .drop-down-tiket .btn-pilih.active {
     background-color: var(--primary);
     color: var(--putih);
-    border: 1px var(--primary) solid;
+    border: 2px var(--primary) solid;
 }
 
 header .menu-nav .drop-down-tiket .drop-down-konten {
@@ -231,6 +211,10 @@ header .menu-nav .drop-down-tiket .drop-down-konten.open {
     height: 80px;
 }
 
+header .menu-nav .drop-down-tiket:hover .btn-pilih {
+    border: 2px var(--primary) solid;
+}
+
 header .menu-nav .drop-down-tiket:hover .drop-down-konten {
     display: block;
     height: 80px;
@@ -239,11 +223,11 @@ header .menu-nav .drop-down-tiket:hover .drop-down-konten {
 header .menu-nav .drop-down-tiket .drop-down-konten .konten-tiket {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-}
-
-header .menu-nav .drop-down-tiket .drop-down-konten .konten-pesan-tiket {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    background: transparent;
+    color: var(--primary);
+    border: transparent;
 }
 
 header .menu-nav .drop-down-tiket .drop-down-konten a {
@@ -258,6 +242,7 @@ header .menu-nav .drop-down-tiket .drop-down-konten a:hover {
     background-color: rgba(255, 255, 255, .1);
     box-shadow: 0 0 5px #111;
     font-weight: 600;
+    transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 header .nav-bar .tombol-menu {
@@ -327,10 +312,22 @@ header .side-bar .list-content {
     text-decoration: none;
     justify-content: left;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.1);
-    /* border: transparent; */
+    background: transparent;
+    border: transparent;
     font-size: 12px;
     color: var(--putih);
+}
+
+header .side-bar .list-tiket {
+    /* border: 2px red solid; */
+    width: 100%;
+    background: rgba(0, 0, 0, .1);
+    padding-left: 25px;
+}
+
+header .side-bar .list-content:hover {
+    background: var(--primary);
+    border: transparent;
 }
 
 header .side-bar .dropdown-tiket {
@@ -359,13 +356,11 @@ header .side-bar .dropdown-tiket .dropdown-content a {
     position: relative;
     width: auto;
     display: block;
-    margin-left: 15px;
     text-decoration: none;
     color: var(--putih);
-
 }
 
-header .side-bar li button.active {
+/* header .side-bar li button.active {
     color: #fff;
     background-color: var(--primary);
     border: 1px rgba(255, 183, 22, 0.8) solid;
@@ -373,7 +368,7 @@ header .side-bar li button.active {
 
 header .side-bar li button:hover {
     border: 1px rgba(255, 183, 22, 0.8) solid;
-}
+} */
 
 /* AKHIR SIDEBAR */
 /* ===================================================================== */
@@ -414,9 +409,9 @@ main .container-beranda .container-kiri .isinya {
     position: relative;
     display: flex;
     justify-content: center;
-    border: 5px var(--primary) solid;
+    border: 3px var(--primary) solid;
     border-radius: 20px;
-    background-color: rgba(33, 42, 62, 0.5);
+    background-color: var(--transecondary);
     box-sizing: border-box;
     overflow: hidden;
     margin-bottom: 10px;
@@ -442,9 +437,9 @@ main .container-beranda .container-kanan .carouselnya {
     max-height: 63vh;
     display: flex;
     justify-content: center;
-    border: 5px var(--primary) solid;
+    border: 3px var(--primary) solid;
     border-radius: 20px;
-    background-color: rgba(33, 42, 62, 0.5);
+    background-color: var(--transecondary);
     box-sizing: border-box;
     overflow: hidden;
     background-size: cover;
@@ -484,14 +479,14 @@ main .swiper-scrollbar {
     padding-bottom: 30px;
     display: block;
     justify-content: center;
-    /* border: 2px purple solid; */
+    box-sizing: border-box;
 }
 
 .container-belanja .nav-belanja {
     width: 300px;
     height: 40px;
     margin: 0 auto 15px;
-    background-color: var(--secondary);
+    background-color: var(--transecondary);
     color: var(--primary);
     display: flex;
     justify-content: center;
@@ -511,7 +506,6 @@ main .swiper-scrollbar {
     margin: 0 10px;
     font-size: 12px;
     font-weight: 500;
-    border: 1px var(--secondary) solid;
     padding: 3px 15px;
     user-select: none;
     cursor: pointer;
@@ -530,16 +524,17 @@ main .swiper-scrollbar {
 }
 
 .container-belanja .isi-belanja {
-    /* border: 2px red solid; */
+    border: 3px var(--primary) solid;
     width: 90%;
     height: auto;
     margin: 0 auto;
     padding: 0 auto;
-    background-color: rgba(33, 42, 62, 0.5);
+    background-color: var(--transecondary);
     border-radius: 20px;
     display: flex;
     animation: baju-in .8s;
-    text-align: center
+    text-align: center;
+    box-sizing: border-box;
 }
 
 /* AKHIR CONTAINER BELANJA DAN NAVBAR BELANJA */
@@ -550,6 +545,7 @@ main .swiper-scrollbar {
 .container-belanja .isi-belanja .belanja-baju {
     display: block;
     animation: baju-in .5s;
+
 }
 
 @keyframes baju-in {
@@ -997,6 +993,7 @@ main .container-pesantik {
     width: 70vh;
     height: auto;
     padding: 10px 0 30px;
+    border: 3px var(--primary) solid;
     border-radius: 20px;
     background-color: var(--secondary);
     box-sizing: border-box;
@@ -1109,6 +1106,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     background-color: var(--secondary);
     width: 80%;
     height: auto;
+    border: 3px var(--primary) solid;
     border-radius: 2rem;
     color: var(--putih);
     padding: 20px;
@@ -1260,17 +1258,16 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 /* ===================================================================== */
 /* CONTAINER KERANJANG*/
 .main-keranjang {
+    /* border: 1px blue solid; */
     display: flex;
     justify-content: center;
-    /* border: 1px blue solid; */
     height: auto;
-    margin-top: 0px;
 }
 
-.link-keluar-keranjang .btn-keluar-keranjang {
+/* .link-keluar-keranjang .btn-keluar-keranjang {
+    border: 1px red solid;
     width: 60px;
     height: 40px;
-    /* border: 1px red solid; */
     border-radius: 20px;
     position: absolute;
     top: 11%;
@@ -1293,17 +1290,17 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 .btn-keluar-keranjang i {
     font-size: 32px;
     color: var(--primary);
-}
+} */
 
 .main-keranjang .container-keranjang {
     /* border: 2px white solid; */
-    position: relative;
-    max-width: 90%;
+    width: 80%;
     height: auto;
+    position: relative;
     display: flex;
     justify-content: space-between;
-    margin-top: 0;
     padding: 15px 30px;
+    border: 3px var(--primary) solid;
     border-radius: 20px;
     background-color: var(--secondary);
     z-index: 0;
@@ -1312,7 +1309,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .container-keranjang .isinya {
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     /* border: 2px green solid; */
 }
@@ -1324,20 +1321,34 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 
 .main-keranjang .isinya .list-produk {
     /* border: 2px red solid; */
+    width: 100%;
     height: 100px;
     margin-top: 30px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.container-keranjang .isinya .list-produk .gambar-produk {
+    /* border: 2px yellow solid; */
+    height: 100%;
 }
 
 .main-keranjang .isinya .list-produk .gambar-produk img {
     /* border: 2px yellow solid; */
-    margin-right: 60px;
+    width: 100px;
+    height: 100%;
+    margin-right: 30px;
     object-fit: cover;
     border-radius: 5px;
 }
 
 .main-keranjang .isinya .list-produk .produk-ukuran {
     /* border: 2px blue solid; */
-    width: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .main-keranjang .isinya .list-produk .jumlah {
@@ -1345,7 +1356,8 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 100%;
+    height: 100%;
 }
 
 .main-keranjang .isinya .list-produk .jumlah .jumlah-produk {
@@ -1357,6 +1369,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .main-keranjang .isinya .list-produk .jumlah .no {
+    border: 3px var(--putih) solid;
     border-radius: 10px;
     background-color: transparent;
     color: var(--putih);
@@ -1378,14 +1391,14 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     align-items: center;
     font-size: 25px;
     font-weight: bold;
-    padding-bottom: 5px;
+    padding-bottom: 7px;
+    /* border: 2px yellow solid; */
 }
 
 .main-keranjang .isinya .list-produk .jumlah .plus {
     border: transparent;
     background-color: transparent;
     color: var(--putih);
-    text-align: center;
     width: 30px;
     height: 30px;
     display: flex;
@@ -1393,13 +1406,18 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     align-items: center;
     font-size: 25px;
     font-weight: bold;
-    padding-bottom: 5px;
+    padding-bottom: 7px;
+    /* border: 2px yellow solid; */
 }
 
 .main-keranjang .isinya .list-produk .harga {
     /* border: 2px green solid; */
-    width: 300px !important;
-    padding: 0 10px;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .main-keranjang .isinya .list-produk .btn-x {
@@ -1636,7 +1654,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 .container-semtim .isi-semtim {
     width: 660px;
     height: auto;
-    background-color: rgba(33, 42, 62, 0.2);
+    background-color: var(--transecondary);
     border: 3px var(--primary) solid;
     border-radius: 50px;
     padding: 25px 30px;
@@ -1671,118 +1689,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 /* AKHIR CONTAINER SEMUA TIM */
-/* ===================================================================== */
-
-/* ===================================================================== */
-/* CONTAINER KERANJANG*/
-.main-keranjang {
-    display: flex;
-    justify-content: center;
-    /* border: 1px blue solid; */
-    height: auto;
-    margin-top: 70px;
-}
-
-.link-keluar-keranjang .btn-keluar-keranjang {
-    width: 60px;
-    height: 40px;
-    /* border: 1px red solid; */
-    border-radius: 20px;
-    position: absolute;
-    top: 11%;
-    left: 10%;
-    background-color: var(--secondary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.link-keluar-keranjang .btn-keluar-keranjang:hover {
-    text-shadow: 0 0 10px var(--primary);
-}
-
-.link-keluar-keranjang .btn-keluar-keranjang:active {
-    transform: scale(0.95);
-}
-
-.btn-keluar-keranjang i {
-    font-size: 32px;
-    color: var(--primary);
-}
-
-.container-keranjang {
-    /* border: 2px red solid; */
-    width: 80%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-    border-radius: 20px;
-    background-color: var(--secondary);
-    z-index: 0;
-}
-
-.container-keranjang {
-    width: 100%;
-    /* border: 1px yellow solid; */
-    padding: 30px 60px;
-    color: var(--putih);
-    font-size: 18px;
-}
-
-.container-keranjang .isinya {
-    width: 100%;
-    height: 100%;
-    /* border: 2px green solid; */
-}
-
-.container-keranjang .isinya h1 {
-    font-size: 21px;
-    letter-spacing: 1px;
-}
-
-.container-keranjang .isinya .list-produk {
-    width: 100%;
-    height: auto;
-    margin-top: 30px;
-    /* border: 2px red solid; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container-keranjang .isinya .list-produk .gambar-produk {
-    padding: 10px 10px 10px 0;
-    /* border: 2px yellow solid; */
-}
-
-.container-keranjang .isinya .list-produk .gambar-produk img {
-    width: 100px;
-    height: 100px;
-}
-
-.container-keranjang .isinya .list-produk .produk-ukuran {
-    /* border: 2px blue solid; */
-    width: 500px;
-    margin-left: -50px;
-}
-
-.container-keranjang .isinya .list-produk .jumlah .no {
-    border: 3px var(--putih) solid;
-    border-radius: 10px;
-    text-align: center;
-    padding: 0 10px;
-}
-
-.container-keranjang .isinya .list-produk .harga {
-    /* border: 2px green solid; */
-    width: 150px;
-    text-align: right;
-    /* margin-right: 50px; */
-}
-
-/* AKHIR CONTAINER KERANJANG*/
 /* ===================================================================== */
 
 /* ===================================================================== */
@@ -1833,7 +1739,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .sponsor .container img {
-    filter: grayscale(90%);
+    filter: grayscale(100%);
     /* border: 2px red solid; */
 }
 
@@ -1846,11 +1752,12 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .sponsor .container .sponsor-lainnya img {
-    max-width: 100px;
+    max-width: 10%;
     margin: 0 15px 0;
     object-fit: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    aspect-ratio: 3/2;
+    /* mix-blend-mode: color-burn; */
+
 }
 
 .sponsor img:hover {
@@ -1865,17 +1772,14 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 @media (max-width: 1200px) {
 
     header .nav-bar .teks-kms {
-        font-size: 18px;
+        font-size: 16px;
     }
 
-    header .nav-bar ul li .button {
+    header .nav-bar ul .btn-nav {
         font-size: 11px;
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 
     header ul li a button .cart-count {
-        background-color: red;
         transform: translateX(15px) translateY(-12px) !important;
     }
 
@@ -1903,28 +1807,21 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 /* RESPONSIVE WIDTH 992px */
 @media (max-width:992px) {
     header .nav-bar .teks-kms {
-        font-size: 16px;
+        font-size: 14px;
 
     }
 
-    header .nav-bar ul li button {
+    header .nav-bar ul .btn-nav {
         font-size: 10px;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 0 1rem;
     }
 
     header ul li a button .cart-count {
-        background-color: red;
         transform: translateX(15px) translateY(-12px) !important;
     }
 
     .produk-klik .konten-atas .container-img img {
         transform: translateY(-10px);
-    }
-
-    .container-keranjang .isinya .list-produk .gambar-produk img {
-        width: 85px;
-        height: 85px;
     }
 
     .main-keranjang .isinya p {
@@ -1989,24 +1886,86 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
         letter-spacing: 1px;
     }
 
-    .container-keranjang .isinya .list-produk .gambar-produk img {
-        width: 80px;
-        height: 80px;
+    .main-keranjang .isinya .list-produk {
+        display: grid;
+        grid-template-areas:
+            "img produk-ukuran produk-ukuran btn-x"
+            "img produk-ukuran produk-ukuran jumlah"
+            "img harga harga harga";
+        grid-template-columns: 120px 1fr 1fr 100px;
+        grid-template-rows: auto 30px 1fr;
+        height: auto;
     }
 
-    .main-keranjang .isinya p {
-        font-size: 12px;
+    .container-keranjang .isinya .list-produk .gambar-produk {
+        /* border: 2px red solid; */
+        grid-area: img;
+        height: 100%;
+    }
+
+    .main-keranjang .isinya .list-produk .gambar-produk img {
+        width: 100px;
+        height: 100px;
+        margin-right: 15px;
+    }
+
+    .main-keranjang .isinya .list-produk .produk-ukuran {
+        grid-area: produk-ukuran;
+        /* border: 2px yellow solid; */
+        width: 100%;
+        height: 100%;
+    }
+
+    .main-keranjang .isinya .list-produk .jumlah {
+        /* border: 2px greenyellow solid; */
+        grid-area: jumlah;
+        height: 100%;
+        justify-content: end;
+    }
+
+    .main-keranjang .isinya .list-produk .jumlah .jumlah-produk {
+        /* border: 2px green solid; */
+        justify-content: end;
+        transform: translateX(10px);
     }
 
     .main-keranjang .isinya .list-produk .jumlah .no {
-        width: 40px;
+        width: 35px;
         height: 20px;
         font-size: 10px;
+        border: 2px var(--putih) solid;
+        border-radius: 5px;
     }
 
     .main-keranjang .isinya .list-produk .jumlah .minus,
     .main-keranjang .isinya .list-produk .jumlah .plus {
         font-size: 20px;
+    }
+
+    .main-keranjang .isinya .list-produk .jumlah .minus {
+        margin-right: -5px;
+    }
+
+    .main-keranjang .isinya .list-produk .jumlah .plus {
+        margin-left: -5px;
+    }
+
+    .main-keranjang .isinya .list-produk .harga {
+        grid-area: harga;
+        /* border: 2px red solid; */
+    }
+
+    .main-keranjang .isinya .list-produk .btn-x {
+        grid-area: btn-x;
+        /* border: 2px white solid; */
+        height: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: start;
+    }
+
+    .main-keranjang .isinya .list-produk .btn-x .delete-cart {
+        transform: translate(7px, -7px);
     }
 
     .sponsor .container .sponsor-utama {
@@ -2066,7 +2025,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     }
 
     header .side-bar .list-content {
-        width: 75%;
+        width: 100%;
         justify-content: center;
         margin: 0 auto;
         padding: 10px 0;
@@ -2103,6 +2062,42 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
         position: relative;
         width: 230px;
         height: 160px;
+    }
+
+    .main-keranjang .isinya p {
+        font-size: 12px;
+    }
+
+    .main-keranjang .isinya .list-produk {
+        grid-template-columns: 90px 1fr 1fr 80px;
+    }
+
+    .main-keranjang .isinya .list-produk .gambar-produk img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .main-keranjang .isinya .list-produk .jumlah .no {
+        width: 30px;
+        height: 17px;
+    }
+
+    .main-keranjang .isinya .list-produk .jumlah .minus,
+    .main-keranjang .isinya .list-produk .jumlah .plus {
+        font-size: 17px;
+        transform: translateY(3px);
+    }
+
+    .main-keranjang .isinya .list-produk .jumlah .minus {
+        margin-right: -7px;
+    }
+
+    .main-keranjang .isinya .list-produk .jumlah .plus {
+        margin-left: -7px;
+    }
+
+    .main-keranjang .isinya .list-produk .btn-x .delete-cart {
+        font-size: 20px;
     }
 
     .modal-bawah .tombolnya .teks-checkout {

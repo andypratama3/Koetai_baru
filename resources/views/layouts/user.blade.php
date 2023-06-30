@@ -35,22 +35,22 @@
             <ul>
                 <li>
                     <a href="/">
-                        <button class="{{ request()->is('/') ? 'active' : '' }}">Beranda</button>
+                        <button class="{{ request()->is('/') ? 'active' : '' }} btn-nav">Beranda</button>
                     </a>
                 </li>
                 <li>
                     <a href="/crew">
-                        <button class="{{ request()->is('crew') ? 'active' : '' }}">Semua Tim</button>
+                        <button class="{{ request()->is('crew') ? 'active' : '' }} btn-nav">Semua Tim</button>
                     </a>
                 </li>
                 <li>
                     <a href="/shop">
-                        <button class="{{ request()->is('shop') ? 'active' : '' }}">Belanja</button>
+                        <button class="{{ request()->is('shop') ? 'active' : '' }} btn-nav">Belanja</button>
                     </a>
                 </li>
                 <li>
                     <a href="/cart">
-                        <button class="{{ request()->is('cart') ? 'active' : '' }}">
+                        <button class="{{ request()->is('cart') ? 'active' : '' }} btn-nav">
                             <i class='bx bx-cart cart-icon'></i>
                             <p>Keranjang</p>
                             <span class="badge badge-pill cart-count">0</span>
@@ -60,27 +60,31 @@
             </ul>
 
             <ul class="menu-nav">
-                <div class="drop-down-tiket">
-                    <button class="btn-pilih" id="btn-tiket">Tiket</button>
+                <li class="drop-down-tiket">
+                    <button class="btn-pilih btn-nav" id="btn-tiket">Tiket</button>
                     <div class="drop-down-konten">
-                        <a href="/tiket" class="konten-tiket">Beli Tiket</a>
-                        <a href="/orderan-tiket" class="konten-pesan-tiket">Pesanan Tiket</a>
+                        <a href="/tiket">
+                            <button class="konten-tiket">Beli Tiket</button>
+                        </a>
+                        <a href="/orderan-tiket">
+                            <button class="konten-tiket">Pesanan Tiket</button>
+                        </a>
                     </div>
-                </div>
+                </li>
                 @if(auth()->check())
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault(); this.closest('form').submit();">
                             @csrf
-                            <button class="{{ request()->is('/logout') ? 'active' : '' }}">Log Out</button>
+                            <button class="{{ request()->is('/logout') ? 'active' : '' }} btn-nav">Log Out</button>
                         </a>
                     </form>
                 </li>
                 @else
                 <li>
                     <a href="{{ route('login') }}">
-                        <button class="{{ request()->is('/login') ? 'active' : '' }}">Login</button>
+                        <button class="{{ request()->is('/login') ? 'active' : '' }} btn-nav">Login</button>
                     </a>
                 </li>
                 @endif
@@ -119,18 +123,30 @@
                         class="{{ request()->is('/shop') ? 'active' : '' }} list-content btn-tiket-resp">Tiket</button>
                     <div class="dropdown-content">
                         <a href="/tiket">
-                            <button class="list-content">Beli Tiket</button>
+                            <button class="list-content list-tiket">Beli Tiket</button>
                         </a>
                         <a href="/orderan-tiket">
-                            <button class="list-content">Pesanan Tiket</button>
+                            <button class="list-content list-tiket">Pesanan Tiket</button>
                         </a>
                     </div>
                 </li>
+                @if(auth()->check())
+                <li>
+                    <form action="{{ route('logout') }}" method="POST">
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); this.closest('form').submit();">
+                            @csrf
+                            <button class="{{ request()->is('/logout') ? 'active' : '' }} list-content">Log Out</button>
+                        </a>
+                    </form>
+                </li>
+                @else
                 <li>
                     <a href="/login">
                         <button class="{{ request()->is('/shop') ? 'active' : '' }} list-content">Login</button>
                     </a>
                 </li>
+                @endif
             </div>
         </div>
     </header>
