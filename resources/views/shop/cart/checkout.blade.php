@@ -25,7 +25,9 @@
                     <input type="hidden" value="{{ $cart->prod_id }}" class="prod_id">
                     <div class="jumlah">
                         <div class=" text-center jumlah-produk" style="width: 130px;">
+                            <button class="minus changeQuantity decrement-btn">-</button>
                             <input class="no qty-input" type="text" name="quantity " value="{{ $cart->prod_qty }}">
+                            <button class="plus changeQuantity increment-btn">+</button>
                         </div>
                     </div>
                     @php $total += $cart->produks->harga * $cart->prod_qty; @endphp
