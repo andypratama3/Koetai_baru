@@ -116,7 +116,6 @@ class ShopController extends Controller
         return view('shop.pembayaran');
     }
 
-
     //List Order Item Shop
     public function list_order_shop()
     {

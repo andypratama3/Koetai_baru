@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('title', 'Produk')
-
-
 @section('content')
 <div class="row">
     <!-- Left side columns -->
