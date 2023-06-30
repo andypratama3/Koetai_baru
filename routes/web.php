@@ -58,7 +58,8 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
     Route::post('add-to-checkout', [ShopController::class,'addprodukcheckout']);
     Route::get('checkout', [ShopController::class,'checkoutproduk']);
     Route::post('proses-checkout', [ShopController::class,'proses_checkout']);
-    Route::get('pembayaran', [ShopController::class,'bayar']);
+    Route::get('order-shop', [ShopController::class,'list_order_shop']);
+    // Route::get('pembayaran', [ShopController::class,'bayar']);
 
 });
 

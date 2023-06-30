@@ -24,9 +24,13 @@ class CheckoutRequest extends FormRequest
     public function rules()
     {
         return [
-            'produk_id' => 'required',
-            'produk_ukuran' => 'required',
-            'produk_qty' => 'required',
+            'nama_penerima'=> 'required',
+            'nomor_telpon'=> 'required',
+            'prod_id'=> 'required',
+            'prod_qty'=> 'required',
+            'prod_ukuran'=> 'required',
+            'total'=> 'required',
+            'alamat'=> 'required',
         ];
     }
 

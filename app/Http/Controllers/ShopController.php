@@ -14,7 +14,7 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $kategoris = Kategori::all();
+        $kategoris = Kategori::select(['nama'])->get();
         $shops = Produk::with('kategoris')->get();
         return view('shop.index', compact('shops','kategoris'));
     }
@@ -55,7 +55,9 @@ class ShopController extends Controller
 
         return view('shop.cart.checkout',compact('carts'));
     }
-    public function proses_checkout(Request $request){
+    public function proses_checkout(CheckoutRequest $request){
+
+
         $metode_pembayaran = $request->input("payment_method");
         $nama_penerima = $request->input("nama_penerima");
         $nomor_telpon = $request->input("nomor_telpon");
@@ -112,6 +114,13 @@ class ShopController extends Controller
         );
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         return view('shop.pembayaran');
+    }
+
+
+    //List Order Item Shop
+    public function list_order_shop()
+    {
+        return view('shop.list-order');
     }
 
 }

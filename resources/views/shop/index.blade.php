@@ -93,10 +93,10 @@
 <script>
 (function () {
     window.addEventListener('load', () => {
-    let portfolioContainer = select('.isi-belanja');
+    let portfolioContainer = select('.belanja-baju');
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.belanja-baju'
+        itemSelector: '.produk'
       });
 
       let portfolioFilters = select('#produk-flters li', true);
