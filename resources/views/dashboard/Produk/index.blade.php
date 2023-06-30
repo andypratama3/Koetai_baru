@@ -38,12 +38,12 @@
                             <a class="btn btn-primary" href="{{ route('dashboard.produk.show',$produk->slug) }}"><i class="bi bi-eye"></i></a>
                             <a class="btn btn-warning" href="{{ route('dashboard.produk.edit', $produk->slug) }}"><i class="bi bi-pen"></i></a>
                             <a href="#" data-id="{{ $produk->slug }}" class="btn btn-danger delete" title="Hapus">
-
-                                <form action="{{ route('dashboard.produk.destroy', $produk->slug) }}" id="delete-{{ $produk->slug }}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    @method('delete')
-                                </form>
-                                <i class="bi bi-trash">
+                                
+                            <form action="{{ route('dashboard.produk.destroy', $produk->slug) }}" id="delete-{{ $produk->slug }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @method('delete')
+                            </form>
+                            <i class="bi bi-trash">
                         </td>
                       </tr>
                     @endforeach

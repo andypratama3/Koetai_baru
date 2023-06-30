@@ -1,6 +1,5 @@
 <script src="{{ asset('dashboard_assets/SwetAlert/index.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="sweetalert2.min.js"></script>
 
 <script src="{{ asset('jquery/jquery.js')}}"></script>
 <script src="{{ asset('jquery/isotop.js')}}"></script>
@@ -39,5 +38,4 @@
             el: '.swiper-scrollbar',
         },
     });
-
 </script>
