@@ -3,18 +3,18 @@
 @section('content')
 <div class="container-belanja produk_data">
     <nav class="nav-belanja">
-        <ul>
-            <li class="belanja-baju active" id="nav-baju">T-Shirt</li>
-            <li class="belanja-mchan" id="nav-mchan">Tote Bag</li>
-            <li class="belanja-mchan" id="nav-mchan">Acc</li>
+        <ul id="produk-flters">
+            <li class="belanja-baju active"  data-filter="*" >Semua</li>
+            @foreach ($kategoris as $kategori)
+            <li class="belanja-baju" data-filter=".{{ $kategori->nama }}">{{ $kategori->nama }}</li>
+            @endforeach
         </ul>
     </nav>
 
-    <div class="isi-belanja" id="isi-belanja">
+    <div class="isi-belanja">
         <div class="belanja-baju" id="belanja-baju">
             @foreach ($shops as $shop)
-            <!-- BELANJA BAJU -->
-            <div class="produk " data-bs-toggle="modal" data-bs-target="#modalss" id="details" data-id="<?=$shop->id ?>"
+            <div class="produk {{ $shop->kategoris}}" data-bs-toggle="modal" data-bs-target="#modalss" id="details" data-id="<?=$shop->id ?>"
                 data-nama="<?=$shop->nama ?>" data-harga="<?=$shop->harga ?>" data-foto="<?=$shop->foto ?>"
                 data-stock="<?=$shop->stock ?>">
                 <div class="gambar-produk">
@@ -88,4 +88,34 @@
 </div>
 
 @include('layouts.script')
+<script>
+(function () {
+    window.addEventListener('load', () => {
+    let portfolioContainer = select('.isi-belanja');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.belanja-baju'
+      });
+
+      let portfolioFilters = select('#produk-flters li', true);
+
+      on('click', '#produk-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function() {
+          AOS.refresh()
+        });
+      }, true);
+    }
+    });
+});
+
+</script>
 @endsection

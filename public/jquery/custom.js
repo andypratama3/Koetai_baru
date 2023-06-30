@@ -248,31 +248,28 @@ $(document).ready(function () {
         var produk_id = $(this).closest('.cartitems').find('.prod_id').val();
         var produk_qty = $(this).closest('.cartitems').find('.prod_qty').val();
         var produk_ukuran = $(this).closest('.cartitems').find('.prod_ukuran').val();
-        alert(produk_id);
-        alert(produk_qty);
-        alert(produk_ukuran);
-        // $.ajaxSetup({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     }
-        // });
-        // $.ajax({
-        //     method: "POST",
-        //     url: "/add-to-cart",
-        //     data: {
-        //         'prod_id': produk_id,
-        //         'prod_qty': produk_qty,
-        //         'prod_ukuran': produk_ukuran
-        //     },
-        //     success: function (response) {
-        //         loadcart();
-        //         Swal.fire({
-        //         icon: 'success',
-        //         title: 'Berhasil',
-        //         text: response.status,
-        //         });
-        //     }
-        // });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            method: "POST",
+            url: "/checkout",
+            data: {
+                'prod_id': produk_id,
+                'prod_qty': produk_qty,
+                'prod_ukuran': produk_ukuran
+            },
+            success: function (response) {
+                loadcart();
+                Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: response.status,
+                });
+            }
+        });
     });
     $(document).on('click','.btn-checkout-form', function (e) {
         var produk_id = $(this).closest('.detail').find('.prod_id').val();

@@ -32,6 +32,8 @@ use App\Http\Controllers\Dashboard\OrderanShopController;
 
 Route::get('/', WelcomeController::class)->name('index');
 Route::get('shop', [ShopController::class, 'index']);
+
+Route::get('shop/category/{{kategori}}', [ShopController::class, 'kategori']);
 Route::get('crew', [CrewController::class, 'index']);
 
 Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
@@ -56,6 +58,8 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
     //shop
     Route::post('add-to-checkout', [ShopController::class,'addprodukcheckout']);
     Route::get('checkout', [ShopController::class,'checkoutproduk']);
+
+
 
 });
 

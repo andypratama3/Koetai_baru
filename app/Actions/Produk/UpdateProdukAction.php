@@ -18,12 +18,6 @@ class UpdateProdukAction
         $produk->stock = $request->stock;
         $produk->harga = $request->harga;
 
-        if ($user->avatar != 'profile.jpg') {
-            Storage::disk('profile')->delete('storage/img/profile/original/' . $user->avatar);
-            Storage::disk('profile')->delete('storage/img/profile/35x35/' . $user->avatar);
-            Storage::disk('profile')->delete('storage/img/profile/150x150/' . $user->avatar);
-        }
-
         if($request->file('foto')){
             $produk_picture = $request->file('foto');
             $ext = $produk_picture->getClientOriginalExtension();

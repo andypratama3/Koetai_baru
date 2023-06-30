@@ -9,7 +9,7 @@
             <div class="container-isi">
                 <div class="isinya">
                     <h1>Pesanan Tiket</h1>
-                    @if ($orders->count() < 0)
+                    @if ($orders->count() > 0)
                     @foreach ($orders as $order)
                     @php $total = 0; @endphp
                     <div class="list-produk pesan_tiket">

@@ -20,7 +20,9 @@ class Produk extends Model
         'foto',
         'stock',
         'harga',
-        'deskripsi'
+        'deskripsi',
+        'kategori_id'
+
     ];
 
     protected $dates = [
@@ -37,6 +39,9 @@ class Produk extends Model
     {
         return $this->belongsToMany(Kategori::class, 'produks_kategoris');
     }
+
+
+
     public function cart(){
 
         return $this->hasMany(Cart::class);

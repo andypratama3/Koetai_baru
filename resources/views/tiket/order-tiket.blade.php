@@ -17,8 +17,7 @@
                                 @php
                                 $total = 0;
                                 @endphp
-                                {{-- <form action="tiket-order" method="POST"> --}}
-                                {{-- @csrf --}}
+                            
                                 <div class="label-pesantik">Nama</div>
                                 <input type="text" name="nama" id="nama" placeholder="nama" class="form-control nama">
                                 <br>
@@ -43,7 +42,6 @@
                                     <button type="submit" class="btn btn-primary btn-lg pesan-tiket pay-button">Pesan
                                         Tiket</button>
                                 </div>
-                                {{-- </form> --}}
                             </div>
                         </div>
                     </div>
