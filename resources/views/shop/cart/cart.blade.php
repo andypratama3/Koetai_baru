@@ -19,9 +19,11 @@
                             <p>{{ $cart->produks->nama }}</p>
                         </div>
                         <div class="ukuran">
+
                             <p>Ukuran : {{ $cart->prod_ukuran }}</p>
                         </div>
                     </div>
+                    <input type="hidden" value="{{ $cart->prod_ukuran }}" class="prod_ukuran">
                     @if($cart->produks->stock > $cart->prod_qty)
                     <input type="hidden" value="{{ $cart->prod_id }}" class="prod_id">
                     <div class="jumlah">
@@ -48,7 +50,7 @@
                 @endforeach
                 <div class="total">
                     <p>Total Semua : Rp. {{ $totals }}</p>
-                    <button type="submit" class="btn btn-warning btn-lg btn-checkout-form">Check Out</button>
+                    <button type="submit" class="btn btn-warning btn-lg btn-checkout">Check Out</button>
                 </div>
             </div>
             @else

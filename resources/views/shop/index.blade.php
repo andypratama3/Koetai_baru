@@ -66,7 +66,7 @@
                                         <span class="name">XXL</span>
                                     </label>
                                 </div>
-                                <span class="text-danger prod_ukuran" style="font-size: 15px"></span>
+                                <span class="text-danger prod_ukuran" style="font-size: 15px">;</span>
 
                                 {{-- <select name="" id="" class="radio-inputs prod_ukuran text-center" style="color :beige">
                                     <option disabled>Pilih Ukuran</option>

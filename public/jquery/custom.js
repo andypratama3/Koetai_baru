@@ -253,7 +253,7 @@ $(document).ready(function () {
     });
     $(document).on('click','.btn-checkout', function (e) {
         var produk_id = $(this).closest('.cartitems').find('.prod_id').val();
-        var produk_ukuran = $('input[name="prod_ukuran"]:checked').val();
+        var produk_qty = $(this).closest('.cartitems').find('.qty-input').val();
         var produk_ukuran = $(this).closest('.cartitems').find('.prod_ukuran').val();
         $.ajaxSetup({
             headers: {
@@ -278,6 +278,7 @@ $(document).ready(function () {
             }
         });
     });
+
     $(document).on('click','.btn-checkout-form', function (e) {
         var produk_id = $(this).closest('.detail').find('.prod_id').val();
         var produk_ukuran = $('input[name="prod_ukuran"]:checked').val();
