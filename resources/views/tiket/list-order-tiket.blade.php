@@ -29,10 +29,10 @@
                         <h5 class="status">{{ $order->status }}</h5>
                         <div class="container-btn">
                             <button type="button" class="bttn btn-kuning" data-bs-toggle="modal"
-                                data-bs-target="#detail_tiket_lauch"
-                                id="detail_tiket" data-id="<?=$order->id?>" data-nama="<?=$order->nama ?>"
-                                data-total="<?=$order->total ?>" data-kategori="<?=$order->tikets ?>"
-                                data-status="<?=$order->status ?>" data-foto="<?=$order->tiket->foto ?>">
+                                data-bs-target="#detail_tiket_lauch" id="detail_tiket" data-id="<?=$order->id?>"
+                                data-nama="<?=$order->nama ?>" data-total="<?=$order->total ?>"
+                                data-kategori="<?=$order->tikets ?>" data-status="<?=$order->status ?>"
+                                data-foto="<?=$order->tiket->foto ?>">
                                 Detail Tiket
                             </button>
                         </div>

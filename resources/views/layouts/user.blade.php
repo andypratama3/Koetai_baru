@@ -57,17 +57,19 @@
                         </button>
                     </a>
                 </li>
-            </ul>
-
-            <ul class="menu-nav">
-                <li class="drop-down-tiket">
-                    <button class="btn-pilih btn-nav" id="btn-tiket">Tiket</button>
-                    <div class="drop-down-konten">
-                        <a href="/tiket">
-                            <button class="konten-tiket">Beli Tiket</button>
-                        </a>
+                <li>
+                    <a href="/tiket">
+                        <button class="btn-pilih btn-nav" id="btn-tiket">Tiket</button>
+                    </a>
+                </li>
+                <li class="dropdown-pesanan">
+                    <button class="btn-pilih btn-nav">Pesanan</button>
+                    <div class="dropdown-content">
                         <a href="/orderan-tiket">
-                            <button class="konten-tiket">Pesanan Tiket</button>
+                            <button class="pesanan-content">Pesanan Tiket</button>
+                        </a>
+                        <a href="/order-shop">
+                            <button class="pesanan-content">Pesanan Belanja</button>
                         </a>
                     </div>
                 </li>
@@ -89,10 +91,13 @@
                 </li>
                 @endif
             </ul>
+
             <div class="tombol-menu">
                 <i class="bx bx-menu"></i>
             </div>
         </nav>
+
+        {{-- Responsive Navbar --}}
         <div class="side-bar">
             <div class="sidebar-img">
                 <img src="{{ asset('asset_user/assets/img/logo-kms1.png')}}">
