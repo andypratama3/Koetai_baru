@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use App\Http\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -34,9 +35,19 @@ class OrderShop extends Model
     ];
 
 
-    public function setNama_penerimaAttribute($value)
+    public function setNamaPenerimaAttribute($value)
     {
         $this->attributes['nama_penerima'] = $value;
         $this->attributes['slug'] = Str::slug($value). "-" .Str::random(4);
+    }
+
+    /**
+     * Get the user that owns the OrderShop
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function produks(): BelongsTo
+    {
+        return $this->belongsTo(Produk::class);
     }
 }

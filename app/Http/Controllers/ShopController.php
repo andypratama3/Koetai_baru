@@ -14,7 +14,8 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $kategoris = Kategori::all();
+        $kategoris = Kategori::select(['nama'])->get();
+        // foreach($kategoris as $kategori)
         $shops = Produk::with('kategoris')->get();
         return view('shop.index', compact('shops','kategoris'));
     }
@@ -55,7 +56,9 @@ class ShopController extends Controller
 
         return view('shop.cart.checkout',compact('carts'));
     }
-    public function proses_checkout(Request $request){
+    public function proses_checkout(CheckoutRequest $request){
+
+
         $metode_pembayaran = $request->input("payment_method");
         $nama_penerima = $request->input("nama_penerima");
         $nomor_telpon = $request->input("nomor_telpon");
@@ -91,6 +94,7 @@ class ShopController extends Controller
     }
 
     public function bayar(){
+
         \Midtrans\Config::$serverKey = config('midtrans.server_Key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
         \Midtrans\Config::$isProduction = false;
@@ -101,13 +105,13 @@ class ShopController extends Controller
         $params = array(
             'transaction_details' => array(
                 'order_id' => rand(),
-                'gross_amount' => $total,
-                'jumlah' => $produk_qty,
+                'gross_amount' => $orderItem->total,
+                // 'jumlah' => $produk_qty,
 
             ),
             'customer_details' => array(
-                'nama' => $nama,
-                'alamat' => $alamat,
+                // 'nama' => $nama,
+                // 'alamat' => $alamat,
             ),
         );
         $snapToken = \Midtrans\Snap::getSnapToken($params);

@@ -1,5 +1,10 @@
 @extends('layouts.user')
 @section('title', 'Checkout')
+<style>
+    .text-error{
+        color: #FFB716;
+    }
+</style>
 @section('content')
 
 <div class="container-belanja cartitems">
@@ -50,7 +55,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" class="nama" id="nama" placeholder="Nama">
+                    <input type="text" class="form-control" name="nama_penerima" class="nama" id="nama" placeholder="Nama">
+                    <span class="text-error nama_penerima"></span>
                 </div>
                 <div class="mb-3">
                     <label for="nomor_telpon" class="form-label">No Telpon</label>
@@ -59,7 +65,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="alamat" class="form-label">Alamat</label>
-                    <textarea class="form-control" name="" cols="30" id="alamat" placeholder="Alamat Detail"></textarea>
+                    <textarea class="form-control" name="alamat" cols="30" id="alamat" placeholder="Alamat Detail"></textarea>
+                    <span class="text-error alamat"></span>
                 </div>
                 <div class="mb-3">
                     <label for="catatan" class="form-label">Catatan</label>

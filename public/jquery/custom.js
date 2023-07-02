@@ -145,7 +145,7 @@ $(document).ready(function () {
         var harga = $('#harga_tiket').data('harga');
         var total = harga * jumlah;
 
-        data = { 
+        data = {
             'nama': nama,
             'tiket_id': kategori_tiket,
             'jumlah': jumlah,
@@ -375,6 +375,13 @@ $(document).ready(function () {
                text: response.status,
                });
                window.location.href = "/pembayaran";
+           },
+           error:function(error){
+                var formErr = error.responseJSON.errors;
+                console.log(error);
+                for(var err in formErr){
+                    $('.'+ err ).html(formErr(err)[0]);
+                }
            }
        });
        }else{
@@ -399,7 +406,15 @@ $(document).ready(function () {
                text: response.status,
                });
                window.location.href = "/order-shop";
-           }
+           },
+           error:function(error){
+            var formErr = error.responseJSON.errors;
+            console.log(error);
+            for(var err in formErr){
+                $('.'+ err).html(formErr[err][0]);
+            }
+       }
+
        });
        }
    });

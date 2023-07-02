@@ -3,10 +3,10 @@
 @section('content')
 <div class="container-belanja produk_data">
     <nav class="nav-belanja">
-        <ul id="produk-flters">
+        <ul id="filter">
             <li class="belanja-baju active"  data-filter="*" >Semua</li>
             @foreach ($kategoris as $kategori)
-            <li class="belanja-baju" data-filter=".{{ $kategori->nama }}">{{ $kategori->nama }}</li>
+            <li class="belanja-baju"  data-filter=".{{ $kategori->nama }}">{{ $kategori->nama }}</li>
             @endforeach
         </ul>
     </nav>
@@ -90,34 +90,31 @@
 </div>
 
 @include('layouts.script')
+
 <script>
-(function () {
-    window.addEventListener('load', () => {
-    let portfolioContainer = select('.isi-belanja');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.belanja-baju'
-      });
+var $j = jQuery.noConflict();
+$j(function() {
+  // Inisialisasi Isotope pada elemen dengan kelas .isi-belanja dan .belanja-baju sebagai item-selector
+  $j('.isi-belanja').isotope({
+    itemSelector: '.produk',
+  });
 
-      let portfolioFilters = select('#produk-flters li', true);
+  // Event handler untuk mengatur filter berdasarkan kategori
+  $j('#filter li').click(function(){
+    $j('#filter li').removeClass('active');
+    $j(this).addClass('active');
 
-      on('click', '#produk-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('active');
-        });
-        this.classList.add('active');
+    var selector = $j(this).attr('data-filter');
+    var selector = $j(this).data('filter');
 
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
+    $j('.isi-belanja').isotope({
+      filter: selector
     });
+
+    return false;
+  });
 });
+
 
 </script>
 @endsection
