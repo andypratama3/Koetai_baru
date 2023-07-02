@@ -24,6 +24,7 @@
                             <p class="variasi">{{ $cart->prod_ukuran }}</p>
                         </div>
                     </div>
+                    <input type="hidden" value="{{ $cart->prod_ukuran }}" class="prod_ukuran">
                     @if($cart->produks->stock > $cart->prod_qty)
                     <input type="hidden" value="{{ $cart->prod_id }}" class="prod_id">
                     <div class="jumlah">

@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('title', 'Checkout')
 <style>
-    .text-error{
+    .text-error {
         color: #FFB716;
     }
 </style>
@@ -18,9 +18,6 @@
                 @php $total = 0; @endphp
                 <div class="list-produk produk_data">
                     <div class="produk">
-                        <div class="rectangle-list">
-                            <img src="{{ asset('asset_user/assets/img/rectangle-list.png') }}" alt="" srcset="">
-                        </div>
                         <img src="{{ asset('storage/img/produk/'.$cart->produks->foto) }}" alt="">
                         <p>{{ $cart->produks->nama }}</p>
                     </div>
@@ -31,7 +28,7 @@
                         </div>
                     </div>
                     <input type="hidden" value="{{ $cart->prod_id }}" class="prod_id">
-                    <div class="jumlah">
+                    <div class="jumlah-checkout">
                         <div class=" text-center jumlah-produk" style="width: 130px;">
                             <input class="no qty-input" type="text" name="quantity " value="{{ $cart->prod_qty }}">
                         </div>
@@ -55,7 +52,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" name="nama_penerima" class="nama" id="nama" placeholder="Nama">
+                    <input type="text" class="form-control" name="nama_penerima" class="nama" id="nama"
+                        placeholder="Nama">
                     <span class="text-error nama_penerima"></span>
                 </div>
                 <div class="mb-3">
@@ -65,7 +63,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="alamat" class="form-label">Alamat</label>
-                    <textarea class="form-control" name="alamat" cols="30" id="alamat" placeholder="Alamat Detail"></textarea>
+                    <textarea class="form-control" name="alamat" cols="30" id="alamat"
+                        placeholder="Alamat Detail"></textarea>
                     <span class="text-error alamat"></span>
                 </div>
                 <div class="mb-3">
