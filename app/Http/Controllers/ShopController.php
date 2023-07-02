@@ -9,6 +9,7 @@ use App\Models\OrderShop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CheckoutRequest;
+use App\Http\Requests\StoreCartRequest;
 
 class ShopController extends Controller
 {
@@ -20,7 +21,7 @@ class ShopController extends Controller
         return view('shop.index', compact('shops','kategoris'));
     }
 
-    public function addprodukcheckout(Request $request){
+    public function addprodukcheckout(StoreCartRequest $request){
 
         $produk_id = $request->input('prod_id');
         $produk_qty = $request->input('prod_qty');
@@ -58,7 +59,6 @@ class ShopController extends Controller
     }
     public function proses_checkout(CheckoutRequest $request){
 
-
         $metode_pembayaran = $request->input("payment_method");
         $nama_penerima = $request->input("nama_penerima");
         $nomor_telpon = $request->input("nomor_telpon");
@@ -81,8 +81,8 @@ class ShopController extends Controller
         $order->metode_pembayaran = $metode_pembayaran;
         $order->total = $total;
         //mengurangin Stok Pada Produk
-        $stok = Produk::find($produk_id);
-        $stok->stock = $stok->stock - $produk_qty;
+        $stok = Produk::find($request->prod_id);
+        $stok->stock = $stok->stock - $request->prod_qty;
         $stok->update();
         $order->save();
         $cartitem = Cart::where('user_id', Auth::id())->get();

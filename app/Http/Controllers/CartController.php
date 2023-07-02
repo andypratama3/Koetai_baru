@@ -6,10 +6,11 @@ use App\Models\Cart;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\StoreCartRequest;
 
 class CartController extends Controller
 {
-    public function addtocart(Request $request)
+    public function addtocart(StoreCartRequest $request)
     {
         $produk_id = $request->input('prod_id');
         $produk_qty = $request->input('prod_qty');

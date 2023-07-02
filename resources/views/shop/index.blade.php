@@ -52,12 +52,28 @@
                         <div class="konten-bawah">
                             <div class="ukuran">
                                 <p>Ukuran</p>
-                                <select name="" id="" class="radio-inputs prod_ukuran text-center" style="color :beige">
+                                <div class="radio-inputs">
+                                    <label class="radio">
+                                        <input type="radio" name="prod_ukuran" value="L">
+                                        <span class="name">L</span>
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="prod_ukuran" value="Xl">
+                                        <span class="name">XL</span>
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="prod_ukuran" value="XXL">
+                                        <span class="name">XXL</span>
+                                    </label>
+                                </div>
+                                <span class="text-danger prod_ukuran" style="font-size: 15px"></span>
+
+                                {{-- <select name="" id="" class="radio-inputs prod_ukuran text-center" style="color :beige">
                                     <option disabled>Pilih Ukuran</option>
                                     <option value="L">L</option>
                                     <option value="XL">XL</option>
                                     <option value="XXL">XXL</option>
-                                </select>
+                                </select> --}}
                             </div>
                             <div class="jumlah">
                                 <h2>jumlah: </h2>
@@ -98,7 +114,6 @@ $j(function() {
   $j('.isi-belanja').isotope({
     itemSelector: '.produk',
   });
-
   // Event handler untuk mengatur filter berdasarkan kategori
   $j('#filter li').click(function(){
     $j('#filter li').removeClass('active');

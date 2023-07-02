@@ -36,7 +36,7 @@ $(document).ready(function () {
     $(document).on('click','.btncart', function (e) {
         var produk_id = $(this).closest('.detail').find('.prod_id').val();
         var produk_qty = $(this).closest('.detail').find('.prod_qty').val();
-        var produk_ukuran = $(this).closest('.detail').find('.prod_ukuran').val();
+        var produk_ukuran = $('input[name="prod_ukuran"]:checked').val();
 
         $.ajaxSetup({
             headers: {
@@ -58,7 +58,14 @@ $(document).ready(function () {
                 title: 'Berhasil',
                 text: response.status,
                 });
-            }
+            },
+            error: function (error) {
+                var formErr = error.responseJSON.errors;
+                console.log(error);
+                for (var err in formErr) {
+                  $('.' + err).html(formErr[err][0]); // Use formErr[err] instead of formErr(err)
+                }
+              }
         });
 
     });
@@ -246,7 +253,7 @@ $(document).ready(function () {
     });
     $(document).on('click','.btn-checkout', function (e) {
         var produk_id = $(this).closest('.cartitems').find('.prod_id').val();
-        var produk_qty = $(this).closest('.cartitems').find('.prod_qty').val();
+        var produk_ukuran = $('input[name="prod_ukuran"]:checked').val();
         var produk_ukuran = $(this).closest('.cartitems').find('.prod_ukuran').val();
         $.ajaxSetup({
             headers: {
@@ -273,7 +280,7 @@ $(document).ready(function () {
     });
     $(document).on('click','.btn-checkout-form', function (e) {
         var produk_id = $(this).closest('.detail').find('.prod_id').val();
-        var produk_ukuran = $(this).closest('.detail').find('.prod_ukuran').val();
+        var produk_ukuran = $('input[name="prod_ukuran"]:checked').val();
         var produk_qty = $(this).closest('.detail').find('.prod_qty').val();
 
         $.ajax({
@@ -292,12 +299,19 @@ $(document).ready(function () {
                 text: response.status,
                 });
                 window.location.href = "/checkout";
-            }
+            },
+            error: function (error) {
+                var formErr = error.responseJSON.errors;
+                console.log(error);
+                for (var err in formErr) {
+                  $('.' + err).html(formErr[err][0]); // Use formErr[err] instead of formErr(err)
+                }
+              }
         });
     });
     $(document).on('click','.btn-proses-checkout', function (e) {
         var produk_id = $(this).closest('.detail').find('.prod_id').val();
-        var produk_ukuran = $(this).closest('.detail').find('.prod_ukuran').val();
+        var produk_ukuran = $('input[name="prod_ukuran"]:checked').val();
         var produk_qty = $(this).closest('.detail').find('.prod_qty').val();
 
         $.ajax({
@@ -316,7 +330,14 @@ $(document).ready(function () {
                 text: response.status,
                 });
                 window.location.href = "/checkout";
-            }
+            },
+            error:function(error){
+                var formErr = error.responseJSON.errors;
+                console.log(error);
+                for(var err in formErr){
+                    $('.'+ err ).html(formErr(err)[0]);
+                }
+           }
         });
     });
     $(document).on('click', '#detail_tiket', function () {
