@@ -71,7 +71,7 @@
                                 {{-- <select name="" id="" class="radio-inputs prod_ukuran text-center" style="color :beige">
                                     <option disabled>Pilih Ukuran</option>
                                     <option value="L">L</option>
-                                    <option value="XL">Xl</option>
+                                    <option value="XL">XL</option>
                                     <option value="XXL">XXL</option>
                                 </select> --}}
                             </div>

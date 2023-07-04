@@ -23,13 +23,22 @@
                     </div>
                     <div class="ukuran">
                         <div class="ukuran-content">
+<<<<<<< HEAD
                             <p>Ukuran</p>
+=======
+                            <p>Variasi</p>
+>>>>>>> d27d70b6a5bec949b89c5bc86e7d4b2d2a19c9ff
                             <p class="variasi">{{ $cart->prod_ukuran }}</p>
                         </div>
                     </div>
                     <input type="hidden" value="{{ $cart->prod_id }}" class="prod_id">
+<<<<<<< HEAD
                     <div class="jumlah">
                         <div class="jumlah-produk">
+=======
+                    <div class="jumlah-checkout">
+                        <div class=" text-center jumlah-produk" style="width: 130px;">
+>>>>>>> d27d70b6a5bec949b89c5bc86e7d4b2d2a19c9ff
                             <input class="no qty-input" type="text" name="quantity " value="{{ $cart->prod_qty }}">
                         </div>
                     </div>
@@ -60,7 +69,10 @@
                     <label for="nomor_telpon" class="form-label">No Telpon</label>
                     <input type="number" class="form-control" id="nomor_telpon" class="no_telp"
                         placeholder="nomor_telpon">
+<<<<<<< HEAD
                         <span class="text-error nomor_telpon"></span>
+=======
+>>>>>>> d27d70b6a5bec949b89c5bc86e7d4b2d2a19c9ff
                 </div>
                 <div class="mb-3">
                     <label for="alamat" class="form-label">Alamat</label>

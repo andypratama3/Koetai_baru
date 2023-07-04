@@ -2,10 +2,8 @@
 const tombolMenu = document.querySelector("header .nav-bar .tombol-menu"),
     tombolMenuIcon = document.querySelector("header .nav-bar .tombol-menu i"),
     side_bar = document.querySelector("header .side-bar"),
-    btn_tiket = document.querySelector("header .menu-nav .drop-down-tiket .btn-pilih"),
-    dropdown_konten = document.querySelector("header .menu-nav .drop-down-tiket .drop-down-konten"),
-    btn_tiketResp = document.querySelector("header .side-bar .dropdown-tiket .btn-tiket-resp"),
-    dropdown_tiketResp = document.querySelector("header .side-bar .dropdown-tiket .dropdown-content");
+    btn_pesanan = document.querySelector("header .nav-bar .dropdown-pesanan .btn-pilih"),
+    dropdown_content = document.querySelector("header .nav-bar .dropdown-pesanan .dropdown-content");
 
 tombolMenu.onclick = function () {
     side_bar.classList.toggle("open");
@@ -15,14 +13,14 @@ tombolMenu.onclick = function () {
         "bx bx-menu";
 }
 
-btn_tiket.onclick = function () {
-    btn_tiket.classList.toggle("active");
-    dropdown_konten.classList.toggle("open");
+btn_pesanan.onclick = function () {
+    btn_pesanan.classList.toggle("active");
+    dropdown_content.classList.toggle("open");
 }
 
-btn_tiketResp.onclick = function () {
-    dropdown_tiketResp.classList.toggle("open");
-}
+// btn_tiketResp.onclick = function () {
+//     dropdown_tiketResp.classList.toggle("open");
+// }
 
 // Belanja -> Navbar Belanja Di Click
 // var navBaju = document.getElementById("nav-baju");
