@@ -179,20 +179,20 @@ header .nav-bar ul li a .btn-nav.active {
     background-color: var(--primary);
 }
 
-header .menu-nav .drop-down-tiket {
+header .nav-bar .dropdown-pesanan {
     /* border: 2px red solid; */
     position: relative;
     display: inline-block;
     transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-header .menu-nav .drop-down-tiket .btn-pilih.active {
+header .nav-bar .dropdown-pesanan .btn-pilih.active {
     background-color: var(--primary);
     color: var(--putih);
     border: 2px var(--primary) solid;
 }
 
-header .menu-nav .drop-down-tiket .drop-down-konten {
+header .nav-bar .dropdown-pesanan .dropdown-content {
     display: none;
     position: fixed;
     min-width: 130px;
@@ -206,21 +206,21 @@ header .menu-nav .drop-down-tiket .drop-down-konten {
     transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-header .menu-nav .drop-down-tiket .drop-down-konten.open {
+header .nav-bar .dropdown-pesanan .dropdown-content.open {
     display: block;
     height: 80px;
 }
 
-header .menu-nav .drop-down-tiket:hover .btn-pilih {
+header .nav-bar .dropdown-pesanan:hover .btn-pilih {
     border: 2px var(--primary) solid;
 }
 
-header .menu-nav .drop-down-tiket:hover .drop-down-konten {
+header .nav-bar .dropdown-pesanan:hover .dropdown-content {
     display: block;
     height: 80px;
 }
 
-header .menu-nav .drop-down-tiket .drop-down-konten .konten-tiket {
+header .nav-bar .dropdown-pesanan .dropdown-content .pesanan-content {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     font-weight: 500;
@@ -230,7 +230,7 @@ header .menu-nav .drop-down-tiket .drop-down-konten .konten-tiket {
     border: transparent;
 }
 
-header .menu-nav .drop-down-tiket .drop-down-konten a {
+header .nav-bar .dropdown-pesanan .dropdown-content a {
     text-decoration: none;
     color: var(--primary);
     display: block;
@@ -238,7 +238,7 @@ header .menu-nav .drop-down-tiket .drop-down-konten a {
     font-size: 12px;
 }
 
-header .menu-nav .drop-down-tiket .drop-down-konten a:hover {
+header .dropdown-pesanan .dropdown-content a:hover {
     background-color: rgba(255, 255, 255, .1);
     box-shadow: 0 0 5px #111;
     font-weight: 600;
@@ -292,6 +292,8 @@ header .side-bar .sidebar-img {
 
 header .side-bar img {
     width: 70%;
+    margin-top: 30px;
+    /* border: 2px red solid; */
 }
 
 header .side-bar .container-dropdown {
@@ -509,11 +511,9 @@ main .swiper-scrollbar {
     padding: 3px 15px;
     user-select: none;
     cursor: pointer;
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    -ms-transition: all .5s ease;
-    transition: all .5s ease;
+    border: 1px transparent solid;
+    border-radius: 20px;
+    transition: .5s ease;
 }
 
 .container-belanja .nav-belanja ul li:hover {
@@ -1299,7 +1299,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 
 .main-keranjang .container-keranjang {
     /* border: 2px white solid; */
-    width: 80%;
+    width: 90%;
     height: auto;
     position: relative;
     display: flex;
@@ -1334,26 +1334,60 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    font-size: 16px;
 }
 
-.container-keranjang .isinya .list-produk .gambar-produk {
-    /* border: 2px yellow solid; */
+.main-keranjang .isinya .list-produk .produk {
+    /* border: 2px blue solid; */
+    width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
 }
 
-.main-keranjang .isinya .list-produk .gambar-produk img {
+.main-keranjang .isinya .list-produk .produk img {
     /* border: 2px yellow solid; */
     width: 100px;
     height: 100%;
-    margin-right: 30px;
+    margin-right: 15px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.main-keranjang .isinya .list-produk .produk-ukuran {
-    /* border: 2px blue solid; */
-    width: 100%;
+.main-keranjang .isinya .list-produk .produk .rectangle-list {
+    /* border: 2px yellow solid; */
+    width: 40px;
     height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.main-keranjang .isinya .list-produk .produk .rectangle-list img {
+    width: 25px;
+    height: 25px;
+}
+
+.main-keranjang .isinya .list-produk .ukuran {
+    /* border: 2px green solid; */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-keranjang .isinya .list-produk .ukuran .ukuran-content p {
+    /* border: 2px red solid; */
+    margin: 0;
+}
+
+.main-keranjang .isinya .list-produk .ukuran .ukuran-content .variasi {
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .main-keranjang .isinya .list-produk .jumlah {
@@ -1361,7 +1395,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 50%;
     height: 100%;
 }
 
@@ -1374,12 +1408,12 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .main-keranjang .isinya .list-produk .jumlah .no {
-    border: 3px var(--putih) solid;
-    border-radius: 10px;
+    border: 2px var(--putih) solid;
+    border-radius: 7px;
     background-color: transparent;
     color: var(--putih);
     width: 50px;
-    height: 30px;
+    height: 25px;
     text-align: center;
     padding: 0 10px;
     font-size: 15px;
@@ -1394,7 +1428,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     padding-bottom: 7px;
     /* border: 2px yellow solid; */
@@ -1409,25 +1443,43 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     padding-bottom: 7px;
     /* border: 2px yellow solid; */
 }
 
+.main-keranjang .isinya .list-produk .jumlah-checkout{
+    border: 2px var(--putih) solid;
+    border-radius: 7px;
+    background-color: transparent;
+    color: var(--putih);
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    padding: 0 10px;
+    font-size: 15px;
+}
+
+.main-keranjang .isinya .list-produk .jumlah-checkout{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .main-keranjang .isinya .list-produk .harga {
     /* border: 2px green solid; */
-    width: 100%;
+    width: 50%;
     height: 100%;
-    text-align: right;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
 }
 
 .main-keranjang .isinya .list-produk .btn-x {
     width: auto;
-    height: 120px;
+    height: 100%;
     /* border: 2px white solid; */
 }
 
@@ -1444,22 +1496,64 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .main-keranjang .isinya .total {
-    display: block;
-    width: auto;
-    text-align: right;
+    /* border: 2px red solid; */
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
 }
 
 .main-keranjang .isinya .total p {
-    display: block;
-    margin-bottom: 20px;
+    /* border: 2px yellow solid; */
+    width: 100%;
+    height: 100%;
 }
 
-.main-keranjang .isinya .total a {
-    color: var(--putih);
-    text-decoration: none;
+.main-keranjang .isinya .total .total-harga {
+    /* border: 2px red solid; */
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.main-keranjang .isinya input,
+.main-keranjang .isinya textarea {
+    font-size: 14px;
+}
+
+.main-keranjang .isinya .btn-checkout {
+    /* border: 2px green solid; */
+    border-bottom-right-radius: 15px;
+    width: 20%;
+    height: 58px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--primary);
+}
+
+.main-keranjang .isinya .btn-checkout:hover {
+    box-shadow: 0 0 5px 1px var(--primary);
+}
+
+.main-keranjang .isinya .btn-checkout button {
+    border: 2px var(--primary) solid;
+    border-bottom-right-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: var(--putih);
+    font-weight: bold;
+}
+
+.main-keranjang .isinya .payment-method{
+    border-radius: 0.5rem;
+    font-size: 16px;
     padding: 3px 10px;
-    border-radius: 5px;
 }
 
 /* AKHIR CONTAINER KERANJANG*/
@@ -1877,9 +1971,10 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
         cursor: pointer;
     }
 
-    header .nav-bar .menu-nav {
+    /*
+    header .nav-bar .nav-bar {
         display: none;
-    }
+    } */
 
     header .nav-bar ul li button {
         font-size: 7px;
@@ -1889,88 +1984,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     .main-keranjang .isinya h1 {
         font-size: 16px;
         letter-spacing: 1px;
-    }
-
-    .main-keranjang .isinya .list-produk {
-        display: grid;
-        grid-template-areas:
-            "img produk-ukuran produk-ukuran btn-x"
-            "img produk-ukuran produk-ukuran jumlah"
-            "img harga harga harga";
-        grid-template-columns: 120px 1fr 1fr 100px;
-        grid-template-rows: auto 30px 1fr;
-        height: auto;
-    }
-
-    .container-keranjang .isinya .list-produk .gambar-produk {
-        /* border: 2px red solid; */
-        grid-area: img;
-        height: 100%;
-    }
-
-    .main-keranjang .isinya .list-produk .gambar-produk img {
-        width: 100px;
-        height: 100px;
-        margin-right: 15px;
-    }
-
-    .main-keranjang .isinya .list-produk .produk-ukuran {
-        grid-area: produk-ukuran;
-        /* border: 2px yellow solid; */
-        width: 100%;
-        height: 100%;
-    }
-
-    .main-keranjang .isinya .list-produk .jumlah {
-        /* border: 2px greenyellow solid; */
-        grid-area: jumlah;
-        height: 100%;
-        justify-content: end;
-    }
-
-    .main-keranjang .isinya .list-produk .jumlah .jumlah-produk {
-        /* border: 2px green solid; */
-        justify-content: end;
-        transform: translateX(10px);
-    }
-
-    .main-keranjang .isinya .list-produk .jumlah .no {
-        width: 35px;
-        height: 20px;
-        font-size: 10px;
-        border: 2px var(--putih) solid;
-        border-radius: 5px;
-    }
-
-    .main-keranjang .isinya .list-produk .jumlah .minus,
-    .main-keranjang .isinya .list-produk .jumlah .plus {
-        font-size: 20px;
-    }
-
-    .main-keranjang .isinya .list-produk .jumlah .minus {
-        margin-right: -5px;
-    }
-
-    .main-keranjang .isinya .list-produk .jumlah .plus {
-        margin-left: -5px;
-    }
-
-    .main-keranjang .isinya .list-produk .harga {
-        grid-area: harga;
-        /* border: 2px red solid; */
-    }
-
-    .main-keranjang .isinya .list-produk .btn-x {
-        grid-area: btn-x;
-        /* border: 2px white solid; */
-        height: 100%;
-        display: flex;
-        justify-content: right;
-        align-items: start;
-    }
-
-    .main-keranjang .isinya .list-produk .btn-x .delete-cart {
-        transform: translate(7px, -7px);
     }
 
     .sponsor .container .sponsor-utama {

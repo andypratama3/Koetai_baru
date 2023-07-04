@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('title', 'Checkout')
 <style>
-    .text-error{
+    .text-error {
         color: #FFB716;
     }
 </style>
@@ -17,20 +17,19 @@
                 @foreach ($carts as $cart)
                 @php $total = 0; @endphp
                 <div class="list-produk produk_data">
-                    <div class="gambar-produk">
+                    <div class="produk">
                         <img src="{{ asset('storage/img/produk/'.$cart->produks->foto) }}" alt="">
+                        <p>{{ $cart->produks->nama }}</p>
                     </div>
-                    <div class="produk-ukuran">
-                        <div class="produk">
-                            <p>{{ $cart->produks->nama }}</p>
-                        </div>
-                        <div class="ukuran">
-                            <p>Ukuran : {{ $cart->prod_ukuran }}</p>
+                    <div class="ukuran">
+                        <div class="ukuran-content">
+                            <p>Ukuran</p>
+                            <p class="variasi">{{ $cart->prod_ukuran }}</p>
                         </div>
                     </div>
                     <input type="hidden" value="{{ $cart->prod_id }}" class="prod_id">
                     <div class="jumlah">
-                        <div class=" text-center jumlah-produk" style="width: 130px;">
+                        <div class="jumlah-produk">
                             <input class="no qty-input" type="text" name="quantity " value="{{ $cart->prod_qty }}">
                         </div>
                     </div>
@@ -53,26 +52,30 @@
                 </div>
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" name="nama_penerima" class="nama" id="nama" placeholder="Nama">
+                    <input type="text" class="form-control" name="nama_penerima" class="nama" id="nama"
+                        placeholder="Nama">
                     <span class="text-error nama_penerima"></span>
                 </div>
                 <div class="mb-3">
                     <label for="nomor_telpon" class="form-label">No Telpon</label>
-                    <input type="number" class="form-control" id="nomor_telpon" class="no_telp" name="nomor_telpon" placeholder="nomor telpon">
-                    <span class="text-error nomor_telpon"></span>
+                    <input type="number" class="form-control" id="nomor_telpon" class="no_telp"
+                        placeholder="nomor_telpon">
+                        <span class="text-error nomor_telpon"></span>
                 </div>
                 <div class="mb-3">
                     <label for="alamat" class="form-label">Alamat</label>
-                    <textarea class="form-control" name="alamat" cols="30" id="alamat" placeholder="Alamat Detail"></textarea>
+                    <textarea class="form-control" name="alamat" cols="30" id="alamat"
+                        placeholder="Alamat Detail"></textarea>
                     <span class="text-error alamat"></span>
                 </div>
                 <div class="mb-3">
                     <label for="catatan" class="form-label">Catatan</label>
-                    <textarea class="form-control" name="catatan" cols="30" id="catatan" placeholder="Pesan Singkat Boleh Di kosongkan"></textarea>
+                    <textarea class="form-control" name="" cols="30" id="catatan"
+                        placeholder="Pesan Singkat"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="payment_method">Metode Pembayaran: </label>
-                    <select id="payment_method" name="metode_pembayaran" class="text-center payment_method">
+                    <label for="payment_method">Metode Pembayaran:</label>
+                    <select id="payment_method" name="payment_method" class="payment-method text-center payment_method">
                         <option value="COD">COD</option>
                         <option value="bayar_sekarang">Bayar Sekarang</option>
                     </select>
@@ -81,7 +84,8 @@
                 <p class="float-end">Total Semua : Rp. {{ $totals }}</p>
                 <br>
                 <br>
-                <button class="btn btn-warning btn-keranjang align-center float-end proses-checkout">Proses Pesanan</button>
+                <button class="btn btn-warning btn-lg btn-keranjang align-center float-end proses-checkout">Proses
+                    Pesanan</button>
             </div>
         </div>
         @else

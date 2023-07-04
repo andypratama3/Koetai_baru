@@ -11,16 +11,17 @@
                 @foreach ($carts as $cart)
                 @php $total = 0; @endphp
                 <div class="list-produk produk_data">
-                    <div class="gambar-produk">
-                        <img src="{{ asset('storage/img/produk/'.$cart->produks->foto) }}" alt="">
-                    </div>
-                    <div class="produk-ukuran">
-                        <div class="produk">
-                            <p>{{ $cart->produks->nama }}</p>
+                    <div class="produk">
+                        <div class="rectangle-list">
+                            <img src="{{ asset('asset_user/assets/img/rectangle-list.png') }}" alt="" srcset="">
                         </div>
-                        <div class="ukuran">
-
-                            <p>Ukuran : {{ $cart->prod_ukuran }}</p>
+                        <img src="{{ asset('storage/img/produk/'.$cart->produks->foto) }}" alt="">
+                        <p>{{ $cart->produks->nama }}</p>
+                    </div>
+                    <div class="ukuran">
+                        <div class="ukuran-content">
+                            <p>Variasi</p>
+                            <p class="variasi">{{ $cart->prod_ukuran }}</p>
                         </div>
                     </div>
                     <input type="hidden" value="{{ $cart->prod_ukuran }}" class="prod_ukuran">
@@ -49,8 +50,11 @@
                 @php $totals += $cart->produks->harga * $cart->prod_qty; @endphp
                 @endforeach
                 <div class="total">
-                    <p>Total Semua : Rp. {{ $totals }}</p>
-                    <button type="submit" class="btn btn-warning btn-lg btn-checkout">Check Out</button>
+                    <p>Lanjut Pembayaran</p>
+                    <p class="total-harga">Total Semua : Rp. {{ $totals }}</p>
+                </div>
+                <div class="btn-checkout">
+                    <button type="submit" class="btn-checkout-form">Checkout</button>
                 </div>
             </div>
             @else

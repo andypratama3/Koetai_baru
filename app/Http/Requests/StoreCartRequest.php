@@ -31,7 +31,7 @@ class StoreCartRequest extends FormRequest
 
     }
 
-    public function  message(){
+    public function message(){
         return [
             'required' => 'Attribut Tidak Boleh Kosong'
         ];
