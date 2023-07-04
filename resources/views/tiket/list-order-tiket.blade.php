@@ -48,7 +48,7 @@
                 <div class="card-body text-center">
                     <h2>Pesanan <i class="bi bi-cart"></i>Tiket Anda Kosong!</h2>
                     <br>
-                    <a href="{{url('tiket')}}" class="btn btn-keranjang align-center"
+                    <a href="{{url('tiket')}}" class="btn btn-lg btn-keranjang align-center"
                         style="background-color: #FFB716;">Beli Tiket</a>
                 </div>
                 @endif
