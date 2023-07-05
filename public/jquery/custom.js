@@ -175,6 +175,13 @@ $(document).ready(function () {
                 });
                 window.location.href = "/checkout-tiket";
             },
+            error:function(error){
+                var formErr = error.responseJSON.errors;
+                console.log(error);
+                for(var err in formErr){
+                    $('.'+ err).html(formErr[err][0]);
+                }
+            }
       });
     });
     $(document).on('click','.change-qty-tiket', function (e) {
