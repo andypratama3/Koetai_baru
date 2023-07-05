@@ -1,5 +1,4 @@
 @extends('layouts.user')
-<<<<<<< HEAD
 @section('title', 'List Order Tiket')
 @section('content')
 
@@ -74,11 +73,4 @@
 </div>
 </div>
 @include('layouts.script')
-=======
-@section('title', 'Checkout')
-@section('content')
-
-@include('layouts.script')
-
->>>>>>> d27d70b6a5bec949b89c5bc86e7d4b2d2a19c9ff
 @endsection

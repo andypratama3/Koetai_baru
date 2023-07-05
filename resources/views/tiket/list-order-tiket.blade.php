@@ -28,6 +28,7 @@
                         <h5 class="total-harga">Total : Rp. {{ $order->total }}</h5>
                         <h5 class="status">{{ $order->status }}</h5>
                         <div class="container-btn">
+                            @if ($order->status == 'Paid')
                             <button type="button" class="bttn btn-kuning" data-bs-toggle="modal"
                                 data-bs-target="#detail_tiket_lauch" id="detail_tiket" data-id="<?=$order->id?>"
                                 data-nama="<?=$order->nama ?>" data-total="<?=$order->total ?>"
@@ -35,10 +36,13 @@
                                 data-foto="<?=$order->tiket->foto ?>">
                                 Detail Tiket
                             </button>
+                            @endif
+                            @if ($order->status == 'Unpaid')
+                            <button class="bttn btn-primary pay-button" data-id="{{ $order->id }}">Bayar</button>
+                            @endif
                         </div>
                     </div>
                     <hr>
-
                     @endforeach
                     <div class="total float-end">
                         <h5>Total Semua Rp. {{ $order->total }}</h5>
@@ -48,7 +52,7 @@
                 <div class="card-body text-center">
                     <h2>Pesanan <i class="bi bi-cart"></i>Tiket Anda Kosong!</h2>
                     <br>
-                    <a href="{{url('tiket')}}" class="btn btn-keranjang align-center"
+                    <a href="{{url('tiket')}}" class="btn btn-lg btn-keranjang align-center"
                         style="background-color: #FFB716;">Beli Tiket</a>
                 </div>
                 @endif
@@ -72,5 +76,13 @@
     </div>
 </div>
 </div>
+
+
 @include('layouts.script')
+
+<script>
+    $(document).on('click', '.pay-button', function (e) {
+        window.location.href = "/checkout-tiket";
+});
+</script>
 @endsection

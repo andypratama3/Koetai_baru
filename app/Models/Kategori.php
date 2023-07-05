@@ -12,7 +12,7 @@ class Kategori extends Model
     use SoftDeletes;
     use \App\Http\Traits\UsesUuid;
     // use HasFactory;
-    protected $table = 'Kategoris';
+    protected $table = 'kategoris';
     protected $guarded = ['id'];
     protected $fillable = [
     'nama'
