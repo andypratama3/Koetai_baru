@@ -38,7 +38,7 @@
                             </button>
                             @endif
                             @if ($order->status == 'Unpaid')
-                            <button class="bttn btn-primary pay-button" data-id="{{ $order->id }}">Bayar</button>
+                            <a href="{{route('checkout-tiket',$order->id)}}" class="bttn btn-primary">Bayar</button>
                             @endif
                         </div>
                     </div>
@@ -81,8 +81,8 @@
 @include('layouts.script')
 
 <script>
-    $(document).on('click', '.pay-button', function (e) {
-        window.location.href = "/checkout-tiket";
-});
+//     $(document).on('click', '.pay-button', function (e) {
+//         window.location.href = "/checkout-tiket";
+// });
 </script>
 @endsection

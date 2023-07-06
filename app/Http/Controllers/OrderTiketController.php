@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Midtrans\Snap;
 use App\Models\Tiket;
 use App\Models\OrderTiket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreOrderTiket;
-use Carbon\Carbon;
 use App\Actions\OrderTiket\StoreOrderTiketAction;
+use Illuminate\Http\RedirectResponse;
+
 
 class OrderTiketController extends Controller
 {
@@ -20,33 +22,45 @@ class OrderTiketController extends Controller
 
     public function checkout(Request $request){
 
-        $order = OrderTiket::where('user_id',Auth::id())->first();
-        // Set your Merchant Server Key
-        \Midtrans\Config::$serverKey = config('midtrans.server_Key');
-        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = true;
-        // Set sanitization on (default)
-        \Midtrans\Config::$isSanitized = true;
-        // Set 3DS transaction for credit card to true
-        \Midtrans\Config::$is3ds = true;
-        $params = array(
-            'transaction_details' => array(
-                'order_id' => $order->id,
-                'gross_amount' => $order->total,
-                'jumlah' => $order->jumlah,
+    $order = OrderTiket::where('user_id', Auth::id())->first();
+    // Periksa apakah order ada sebelum melanjutkan
+    if (!$order) {
+        return redirect()->route('order.error', ['message' => 'Order tidak ditemukan']);
+    }
 
-            ),
-            'customer_details' => array(
-                'nama' => $order->nama,
-                'slug' => $request->slug,
-            ),
-        );
+    // Set your Merchant Server Key
+    \Midtrans\Config::$serverKey = config('midtrans.server_Key');
+    // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+    \Midtrans\Config::$isProduction = true;
+    // Set sanitization on (default)
+    \Midtrans\Config::$isSanitized = true;
+    // Set 3DS transaction for credit card to true
+    \Midtrans\Config::$is3ds = true;
 
+    $params = array(
+        'transaction_details' => array(
+            'order_id' => $order->id,
+            'gross_amount' => $order->total,
+            'jumlah' => $order->jumlah,
+        ),
+        'customer_details' => array(
+            'nama' => $order->nama,
+            'slug' => $request->slug,
+        ),
+    );
+
+    try {
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
-        return view('tiket.tiket-pay', compact('order','snapToken'));
+        return view('tiket.tiket-pay', compact('order', 'snapToken'));
+    } catch (\Exception $e) {
+        // Tangani kesalahan yang terjadi saat meminta snapToken
+        return redirect()->route('orderan.tiket', ['message' => $e->getMessage()]);
     }
+}
+
      public function order_tiket(StoreOrderTiket $request, StoreOrderTiketAction $storeOrderTiketAction){
+
 
         $storeOrderTiketAction->execute($request);
         return response()->json(['status'=>'Tiket Berhasil Di Pesan']);
@@ -61,10 +75,14 @@ class OrderTiketController extends Controller
         $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
         if($hashed == $request->signature_key){
             if($request->transaction_status == "capture"){
-                $order = OrderTiket::find($request->order_id);
                 $order->update(['status' => 'Paid']);
+                $order = OrderTiket::find($request->order_id);
+                $stok = Tiket::find($order->tiket_id);
+                $stok->stok = $stok->stok - $order->jumlah;
+                $stok->update();
             }
         }
+
     }
 
     public function destroy(Request $request){

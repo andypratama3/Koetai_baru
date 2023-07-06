@@ -40,9 +40,9 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
     Route::get('tiket', [OrderTiketController::class, 'index']);
     Route::post('tiket-order', [OrderTiketController::class, 'order_tiket']);
     //listTiket
-    Route::get('checkout-tiket', [OrderTiketController::class, 'checkout']);
+    Route::get('checkout-tiket', [OrderTiketController::class, 'checkout'])->name('checkout.id');
     Route::post('bayar-tiket', [OrderTiketController::class, 'order']);
-    Route::get('orderan-tiket', [OrderTiketController::class, 'orderan']);
+    Route::get('orderan-tiket', [OrderTiketController::class, 'orderan'])->name('orderan.tiket');
     Route::post('update-tiket', [OrderTiketController::class, 'update_tiket']);
     Route::post('delete-pesanan-tiket', [OrderTiketController::class, 'destroy']);
     //cart
