@@ -175,6 +175,13 @@ $(document).ready(function () {
                 });
                 window.location.href = "/checkout-tiket";
             },
+            error:function(error){
+                var formErr = error.responseJSON.errors;
+                console.log(error);
+                for(var err in formErr){
+                    $('.'+ err).html(formErr[err][0]);
+                }
+            }
       });
     });
     $(document).on('click','.change-qty-tiket', function (e) {
@@ -262,7 +269,7 @@ $(document).ready(function () {
         });
         $.ajax({
             method: "POST",
-            url: "/checkout",
+            url: "/add-to-checkout",
             data: {
                 'prod_id': produk_id,
                 'prod_qty': produk_qty,
@@ -275,6 +282,7 @@ $(document).ready(function () {
                 title: 'Berhasil',
                 text: response.status,
                 });
+                window.location.href = "/checkout";
             }
         });
     });
@@ -399,12 +407,12 @@ $(document).ready(function () {
                window.location.href = "/pembayaran";
            },
            error:function(error){
-                var formErr = error.responseJSON.errors;
-                console.log(error);
-                for(var err in formErr){
-                    $('.'+ err ).html(formErr(err)[0]);
-                }
-           }
+            var formErr = error.responseJSON.errors;
+            console.log(error);
+            for(var err in formErr){
+                $('.'+ err).html(formErr[err][0]);
+            }
+       }
        });
        }else{
            $.ajax({

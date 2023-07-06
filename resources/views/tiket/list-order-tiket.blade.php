@@ -23,7 +23,12 @@
                         </div>
                         <h5 class="total-harga"><span>Total :</span> Rp. {{ $order->total }}</h5>
                         <h5 class="status">{{ $order->status }}</h5>
+<<<<<<< HEAD
                         <div class="container-btn btn-detail">
+=======
+                        <div class="container-btn">
+                            @if ($order->status == 'Paid')
+>>>>>>> e3b084e9b51a1ed347f48fb6e7585be024c0cb50
                             <button type="button" class="bttn btn-kuning" data-bs-toggle="modal"
                                 data-bs-target="#detail_tiket_lauch" id="detail_tiket" data-id="<?=$order->id?>"
                                 data-nama="<?=$order->nama ?>" data-total="<?=$order->total ?>"
@@ -31,10 +36,13 @@
                                 data-foto="<?=$order->tiket->foto ?>">
                                 Detail Tiket
                             </button>
+                            @endif
+                            @if ($order->status == 'Unpaid')
+                            <button class="bttn btn-primary pay-button" data-id="{{ $order->id }}">Bayar</button>
+                            @endif
                         </div>
                     </div>
                     <hr>
-
                     @endforeach
                     <div class="total d-flex justify-content-end">
                         <h5>Total Semua Rp. {{ $order->total }}</h5>
@@ -68,5 +76,13 @@
     </div>
 </div>
 </div>
+
+
 @include('layouts.script')
+
+<script>
+    $(document).on('click', '.pay-button', function (e) {
+        window.location.href = "/checkout-tiket";
+});
+</script>
 @endsection

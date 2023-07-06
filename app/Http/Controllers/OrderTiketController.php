@@ -52,7 +52,6 @@ class OrderTiketController extends Controller
         return response()->json(['status'=>'Tiket Berhasil Di Pesan']);
     }
     public function orderan(Request $request){
-
         $orders = OrderTiket::with('tiket')->where('user_id', Auth::id())->get();
         return view('tiket.list-order-tiket', compact('orders'));
     }

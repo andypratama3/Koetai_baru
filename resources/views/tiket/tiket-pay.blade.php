@@ -77,6 +77,7 @@
                     });
             });
             $(document).on('click', '.pay-button', function (e) {
+
                 // var order_id = $(this).closest('.pesan_tiket').find('.order_id').val();
                 //   payButton.addEventListener('click', function () {
                 // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
@@ -107,6 +108,7 @@
             });
         });
     </script>
+<<<<<<< HEAD
 
 
     {{-- <script type="text/javascript">
@@ -152,3 +154,6 @@
 });
 </script> --}}
     @endsection
+=======
+@endsection
+>>>>>>> e3b084e9b51a1ed347f48fb6e7585be024c0cb50
