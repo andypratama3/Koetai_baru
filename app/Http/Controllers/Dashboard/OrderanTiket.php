@@ -31,7 +31,7 @@ class OrderanTiket extends Controller
     }
     public function export(){
 
-        return Excel::download(new OrderTiketExport, 'ordeTiket.xlsx');
+        return Excel::download(new OrderTiketExport, 'orderTiket.xlsx');
 
     }
 }
