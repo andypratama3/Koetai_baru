@@ -55,8 +55,8 @@
                         @endif
                         </div>
                         <div class="form-btn">
-                            <button type="submit" class="btn-login">Masuk</button>
                             <a type="button" class="btn-register" href="{{ route('register') }}">Register</a>
+                            <button type="submit" class="btn-login">Masuk</button>
                         </div>
                     </form>
 

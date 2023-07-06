@@ -12,22 +12,18 @@
                     @if ($orders->count() > 0)
                     @foreach ($orders as $order)
                     @php $total = 0; @endphp
-                    <div class="list-produk pesan_tiket">
-                        <div class="produk-ukuran">
-                            <div class="produk">
-                                <p>{{ $order->nama }}</p>
-                            </div>
+                    <div class="list-tiket pesan_tiket">
+                        <div class="nama-content">
+                            <p>{{ $order->nama }}</p>
                         </div>
                         <input type="hidden" value="{{ $order->id }}" class="order_id">
                         <div class="jumlah">
-                            <div class=" text-center mb-3" style="width: 130px;">
-                                <input class="no qty-input-tiket" type="text" name="quantity "
-                                    value="{{ $order->jumlah }}" readonly>
-                            </div>
+                            <input class="no qty-input-tiket" type="text" name="quantity " value="{{ $order->jumlah }}"
+                                readonly>
                         </div>
-                        <h5 class="total-harga">Total : Rp. {{ $order->total }}</h5>
+                        <h5 class="total-harga"><span>Total :</span> Rp. {{ $order->total }}</h5>
                         <h5 class="status">{{ $order->status }}</h5>
-                        <div class="container-btn">
+                        <div class="container-btn btn-detail">
                             <button type="button" class="bttn btn-kuning" data-bs-toggle="modal"
                                 data-bs-target="#detail_tiket_lauch" id="detail_tiket" data-id="<?=$order->id?>"
                                 data-nama="<?=$order->nama ?>" data-total="<?=$order->total ?>"
@@ -40,7 +36,7 @@
                     <hr>
 
                     @endforeach
-                    <div class="total float-end">
+                    <div class="total d-flex justify-content-end">
                         <h5>Total Semua Rp. {{ $order->total }}</h5>
                     </div>
                 </div>

@@ -18,19 +18,19 @@
                 @php $total = 0; @endphp
                 <div class="text-produk">Produk Dipesan</div>
                 <div class="list-produk-checkout produk_data">
-                    <div class="produk">
+                    <div class="img-content">
                         <img src="{{ asset('storage/img/produk/'.$cart->produks->foto) }}" alt="">
+                    </div>
+                    <div class="produk-content">
                         <p>{{ $cart->produks->nama }}</p>
                     </div>
-                    <div class="ukuran">
-                        <div class="ukuran-content">
-                            <p>Variasi</p>
-                            <p><b>{{ $cart->prod_ukuran }}</b></p>
-                        </div>
+                    <div class="ukuran-content">
+                        <p>Variasi</p>
+                        <p><b>{{ $cart->prod_ukuran }}</b></p>
                     </div>
                     <div class="harga">
                         <div class="harga-content">
-                            <p class="text-content">Subtotal Produk</p>
+                            <p class="text-content">Harga Satuan</p>
                             <p>Rp. Harga Produknya Ndyy</p>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="harga">
                         <div class="harga-content">
                             <p class="text-content">Subtotal Produk</p>
-                            <p>Total : Rp. {{ $total }}</p>
+                            <p>Rp. {{ $total }}</p>
                         </div>
                     </div>
                     <div class="btn-x">
@@ -64,9 +64,11 @@
                 <div class="input-checkout">
                     <div class="top-content">
                         <div class="left-input">
-                            <input type="text" class="input-name nama" name="Nama Penerima" id="nama" placeholder="Nama">
+                            <input type="text" class="input-name nama" name="Nama Penerima" id="nama"
+                                placeholder="Nama">
                             <span class="text-error nama_penerima"></span>
-                            <input type="number" class="input-number no_telp" id="nomor_telpon" max="0" placeholder="Nomor Telepon">
+                            <input type="number" class="input-number no_telp" id="nomor_telpon" max="0"
+                                placeholder="Nomor Telepon">
                         </div>
                         <div class="right-input">
                             <textarea class="input-address" name="alamat" cols="30" id="alamat"

@@ -2,8 +2,8 @@
 const tombolMenu = document.querySelector("header .nav-bar .tombol-menu"),
     tombolMenuIcon = document.querySelector("header .nav-bar .tombol-menu i"),
     side_bar = document.querySelector("header .side-bar"),
-    btn_pesanan = document.querySelector("header .nav-bar .dropdown-pesanan .btn-pilih"),
-    dropdown_content = document.querySelector("header .nav-bar .dropdown-pesanan .dropdown-content");
+    btn_pesanan = document.querySelector("header .side-bar .dropdown-pesanan .btn-pilih"),
+    dropdown_content = document.querySelector("header .side-bar .dropdown-pesanan .dropdown-content");
 
 tombolMenu.onclick = function () {
     side_bar.classList.toggle("open");
