@@ -36,16 +36,14 @@
         <h1>SPONSOR</h1>
 
         <div class="sponsor-utama">
-            {{-- <img src="{{ asset('asset_user/assets/img/sponsor1.png') }}" alt="" srcset=""> --}}
+            <img src="{{ asset('asset_user/assets/img/sponsor1.png') }}" alt="" srcset="">
+        </div>
+        <div class="sponsor-lainnya">
             @foreach ($sponsors as $spons)
             <img src="{{ asset('storage/img/sponsor/'.$spons->logo) }}" alt="" srcset="">
             @endforeach
         </div>
-        {{-- <div class="sponsor-lainnya">
-            @foreach ($sponsors as $spons)
-            <img src="{{ asset('storage/img/sponsor/'.$spons->logo) }}" alt="" srcset="">
-            @endforeach
-        </div> --}}
+
     </div>
 </section>
 

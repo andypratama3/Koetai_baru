@@ -19,10 +19,9 @@ class StoreOrderTiketAction
         $order->nama = $request->input("nama");
         $order->tiket_id = $request->input("tiket_id");
         $order->jumlah = $request->input("jumlah");
-
-        $tiket = Tiket::find($order->tiket_id);
-        $order->total = $tiket->harga * $order->jumlah;
+        $order->total = $request->total;
         //mengurangi stok pada tiket
+
         $order->save();
     }
 

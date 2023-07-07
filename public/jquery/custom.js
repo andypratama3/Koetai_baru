@@ -142,48 +142,48 @@ $(document).ready(function () {
             },
       });
     });
-    // $(document).on('click','.pesan-tiket', function (e) {
-    //     e.preventDefault();
+    $(document).on('click','.pesan-tiket', function (e) {
+        e.preventDefault();
 
-    //     var nama = $(this).closest('.pesan_tiket').find('.nama').val();
-    //     var kategori_tiket = $(this).closest('.pesan_tiket').find('.tiket_id').val();
-    //     var jumlah = $(this).closest('.pesan_tiket').find('.qty').val();
+        var nama = $(this).closest('.pesan_tiket').find('.nama').val();
+        var kategori_tiket = $(this).closest('.pesan_tiket').find('.tiket_id').val();
+        var jumlah = $(this).closest('.pesan_tiket').find('.qty').val();
 
-    //     var harga = $('#harga_tiket').data('harga');
-    //     var total = harga * jumlah;
+        var harga = $('#harga_tiket').data('harga');
+        var total = harga * jumlah;
 
-    //     data = {
-    //         'nama': nama,
-    //         'tiket_id': kategori_tiket,
-    //         'jumlah': jumlah,
-    //         'total': total,
-    //     }
-    //     $.ajaxSetup({
-    //     headers: {
-    //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //     }
-    //     });
-    //     $.ajax({
-    //         method: "POST",
-    //         url: "/tiket-order",
-    //         data: data,
-    //         success: function (response){
-    //             Swal.fire({
-    //                 icon: 'success',
-    //                 title: 'Berhasil',
-    //                 text: response.status,
-    //             });
-    //             window.location.href = "/checkout-tiket";
-    //         },
-    //         error:function(error){
-    //             var formErr = error.responseJSON.errors;
-    //             console.log(error);
-    //             for(var err in formErr){
-    //                 $('.'+ err).html(formErr[err][0]);
-    //             }
-    //         }
-    //   });
-    // });
+        data = {
+            'nama': nama,
+            'tiket_id': kategori_tiket,
+            'jumlah': jumlah,
+            'total': total,
+        }
+        $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+        $.ajax({
+            method: "POST",
+            url: "/tiket-order",
+            data: data,
+            success: function (response){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: response.status,
+                });
+                window.location.href = "/checkout-tiket";
+            },
+            error:function(error){
+                var formErr = error.responseJSON.errors;
+                console.log(error);
+                for(var err in formErr){
+                    $('.'+ err).html(formErr[err][0]);
+                }
+            }
+      });
+    });
     $(document).on('click','.change-qty-tiket', function (e) {
         e.preventDefault();
 

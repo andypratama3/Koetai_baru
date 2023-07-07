@@ -11,18 +11,18 @@
                 @foreach ($carts as $cart)
                 @php $total = 0; @endphp
                 <div class="list-produk produk_data">
-                    <div class="img-content">
+                    <div class="produk">
                         <div class="rectangle-list">
                             <img src="{{ asset('asset_user/assets/img/rectangle-list.png') }}" alt="" srcset="">
                         </div>
-                        <div class="produk-img">
-                            <img src="{{ asset('storage/img/produk/'.$cart->produks->foto) }}" alt="">
-                        </div>
+                        <img src="{{ asset('storage/img/produk/'.$cart->produks->foto) }}" alt="">
+                        <p>{{ $cart->produks->nama }}</p>
                     </div>
-                    <p class="produk-content">{{ $cart->produks->nama }}</p>
-                    <div class="ukuran-content">
-                        <p class="text  ">Variasi</p>
-                        <p class="variasi">{{ $cart->prod_ukuran }}</p>
+                    <div class="ukuran">
+                        <div class="ukuran-content">
+                            <p>Variasi</p>
+                            <p class="variasi">{{ $cart->prod_ukuran }}</p>
+                        </div>
                     </div>
                     <input type="hidden" value="{{ $cart->prod_ukuran }}" class="prod_ukuran">
                     @if($cart->produks->stock > $cart->prod_qty)
@@ -51,7 +51,7 @@
                 @endforeach
                 <div class="total">
                     <p>Lanjut Pembayaran</p>
-                    <p class="total-harga"><span>Total Semua :</span> Rp. {{ $totals }}</p>
+                    <p class="total-harga">Total Semua : Rp. {{ $totals }}</p>
                 </div>
                 <div class="btn-checkout">
                     <button type="submit" class="btn-checkout-form">Checkout</button>

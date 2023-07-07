@@ -14,11 +14,7 @@
     <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
     @stack('css')
 
-<<<<<<< HEAD
-    <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js"
-=======
     <script type="text/javascript" src="{{ config('midtrans.snap_url') }}"
->>>>>>> e3b084e9b51a1ed347f48fb6e7585be024c0cb50
         data-client-key="{{ config('midtrans.client_Key') }}"></script>
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -41,36 +37,31 @@
                         <button class="{{ request()->is('/') ? 'active' : '' }} btn-nav">Beranda</button>
                     </a>
                 </li>
-                {{-- <li>
+                <li>
                     <a href="/crew">
                         <button class="{{ request()->is('crew') ? 'active' : '' }} btn-nav">Semua Tim</button>
-                </a>
-                </li> --}}
-                {{-- <li>
+                    </a>
+                </li>
+                <li>
                     <a href="/shop">
                         <button class="{{ request()->is('shop') ? 'active' : '' }} btn-nav">Belanja</button>
-                </a>
-                </li> --}}
-                {{-- <li>
+                    </a>
+                </li>
+                <li>
                     <a href="/cart">
                         <button class="{{ request()->is('cart') ? 'active' : '' }} btn-nav">
-                <i class='bx bx-cart cart-icon'></i>
-                <p>Keranjang</p>
-                <span class="badge badge-pill cart-count">0</span>
-                </button>
-                </a>
-                </li> --}}
+                            <i class='bx bx-cart cart-icon'></i>
+                            <p>Keranjang</p>
+                            <span class="badge badge-pill cart-count">0</span>
+                        </button>
+                    </a>
+                </li>
                 <li>
                     <a href="/tiket">
-                        <button class="{{ request()->is('tiket') ? 'active' : '' }} btn-pilih btn-nav" id="btn-tiket">Tiket</button>
+                        <button class="btn-pilih btn-nav" id="btn-tiket">Tiket</button>
                     </a>
                 </li>
-                <li>
-                    <a href="/orderan-tiket">
-                        <button class="{{ request()->is('orderan-tiket') ? 'active' : '' }} btn-nav">Pesanan Tiket</button>
-                    </a>
-                </li>
-                {{-- <li class="dropdown-pesanan">
+                <li class="dropdown-pesanan">
                     <button class="btn-pilih btn-nav">Pesanan</button>
                     <div class="dropdown-content">
                         <a href="/orderan-tiket">
@@ -80,7 +71,7 @@
                             <button class="pesanan-content">Pesanan Belanja</button>
                         </a>
                     </div>
-                </li> --}}
+                </li>
                 @if(auth()->check())
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
@@ -116,42 +107,33 @@
                         <button class="{{ request()->is('/login') ? 'active' : '' }} list-content">Beranda</button>
                     </a>
                 </li>
-                {{-- <li>
+                <li>
                     <a href="/crew">
                         <button class="{{ request()->is('/crew') ? 'active' : '' }} list-content">Semua Tim</button>
-                </a>
-                </li> --}}
-                {{-- <li>
+                    </a>
+                </li>
+                <li>
                     <a href="/shop">
                         <button class="{{ request()->is('/shop') ? 'active' : '' }} list-content">Belanja</button>
-                </a>
-                </li> --}}
-                {{-- <li>
+                    </a>
+                </li>
+                <li>
                     <a href="/cart">
                         <button class="{{ request()->is('/cart') ? 'active' : '' }} list-content">Keranjang</button>
-                </a>
-                </li> --}}
-                <li>
-                    <a href="/tiket">
-                        <button class="list-content" id="btn-tiket">Tiket</button>
                     </a>
                 </li>
-                <li>
-                    <a href="/orderan-tiket">
-                        <button class="list-content">Pesanan Tiket</button>
-                    </a>
-                </li>
-                {{-- <li class="dropdown-pesanan">
-                    <button class="list-content btn-pilih">Pesanan</button>
+                <li class="dropdown-tiket">
+                    <button
+                        class="{{ request()->is('/shop') ? 'active' : '' }} list-content btn-tiket-resp">Tiket</button>
                     <div class="dropdown-content">
-                        <a href="/orderan-tiket">
-                            <button class="list-content pesanan-content">Pesanan Tiket</button>
+                        <a href="/tiket">
+                            <button class="list-content list-tiket">Beli Tiket</button>
                         </a>
-                        <a href="/order-shop">
-                            <button class="list-content pesanan-content">Pesanan Belanja</button>
+                        <a href="/orderan-tiket">
+                            <button class="list-content list-tiket">Pesanan Tiket</button>
                         </a>
                     </div>
-                </li> --}}
+                </li>
                 @if(auth()->check())
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
