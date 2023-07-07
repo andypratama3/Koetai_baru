@@ -23,12 +23,12 @@
                         </div>
                         <h5 class="total-harga"><span>Total :</span> Rp. {{ $order->total }}</h5>
                         <h5 class="status">{{ $order->status }}</h5>
-<<<<<<< HEAD
+
                         <div class="container-btn btn-detail">
-=======
+
                         <div class="container-btn">
                             @if ($order->status == 'Paid')
->>>>>>> e3b084e9b51a1ed347f48fb6e7585be024c0cb50
+
                             <button type="button" class="bttn btn-kuning" data-bs-toggle="modal"
                                 data-bs-target="#detail_tiket_lauch" id="detail_tiket" data-id="<?=$order->id?>"
                                 data-nama="<?=$order->nama ?>" data-total="<?=$order->total ?>"
@@ -38,7 +38,7 @@
                             </button>
                             @endif
                             @if ($order->status == 'Unpaid')
-                            <a href="{{route('checkout-tiket',$order->id)}}" class="bttn btn-primary">Bayar</button>
+                            <button class="btn btn-primary">Bayar</button>
                             @endif
                         </div>
                     </div>

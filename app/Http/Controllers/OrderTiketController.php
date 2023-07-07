@@ -20,14 +20,14 @@ class OrderTiketController extends Controller
         return view('tiket.order-tiket', compact('tikets'));
     }
 
-    public function checkout(Request $request){
+    public function checkout(Request $request ,StoreOrderTiketAction $storeOrderTiketAction){
 
+    $storeOrderTiketAction->execute($request);
     $order = OrderTiket::where('user_id', Auth::id())->first();
     // Periksa apakah order ada sebelum melanjutkan
-    if (!$order) {
+    if (!$storeOrderTiketAction) {
         return redirect()->route('order.error', ['message' => 'Order tidak ditemukan']);
     }
-
     // Set your Merchant Server Key
     \Midtrans\Config::$serverKey = config('midtrans.server_Key');
     // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -45,7 +45,7 @@ class OrderTiketController extends Controller
         ),
         'customer_details' => array(
             'nama' => $order->nama,
-            'slug' => $request->slug,
+            'slug' => $order->slug,
         ),
     );
 
@@ -59,12 +59,11 @@ class OrderTiketController extends Controller
     }
 }
 
-     public function order_tiket(StoreOrderTiket $request, StoreOrderTiketAction $storeOrderTiketAction){
+    //  public function order_tiket(StoreOrderTiket $request, StoreOrderTiketAction $storeOrderTiketAction){
 
-
-        $storeOrderTiketAction->execute($request);
-        return response()->json(['status'=>'Tiket Berhasil Di Pesan']);
-    }
+    //     $storeOrderTiketAction->execute($request);
+    //     return response()->json(['status'=>'Tiket Berhasil Di Pesan']);
+    // }
     public function orderan(Request $request){
         $orders = OrderTiket::with('tiket')->where('user_id', Auth::id())->get();
         return view('tiket.list-order-tiket', compact('orders'));
@@ -84,7 +83,6 @@ class OrderTiketController extends Controller
         }
 
     }
-
     public function destroy(Request $request){
         if(Auth::check())
         {

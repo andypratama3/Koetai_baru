@@ -108,52 +108,5 @@
             });
         });
     </script>
-<<<<<<< HEAD
-
-
-    {{-- <script type="text/javascript">
-    //   var payButton = document.getElementById('pay-button');
-    $(document).on('click','.pay-button', function (e) {
-        //payButton.addEventListener('click', function () {
-        //Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-        var harga = $(this).closest('.pesan_tiket').find('.harga').val();
-        var id = $(this).closest('.pesan_tiket').find('.order_id').val();
-        var jumlah = $(this).closest('.pesan_tiket').find('.no').val();
-        var total = harga * jumlah;
-        // console.log(id);
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            method: "POST",
-            url: "bayar-tiket",
-            data: {
-                'id': id,
-                'total': total,
-            },
-            window.snap.pay('', {
-            onSuccess: function(result){
-            alert("payment success!"); console.log(result);
-          },
-             onPending: function(result){
-            /* You may add your own implementation here */
-            alert("wating your payment!"); console.log(result);
-          },
-            onError: function(result){
-            /* You may add your own implementation here */
-            alert("payment failed!"); console.log(result);
-          },
-          onClose: function(){
-            /* You may add your own implementation here */
-            alert('you closed the popup without finishing the payment');
-          },
-        });
-    });
-});
-</script> --}}
-    @endsection
-=======
 @endsection
->>>>>>> e3b084e9b51a1ed347f48fb6e7585be024c0cb50
+

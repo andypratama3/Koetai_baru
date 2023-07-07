@@ -14,6 +14,8 @@
                     <div class="pesantik-menu">
                         <div class="form-menu">
                             <div class="pilihan">
+                                <form action="{{ route('checkout') }}" method="post" enctype="multipart/form-data">
+                                    @csrf
                                 @php
                                 $total = 0;
                                 @endphp
@@ -43,8 +45,9 @@
                                     placeholder="Jumlah">
                                 <br>
                                 <div class="tombol-pesantik">
-                                    <button type="submit" class="btn-pesan pesan-tiket pay-button">Pesan Tiket</button>
+                                    <button type="submit" class="btn-pesan pesan-tiket">Pesan Tiket</button>
                                 </div>
+                            </form>
                             </div>
                         </div>
                     </div>
