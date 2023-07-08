@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\OrderTiketController;
+use App\Http\Controllers\Api\ApiOrderTiketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,4 @@ use App\Http\Controllers\OrderTiketController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/midtrans-calback', [OrderTiketController::class, 'callback_status']);
+Route::post('/payment-handler', [ApiOrderTiketController::class, 'payment_handler']);

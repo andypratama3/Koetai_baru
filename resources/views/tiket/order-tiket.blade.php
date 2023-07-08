@@ -12,6 +12,8 @@
             <div class="form-menu">
                 <div class="pilihan">
                     <div class="pesantik-menu">
+                        <form action="checkout-tiket" method="post">
+                            @csrf
                         <div class="form-menu">
                             <div class="pilihan">
                                 @php
@@ -47,6 +49,7 @@
                                 </div>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>

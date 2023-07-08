@@ -15,13 +15,18 @@ return new class extends Migration
     {
         Schema::create('order_tikets', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('user_id');
             $table->string('nama');
-            $table->bigInteger('tiket_id');
-            $table->integer('jumlah');
-            $table->Biginteger('total');
-            $table->enum('status', ['Unpaid','Paid']);
-            $table->string('slug');
+            $table->string('user_id');
+            $table->string('tiket_id');
+            $table->string('email');
+            $table->string('jumlah');
+            $table->string('order_id');
+            $table->string('status');
+            $table->string('transaction_id');
+            $table->string('payment_type');
+            $table->string('payment_code')->nullable();
+            $table->string('gross_amount');
+            $table->string('pdf_url')->nullable();
             $table->timestamps();
         });
     }
@@ -36,6 +41,3 @@ return new class extends Migration
         Schema::dropIfExists('order_tikets');
     }
 };
-
-
-

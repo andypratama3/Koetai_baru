@@ -1,116 +1,78 @@
 @extends('layouts.user')
 @section('title', 'List Order Tiket')
 @section('content')
-
 <div class="container-pesanan-tiket pesantiket">
     <div class="main-pesanan-tiket">
         <div class="isi-pesanan-tiket">
             <div class="container-isi">
                 <div class="isinya">
                     <h1>Pesanan Tiket</h1>
-                    @if ($order->count() > 0)
-                    @php $totals = 0; @endphp
-                    @php $total = 0; @endphp
-                    <div class="list-produk pesan_tiket">
-                        <div class="produk-ukuran">
-                            <div class="produk">
-                                <p>{{ $order->nama }}</p>
-                            </div>
+                    <div class="list-tiket pesan_tiket">
+                        <div class="nama-content">
+                            <p>{{ $nama }}</p>
+                            <input type="hidden" name="nama" value="{{$nama}}">
                         </div>
-                        @if($order->tiket->stok > $order->jumlah)
-                        <input type="hidden" value="{{ $order->id }}" class="order_id">
-                        <div class="jumlah">
-                            <div class="">
-                                <button class="minus change-qty-tiket decrement-btn-tiket">-</button>
-                                <input class="no qty-input-tiket" type="text" name="quantity "
-                                    value="{{ $order->jumlah }}">
-                                <button class="plus change-qty-tiket increment-btn-tiket">+</button>
-                            </div>
-                        </div>
-                        @php $total += $order->tiket->harga * $order->jumlah; @endphp
-                        @else
-                        <h6>Out Of Stock</h6>
-                        @endif
-                        <h5 class="total-harga">Total : Rp. {{ $total }}</h5>
-                        <h5 class="status">{{ $order->status }}</h5>
-                        <div class="container-btn">
-                            <button class="bttn btn-merah delete-tiket-order">Delete</button>
-                            <button class="bttn btn-kuning pay-button">Bayar</button>
-                        </div>
-                        <input type="hidden" value="{{ $order->tiket->harga }}" class="harga">
-                        <input type="hidden" class="prod_id" value="{{ $order->prod_id }}">
+                    <div class="jumlah">
+                        <input class="no qty-input-tiket" type="text" name="jumlah" value="{{ $jumlah }}" readonly>
                     </div>
-                    <hr>
-                    @php $totals += $order->tiket->harga * $order->jumlah; @endphp
-
-                    {{-- @endforeach --}}
-                    <div class="total">
-                        <h5>Total Semua : Rp. {{ $totals }}</h5>
-                        <button class="btn btn-warning btn-keranjang pay-button">Bayar</button>
+                    <h5 class="total-harga"><span>Total :</span> Rp. {{ $total }}</h5>
+                    <div class="container-btn">
+                    <button class="bttn btn-kuning btn-bayar pay-button">Bayar</button>
                     </div>
                 </div>
-                @else
-                <div class="card-body text-center">
-                    <h2>Pesanan <i class="bi bi-cart"></i>Tiket Anda Kosong!</h2>
-                    <br>
-                    <a href="{{url('tiket')}}" class="btn btn-keranjang align-center"
-                        style="background-color: #FFB716;">Beli Tiket</a>
-                </div>
-                @endif
-
+                <hr>
+            </div>
             </div>
         </div>
     </div>
+</div>
+    <form action="checkout-tiket-status" id="form-pesan-tiket" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" name="json" id="json_callback">
+        <input type="hidden" name="nama" id="nama" value="{{ $nama }}">
+        <input type="hidden" name="jumlah" id="jumlah" value="{{ $jumlah }}">
+        <input type="hidden" name="tiket_id" id="tiket_id" value="{{ $tiket_id }}">
+    </form>
     @include('layouts.script')
     <script>
-        $(document).ready(function () {
-            $(".delete").click(function (e) {
-                slug = e.target.dataset.id;
-                swal({
-                        title: 'Anda yakin?',
-                        text: 'Data yang sudah dihapus tidak dapat dikembalikan!',
-                        icon: 'warning',
-                        buttons: true,
-                        dangerMode: true,
-                    })
-                    .then((willDelete) => {
-                        if (willDelete) {
-                            $(`#delete-${slug}`).submit();
-                        } else {
-                            // Do Nothing
-                        }
-                    });
-            });
-            $(document).on('click', '.pay-button', function (e) {
+    $(document).ready(function () {
+        $(document).on('click', '.pay-button', function (e) {
 
-                // var order_id = $(this).closest('.pesan_tiket').find('.order_id').val();
-                //   payButton.addEventListener('click', function () {
-                // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-                window.snap.pay('{{$snapToken}}', {
-                    onSuccess: function (result) {
-                        Swal.fire(
-                            'Success',
-                            result.status,
-                            'success',
-                        )
-                        window.location.href = "/orderan-tiket";
-                    },
-                    onPending: function (result) {
-                        /* You may add your own implementation here */
-                        alert("wating your payment!");
-                        console.log(result);
-                    },
-                    onError: function (result) {
-                        /* You may add your own implementation here */
-                        alert("payment failed!");
-                        console.log(result);
-                    },
-                    onClose: function () {
-                        /* You may add your own implementation here */
-                        alert('you closed the popup without finishing the payment');
-                    }
-                })
-            });
+            // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+            window.snap.pay('{{$snapToken}}', {
+                onSuccess: function (result) {
+                    Swal.fire(
+                        'Success',
+                        result.status,
+                        'success',
+                    )
+                    console.log(result);
+                    send_order_tiket(result);
+                },
+                onPending: function (result) {
+                    alert("wating your payment!");
+                    console.log(result);
+                    send_order_tiket(result);
+                },
+                onError: function (result) {
+                    /* You may add your own implementation here */
+                    alert("payment failed!");
+                    console.log(result);
+                    send_order_tiket(result);
+                },
+                onClose: function () {
+                    /* You may add your own implementation here */
+                    alert('you closed the popup without finishing the payment');
+                }
+            })
+            function send_order_tiket(result){
+                document.getElementById('json_callback').value = JSON.stringify(result);
+                nama = document.getElementById('nama').value;
+                jumlah = document.getElementById('jumlah').value;
+                tiket_id = document.getElementById('tiket_id').value;
+                $("#form-pesan-tiket").submit();
+            }
         });
+    });
     </script>
 @endsection

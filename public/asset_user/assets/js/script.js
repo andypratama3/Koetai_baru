@@ -13,52 +13,6 @@ tombolMenu.onclick = function () {
         "bx bx-menu";
 }
 
-btn_pesanan.onclick = function () {
-    btn_pesanan.classList.toggle("active");
-    dropdown_content.classList.toggle("open");
-}
-
-// btn_tiketResp.onclick = function () {
-//     dropdown_tiketResp.classList.toggle("open");
-// }
-
-// Belanja -> Navbar Belanja Di Click
-// var navBaju = document.getElementById("nav-baju");
-// var navMchan = document.getElementById("nav-mchan");
-// var belanjaBaju = document.getElementById("belanja-baju");
-// var belanjaMchan = document.getElementById("belanja-mchan");
-// var isiBelanja = document.getElementById("isi-belanja");
-
-// navBaju.onclick = function () {
-//     navBaju.classList.add("active");
-//     navMchan.classList.remove("active");
-//     belanjaBaju.style.display = "block";
-//     belanjaMchan.style.display = "none";
-//     belanjaBaju.style.animation = "baju-in .8s";
-//     isiBelanja.style.animation = "baju-in .8s";
-// }
-
-// navMchan.onclick = function () {
-//     navMchan.classList.add("active");
-//     navBaju.classList.remove("active");
-//     belanjaMchan.style.display = "block";
-//     belanjaBaju.style.display = "none";
-//     belanjaMchan.style.animation = "mchan-in .8s";
-//     isiBelanja.style.animation = "mchan-in .8s";
-// }
-
-// function pilihTiket() {
-//     document.getElementsByClassName("pilih-btn").classList.add("show");
-// }
-
-// Tiket Dropdown -> Variabel Dropdown
-// var btn_tiket = document.querySelector("header .menu-nav .drop-down-tiket .btn-pilih")
-
-// btn_tiket.onclick = function () {
-//     btn_tiket.classList.toggle("active")
-// }
-
-
 
 window.onclick = function (event) {
     if (!event.target.matches('header .menu-nav .drop-down-tiket .drop-down-tiket .btn-pilih')) {
