@@ -292,6 +292,7 @@ $(document).ready(function () {
         var produk_ukuran = $('input[name="prod_ukuran"]:checked').val();
         var produk_qty = $(this).closest('.detail').find('.prod_qty').val();
 
+
         $.ajax({
             method: "POST",
             url: "/add-to-checkout",
@@ -373,6 +374,7 @@ $(document).ready(function () {
        var no_telp = document.getElementById("nomor_telpon").value;
        var alamat = document.getElementById("alamat").value;
        var catatan = document.getElementById("catatan").value;
+
        //produk
        var produk_id = $(this).closest('.cartitems').find('.prod_id').val();
        var produk_qty = $(this).closest('.cartitems').find('.prod_qty').val();

@@ -14,13 +14,8 @@
     <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
     @stack('css')
 
-<<<<<<< HEAD
     <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js"
-=======
-    <script type="text/javascript" src="{{ config('midtrans.snap_url') }}"
->>>>>>> e3b084e9b51a1ed347f48fb6e7585be024c0cb50
         data-client-key="{{ config('midtrans.client_Key') }}"></script>
-
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('asset_user/vendor/glightbox/css/glightbox.min.css')}}">
 
@@ -45,13 +40,13 @@
                     <a href="/crew">
                         <button class="{{ request()->is('crew') ? 'active' : '' }} btn-nav">Semua Tim</button>
                 </a>
-                </li> --}}
-                {{-- <li>
+                </li>
+                <li>
                     <a href="/shop">
                         <button class="{{ request()->is('shop') ? 'active' : '' }} btn-nav">Belanja</button>
                 </a>
-                </li> --}}
-                {{-- <li>
+                </li>
+                <li>
                     <a href="/cart">
                         <button class="{{ request()->is('cart') ? 'active' : '' }} btn-nav">
                 <i class='bx bx-cart cart-icon'></i>
@@ -151,7 +146,7 @@
                             <button class="list-content pesanan-content">Pesanan Belanja</button>
                         </a>
                     </div>
-                </li> --}}
+                </li>  --}}
                 @if(auth()->check())
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
@@ -174,7 +169,6 @@
     </header>
 
     @yield('content')
-
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="{{ asset('asset_user/assets/js/script.js')}}"></script>
     <script src="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js')}}"></script>

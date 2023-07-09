@@ -1,5 +1,5 @@
 @extends('layouts.user')
-@section('title', 'Cart')
+@section('title','Cart')
 @section('content')
 <div class="container-belanja cartitems">
     <div class="main-keranjang">
@@ -66,5 +66,7 @@
             @endif
         </div>
     </div>
-    @include('layouts.script')
-    @endsection
+</div>
+
+@include('layouts.script')
+@endsection

@@ -26,6 +26,12 @@
         </div>
     </div>
 </div>
+    @if (Session::has('status-success'))
+    <script>
+        swal("Message")
+    </script>
+    @endif
+
     <form action="checkout-tiket-status" id="form-pesan-tiket" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="json" id="json_callback">
@@ -33,36 +39,47 @@
         <input type="hidden" name="jumlah" id="jumlah" value="{{ $jumlah }}">
         <input type="hidden" name="tiket_id" id="tiket_id" value="{{ $tiket_id }}">
     </form>
+
     @include('layouts.script')
     <script>
     $(document).ready(function () {
         $(document).on('click', '.pay-button', function (e) {
-
             // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
             window.snap.pay('{{$snapToken}}', {
                 onSuccess: function (result) {
-                    Swal.fire(
-                        'Success',
-                        result.status,
-                        'success',
-                    )
-                    console.log(result);
+                    Swal.fire({
+                    icon: 'Success',
+                    title: 'Success',
+                    text: 'Pembayaran Berhasil',
+                    timer: 1500,
+                    });
                     send_order_tiket(result);
                 },
                 onPending: function (result) {
-                    alert("wating your payment!");
-                    console.log(result);
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Oops...',
+                    text: 'Pembayaran Tertunda',
+                    timer: 1500,
+                    });
                     send_order_tiket(result);
                 },
                 onError: function (result) {
-                    /* You may add your own implementation here */
-                    alert("payment failed!");
-                    console.log(result);
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Pembayaran Error',
+                    timer: 1500,
+                    });
                     send_order_tiket(result);
                 },
                 onClose: function () {
-                    /* You may add your own implementation here */
-                    alert('you closed the popup without finishing the payment');
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Pembayaran Di Batalkan',
+                    timer: 1500,
+                    });
                 }
             })
             function send_order_tiket(result){

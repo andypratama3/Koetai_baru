@@ -16,17 +16,21 @@
                         <div class="nama-content">
                             <p>{{ $order->nama }}</p>
                         </div>
+                        {{-- <div class="nama-content">
+                            <h4>Kategori Tiket : </h4>
+                            <p style="margin-left: 10px;"> {{ $order->tiket->kategori }}</p>
+                        </div> --}}
                         <div class="jumlah">
                             <input class="no qty-input-tiket" type="text" name="quantity " value="{{ $order->jumlah }}"
                                 readonly>
                         </div>
-                        <h5 class="total-harga"><span>Total :</span> Rp. {{ $order->total }}</h5>
-                        <h5 class="status"><span class="badge primary">{{ $order->status }}</span></h5>
+                        <h5 class="total-harga"><span>Total :</span> Rp. {{ $order->gross_amount }}</h5>
+
+                        <h5 class="status">Status Pembayaran    : {{ $order->status }}</h5>
 
                         <div class="container-btn btn-detail">
                         <div class="container-btn">
-                            @if ($order->status == 'Paid')
-
+                            @if ($order->status == 'settlement')
                             <button type="button" class="bttn btn-kuning" data-bs-toggle="modal"
                                 data-bs-target="#detail_tiket_lauch" id="detail_tiket" data-id="<?=$order->id?>"
                                 data-nama="<?=$order->nama ?>" data-total="<?=$order->total ?>"

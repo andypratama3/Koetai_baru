@@ -17,7 +17,9 @@
                             @foreach ($events as $event)
                             <!-- Slides -->
                             <div class="swiper-slide">
-                                <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="" class="img-carsoul">
+                                <a href="{{ route('detail.event.show',$event->slug) }}">
+                                    <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="" class="img-carsoul">
+                                </a>
                             </div>
                             @endforeach
                         </div>

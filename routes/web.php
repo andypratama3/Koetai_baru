@@ -33,6 +33,8 @@ use App\Http\Controllers\Dashboard\OrderanShopController;
 Route::get('/', WelcomeController::class)->name('index');
 Route::get('shop', [ShopController::class, 'index']);
 
+Route::get('event/{slug}', [WelcomeController::class, 'show'])->name('detail.event.show');
+
 Route::get('crew', [CrewController::class, 'index']);
 
 Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
