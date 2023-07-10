@@ -36,7 +36,12 @@
                         <button class="{{ request()->is('/') ? 'active' : '' }} btn-nav">Beranda</button>
                     </a>
                 </li>
-                {{-- <li>
+                <li>
+                    <a href="/tentang">
+                        <button class="{{ request()->is('tentang') ? 'active' : '' }} btn-nav">Tentang</button>
+                    </a>
+                </li>
+                <li>
                     <a href="/crew">
                         <button class="{{ request()->is('crew') ? 'active' : '' }} btn-nav">Semua Tim</button>
                 </a>
@@ -54,7 +59,7 @@
                 <span class="badge badge-pill cart-count">0</span>
                 </button>
                 </a>
-                </li> --}}
+                </li>
                 <li>
                     <a href="/tiket">
                         <button class="{{ request()->is('tiket') ? 'active' : '' }} btn-pilih btn-nav" id="btn-tiket">Tiket</button>
@@ -167,7 +172,6 @@
             </div>
         </div>
     </header>
-
     @yield('content')
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="{{ asset('asset_user/assets/js/script.js')}}"></script>

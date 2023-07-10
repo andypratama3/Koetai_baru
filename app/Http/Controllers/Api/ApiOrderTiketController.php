@@ -24,7 +24,7 @@ class ApiOrderTiketController extends Controller
         }
         $orderTiket->update(['status' => $json->transaction_status]);
 
-        
+
 
 
     }

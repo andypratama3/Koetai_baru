@@ -11,11 +11,13 @@
                 @foreach ($carts as $cart)
                 @php $total = 0; @endphp
                 <div class="list-produk produk_data">
-                    <div class="produk">
+                    <div class="img-content">
                         <div class="rectangle-list">
                             <img src="{{ asset('asset_user/assets/img/rectangle-list.png') }}" alt="" srcset="">
                         </div>
+                        {{-- <div class="produk-img"> --}}
                         <img src="{{ asset('storage/img/produk/'.$cart->produks->foto) }}" alt="">
+                        {{-- </div> --}}
                         <p>{{ $cart->produks->nama }}</p>
                     </div>
                     <div class="ukuran">

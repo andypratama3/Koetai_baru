@@ -31,6 +31,7 @@ use App\Http\Controllers\Dashboard\OrderanShopController;
 */
 
 Route::get('/', WelcomeController::class)->name('index');
+Route::get('tentang', [WelcomeController::class,'about']);
 Route::get('shop', [ShopController::class, 'index']);
 
 Route::get('event/{slug}', [WelcomeController::class, 'show'])->name('detail.event.show');
@@ -46,8 +47,6 @@ Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () 
     Route::get('orderan-tiket', [OrderTiketController::class, 'orderan'])->name('orderan.tiket');
     Route::post('delete-pesanan-tiket', [OrderTiketController::class, 'destroy']);
     //cart
-
-
     Route::resource('cart', CartController::class, ['names' => 'cart']);
     Route::post('add-to-cart', [CartController::class, 'addtocart']);
     Route::post('update-cart', [CartController::class, 'updatecart']);

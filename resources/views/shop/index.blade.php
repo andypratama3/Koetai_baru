@@ -1,6 +1,7 @@
 @extends('layouts.user')
 @section('title', 'Shop')
 @section('content')
+
 <div class="container-belanja produk_data">
     <nav class="nav-belanja">
         <ul id="filter">

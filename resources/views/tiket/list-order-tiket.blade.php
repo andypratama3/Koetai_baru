@@ -16,10 +16,6 @@
                         <div class="nama-content">
                             <p>{{ $order->nama }}</p>
                         </div>
-                        {{-- <div class="nama-content">
-                            <h4>Kategori Tiket : </h4>
-                            <p style="margin-left: 10px;"> {{ $order->tiket->kategori }}</p>
-                        </div> --}}
                         <div class="jumlah">
                             <input class="no qty-input-tiket" type="text" name="quantity " value="{{ $order->jumlah }}"
                                 readonly>
@@ -39,6 +35,7 @@
                                 Detail Tiket
                             </button>
                             @else
+                            
                             @endif
                         </div>
                         </div>

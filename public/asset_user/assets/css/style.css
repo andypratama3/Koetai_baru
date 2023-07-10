@@ -467,7 +467,7 @@ main .swiper-scrollbar {
     width: 100%;
     margin-top: 70px;
     padding-bottom: 30px;
-    display: none;
+
     justify-content: center;
     box-sizing: border-box;
 }
@@ -2160,7 +2160,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 
     header .nav-bar .nav-bar {
         display: none;
-    } 
+    }
     header .nav-bar ul li button {
         font-size: 7px;
 

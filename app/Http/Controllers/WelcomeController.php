@@ -28,4 +28,10 @@ class WelcomeController extends Controller
         return view('detail-event', compact('event','tikets'));
     }
 
+    public function about(){
+
+        
+        return view('about');
+    }
+
 }
