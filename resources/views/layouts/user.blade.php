@@ -41,11 +41,11 @@
                         <button class="{{ request()->is('tentang') ? 'active' : '' }} btn-nav">Tentang</button>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="/crew">
                         <button class="{{ request()->is('crew') ? 'active' : '' }} btn-nav">Semua Tim</button>
                 </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="/shop">
                         <button class="{{ request()->is('shop') ? 'active' : '' }} btn-nav">Belanja</button>

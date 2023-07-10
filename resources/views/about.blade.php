@@ -1,8 +1,49 @@
 @extends('layouts.user')
 @section('title', 'Tentang')
 @section('content')
-<div class="container">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut id ex sint ullam vero adipisci ipsa deleniti molestias inventore. Odio at soluta consectetur, saepe pariatur doloribus repellendus repellat nihil vel!</p>
-</div>
+<main>
+    <div class="container-semtim">
+        <div class="isi-semtim">
+            <h1 class="judul-semtim">Tentang Kami</h1>
+            <div class="container-anggota">
+                <div class="pendahuluan">
+                    <h2 class="text-center" style="color: white;">Pendahuluan</h2>
+                <p style="display:flex; color: white; font-size: 14px; text-center:center; align-items:center  justify-content: center;">
+                    melihat perkembangan perpindahan Ibu Kota Negara (IKN) yang kemudian begitu
+                    signifikan dengan percepatan pembangunan infrastruktur, teknologi, dll dalam hal ini pemuda juga turut serta
+                    dalam mengambil peran untuk membangun daerah melalui pembangunan kualitas SDM dan kreatifitas
+                    kepemudaan, sebagai penyeimbang perekonomian khususnya di Kecamatan Anggana, pada umumnya
+
+                    Kabupaten Kutai Kartanegara, Kalimantan Timur. Selain itu, akan berdampak ke beberapa sektor dari SDM,
+                    Budaya, Ekonomi, dan pendidikan. Tentunya peran pemuda juga dibutuhkan dalam pengembangan dan
+                    melestarikan budaya, membantu pemerintah dengan mengendalikan ekonomi yaitu dengan percepatan UKM
+                    Kreatif dan adaptif.
+
+                    Banyak masukan dan evaluasi mulai dari internal hingga eksternal untuk event Koetai Mahkota
+                    Sounline Volume 1 yang akan kami jadikan sebagai pengalaman, pelajaran, perbaikan, dan perkembangan
+                    untuk lebih baik lagi pada event selanjutnya. Maka dari itu, dengan landasan tersebut kami dari Anggana Project
+                    yang terdiri dari pemuda-pemuda kreatif yang ada di Kecamatan Anggana akan menggelar kembali eyent.
+
+                    tersebut dengan niat dan visi misi yang Sama untuk mengangkat lagi nama Kecamatan Anggana dalam bidang.
+                    musik diruang lingkup yang lebih luas dan lebih eksis di tingkat nasional.
+                    </div>
+                </div>
+                    <div class="tujuan">
+                        <h2 class="text-center" style="color: white;">TUJUAN</h2>
+                        <p style=" display:flex; color: white; font-size: 14px; text-center:center; align-items:center  justify-content: center;">
+                    Dengan momentum ini yang dimana Kecamatan Anggana dalam keadaan yang pasif di kalangan muda,
+
+                    kami dari Anggana Project hadir untuk mengembalikan semangat sertan hasrat pemuda yang ada di Kecamatan
+                    Anggana dengan mengadakan sebuah kegiatan ber-tema-kan musik dan seni budaya tradisional. Sebagai titik
+                    awal bangkitnya semangat pemuda yang ada di Kecamatan Anggana yang tentunya dalam kegiatan ini terdapat
+                    unsur budaya yang menjadi media penyalur dalam memperkenalkan dan mengembangkan terkait dengan
+
+                    kearifan lokal dan melestarikan budaya lokal yang ada di Kecamatan Anggana.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
 
 @endsection
