@@ -22,7 +22,7 @@ class ApiOrderTiketController extends Controller
             $tiket->stok -= $orderTiket->jumlah;
             $tiket->save();
         }
-        $orderTiket->update(['status' => $json->transaction_status]);
+        $orderTiket->update(['status' => 'Berhasil']);
 
 
 
