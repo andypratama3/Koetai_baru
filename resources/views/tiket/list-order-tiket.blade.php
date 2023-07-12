@@ -21,12 +21,10 @@
                                 readonly>
                         </div>
                         <h5 class="total-harga"><span>Total :</span> Rp. {{ $order->gross_amount }}</h5>
-
-                        <h5 class="status">Status Pembayaran    : {{ $order->status }}</h5>
-
+                         <h5 class="status">Status Pembayaran    : <span style="margin-left:10px;" class="badge {{ $order->status == 'pending' ? 'bg-warning' : 'bg-success' }} text-dark">{{ $order->status }}</span></h5>
                         <div class="container-btn btn-detail">
                         <div class="container-btn">
-                            @if ($order->status == 'settlement')
+                            @if ($order->status == 'Berhasil')
                             <button type="button" class="bttn btn-kuning" data-bs-toggle="modal"
                                 data-bs-target="#detail_tiket_lauch" id="detail_tiket" data-id="<?=$order->id?>"
                                 data-nama="<?=$order->nama ?>" data-total="<?=$order->total ?>"
@@ -35,7 +33,7 @@
                                 Detail Tiket
                             </button>
                             @else
-                            
+
                             @endif
                         </div>
                         </div>
@@ -43,7 +41,7 @@
                     <hr>
                     @endforeach
                     <div class="total d-flex justify-content-end">
-                        <h5>Total Semua Rp. {{ $order->total }}</h5>
+                        <a href="{{ route('index') }}"><button class="bttn btn-kuning">Kembali</button></a>
                     </div>
                 </div>
                 @else

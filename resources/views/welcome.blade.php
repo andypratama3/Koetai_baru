@@ -1,7 +1,6 @@
 @extends('layouts.user')
 @section('title','Home')
 @section('content')
-
 <main>
     <div class="container-beranda">
         <div class="container-kiri">

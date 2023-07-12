@@ -38,7 +38,7 @@
                         <td>{{ $order->order_id}}</td>
                         <td>{{ $order->gross_amount}}</td>
                         <td><span class="badge {{ $order->status == 'pending' ? 'bg-danger' : 'bg-success' }} text-dark">{{ $order->status }}</span></td>
-                        {{-- <td>{{ $order->status}}</td> --}}
+                        
                         <td>
                             <a class="btn btn-primary" href="{{ route('dashboard.order.show',$order->order_id) }}"><i class="bi bi-eye"></i></a>
                             <a href="#" data-id="{{ $order->order_id }}" class="btn btn-danger delete" title="Hapus">
