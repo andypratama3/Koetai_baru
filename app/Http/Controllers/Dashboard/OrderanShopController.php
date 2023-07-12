@@ -15,8 +15,8 @@ class OrderanShopController extends Controller
         return view('dashboard.orderan_shop.orderan', compact('ordersShop'));
     }
 
-    public function show(){
 
+    public function show(){
         return view('dashboard.orderan_shop.show');
     }
 }

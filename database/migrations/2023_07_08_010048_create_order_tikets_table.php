@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('payment_code')->nullable();
             $table->string('gross_amount');
             $table->string('pdf_url')->nullable();
+            $table->string('slug');
             $table->timestamps();
         });
     }

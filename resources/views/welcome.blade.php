@@ -17,7 +17,7 @@
                             @foreach ($events as $event)
                             <!-- Slides -->
                             <div class="swiper-slide">
-                                <a href="{{ route('detail.event.show',$event->slug) }}">
+                                <a href="{{ route('detail.event.show',$event->slug) }}" id="button-info">
                                     <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="" class="img-carsoul">
                                 </a>
                             </div>
@@ -36,21 +36,16 @@
 <section class="sponsor">
     <div class="container">
         <h1>SPONSOR</h1>
-
+        @foreach ($sponsors as $spons)
         <div class="sponsor-utama">
-            <img src="{{ asset('asset_user/assets/img/sponsor1.png') }}" alt="" srcset="">
+            <img src="{{ asset('storage/img/sponsor/'.$spons->logo) }}" alt="" srcset="">
         </div>
         <div class="sponsor-lainnya">
-            @foreach ($sponsors as $spons)
             <img src="{{ asset('storage/img/sponsor/'.$spons->logo) }}" alt="" srcset="">
-            @endforeach
         </div>
-
+        @endforeach
     </div>
 </section>
-
-
-
 @include('layouts.script')
 
 @endsection

@@ -45,7 +45,7 @@
                                     placeholder="Jumlah">
                                 <br>
                                 <div class="tombol-pesantik">
-                                    <button type="submit" class="btn-pesan pesan-tiket pay-button">Pesan Tiket</button>
+                                    <button type="submit" class="btn-pesan pay-button">Pesan Tiket</button>
                                 </div>
                             </div>
                         </div>

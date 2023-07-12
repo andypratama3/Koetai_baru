@@ -164,7 +164,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.kategori.*') ? '' : 'collapsed' }}"
                     href="{{ route('dashboard.kategori.index') }}">
-                    <i class=" ri-product-hunt-fill"></i>
+                    <i class="ri-menu-add-fill"></i>
                     <span>Kategori</span>
                 </a>
             </li>
@@ -172,7 +172,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.produk.*') ? '' : 'collapsed' }}"
                     href="{{ route('dashboard.produk.index') }}">
-                    <i class=" ri-product-hunt-fill"></i>
+                    <i class="ri-store-line"></i>
                     <span>Produk</span>
                 </a>
             </li>
@@ -180,7 +180,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.ordershop.*') ? '' : 'collapsed' }}"
                     href="{{ route('dashboard.ordershop.index') }}">
-                    <i class=" ri-product-hunt-fill"></i>
+                    <i class="ri-contacts-book-2-line"></i>
                     <span>Orderan Produk</span>
                 </a>
             </li>
@@ -197,7 +197,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('dashboard.order.*') ? '' : 'collapsed' }}"
                     href="{{ route('dashboard.order.index') }}">
-                    <i class="ri-ticket-2-fill"></i>
+                    <i class="ri-contacts-book-2-line"></i>
                     <span>Orderan tiket</span>
                 </a>
             </li>

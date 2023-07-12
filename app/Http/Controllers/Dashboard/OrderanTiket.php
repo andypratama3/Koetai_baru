@@ -14,19 +14,21 @@ class OrderanTiket extends Controller
     public function index(){
 
         $limit = 15;
-        $orderan = OrderTiket::select(['nama','tiket_id','jumlah','total','status','slug'])->latest()->paginate($limit);
+        $orderan = OrderTiket::select(['nama','user_id','tiket_id','email','jumlah','order_id','status','transaction_id','payment_type','payment_code','gross_amount','pdf_url'])->latest()->paginate($limit);
         $count = OrderTiket::all()->count();
         $no = $limit * ($orderan->currentPage() - 1);
         return view('dashboard.orderan_tiket.orderan', compact('orderan','no','count'));
     }
-    public function show($slug){
+    public function show($order_id){
 
-        $orderan = OrderTiket::where('slug',$slug)->select(['id','user_id','nama','tiket_id','jumlah','total','status','slug'])->firstOrFail();
+        $orderan = OrderTiket::where('order_id',$order_id)->select(['nama','user_id','tiket_id','email','jumlah','order_id','status','transaction_id','payment_type','payment_code','gross_amount','pdf_url'])->firstOrFail();
+
+
         return view('dashboard.orderan_tiket.show',compact('orderan'));
     }
-    public function destroy($slug, DeleteOrderanAction $deleteOrderanAction){
+    public function destroy($order_id, DeleteOrderanAction $deleteOrderanAction){
 
-        $deleteOrderanAction->execute($slug);
+        $deleteOrderanAction->execute($order_id);
         return redirect()->route('dashboard.order.index')->with('success-delete','Orderan Berhasil Di Hapus!');
     }
     public function export(){

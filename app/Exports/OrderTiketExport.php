@@ -17,6 +17,6 @@ class OrderTiketExport implements FromCollection, WithHeadings
     }
 
     public function headings(): array{
-        return ["Order ID","User_ID","Nama","Tiket","Jumlah","Total","Status","SLug","Tangga Di Buat","Tanggal Di Update"];
+        return ["id","nama","user_id","tiket_id","email","jumlah","order_id","status","transaction_id","payment_type","payment_code","gross_amount","pdf_url","Tangga Di Buat","Tanggal Di Update"];
     }
 }

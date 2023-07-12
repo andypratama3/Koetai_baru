@@ -116,11 +116,11 @@
                         <button class="{{ request()->is('/login') ? 'active' : '' }} list-content">Beranda</button>
                     </a>
                 </li>
-                {{-- <li>
-                    <a href="/crew">
-                        <button class="{{ request()->is('/crew') ? 'active' : '' }} list-content">Semua Tim</button>
+                <li>
+                    <a href="/tentang">
+                        <button class="{{ request()->is('tentang') ? 'active' : '' }} list-content">Tentang</button>
                 </a>
-                </li> --}}
+                </li>
                 <li>
                     <a href="/shop">
                         <button class="{{ request()->is('/shop') ? 'active' : '' }} list-content">Belanja</button>

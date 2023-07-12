@@ -7,16 +7,29 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Detail Orderan</h5>              
+                <h5 class="card-title">Detail Orderan</h5>
                 <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">User Id</label>
                     <div class="col-sm-10">
-                        {{ $orderan->user_id }}
+                        {{ $orderan->order_id }}
                     </div>
-                </div> <div class="row mb-3">
+                </div>
+                <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
                         {{ $orderan->nama }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        {{ $orderan->email }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Payment Type</label>
+                    <div class="col-sm-10">
+                        {{ $orderan->payment_type }}
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -34,7 +47,7 @@
                 <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Total</label>
                     <div class="col-sm-10">
-                        Rp.{{ $orderan->total }}
+                        Rp.{{ $orderan->gross_amount }}
                     </div>
                 </div>
                 <div class="row mb-3">

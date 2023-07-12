@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Auth;
 
 class DeleteOrderanAction
 {
-    public function execute($slug)
+    public function execute($order_id)
     {
-        $orderan = OrderTiket::where('slug', $slug)->firstOrFail();
+        $orderan = OrderTiket::where('order_id', $order_id)->firstOrFail();
         $orderan->delete();
     }
 }
