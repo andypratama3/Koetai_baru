@@ -24,8 +24,7 @@
 </head>
 
 <body>
-    <div class="blur-kuning"></div>
-    <img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="logo-kms-kuning">
+    <div class="main-background"></div>
 
     <header>
         <nav class="nav-bar">
@@ -49,25 +48,27 @@
                 <li>
                     <a href="/shop">
                         <button class="{{ request()->is('shop') ? 'active' : '' }} btn-nav">Belanja</button>
-                </a>
+                    </a>
                 </li>
                 <li>
                     <a href="/cart">
                         <button class="{{ request()->is('cart') ? 'active' : '' }} btn-nav">
-                <i class='bx bx-cart cart-icon'></i>
-                <p>Keranjang</p>
-                <span class="badge badge-pill cart-count">0</span>
-                </button>
-                </a>
+                            <i class='bx bx-cart cart-icon'></i>
+                            <p>Keranjang</p>
+                            <span class="badge badge-pill cart-count">0</span>
+                        </button>
+                    </a>
                 </li>
                 <li>
                     <a href="/tiket">
-                        <button class="{{ request()->is('tiket') ? 'active' : '' }} btn-pilih btn-nav" id="btn-tiket">Tiket</button>
+                        <button class="{{ request()->is('tiket') ? 'active' : '' }} btn-pilih btn-nav"
+                            id="btn-tiket">Tiket</button>
                     </a>
                 </li>
                 <li>
                     <a href="/orderan-tiket">
-                        <button class="{{ request()->is('orderan-tiket') ? 'active' : '' }} btn-nav">Pesanan Tiket</button>
+                        <button class="{{ request()->is('orderan-tiket') ? 'active' : '' }} btn-nav">Pesanan
+                            Tiket</button>
                     </a>
                 </li>
                 {{-- <li class="dropdown-pesanan">
@@ -119,17 +120,17 @@
                 <li>
                     <a href="/tentang">
                         <button class="{{ request()->is('tentang') ? 'active' : '' }} list-content">Tentang</button>
-                </a>
+                    </a>
                 </li>
                 <li>
                     <a href="/shop">
                         <button class="{{ request()->is('/shop') ? 'active' : '' }} list-content">Belanja</button>
-                </a>
+                    </a>
                 </li>
                 <li>
                     <a href="/cart">
                         <button class="{{ request()->is('/cart') ? 'active' : '' }} list-content">Keranjang</button>
-                </a>
+                    </a>
                 </li>
                 <li>
                     <a href="/tiket">

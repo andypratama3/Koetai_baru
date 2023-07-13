@@ -27,7 +27,6 @@
                     </div>
                 </div>
             </div>
-            <h3>CALL FOR SPONSORED <br> 08XXXXXXXXXX</h3>
         </div>
     </div>
 </main>

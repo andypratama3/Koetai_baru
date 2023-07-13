@@ -48,8 +48,8 @@
                 </div>
 
                 <div class="form-btn">
-                    <button type="submit" class="btn-login">Register</button>
-                    <a type="button" class="btn-register" href="{{ route('login') }}" style="text-decoration: none;">Masuk</a>
+                    <button type="submit" class="btn-register">Daftar</button>
+                    <a type="button" class="btn-login" href="{{ route('login') }}" style="text-decoration: none;">Masuk</a>
                 </div>
                 </form>
 
