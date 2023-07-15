@@ -20,8 +20,8 @@
                                     <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="" class="img-carsoul">
                                 </a>
                                 <div class="hover-content">
-                                    <h1>Title</h1>
-                                    <p>Lorem ipsum dolor sit amet.</p>
+                                    <h1>{{ $event->nama }}</h1>
+                                    <a class="btn btn-primary" href="{{ route('detail.event.show',$event->slug) }}">Selengkapnya</a>
                                 </div>
                             </div>
                             @endforeach
@@ -38,12 +38,14 @@
 <section class="sponsor">
     <div class="container">
         <h1>SPONSOR</h1>
-        @foreach ($sponsors as $spons)
+        @foreach ($sponsor as $spons)
         <div class="sponsor-utama">
             <img src="{{ asset('storage/img/sponsor/'.$spons->logo) }}" alt="" srcset="">
-        </div>
-        <div class="sponsor-lainnya">
+          @if ($spons->nama != 'Pt Bara Kumala Sakti')
+          @continue
+          <div class="sponsor-lainnya">
             <img src="{{ asset('storage/img/sponsor/'.$spons->logo) }}" alt="" srcset="">
+            @endif
         </div>
         @endforeach
     </div>

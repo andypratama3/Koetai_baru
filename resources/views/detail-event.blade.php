@@ -11,11 +11,7 @@
                     <img src="{{ asset('asset_user/assets/img/kms-vol2.png')}}" alt="">
                 </div>
                 <div class="selected-carousel">
-<<<<<<< HEAD
                     <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="">
-=======
-                    <img src="{{ asset("asset_user/assets/img/never.jpeg")}}" alt="" class="carousel-content">
->>>>>>> 80fe0687529a91c45ad7f30a915d7991ab8f395d
                 </div>
                 <div class="content-detail">
                     <div class="datetime">
