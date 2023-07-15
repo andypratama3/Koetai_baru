@@ -13,9 +13,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
 </head>
-
-<div class="blur-kuning"></div>
-<img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="logo-kms-kuning">
+<div class="main-background"></div>
 <main>
     <div class="container-login">
         <div class="container-kiri">
