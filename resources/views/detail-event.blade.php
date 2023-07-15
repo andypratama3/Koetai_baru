@@ -40,7 +40,7 @@
                     <img src="{{ asset('asset_user/assets/img/kms-vol2.png')}}" alt="">
                 </div>
                 <div class="selected-carousel">
-
+                    <img src="{{ asset("asset_user/assets/img/never.jpeg")}}" alt="" class="carousel-content">
                 </div>
                 <div class="content-detail">
                     <div class="datetime">

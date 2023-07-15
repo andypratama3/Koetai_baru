@@ -19,6 +19,10 @@
                                 <a href="{{ route('detail.event.show',$event->slug) }}" id="button-info">
                                     <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="" class="img-carsoul">
                                 </a>
+                                <div class="hover-content">
+                                    <h1>Title</h1>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
                             </div>
                             @endforeach
                         </div>
