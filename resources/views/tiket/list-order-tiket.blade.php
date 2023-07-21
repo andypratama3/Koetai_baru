@@ -32,8 +32,8 @@
                                 data-foto="<?=$order->tiket->foto ?>">
                                 Detail Tiket
                             </button>
-                            @else
-
+                            @else  
+                            {{-- <button class="bttn btn-kuning btn-bayar pay-button">Bayar</button> --}}
                             @endif
                         </div>
                         </div>

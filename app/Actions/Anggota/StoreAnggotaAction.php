@@ -11,6 +11,7 @@ class StoreAnggotaAction
     public function execute(Request $request)
     {
         $anggota = new Anggota();
+        
         $anggota->nama = $request->nama;
         $anggota->devisi = $request->devisi;
         $anggota->instagram = $request->instagram;

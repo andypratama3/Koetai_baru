@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CrewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\OrderTiketController;
 use App\Http\Controllers\Dashboard\OrderanTiket;
 use App\Http\Controllers\Dashboard\UserController;
@@ -34,9 +35,12 @@ Route::get('/', WelcomeController::class)->name('index');
 Route::get('tentang', [WelcomeController::class,'about']);
 Route::get('shop', [ShopController::class, 'index']);
 
-Route::get('event/{slug}', [WelcomeController::class, 'show'])->name('detail.event.show');
+Route::get('event/{slug}', [BeritaController::class, 'show'])->name('detail.event.show');
 
 Route::get('crew', [CrewController::class, 'index']);
+
+
+
 
 Route::group(['prefix' => '/','middleware' => ['auth','verified']], function () {
     //tiket
@@ -68,7 +72,6 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth', 'admin: 1','verif
     Route::resource('talent', TalentController::class, ['names' => 'dashboard.talent']);
     Route::resource('event', EventController::class, ['names' => 'dashboard.event']);
     Route::resource('anggota', AnggotaController::class, ['names' => 'dashboard.anggota']);
-    Route::resource('sponsor', SponsorController::class, ['names' => 'dashboard.sponsor']);
     Route::resource('kategori', KategoriController::class, ['names' => 'dashboard.kategori']);
     Route::resource('produk', ProdukController::class, ['names' => 'dashboard.produk']);
     Route::resource('tiket', TiketController::class, ['names' => 'dashboard.tiket']);
@@ -76,6 +79,13 @@ Route::group(['prefix' => 'dashboard','middleware' => ['auth', 'admin: 1','verif
     Route::get('order-export', [OrderanTiket::class, 'export'])->name('dashboard.order.export');
     Route::resource('user', UserController::class, ['names' => 'dashboard.user']);
     Route::resource('ordershop', OrderanShopController::class, ['names' => 'dashboard.ordershop']);
+    Route::resource('sponsor', SponsorController::class, ['names' => 'dashboard.sponsor']);
+
+
+
+
+
+
 
 
 });

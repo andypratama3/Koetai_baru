@@ -34,20 +34,25 @@
         </div>
     </div>
 </main>
-
 <section class="sponsor">
     <div class="container">
         <h1>SPONSOR</h1>
-        @foreach ($sponsor as $spons)
-        <div class="sponsor-utama">
-            <img src="{{ asset('storage/img/sponsor/'.$spons->logo) }}" alt="" srcset="">
-          @if ($spons->nama != 'Pt Bara Kumala Sakti')
-          @continue
-          <div class="sponsor-lainnya">
-            <img src="{{ asset('storage/img/sponsor/'.$spons->logo) }}" alt="" srcset="">
-            @endif
-        </div>
-        @endforeach
+        {{-- @foreach ($sponsors as $spons) --}}
+            <div class="sponsor-utama">
+                @foreach ($sponsors as $sponsor)
+                @if ($sponsor->nama == 'Pt Bara Kumala Sakti')
+                <img src="{{ asset('storage/img/sponsor/' .$sponsor->logo) }}" alt="">
+                @endif
+                @endforeach
+            </div>
+            <div class="sponsor-lainnya">
+                @foreach ($sponsors as $sponsor)
+                @if ($sponsor->nama != 'Pt Bara Kumala Sakti')
+                <img src="{{ asset('storage/img/sponsor/' .$sponsor->logo) }}" alt="">
+                @endif
+                @endforeach
+            </div>
+        {{-- @endforeach --}}
     </div>
 </section>
 @include('layouts.script')

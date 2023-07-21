@@ -41,7 +41,7 @@
         window.snap.pay('{{$snapToken}}', {
             onSuccess: function (result) {
                 Swal.fire({
-                icon: 'Success',
+                icon: 'success',
                 title: 'Success',
                 text: 'Pembayaran Berhasil',
                 timer: 1500,

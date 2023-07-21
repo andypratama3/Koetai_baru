@@ -2022,7 +2022,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .container-semtim .isi-semtim .isinya .selected-carousel {
-    border: 2px red solid;
     position: relative;
     width: 80%;
     max-width: 100%;

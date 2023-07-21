@@ -82,21 +82,6 @@ class OrderTiketController extends Controller
         return view('tiket.list-order-tiket', compact('orders'));
     }
 
-    // public function callback_status(Request $request){
-    //     $serverKey = config('midtrans.server_Key');
-    //     $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
-    //     if($hashed == $request->signature_key){
-    //         if($request->transaction_status == "capture"){
-    //             $order->update(['status' => 'Paid']);
-    //             $order = OrderTiket::find($request->order_id);
-    //             $stok = Tiket::find($order->tiket_id);
-    //             $stok->stok = $stok->stok - $order->jumlah;
-    //             $stok->update();
-    //         }
-    //     }
-
-    // }
-
     public function destroy(Request $request){
         if(Auth::check())
         {
