@@ -73,8 +73,6 @@
             </div>
         {{-- @endforeach --}}
     </div>
-    
-    <h2>Note: Untuk Sponsor Masih Dalam Perbaikan Penataan Di Mobile</h2>
 </section>
 
 @include('layouts.script')

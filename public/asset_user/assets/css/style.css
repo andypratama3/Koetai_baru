@@ -2050,13 +2050,13 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     display: inline-block;
     text-align: center;
     width: 100%;
-    height: auto;
+    height: 40%;
     padding: 0;
 }
 
 .sponsor .container .sponsor-lainnya img {
     /* border: 2px green solid; */
-    max-width: 150px;
+    max-width: 18%;
     margin: 0 15px 0;
     object-fit: contain;
     aspect-ratio: 3/2;
@@ -2357,11 +2357,11 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
         margin: 0 auto;
         min-width: 45px;
     }
-    
+
     .container-pesanan-tiket .main-pesanan-tiket .isi-pesanan-tiket .container-isi .isinya .total .btn-bayar {
         margin: 0;
     }
-    
+
     .sponsor .container img {
         filter: grayscale(100%);
     }
