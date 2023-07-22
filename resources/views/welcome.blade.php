@@ -12,26 +12,45 @@
             <div class="carousel-swiper">
                 <div class="carouselnya">
                     <div class="swiper">
-                        <div class="swiper-wrapper">
+                        {{-- <div class="swiper-wrapper">
                             @foreach ($events as $event)
                             <!-- Slides -->
                             <div class="swiper-slide">
-                                <a href="{{ route('detail.event.show',$event->slug) }}">
-                                    <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="" class="img-carsoul">
-                                </a>
-                                <div class="hover-content">
-                                    <h1>{{ $event->nama }}</h1>
-                                    <a class="btn btn-primary" href="{{ route('detail.event.show',$event->slug) }}">Selengkapnya</a>
-                                </div>
-                            </div>
-                            @endforeach
+                                <a href="{{ route('detail.event.show',$event->slug) }}" id="button-info">
+                        <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="" class="img-carsoul">
+                        </a>
+                        <div class="hover-content">
+                            <h1>{{ $event->nama }}</h1>
+                            <a class="bttn btn-kuning"
+                                href="{{ route('detail.event.show',$event->slug) }}">Selengkapnya</a>
                         </div>
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-scrollbar"></div>
+                        <a class="hover-content" href="{{ route('detail.event.show',$event->slug) }}">
+                            <h1>{{ $event->nama }}</h1>
+                        </a>
                     </div>
+                    @endforeach
+                </div> --}}
+                <div class="swiper-wrapper">
+                    @foreach ($events as $event)
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <a href="{{ route('detail.event.show',$event->slug) }}">
+                            <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="" class="img-carsoul">
+                        </a>
+                        <div class="hover-content">
+                            <h1>{{ $event->nama }}</h1>
+                            <a class="btn btn-primary"
+                                href="{{ route('detail.event.show',$event->slug) }}">Selengkapnya</a>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-scrollbar"></div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 </main>
 <section class="sponsor">
@@ -54,7 +73,10 @@
             </div>
         {{-- @endforeach --}}
     </div>
+    
+    <h2>Note: Untuk Sponsor Masih Dalam Perbaikan Penataan Di Mobile</h2>
 </section>
+
 @include('layouts.script')
 
 @endsection

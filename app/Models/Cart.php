@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Cart extends Model
 {
     use \App\Http\Traits\UsesUuid;
-
     use HasFactory;
+    
     protected $table = 'carts';
     protected $guarded = ['id'];
     protected $fillable = [

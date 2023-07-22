@@ -46,6 +46,7 @@ class CartController extends Controller
         $carts = Cart::where('user_id', Auth::id())->get();
         return view('shop.cart.cart', compact('carts'));
     }
+    
     public function updatecart(Request $request){
         $produk_id = $request->input('prod_id');
         $produk_qty = $request->input('prod_qty');
