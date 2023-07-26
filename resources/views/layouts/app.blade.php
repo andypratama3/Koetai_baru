@@ -108,6 +108,7 @@
                                     <span>Sign Out</span>
                                 </a>
                             </form>
+                            
                         </li>
 
                     </ul><!-- End Profile Dropdown Items -->

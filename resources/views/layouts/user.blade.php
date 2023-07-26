@@ -45,7 +45,7 @@
                         <button class="{{ request()->is('crew') ? 'active' : '' }} btn-nav">Semua Tim</button>
                 </a>
                 </li> --}}
-                <li>
+                {{-- <li>
                     <a href="/shop">
                         <button class="{{ request()->is('shop') ? 'active' : '' }} btn-nav">Belanja</button>
                     </a>
@@ -59,7 +59,7 @@
                         </button>
                     </a>
                 </li>
-                <li>
+                <li> --}}
                     <a href="/tiket">
                         <button class="{{ request()->is('tiket') ? 'active' : '' }} btn-pilih btn-nav"
                             id="btn-tiket">Tiket</button>
