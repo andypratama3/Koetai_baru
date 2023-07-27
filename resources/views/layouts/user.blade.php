@@ -13,7 +13,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
     @stack('css')
-
     <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js"
         data-client-key="{{ config('midtrans.client_Key') }}"></script>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />

@@ -2023,44 +2023,39 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     font-weight: bold;
 }
 
+.sponsor .container img {
+    filter: grayscale(100%);
+}
+
 .sponsor .container .sponsor-utama {
-    /* border: 2px red solid; */
     display: flex;
     justify-content: center;
     margin-top: 30px;
     margin-bottom: 50px;
     padding: 0;
-    width: auto;
+    width: 100%;
     height: auto;
 }
 
 .sponsor .container .sponsor-utama img {
-    /* border: 2px white solid; */
-    max-width: 350px;
+    max-width: 400px;
     height: auto;
 
 }
 
-.sponsor .container img {
-    filter: grayscale(100%);
-}
-
 .sponsor .container .sponsor-lainnya {
-    /* border: 2px white solid; */
     display: inline-block;
     text-align: center;
-    width: 100%;
-    height: 40%;
     padding: 0;
+    width: 100%;
+    height: auto;
 }
 
 .sponsor .container .sponsor-lainnya img {
-    /* border: 2px green solid; */
-    max-width: 18%;
+    max-width: 150px;
     margin: 0 15px 0;
-    object-fit: contain;
-    aspect-ratio: 3/2;
-    /* mix-blend-mode: color-burn; */
+    object-fit: cover;
+    /* aspect-ratio: 3/2; */
 }
 
 .sponsor img:hover {
@@ -2165,12 +2160,11 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     }
 
     .sponsor .container .sponsor-utama img {
-        width: 250px;
+        max-width: 375px;
     }
 
     .sponsor .container .sponsor-lainnya img {
-        width: 75px;
-        height: 40px;
+        max-width: 125px;
     }
 }
 
@@ -2372,17 +2366,11 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     }
 
     .sponsor .container .sponsor-utama img {
-        max-width: 250px;
-    }
-
-    .sponsor .container .sponsor-lainnya {
-        display: block;
-        text-align: center !important;
+        max-width: 350px;
     }
 
     .sponsor .container .sponsor-lainnya img {
-        width: 100%;
-        margin: 10px;
+        max-width: 100px;
     }
 
     .id-tiket {
@@ -2551,13 +2539,18 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     .container-login {
         width: 90%;
 
-        .sponsor .container h1 {
-            font-size: 16px;
-        }
+    }
 
-        .sponsor .container .sponsor-lainnya img {
-            width: 75px;
-        }
+    .sponsor .container h1 {
+        font-size: 16px;
+    }
+
+    .sponsor .container .sponsor-utama img {
+        max-width: 300px;
+    }
+
+    .sponsor .container .sponsor-lainnya img {
+        max-width: 75px;
     }
 
 }

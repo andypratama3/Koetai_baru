@@ -13,6 +13,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
 </head>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 <div class="main-background"></div>
 <main>
     <div class="container-login">

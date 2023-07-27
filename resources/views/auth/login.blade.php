@@ -16,6 +16,10 @@
 
 <body>
     <div class="main-background"></div>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     <main>
         <div class="container-login">
             <div class="container-kiri">
