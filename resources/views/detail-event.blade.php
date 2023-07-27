@@ -11,11 +11,7 @@
                     <img src="{{ asset('asset_user/assets/img/kms-vol2.png')}}" alt="">
                 </div>
                 <div class="selected-carousel">
-<<<<<<< Updated upstream
-                    <img src="{{ asset('storage/img/event/'.$event->foto) }}" alt="">
-=======
                     <img src="{{ asset('storage/img/event/'.$event->foto)}}" alt="" class="carousel-content">
->>>>>>> Stashed changes
                 </div>
                 <div class="content-detail">
                     <div class="datetime">

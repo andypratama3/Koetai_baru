@@ -2052,7 +2052,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .sponsor .container .sponsor-lainnya img {
-    max-width: 150px;
+    max-width: 250px;
     margin: 0 15px 0;
     object-fit: cover;
     /* aspect-ratio: 3/2; */
@@ -2164,7 +2164,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     }
 
     .sponsor .container .sponsor-lainnya img {
-        max-width: 125px;
+        max-width: 225px;
     }
 }
 
@@ -2370,7 +2370,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     }
 
     .sponsor .container .sponsor-lainnya img {
-        max-width: 100px;
+        max-width: 200px;
     }
 
     .id-tiket {
@@ -2550,7 +2550,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     }
 
     .sponsor .container .sponsor-lainnya img {
-        max-width: 75px;
+        max-width: 150px;
     }
 
 }
