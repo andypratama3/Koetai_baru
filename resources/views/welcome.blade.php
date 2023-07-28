@@ -41,14 +41,14 @@
         {{-- @foreach ($sponsors as $spons) --}}
         <div class="sponsor-utama">
             @foreach ($sponsors as $sponsor)
-            @if ($sponsor->nama == 'Pt Bara Kumala Sakti')
+            @if ($sponsor->nama == 'phm')
             <img src="{{ asset('storage/img/sponsor/' .$sponsor->logo) }}" alt="">
             @endif
             @endforeach
         </div>
         <div class="sponsor-lainnya">
             @foreach ($sponsors as $sponsor)
-            @if ($sponsor->nama != 'Pt Bara Kumala Sakti')
+            @if ($sponsor->nama != 'phm')
             <img src="{{ asset('storage/img/sponsor/' .$sponsor->logo) }}" alt="">
             @endif
             @endforeach

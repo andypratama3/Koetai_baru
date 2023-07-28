@@ -8,7 +8,6 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Tambah Talent</h5>
-               
                 <!-- General Form Elements -->
                 <form action="{{ route('dashboard.talent.store') }} " method="POST" enctype="multipart/form-data">
                     @csrf
