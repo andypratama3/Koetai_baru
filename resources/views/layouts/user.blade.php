@@ -44,7 +44,7 @@
                         <button class="{{ request()->is('crew') ? 'active' : '' }} btn-nav">Semua Tim</button>
                 </a>
                 </li> --}}
-                <li>
+                {{-- <li>
                     <a href="/shop">
                         <button class="{{ request()->is('shop') ? 'active' : '' }} btn-nav">Belanja</button>
                     </a>
@@ -57,7 +57,7 @@
                             <span class="badge badge-pill cart-count">0</span>
                         </button>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="/tiket">
                         <button class="{{ request()->is('tiket') ? 'active' : '' }} btn-pilih btn-nav"
@@ -121,7 +121,7 @@
                         <button class="{{ request()->is('tentang') ? 'active' : '' }} list-content">Tentang</button>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="/shop">
                         <button class="{{ request()->is('/shop') ? 'active' : '' }} list-content">Belanja</button>
                     </a>
@@ -131,7 +131,7 @@
                         <button class="{{ request()->is('/cart') ? 'active' : '' }} list-content">Keranjang</button>
                     </a>
                 </li>
-                <li>
+                <li> --}}
                     <a href="/tiket">
                         <button class="list-content" id="btn-tiket">Tiket</button>
                     </a>
