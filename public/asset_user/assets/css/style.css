@@ -1943,7 +1943,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     grid-template-areas:
         "datetime guest action"
         "category guest action";
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: auto 2fr 1fr;
     grid-template-rows: auto 1fr;
     height: auto;
     margin-top: 30px;
@@ -1994,6 +1994,14 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     width: 100%;
 }
 
+.container-semtim .isi-semtim .isinya .content-detail .guest .title-guest{
+    width: auto;
+    background-color: var(--primary);
+    padding: 3px;
+    border-radius: 10px;
+    text-align: center;
+}
+
 /* AKHIR DETAIL EVENT */
 
 /* CONTAINER SPONSOR */
@@ -2021,10 +2029,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     color: var(--bg);
     text-align: center;
     font-weight: bold;
-}
-
-.sponsor .container img {
-    filter: grayscale(100%);
 }
 
 .sponsor .container .sponsor-utama {
@@ -2056,10 +2060,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     margin: 0 15px 0;
     object-fit: cover;
     /* aspect-ratio: 3/2; */
-}
-
-.sponsor img:hover {
-    filter: grayscale(0%) brightness(120%);
 }
 
 /* AKHIR CONTAINER SPONSOR*/

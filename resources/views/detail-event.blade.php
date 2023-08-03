@@ -1,6 +1,9 @@
 @extends('layouts.user')
 @section('title','Detail Event')
 @section('content')
+<style>
+    
+</style>
 
 <main>
     <div class="container-semtim">
@@ -26,7 +29,7 @@
                         @endforeach
                     </div>
                     <div class="guest">
-                        <p>Guest Star</p>
+                        <p class="title-guest">Guest Star</p>
                         @foreach ($event->talents as $talent)
                         <p>{{ $talent->nama }}</p>
                         @endforeach
