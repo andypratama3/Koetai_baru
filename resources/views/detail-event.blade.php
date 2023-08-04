@@ -1,9 +1,6 @@
 @extends('layouts.user')
 @section('title','Detail Event')
 @section('content')
-<style>
-    
-</style>
 
 <main>
     <div class="container-semtim">

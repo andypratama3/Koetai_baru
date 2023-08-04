@@ -16,10 +16,6 @@
 
 <body>
     <div class="main-background"></div>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     <main>
         <div class="container-login">
             <div class="container-kiri">
@@ -38,10 +34,12 @@
                         <div class="form-input">
                             <div class="input-isi">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" :value="old('email')" class="form-control" placeholder="Email">
+                                <input type="email" id="email" name="email" :value="old('email')" class="form-control"
+                                    placeholder="Email">
                             </div>
                             @if ($errors->has('email'))
-                            <div class="alert alert-primary alert-dismissible fade show text-center text-black" role="alert">
+                            <div class="alert alert-primary alert-dismissible fade show text-center text-black"
+                                role="alert">
                                 <strong>{{ $errors->first('email') }}</strong>
                             </div>
                             @endif
@@ -51,14 +49,21 @@
                                     aria-label="password">
                             </div>
                             @if ($errors->has('password'))
-                        <div class="alert alert-primary alert-dismissible fade show text-center text-black" role="alert">
-                            <strong>{{ $errors->first('password') }}</strong>
-                        </div>
-                        @endif
+                            <div class="alert alert-primary alert-dismissible fade show text-center text-black"
+                                role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </div>
+                            @endif
                         </div>
                         <div class="form-btn">
-                            <a type="button" class="btn-register" href="{{ route('register') }}">Daftar</a>
                             <button type="submit" class="btn-login">Masuk</button>
+                            <br>
+                            <div class="link">
+                                Anda Belum Memiliki Akun? 
+                                <span class="btn-link">
+                                    <a href="{{ route('register') }}">Daftar</a>
+                                </span>
+                            </div>
                         </div>
                     </form>
 

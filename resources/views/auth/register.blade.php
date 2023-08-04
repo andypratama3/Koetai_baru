@@ -13,10 +13,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('asset_user/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css')}}">
 </head>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 <div class="main-background"></div>
 <main>
     <div class="container-login">
@@ -50,8 +46,14 @@
                 </div>
 
                 <div class="form-btn">
-                    <button type="submit" class="btn-register">Daftar</button>
-                    <a type="button" class="btn-login" href="{{ route('login') }}" style="text-decoration: none;">Masuk</a>
+                    <button type="submit" class="btn-login">Daftar</button>
+                    <br>
+                    <div class="link">
+                        Anda Sudah Memiliki Akun? 
+                        <span class="btn-link">
+                            <a href="{{ route('login') }}">Masuk</a>
+                        </span>
+                    </div>
                 </div>
                 </form>
 

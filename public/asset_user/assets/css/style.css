@@ -1737,7 +1737,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 }
 
 .container-login .container-kanan .isi-container .form-btn .btn-login,
-.container-login .container-kanan .isi-container .form-btn .btn-register {
+.container-login .container-kanan .isi-container .form-btn {
     width: 100%;
 }
 
@@ -1774,9 +1774,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 
 .container-login .container-kanan .isi-container .form-btn {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
     margin: 20px auto 0;
 }
 
@@ -1795,21 +1793,16 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     transition: .2s all;
 }
 
-.container-login .container-kanan .form-btn .btn-register {
-    width: 100%;
-    height: 35px;
-    padding: 15px 0;
-    margin-right: 15px;
-    background-color: #146C94;
-    border: 1px #146C94 solid;
-    border-radius: 3px;
+.container-login .container-kanan .form-btn .link{
     color: var(--putih);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 15px;
-    transition: .2s all;
-    text-decoration: none;
+}
+
+.container-login .container-kanan .form-btn .btn-link {
+    margin-left: 5px;
 }
 
 .container-login .container-kanan .btn-login:hover {
@@ -1821,14 +1814,14 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     transition: none;
 }
 
-.container-login .container-kanan .btn-register:hover {
+/* .container-login .container-kanan .btn-register:hover {
     box-shadow: 0 0 10px 1px #146C94;
-}
+} */
 
-.container-login .container-kanan .btn-register:active {
+/* .container-login .container-kanan .btn-register:active {
     transform: scale(0.95);
     transition: none;
-}
+} */
 
 /* AKHIR CONTAINER LOGIN */
 

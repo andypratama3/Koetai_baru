@@ -32,7 +32,7 @@ use App\Http\Controllers\Dashboard\OrderanShopController;
 */
 
 Route::get('/', WelcomeController::class)->name('index');
-Route::get('tentang', [WelcomeController::class,'about']);
+Route::get('tentang', [BeritaController::class,'about']);
 Route::get('shop', [ShopController::class, 'index']);
 
 Route::get('event/{slug}', [BeritaController::class, 'show'])->name('detail.event.show');

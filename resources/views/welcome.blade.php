@@ -38,7 +38,6 @@
 <section class="sponsor">
     <div class="container">
         <h1>SPONSOR</h1>
-        {{-- @foreach ($sponsors as $spons) --}}
         <div class="sponsor-utama">
             @foreach ($sponsors as $sponsor)
             @if ($sponsor->nama == 'phm')
@@ -52,8 +51,7 @@
             <img src="{{ asset('storage/img/sponsor/' .$sponsor->logo) }}" alt="">
             @endif
             @endforeach
-        </div>
-        {{-- @endforeach --}}
+        </div>    
     </div>
 </section>
 
