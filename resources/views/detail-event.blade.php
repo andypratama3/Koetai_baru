@@ -33,8 +33,8 @@
                     </div>
                     <div class="action">
                         <div class="bttn-container">
-                        <a href="{{ route('index') }}" class="bttn btn btn-danger" style="border-radius: 7px; padding: 5px 0;">Kembali</a>
-                        <a href="{{ route('tiket.index') }}" class="bttn btn btn-primary mt-3" style="border-radius: 7px; padding: 5px 0;">Beli Tiket</a>
+                        <a href="{{ route('index') }}" class="bttn btn btn-danger">Kembali</a>
+                        <a href="{{ route('tiket.index') }}" class="bttn btn btn-primary mt-3">Beli Tiket</a>
                     </div>
                     </div>
                 </div>

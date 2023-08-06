@@ -1905,7 +1905,6 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     overflow: hidden;
     object-fit: cover;
     background-position: center;
@@ -1938,7 +1937,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     border-bottom: 1px var(--primary) solid;
     grid-area: datetime;
     width: 100%;
-    padding: 10px;
+    padding: 7px;
     display: block;
 }
 
@@ -1946,7 +1945,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     border-top: 1px var(--primary) solid;
     border-right: 1px var(--primary) solid;
     grid-area: category;
-    padding: 10px;
+    padding: 7px;
     width: 100%;
     display: block;
 }
@@ -1956,7 +1955,7 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
     border-left: 1px var(--primary) solid;
     grid-area: guest;
     width: 100%;
-    padding: 10px;
+    padding: 7px;
     display: block;
 }
 
@@ -1976,6 +1975,9 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
 
 .container-semtim .isi-semtim .isinya .content-detail .action .bttn-container .bttn {
     width: 100%;
+    font-size: 12px;
+    border-radius: 7px; 
+    padding: 5px;
 }
 
 .container-semtim .isi-semtim .isinya .content-detail .guest .title-guest{
@@ -2515,6 +2517,14 @@ main .container-pesantik .pesantik-menu .form-menu .pilihan .checkout:active {
         padding: 2px 5px;
         margin: 0 5px;
         font-size: 11px;
+    }
+
+    .container-semtim .isi-semtim .isinya .content-detail .action .bttn-container .bttn{
+        font-size: 11px;
+    }
+
+    .container-semtim .isi-semtim .isinya .content-detail{
+        font-size: 12px;
     }
 
     .container-login {

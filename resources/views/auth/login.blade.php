@@ -69,7 +69,6 @@
 
                 </div>
             </div>
-            {{-- <img src="{{ asset('asset_user/assets/img/logo-kms4.png')}}" class="bg-logo"> --}}
         </div>
     </main>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
